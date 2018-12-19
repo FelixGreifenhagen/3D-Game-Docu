@@ -2,6 +2,7 @@
 
 <h3 id="charactercontroller">Der CharacterController</h3>
 Als nächstes wird in den Assets ein Character Controller über Rechtsklick > Create > C#-Script erstellt. In diesem werden dann sämtliche Zeilen geschrieben, mit denen sich dann der Charakter im Game bewegt. 
+
 ``` 
 using System.Collections;
 using System.Collections.Generic;

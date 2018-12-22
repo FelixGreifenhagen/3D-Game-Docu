@@ -1,6 +1,10 @@
 # 3D-Game-Docu
 <h2 id="charakter">Der Charakter</h2>
 
+In diesem Fall wird, um das Modell später zu animieren, ein Character-Model benötigt, welches ein Exoskelett enthält. Zudem muss das Charakter-Model menschliche Proportionen aufweisen. Dies kann alles in Adobe Fuse (Beta) gestaltet werden. Nach dem start erhält man dort die Möglichkeit, einen Charakter zu gestalten und sowohl den Körper, als auch das Gesicht sowie die Kleidung selber zu gestalten:
+
+<p align="center"><img src="#" width="600px"></p>
+
 <h2 id="capsulecollider">Der Capsule-Collider</h2>
 
 Nun ist der Charakter erstellt und importiert. Allerdings fällt dieser noch durch das vorhandene Terrain durch. Damit dies nicht passiert brauchen alle Objekte, die bei einer Berührung eine Bewegung ausführen sollen (wie z.B. dass der Charakter nicht durch den Boden fällt) einen von Unity bereitgestellten Collider. Dieser wird hinzugefügt, indem man den Charakter auswählt und dann auf Component > Physics > SphereCollider geht:

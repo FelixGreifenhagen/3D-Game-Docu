@@ -11,6 +11,9 @@ Damit wird dann ein Collider auf den Charakter hinzugefügt und der Charakter f�
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/50374574-64074a00-05f0-11e9-973e-3f3b572bebf8.png" width="500px"></p>
 
+Dies geschieht, da der Collider ein Capsule-Collider, also teilweise rund, ist. Eine Lösung wäre es, einen BoxCollider auf den Charakter zu setzen. Das würde allerdings nur dafür sorgen, dass der Charakter nicht wie eine Kugel, sondern wie ein Quader nach hinten kippt. Also ist das Problem damit nicht gelöst. Gelöst wird es, indem das Charakter-Model editiert wird. Dafür wird der Charakter ausgewählt und auf dem Rigidbody unter "Constraints" bei "Freeze Rotation" die Box für X, Y und Z ausgewählt:
+
+<p align="center"><img src="#" width="500px"></p>
 Damit sich der Charakter nun bewegt, muss als nächstes ein Player-Controller geschrieben werden:
 
 <h3 id="charactercontroller">Der Player-Controller</h3>

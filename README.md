@@ -7,6 +7,10 @@ Nun ist der Charakter erstellt und importiert. Allerdings fällt dieser noch dur
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/50374528-cd3a8d80-05ef-11e9-9d0b-a028d61841c1.png" width="300px"></p>
 
+Damit wird dann ein Collider auf den Charakter hinzugefügt und der Charakter fällt nicht mehr durch den Boden. Als Problem besteht dennoch weiterhin, dass der Charakter, wenn er auf einen Berg zugesteuert wird, den Berg rückwärts herunterrollt:
+
+<p align="center"><img src="#" width="500px"></p>
+
 Damit sich der Charakter nun bewegt, muss als nächstes ein Player-Controller geschrieben werden:
 
 <h3 id="charactercontroller">Der Player-Controller</h3>

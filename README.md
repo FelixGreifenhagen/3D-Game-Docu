@@ -46,6 +46,8 @@ Als nächstes soll ein Pause Menü zum Spiel hinzugefügt werden. Dafür kann in
 
 Das Canvas ist ein von Unity bereitgestelltes User Interface Element, welches einen Screen über den gesamten Bildschirm spannt.
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/51204982-34084980-1905-11e9-9889-b57a4e006873.png" width="300px"></p>
+
 
 Nun ist das Menü allerdings dauerhaft geöffnet und die Buttons haben keine Funktion. Um dies zu ändern, wird auf dem Canvas ein neues Script namens "EscapeMenu" erstellt. In diesem werden dann alle Bedingungen geschrieben, nach denen das Menü geöffnet wird und alle Aktionen definiert, die die erstellten Buttons ausführen sollen.
 

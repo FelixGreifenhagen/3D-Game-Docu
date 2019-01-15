@@ -40,4 +40,136 @@ Der Controller hat die Haupt-Klasse: PlayerController. Diese ist vom Typ MonoBeh
 
 
 
+## Das Pause-Menü
 
+Als nächstes soll ein Pause Menü zum Spiel hinzugefügt werden. Dafür kann in Unity ein Element namens Canvas genutzt werden. Dies lässt sich mittels <b>Rechtsklick in die Assets > UI > Canvas</b> zu den Standart Elementen hinzufügen.
+
+Das Canvas ist ein von Unity bereitgestelltes User Interface Element, welches einen Screen über den gesamten Bildschirm spannt.
+
+
+Nun ist das Menü allerdings dauerhaft geöffnet und die Buttons haben keine Funktion. Um dies zu ändern, wird auf dem Canvas ein neues Script namens "EscapeMenu" erstellt. In diesem werden dann alle Bedingungen geschrieben, nach denen das Menü geöffnet wird und alle Aktionen definiert, die die erstellten Buttons ausführen sollen.
+
+Wie alle C# Scripte in Unity hat auch dieses zu Beginneine Start() und eine Update() Funktion. Die Start()-Funktion kann gelöst werden, da sie in diesem Fall nicht benötigt wird.
+
+Zu Beginn des Scripts werden wieder außerhalb der Funktion aber innerhalb der Klasse, alle Variablen und Objekte definiert, die benötigt werden. In diesem Fall sind das nur zwei:
+
+```
+public class EscapeMenu:MonoBehaviour {
+    public static bool GamePaused = false;
+    public GameObject pauseMenuUI
+}
+```
+Die erste Variable ist vom Typ bool (also Wahrheitsaussagen) und soll als Überprüfung dienen, ob sich das Spiel aktuell im Pause-Modus befindet oder nicht (da ja abhängig davon das Menü entweder geschlossen, oder eben geöffnet wird). Zudem wird sie zu Beginn auf false gesetzt, da das Spiel zu Anfang nicht im Pause Modus ist. Die zweite Initialisierung ist ein GameObject. Auch dies ist public, weil später nocheinmal aus dem Unity-Inspector drauf zugegriffen werden muss. Dieses GameObject heißt pauseMenuUI, stellt also das Canvas dar. Die Logik dahinter ist, dass diesem GameObject das vorher initialisierte Canvas, also das Menü, zugewiesen wird und dieses dann abhängig vom Tastendruck (in diesem Falle die Escape-Taste) angezeigt oder eben nicht angezeigt wird.
+
+Als nächstes wird die Update Funktion geschrieben:
+
+```
+public class EscapeMenu:MonoBehaviour {
+    public static bool GamePaused = false;
+    public GameObject pauseMenuUI
+    
+    void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(GamePaused == true) {
+                Resume();
+            }
+            else {
+                Pause();
+            }
+        }
+    }
+}
+```
+
+Wie bereits im CharacterController wird hier abhängig vom Tastendruck eine Aktion ausgelöst. In diesem Fall ist es die EscapeTaste, die durch die Bedingung Input.GetKeyDown(KeyCode.Escape) (also: Input eines Tastendruckes holen(von der Taste mit dem Code:Escape) abgefragt wird. Wird nun also die Escape-Taste gedrückt, wird der Inhalt der If-Schleife ausgeführt. In dieser If-Schleife ist eine weitere If-Schleife, die dann noch einmal überprüft, in welchem Zustand sich das Spiel gerade befindet, also ob das Pause-Menü offen oder geschlossen ist, in dem es den Inhalt der zuvor initialisierten Variable <b>GamePaused</b> abfragt. Falls das Spiel pausiert ist, führt es nun also die Funktion Resume() aus, die im nächsten Schritt erläutert wird. Ist das Spiel nicht pausiert, wird die Funktion Pause() ausgeführt.
+
+Als nächstes müssen dann die Pause() und die Resume() Funktion geschrieben werden. Diese werden unter der Update Funktion geschrieben und enthalten folgendes: 
+
+```
+public class EscapeMenu:MonoBehaviour {
+    public static bool GamePaused = false;
+    public GameObject pauseMenuUI
+    
+    void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(GamePaused == true) {
+                Resume();
+            }
+            else {
+                Pause();
+            }
+        }
+    }
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GamePaused = false;
+    }
+    void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GamePaused = true;
+    }
+}
+```
+Zunächst zur Pause() Funktion:
+Diese hat den ausgangspunkt, dass das Menü geschlossen ist. Um es daher zu öffnen (da ja beim pausieren das Pausemenü geöffnet werden muss) wird das zu Beginn gesetzte GameObject pauseMenuUI mit dem Befehl pauseMenuUI.SetActive(true) auf aktiv gesetzt, wodurch es dem Spieler sichtbar wird. Als nächsten Schritt muss dafür gesorgt werden, dass das Spiel währenddessen nicht weiterläuft. Dies geschieht, indem die im Spiel vorhandene Zeit auf null gesetzt wird. Das geschieht mithilfe des Befehls Time.timeScale = 0f; - die Time.timeScale (also die "Spielzeit") wird auf null gesetzt, sie wird angehalten. Als letzten Schritt muss noch die Variable GamePaused auf true gesetzt werden, um beim nächsten Escape-drücken signalisiert wird, dass das Spiel sich aktuell im Pause-Modus befindet. 
+
+
+Nun zur Resume() Funktion
+Sobald diese ausgeführt wird, muss natürlich das Menü nach dem Tastendruck wieder verschwinden. Um dies zu erreichen, wird pauseMenuUI, also das zuvor initialisierte GameObject, mittels pauseMenuUI.SetActive(false) als nicht aktiv (false) gesetzt. Es wird also deaktiviert! Als nächsten Schritt muss natürlich die Spielzeit wieder auf "normal" gesetzt werden. Daher wird hier einfach Time.timeScale = 1f; gesetzt. Als letztes wird die GamePaused Variable auf false gesetzt, das Spiel geht nämlich von hier an weiter.
+
+Als letztes muss natürlich noch dem "Beenden"-Button eine Funktion zugewiesen werden. Dafür wird eine weitere Funktion mit dem Namen QuitGame() initialisert:
+
+```
+public class EscapeMenu : MonoBehaviour
+{   
+    public void QuitGame()  {        
+    }    
+}
+```
+Im Anschluss wird in diese ein einziger einfacher Befehl geschrieben:
+```
+public class EscapeMenu : MonoBehaviour
+{    
+    public void QuitGame()  { 
+        Application.Quit();
+    }    
+}
+```
+Dieser lässt die Funktion schon vermuten: Er schließt ganz einfach die Anwendung!
+
+Damit wäre auch dieses Script fertig und sieht im ganzen wie folgt aus:
+
+```
+public class EscapeMenu : MonoBehaviour {
+    public static bool GamePaused = false;
+    public GameObject pauseMenuUI;
+    // Update is called once per frame
+    void Update()  {
+        if(Input.GetKeyDown(KeyCode.Escape))  {
+            if(GamePaused == true)   {
+                Resume();
+            }
+            else   {
+                Pause();
+            }
+        }
+    }
+    public void Resume()  {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GamePaused = false;
+    }
+    void Pause()  {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GamePaused = true;
+    }
+    public void QuitGame()  {
+        Application.Quit();
+    }    
+}
+```

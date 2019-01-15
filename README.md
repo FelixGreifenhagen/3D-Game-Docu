@@ -186,4 +186,4 @@ public class EscapeMenu : MonoBehaviour {
 Damit diese Bedingungen und Funktionen nun auch Anwendung finden gibt es in Unity für Buttons ein Feature: Im Inspektor lässt sich unter OnClick() eine Reaktion auf das Drücken des Buttons einführen. Dafür geht man nun auf das + , zieht in das Object das zuvor erstellte Canvas rein (da auf diesem ja das Script mit den jeweiligen Funktionen liegt) und wählt oben rechts im Dropdown-Menü die jeweilige Funktion aus dem EscapeMenu-Script aus (Beim Resume Button die Resume-Funktion oder Beim Beenden Button eben die Quit-Funktion). Damit wird automatisch eine Abhängigkeit erstellt und der Button hat eine Funktion!
 
 <p align="center"><img width="400px" src=""></p>
-<p align="center"><img width="400px" src=""></p>
+<p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/51206147-b8f46280-1907-11e9-8b6f-918cb9c937eb.png"></p>

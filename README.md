@@ -1,4 +1,4 @@
-# 3D-Game-Docu
+# WHYlands Dokumentation (3D-Game)
 <h2 id="charakter">Der Charakter</h2>
 
 In diesem Fall wird, um das Modell später zu animieren, ein Character-Model benötigt, welches ein Exoskelett enthält. Zudem muss das Charakter-Model menschliche Proportionen aufweisen. Dies kann alles in Adobe Fuse (Beta) gestaltet werden. Nach dem start erhält man dort die Möglichkeit, einen Charakter zu gestalten und sowohl den Körper, als auch das Gesicht sowie die Kleidung selber zu gestalten:

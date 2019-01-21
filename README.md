@@ -1,9 +1,12 @@
 # WHYlands Dokumentation (3D-Game)
+
+<h1>Das Game-Design</h1>
 <h2 id="charakter">Der Charakter</h2>
 
 In diesem Fall wird, um das Modell später zu animieren, ein Character-Model benötigt, welches ein Exoskelett enthält. Zudem muss das Charakter-Model menschliche Proportionen aufweisen. Dies kann alles in Adobe Fuse (Beta) gestaltet werden. Nach dem start erhält man dort die Möglichkeit, einen Charakter zu gestalten und sowohl den Körper, als auch das Gesicht sowie die Kleidung selber zu gestalten:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/50374742-923a5900-05f3-11e9-930f-a08619cca564.png" width="600px"></p>
+
 
 <h2 id="capsulecollider">Der Capsule-Collider</h2>
 
@@ -187,3 +190,4 @@ Damit diese Bedingungen und Funktionen nun auch Anwendung finden gibt es in Unit
 
 <p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/51206209-d45f6d80-1907-11e9-964e-1f93cec748b7.png"></p><br>
 <p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/51206147-b8f46280-1907-11e9-8b6f-918cb9c937eb.png"></p>
+

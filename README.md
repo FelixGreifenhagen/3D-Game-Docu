@@ -12,7 +12,7 @@ In diesem Fall wird, um das Modell später zu animieren, ein Character-Model ben
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/50374742-923a5900-05f3-11e9-930f-a08619cca564.png" width="600px"></p>
 
-Sobald der Charakter dann beendet ist, lässt sich oben rechts mit "Save to Maximo" in Maximo exportieren. In Mixamo lassen sich dann Animationen auf einen Charakter anwenden bzw. eigene Animationen mithilfe des von Fuse angewandten Exoskelett erstellen. 
+Sobald der Charakter dann beendet ist, lässt sich oben rechts mit "Save to Maximo" in Maximo exportieren. In Mixamo lassen sich dann Animationen auf einen Charakter anwenden bzw. eigene Animationen mithilfe des von Fuse angewandten Exoskelett erstellen:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51466760-3e926b00-1d6b-11e9-921a-4b39743ccb33.png" width="600px"></p>
 

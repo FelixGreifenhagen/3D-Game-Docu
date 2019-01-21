@@ -18,14 +18,13 @@ Sobald der Charakter dann beendet ist, lässt sich oben rechts mit "Save to Maxi
 
 Sobald dann auch die Animationen angewandt sind, lässt sich das Modell, sowie die Animationen als .fbx datei exportieren. Diese lässt sich dann per Drag&Drop in Unity importieren.
 
-HIER NE ANLEITUNG HIN, WIE MAN DEN ANIMATOR CONTROLLER ERREICHT, ERSTELLT UND WIE MAN DIE ANIMATIONEN HINZUFÜGT
-
-Sobald dann sämtliche Animationen zum Animator-Controller hinzugefügt wurden, sind schon einige Pfeile zwischen den verschiedenen "Kästen" zu erkennen. Diese Stellen Übergänge zwischen den Animationen da und lassen sich mit Rechtsklick hinzufügen. Anschließend kann mit einem Klick auf den Pfeil rechts im Inspektor die Bedingung eingefügt werden. 
-
 <h2 id="animationcontroller">Der Animatior-Controller</h2>
 
 Als nächstes müssen in Unity die zuvor erstellten Animationen auf das Charakter-Modell angewandt werden. Dafür gibt es in Unity ein einfaches Tool: den Animator-Controller!
 
+HIER NE ANLEITUNG HIN, WIE MAN DEN ANIMATOR CONTROLLER ERREICHT, ERSTELLT UND WIE MAN DIE ANIMATIONEN HINZUFÜGT
+
+Sobald dann sämtliche Animationen zum Animator-Controller hinzugefügt wurden, sind schon einige Pfeile zwischen den verschiedenen "Kästen" zu erkennen. Diese Stellen Übergänge zwischen den Animationen da und lassen sich mit Rechtsklick hinzufügen. Anschließend kann mit einem Klick auf den Pfeil rechts im Inspektor die Bedingung eingefügt werden. 
 
 
 <h2 id="capsulecollider">Der Capsule-Collider</h2>

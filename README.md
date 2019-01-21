@@ -1,5 +1,7 @@
 # WHYlands Dokumentation (3D-Game)
 
+
+
 <h1>Das Game-Design</h1>
 <h2 id="charakter">Der Charakter</h2>
 
@@ -7,7 +9,7 @@ In diesem Fall wird, um das Modell später zu animieren, ein Character-Model ben
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/50374742-923a5900-05f3-11e9-930f-a08619cca564.png" width="600px"></p>
 
-
+<h1>Die Unity-Konfiguration und Scripting</h1>
 <h2 id="capsulecollider">Der Capsule-Collider</h2>
 
 Nun ist der Charakter erstellt und importiert. Allerdings fällt dieser noch durch das vorhandene Terrain durch. Damit dies nicht passiert brauchen alle Objekte, die bei einer Berührung eine Bewegung ausführen sollen (wie z.B. dass der Charakter nicht durch den Boden fällt) einen von Unity bereitgestellten Collider. Dieser wird hinzugefügt, indem man den Charakter auswählt und dann auf Component > Physics > SphereCollider geht:

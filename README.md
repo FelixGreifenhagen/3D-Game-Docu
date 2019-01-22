@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/42578917/51550492-b6948a00-1e6c-11e9-9a67-90d217207b03.png">
+<p align="top"><img src="https://user-images.githubusercontent.com/42578917/51550492-b6948a00-1e6c-11e9-9a67-90d217207b03.png"></p>
 
 <h1>Die Grundlagen</h1>
 

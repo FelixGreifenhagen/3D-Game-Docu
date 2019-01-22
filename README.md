@@ -215,5 +215,62 @@ Damit diese Bedingungen und Funktionen nun auch Anwendung finden gibt es in Unit
 Nachdem nun ein Pause-Menü eingerichtet wurde, lässt sich dies auch normal bedienen. Allerdings fällt noch auf, dass die Maus sowohl im Menü, als auch inGame zu sehen ist. Dies soll natürlich nicht sein, die Maus soll inGame nicht zu sehen sein. Das Problem daran, sie einfach auszublenden, ist, dass sie im Menü ja weiterhin sichtbare sein soll. Also muss in einem Script, abhängig davon ob das Menü geöffnet ist, die Maus aus- oder eben eingeblendet werden. Dafür wird zunächst ein neues C#-Script erstellt und folgendes hinzugefügt:
 
 ```
+public class CursorScript:MonoBehaviour {
+bool CursorIsLocked;
 
-``` 
+void Start() {
+Cursor.lockState = CursorLockMode.Locked;
+Cursor.visible = false;
+CursorIsLocked = true;
+}
+void Update() {
+if(Input.GetKeyDown(KeyCode.Escape) && !CursorIsLocked) {
+Cursor.lockState = CursorLockMode.None;
+Cursor.visible = false;
+CursorIsLocked = true;
+}
+else if(Input.GetKeyDown(KeyCode.Escape) {
+Cursor.lockState = CursorLockMode.None;
+Cursor.visible = true;
+CursorIsLocked = false;
+}
+}
+}
+```
+Dieses Script führt diese Aktionen aus und funktioniert wie folgt:
+
+Zunächst wird erstmal eine Variable vom Typ Boolean mit dem Namen CursorIsLocked erzeugt. Mit dieser soll später der aktuelle Zustand überprüft werden, ob der Mauszeiger aktuell an oder aus ist. Als nächstes wird in der void Start ein Grundzustand erzeugt, also wie die Maus zu Beginn des Spiels aussehen soll:
+```
+void Start() {
+Cursor.lockState = CursorLockMode.Locked;
+Cursor.visible = false;
+CursorIsLocked = true;
+}
+```
+Grundsätzlich soll der Cursor unsichtbar sein, und die Varibale CursorIsLocked soll true sagen. Der Befehlt Cursor.lockState=CursorLockMode.Locked, setzt den Cursor zunächst einmal auf locked, also unbeweglich auf dem Bildschirm. Dann wird mit Cursor.visible=false der Cursor unsichtbar gesetzt. Als nächstes muss dem Programm natürlich noch gesagt dass der Cursor jetzt gerade gelockt/unsichtbar ist. Die Variable wird also auf true gesetzt.
+
+Damit es nun möglich ist, auch im aktiven Spiel den Zustand der Maus zu verändern (z.B. wenn man das Menü öffnet), wird der Rest in die Update() Funktion geschrieben, also mit jedem Frame überprüft:
+
+```
+void Update() {
+if(Input.GetKeyDown(KeyCode.Escape) && !CursorIsLocked) {
+Cursor.lockState = CursorLockMode.None;
+Cursor.visible = false;
+CursorIsLocked = true;
+}
+else if(Input.GetKeyDown(KeyCode.Escape) && CursorIsLocked) {
+Cursor.lockState = CursorLockMode.None;
+Cursor.visible = true;
+CursorIsLocked = false;
+}
+}
+```
+Der Zustand der Maus (ob sie unsichtbar oder sichtbar ist) soll natürlich nur mit dem Öffnen des Menüs beeinflusst werden. Da das Menü mit der Escape Taste geöffnet wird, kann auch der Mauszeiger vom Drücken der Escape-Taste abhängig gemacht. Also wird mit der If-Schleife überprüft, ob die Escape-Taste gedrückt wird. Wie genau das funktioniert, lässt sich <a href="#">hier</a> nachlesen. Gleichzeitig muss allerdings auch geguckt werden, ob der Mauszeiger aktuell gelockt ist. Zuvor wurde ja eine Variable namens CursorIsLocked erstellt, in der der aktuelle Zustand der Maus gespeichert ist, welche daher dafür ausgelesen werden kann. Also wird in die If-Schleife noch eine zweite Bedingung hinzugefügt, nämlich ob der Cursor NICHT gelockt ist (Nicht-true wird durch ein Ausrufezeichen (!) vor der Bedingung symbolisiert).
+
+Wenn nun also Escape gedrückt wird UND der cursor nicht gelockt ist, wird die If-Schleife ausgeführt. Die If-Schleife enthält nun alle zuvor in der Start() Funktion verwendeten Befehle, die den Cursor festsetzen, unsichtbar machen und die Variable auf true setzen. Die Schleife würde also ausgeführt werden, wenn man sich im Menü befindet (Die Maus also sichtbar und NICHT gelocked ist = CursorIsLocked auf false ist) und dann mit Escape zurück ins Spiel wechselt.
+
+Andersrum muss natürlich auch der Fall abgedeckt werden, dass man aus dem Spiel ins Menü wechselt, der Cursor also von der Locked-Position in die nicht-LockedPosition wechselt. Dies wird mit einem else if, also einem an eine if-Schleife gebundenen else ausgeführt. In dieser wird überprüft, ob der Escape-Button gedrückt wird, sowie ob der Cursor aktuell gelockt ist. Ist dies der Fall wird die if-schleife ausgeführt. In dieser wird eigentlich nur genau das Gegenteil von den Befehlen in der ersten if-Schleife ausgeführt. Statt CursorLockMode.Locked, wird CursorLockMode.None gesetzt, sodass der Cursor NICHT mehr gelockt ist. Genauso wird Cursor.visible auf true, also auf sichtbar gesetzt. Und die CursorIsLocked wird auf false gesetzt, da der Cursor ja von nun an nicht mehr locked ist.
+
+Als nächstes muss das Script auf die MainCamera gezogen werden. Wenn man nun das Game ausprobiert, sieht man, dass die Maus genau das macht, was erwünscht war.
+
+Nun kommt allerdings noch ein weiteres Problem auf. Wenn man im zuvor erstellten Menü auf Fortsetzen klickt, verschwindet die Maus nicht.

@@ -1,6 +1,6 @@
 # WHYlands Dokumentation (3D-Game)
 
-
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/51548558-dd50c180-1e68-11e9-8fb5-60156125f964.png"></p>
 
 <h1>Die Grundlagen</h1>
 

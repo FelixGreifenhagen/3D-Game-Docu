@@ -2,6 +2,14 @@
 <img src="https://user-images.githubusercontent.com/42578917/51550957-c19bea00-1e6d-11e9-9baf-56e92610e7fe.png">
 <b>Beschreibung: Ein Abendteurer strandet auf einer einsamen Insel, die schon seit Jahren verlassen ist. Nun muss er viele Probleme lösen und Sachen sammeln um der Insel zu entkommen und sich selbst zu retten...</b>
 
+## Inhaltsverzeichnis
+
+* <a href="#komponenten">Komponentenliste</a>
+  * <a href="#bauundinst">Bauelemente und Installation</a>
+    + <a href="#bauelemente">Bauelemente</a>
+    + <a href="#installation">Intstallation der Entwicklungsumgebung</a>   
+ 
+
 
 <h1>Die Grundlagen</h1>
 

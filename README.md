@@ -1,5 +1,4 @@
 <img src="https://user-images.githubusercontent.com/42578917/51550492-b6948a00-1e6c-11e9-9a67-90d217207b03.png">
-
 <h1>Die Grundlagen</h1>
 
 Zunächst müssen erstmal, um später ein solides Gameplay zu implementieren, die Grundlagen in Unity einrichten. Dazu gehören unter anderem das Charaktermodel, ein Controller um Bewegungen zu steuern, Animationen für den Charakter, ein Terrain mit Border, sowie Menüs und weiteres. 

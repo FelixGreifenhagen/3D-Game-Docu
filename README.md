@@ -1,6 +1,6 @@
 <h1 align="center">WHYLANDS</h1>
 <img src="https://user-images.githubusercontent.com/42578917/51550957-c19bea00-1e6d-11e9-9baf-56e92610e7fe.png">
-<p style="font-size:28px">Beschreibung: Ein Abendteurer strandet auf einer einsamen Insel, die schon seit Jahren verlassen ist. Nun muss er viele Probleme lösen und Sachen sammeln um der Insel zu entkommen und sich selbst zu retten...</p>
+<b>Beschreibung: Ein Abendteurer strandet auf einer einsamen Insel, die schon seit Jahren verlassen ist. Nun muss er viele Probleme lösen und Sachen sammeln um der Insel zu entkommen und sich selbst zu retten...</b>
 <h1>Die Grundlagen</h1>
 
 Zunächst müssen erstmal, um später ein solides Gameplay zu implementieren, die Grundlagen in Unity einrichten. Dazu gehören unter anderem das Charaktermodel, ein Controller um Bewegungen zu steuern, Animationen für den Charakter, ein Terrain mit Border, sowie Menüs und weiteres. 

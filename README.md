@@ -43,10 +43,19 @@ In diesem werden sämtliche Animationen hinzugefügt und verwaltet. Man erreicht
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51618452-a7761080-1f2e-11e9-843d-71d63eb24277.png" width="300px"></p>
 
-Als nächstes werden dann Charakter und Animationen unten in die Projektdatein gezogen. Sobald der Charakter dann in der Szene paltziert ist, kann in den Dateien eine Animation ausgewählt und auf den Charakter gezogen werden. Damit erstellt Unity 
+Als nächstes werden dann Charakter und Animationen unten in die Projektdatein gezogen. Sobald der Charakter dann in der Szene paltziert ist, kann in den Dateien eine Animation ausgewählt und auf den Charakter gezogen werden. Damit erstellt Unity einen sogenannten <b>Animator </b>:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/51619541-d8efdb80-1f30-11e9-8319-9dd0df862037.png" width="400px">
+    
+In diesen ist bereits der Controller (wird automatisch hinzugefügt und kann dabei belassen werden) und der Avatar (der in diesem Fall den Charakter mitsamt Animation darstellt. In Unity werden diese zusammen konvertiert, das Endergebnis zeigt aber nur einen Charakter, den aber mit mehreren Animationen an). Zudem ist zu beobachten, dass im Animatior-Controller mit dem Hinzufügen von neuen Animation auch kleine neue Kästchen entstehen:
 
-Sobald dann sämtliche Animationen zum Animator-Controller hinzugefügt wurden, sind schon einige Pfeile zwischen den verschiedenen "Kästen" zu erkennen. Diese Stellen Übergänge zwischen den Animationen da und lassen sich mit Rechtsklick hinzufügen. Anschließend kann mit einem Klick auf den Pfeil rechts im Inspektor die Bedingung eingefügt werden. 
+FOTO VOM ANIMATOR CONTROLLER
+
+Das ist die Besonderheit vom Animator in einer Engine wie Unity: die Verwaltung von Animationen erfolgt grafisch! 
+
+Noch ist zu erkennen, dass es ein orangenes Kästchen und mehrere graue gibt. Das Orangene ist dabei der IDLE, also die Standart Animation, und die grauen sind die anderen Animationen. Per <b>Rechtsklick auf ein Kästchen > Set as Layer Default State </b> lässt sich auch ein anderes Kästchen als IDLE/Default bestimmen. 
+
+Sobald dann sämtliche Animationen zum Animator-Controller hinzugefügt wurden, sind schon einige Pfeile zwischen den verschiedenen Kästen zu erkennen. Diese stellen "Übergänge" zwischen den Animationen da und lassen sich mit <b> Rechtsklick > Make Transition </b> hinzufügen. Anschließend kann mit einem Klick auf den Pfeil rechts im Inspektor die Bedingung (unter "Conditions" eingefügt werden. 
 
 
 <h2 id="capsulecollider">Der Capsule-Collider</h2>

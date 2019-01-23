@@ -290,3 +290,20 @@ Andersrum muss natürlich auch der Fall abgedeckt werden, dass man aus dem Spiel
 Als nächstes muss das Script auf die MainCamera gezogen werden. Wenn man nun das Game ausprobiert, sieht man, dass die Maus genau das macht, was erwünscht war.
 
 Nun kommt allerdings noch ein weiteres Problem auf. Wenn man im zuvor erstellten Menü auf Fortsetzen klickt, verschwindet die Maus nicht.
+
+# Das Game-Design
+
+Natürlich ist für ein gutes Computerspiel nicht nur eine funktionierende GameEngine mit Animationen und einem Charakter notwendig, sondern es wird auch eine ansprechende Spielwelt benötigt. Dafür wird zunächst einmal ein Untergrund zum Laufen benötigt. Diesen stellt Unity unter <b>GameObject > 3d Object > Terrain</b> bereit. 
+
+# Das Gameplay
+
+Nachdem nun eine ansprechende Spielwelt erstellt wurde, muss der zuvor implementierte Charakter auch mit dieser Interagieren können. Oft erfolgt dies in Form von Quests/Aufgaben, für die der Spieler etwas finden, sammeln oder auf sonstige Weise mit der Welt interagieren. In diesem Fall beschränken sich die Aktionen vor allem auf das finden und sammeln von Objekten. 
+
+### Das Inventory-System
+
+Als nächstes soll ein Inventory System implementiert werden, in dem Objekte gespeichert werden, die zuvor aufgesammelt wurden
+
+### Das Health-System
+
+Ein weiterer wichtiger Aspekt für das Gameplay ist ein Health-System.
+

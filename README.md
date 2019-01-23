@@ -4,6 +4,7 @@
 <br>
 <br>
 In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, die schon seit Jahren verlassen ist. Nun muss er sich den Gefahren und Aufgaben dort stellen, um seinen Weg zurück nach Hause zu finden. Von Feinden umgeben und mit rudimentären Informationen muss der Spieler hier alle Teile finden und sammeln, um ein Boot zu bauen um zurück zur Zivilisation zu kommen.
+
 # Das Making-Off
 
 ## Inhaltsverzeichnis

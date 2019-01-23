@@ -59,6 +59,43 @@ Sobald dann sämtliche Animationen zum Animator-Controller hinzugefügt wurden, 
 
 <p align="center"><img width="400" src="https://user-images.githubusercontent.com/42578917/51620344-713a9000-1f32-11e9-8c1e-4dc91c343fa0.png"></p>
 
+Um dort eine Condition auswählen zu können, muss zuerst eine erstellt werden! Eine Condition wird von Unity als ein Script mit einer gleichnamigen Boolean Variable verstanden, welche in abhängigkeit die Werte true oder false annimmt. Um also eine Condition zu erstellen, muss zunächst ein neues C#-Script erstellt werden. Dies wird "Moving" genannt und geöffnet. 
+
+Da das Script selber von Unity als eine Boolean Variable verstanden wird, muss diese nicht mehr definiert werden. Allerdings muss zuvor noch definiert werden, dass dies ein Script ist, welches im Animator verwendet wird. Dafür muss zunächst ein neuer public Animator namens move definiert werden. Dies holt sich quasi den Animator ins Script und kann in diesem den Zustand von Conditions ändern. Damit dieser auch erreicht wird, muss er zudem in der void Start() initialisiert werden:
+
+```
+public class Moving:MonoBehaviour {
+    public Animator move;
+    
+    void Start() {
+        move = GetComponent<Animator>();
+    }
+}
+
+```
+Das stellt quasi dar: "Ich brauche einen neuen Animator, das ist dieser und in ihm sollen später die Veränderungen Wirkung finden".
+
+als nächstes soll natürlich auch irgendein Ereignis im Script stattfinden. Dafür wird in die void Update() folgendes geschrieben:
+
+```
+void Update() {
+    if(Input.GetKey(KeyCode.W)) {
+        move.SetBool("Moving", true);
+    }
+    if(!Input.GetKey(KeyCode.W)) {
+        move.SetBool("Moving", false);
+    }
+}
+```
+Es werden wird wie im Character Controller wieder der Zustand der Taste W abgefragt. Diesmal wird allerding etwas anderes dabei ausgelöst: Undzwar wird auf mittels move.SetBool() im Animator move (der vorher definiert wurde) auf eine Variable zugegriffen und sie "gesetted" (daher das "SetBool"). In den Klammern danach wird zunächst dargestellt, um welche Variable es geht (nämlich "Moving") und auf was sie gesetzt wird (false bzw. true). Der volle Command move.SetBool("Moving", false) nimmt sich (das verhältnis von conditions und variablen in diesem Script wurde zuvor bereits angeschnitten) die Condition "Moving" im move-Animator, und setzt sie als bool false. Andersrum wird das ganze mit true natürlich auch gemacht.
+
+Nachdem das Script gespeichert wurde, kann die Condition im Animator gesetzt werden. Dafür muss zunächst ein neuer Parameter definiert werden: Dafür geht man links unter Parameters auf das + und wählt Bool aus (da ja am Ende auch eine Boolean Condition verwendet werden soll). 
+
+
+Anschließend wird der Parameter genauso genannt wie das zuvor erstellte Script, in diesem Fall "Moving". Zuletzt kann noch mit klicken auf einen der Pfeile, mit dem Plus bei Condition eine Condition ausgewählt werden, und daneben gewählt, in welchem Zustand diese ausgeführt wird. In diesem Fall soll bei Moving = true der Pfeil von der Idle Animation zur Lauf-Animation getriggered werden. Also wird dies in der Condition definiert: 
+
+
+
 <h2 id="capsulecollider">Der Capsule-Collider</h2>
 
 Nun ist der Charakter erstellt und importiert. Allerdings fällt dieser noch durch das vorhandene Terrain durch. Damit dies nicht passiert brauchen alle Objekte, die bei einer Berührung eine Bewegung ausführen sollen (wie z.B. dass der Charakter nicht durch den Boden fällt) einen von Unity bereitgestellten Collider. Dieser wird hinzugefügt, indem man den Charakter auswählt und dann auf Component > Physics > SphereCollider geht:

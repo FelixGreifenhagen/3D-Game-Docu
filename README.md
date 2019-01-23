@@ -96,6 +96,16 @@ Anschließend wird der Parameter genauso genannt wie das zuvor erstellte Script,
 
 <p align="center"><img width="600px" src="https://user-images.githubusercontent.com/42578917/51623012-0e4bf780-1f38-11e9-98ae-08a092c2a803.png"></p>
 
+Das ganze kann natürlich auch mit Moving = false in die andere Richtung gemacht werden, sodass, wenn der Charakter aufhört zu laufen, zurück in die Idle Animation gewechselt werden. 
+
+Nun ist die Condition erstellt und der Animator Controller eingerichtet. Als letztes muss noch ein kleiner Haken im Inspektor entfernt werden:
+
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/51623180-6551cc80-1f38-11e9-920e-5c2bc512e829.png" width="400px"></p>
+
+Der Haken sorgt dafür, das die Animation, sobald sie beendet ist, aufhört, und der Animator Controller wieder in die Idle Animation wechselt. Da dies nicht erwünscht ist (die Animation soll sich beim Laufen ja schließlich die ganze Zeit wiederholen), muss der Haken entfernt werden.
+
+Sobald dies erledigt ist, ist die Animation für das Laufen eingerichtet und kann verwendet werden. Das gleiche kann natürlich auch mit anderen Tasten und anderen Animationen ausgeführt werden. Dafür müssen lediglich neue Scripte mit anderem Namen erstellt werden und weitere Conditions erstellt werden. Zudem muss in den Scripten in der If-Schleiffe die Taste geändert werden, mit der die Animation gestartet werden soll. Nachdem all die Animationen hinzugefügt wurden, kann der Charakter sauber und schön in alle Richtungen laufen.
+
 <h2 id="capsulecollider">Der Capsule-Collider</h2>
 
 Nun ist der Charakter erstellt und importiert. Allerdings fällt dieser noch durch das vorhandene Terrain durch. Damit dies nicht passiert brauchen alle Objekte, die bei einer Berührung eine Bewegung ausführen sollen (wie z.B. dass der Charakter nicht durch den Boden fällt) einen von Unity bereitgestellten Collider. Dieser wird hinzugefügt, indem man den Charakter auswählt und dann auf Component > Physics > SphereCollider geht:

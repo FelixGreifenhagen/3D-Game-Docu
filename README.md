@@ -232,25 +232,25 @@ Nachdem nun ein Pause-Menü eingerichtet wurde, lässt sich dies auch normal bed
 
 ```
 public class CursorScript:MonoBehaviour {
-bool CursorIsLocked;
+    bool CursorIsLocked;
 
-void Start() {
-Cursor.lockState = CursorLockMode.Locked;
-Cursor.visible = false;
-CursorIsLocked = true;
-}
-void Update() {
-if(Input.GetKeyDown(KeyCode.Escape) && !CursorIsLocked) {
-Cursor.lockState = CursorLockMode.None;
-Cursor.visible = false;
-CursorIsLocked = true;
-}
-else if(Input.GetKeyDown(KeyCode.Escape) {
-Cursor.lockState = CursorLockMode.None;
-Cursor.visible = true;
-CursorIsLocked = false;
-}
-}
+    void Start() {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        CursorIsLocked = true;
+    }
+    void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape) && !CursorIsLocked) {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
+            CursorIsLocked = true;
+           }
+        else if(Input.GetKeyDown(KeyCode.Escape) {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            CursorIsLocked = false;
+        }
+    }
 }
 ```
 Dieses Script führt diese Aktionen aus und funktioniert wie folgt:
@@ -258,9 +258,9 @@ Dieses Script führt diese Aktionen aus und funktioniert wie folgt:
 Zunächst wird erstmal eine Variable vom Typ Boolean mit dem Namen CursorIsLocked erzeugt. Mit dieser soll später der aktuelle Zustand überprüft werden, ob der Mauszeiger aktuell an oder aus ist. Als nächstes wird in der void Start ein Grundzustand erzeugt, also wie die Maus zu Beginn des Spiels aussehen soll:
 ```
 void Start() {
-Cursor.lockState = CursorLockMode.Locked;
-Cursor.visible = false;
-CursorIsLocked = true;
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+    CursorIsLocked = true;
 }
 ```
 Grundsätzlich soll der Cursor unsichtbar sein, und die Varibale CursorIsLocked soll true sagen. Der Befehlt Cursor.lockState=CursorLockMode.Locked, setzt den Cursor zunächst einmal auf locked, also unbeweglich auf dem Bildschirm. Dann wird mit Cursor.visible=false der Cursor unsichtbar gesetzt. Als nächstes muss dem Programm natürlich noch gesagt dass der Cursor jetzt gerade gelockt/unsichtbar ist. Die Variable wird also auf true gesetzt.
@@ -269,16 +269,16 @@ Damit es nun möglich ist, auch im aktiven Spiel den Zustand der Maus zu veränd
 
 ```
 void Update() {
-if(Input.GetKeyDown(KeyCode.Escape) && !CursorIsLocked) {
-Cursor.lockState = CursorLockMode.None;
-Cursor.visible = false;
-CursorIsLocked = true;
-}
-else if(Input.GetKeyDown(KeyCode.Escape) && CursorIsLocked) {
-Cursor.lockState = CursorLockMode.None;
-Cursor.visible = true;
-CursorIsLocked = false;
-}
+    if(Input.GetKeyDown(KeyCode.Escape) && !CursorIsLocked) {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+        CursorIsLocked = true;
+    }
+    else if(Input.GetKeyDown(KeyCode.Escape) && CursorIsLocked) {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        CursorIsLocked = false;
+    }
 }
 ```
 Der Zustand der Maus (ob sie unsichtbar oder sichtbar ist) soll natürlich nur mit dem Öffnen des Menüs beeinflusst werden. Da das Menü mit der Escape Taste geöffnet wird, kann auch der Mauszeiger vom Drücken der Escape-Taste abhängig gemacht. Also wird mit der If-Schleife überprüft, ob die Escape-Taste gedrückt wird. Wie genau das funktioniert, lässt sich <a href="#">hier</a> nachlesen. Gleichzeitig muss allerdings auch geguckt werden, ob der Mauszeiger aktuell gelockt ist. Zuvor wurde ja eine Variable namens CursorIsLocked erstellt, in der der aktuelle Zustand der Maus gespeichert ist, welche daher dafür ausgelesen werden kann. Also wird in die If-Schleife noch eine zweite Bedingung hinzugefügt, nämlich ob der Cursor NICHT gelockt ist (Nicht-true wird durch ein Ausrufezeichen (!) vor der Bedingung symbolisiert).

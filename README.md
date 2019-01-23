@@ -94,7 +94,7 @@ Nachdem das Script gespeichert wurde, kann die Condition im Animator gesetzt wer
 
 Anschließend wird der Parameter genauso genannt wie das zuvor erstellte Script, in diesem Fall "Moving". Zuletzt kann noch mit klicken auf einen der Pfeile, mit dem Plus bei Condition eine Condition ausgewählt werden, und daneben gewählt, in welchem Zustand diese ausgeführt wird. In diesem Fall soll bei Moving = true der Pfeil von der Idle Animation zur Lauf-Animation getriggered werden. Also wird dies in der Condition definiert: 
 
-
+<p align="center"><img width="600px" src="https://user-images.githubusercontent.com/42578917/51623012-0e4bf780-1f38-11e9-98ae-08a092c2a803.png"></p>
 
 <h2 id="capsulecollider">Der Capsule-Collider</h2>
 

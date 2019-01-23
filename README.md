@@ -39,7 +39,12 @@ Sobald dann auch die Animationen angewandt sind, lässt sich das Modell, sowie d
 
 Als nächstes müssen in Unity die zuvor erstellten Animationen auf das Charakter-Modell angewandt werden. Dafür gibt es in Unity ein einfaches Tool: den Animator-Controller!
 
-HIER NE ANLEITUNG HIN, WIE MAN DEN ANIMATOR CONTROLLER ERREICHT, ERSTELLT UND WIE MAN DIE ANIMATIONEN HINZUFÜGT
+In diesem werden sämtliche Animationen hinzugefügt und verwaltet. Man erreicht ihn mittels des Reiters oben neben Scene und Game bzw. über <b>Window > Animation > Animator</b>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/51618452-a7761080-1f2e-11e9-843d-71d63eb24277.png" width="300px"></p>
+
+Als nächstes werden dann Charakter und Animationen unten in die Projektdatein gezogen. Sobald der Charakter dann in der Szene paltziert ist, kann in den Dateien eine Animation ausgewählt und auf den Charakter gezogen werden. Damit erstellt Unity 
+
 
 Sobald dann sämtliche Animationen zum Animator-Controller hinzugefügt wurden, sind schon einige Pfeile zwischen den verschiedenen "Kästen" zu erkennen. Diese Stellen Übergänge zwischen den Animationen da und lassen sich mit Rechtsklick hinzufügen. Anschließend kann mit einem Klick auf den Pfeil rechts im Inspektor die Bedingung eingefügt werden. 
 

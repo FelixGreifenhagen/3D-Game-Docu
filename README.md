@@ -57,6 +57,7 @@ Noch ist zu erkennen, dass es ein orangenes Kästchen und mehrere graue gibt. Da
 
 Sobald dann sämtliche Animationen zum Animator-Controller hinzugefügt wurden, sind schon einige Pfeile zwischen den verschiedenen Kästen zu erkennen. Diese stellen "Übergänge" zwischen den Animationen da und lassen sich mit <b> Rechtsklick > Make Transition </b> hinzufügen. Anschließend kann mit einem Klick auf den Pfeil rechts im Inspektor die Bedingung (unter "Conditions" eingefügt werden. 
 
+<p align="center"><img width="400" src="https://user-images.githubusercontent.com/42578917/51620344-713a9000-1f32-11e9-8c1e-4dc91c343fa0.png"></p>
 
 <h2 id="capsulecollider">Der Capsule-Collider</h2>
 

@@ -8,10 +8,13 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
 
 ## Inhaltsverzeichnis
 
-* <a href="#komponenten">Komponentenliste</a>
-  * <a href="#bauundinst">Bauelemente und Installation</a>
-    + <a href="#bauelemente">Bauelemente</a>
-    + <a href="#installation">Intstallation der Entwicklungsumgebung</a>   
+* <a href="#">Die Idee</a>
+* <a href="#">Die benötigten Programme</a>
+* <a href="#">Zum Charakter
+    + <a href="#">Die Charaktererstellung</a>
+    + <a href="#">Der Animator-Controller</a>   
+    + <a href="#">Der Capsule-Collider</a>
+    + <a href="#">Der Character-Controller</a>
  
 
 

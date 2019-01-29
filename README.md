@@ -359,10 +359,20 @@ Nun kommt allerdings noch ein weiteres Problem auf. Wenn man im zuvor erstellten
 Natürlich ist für ein gutes Computerspiel nicht nur eine funktionierende GameEngine mit Animationen und einem Charakter notwendig, sondern es wird auch eine ansprechende Spielwelt benötigt. Dafür wird zunächst einmal ein Untergrund zum Laufen benötigt. Diesen stellt Unity unter <b>GameObject > 3d Object > Terrain</b> bereit. 
 
 <p align="center"><img width="300px" src="https://user-images.githubusercontent.com/42578917/51617903-7812d400-1f2d-11e9-8c47-add51e198616.png"></p>
+## Die Texturen
+
+Damit das Terrain auch einigermaßen aussieht, muss es auch mit Texturen ausgestattet werden. Dafür geht man unter <b>Terrain > Paint Terrain > Paint Texture </b> unten auf einen der Brushes und darpber unter <b>Edit Terrain Layers</b> weitere Texturen hinzufügen. Die Texturen werden in diesem Fall in Microsoft Photoshop erstellt.
+
+<p align="center"><img src="" width="600px"></p>
+
+Dafür wird in Photoshop eine neue Datei erstellt, diese Fläche dann in der jeweiligen Farbe eingefärbt, und anschließend mit einem beliebigen Pinsel die Unregelmäßigkeiten hinzugefügt
+
 
 # Das Gameplay
 
 Nachdem nun eine ansprechende Spielwelt erstellt wurde, muss der zuvor implementierte Charakter auch mit dieser Interagieren können. Oft erfolgt dies in Form von Quests/Aufgaben, für die der Spieler etwas finden, sammeln oder auf sonstige Weise mit der Welt interagieren. In diesem Fall beschränken sich die Aktionen vor allem auf das finden und sammeln von Objekten. 
+
+
 
 ### Das Inventory-System
 

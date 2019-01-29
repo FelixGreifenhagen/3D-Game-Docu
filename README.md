@@ -365,7 +365,11 @@ Damit das Terrain auch einigermaßen aussieht, muss es auch mit Texturen ausgest
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51914562-70de4100-23d9-11e9-8a49-0fe9f11eaaaf.png" width="600px"></p>
 
-Dafür wird in Photoshop eine neue Datei erstellt, diese Fläche dann in der jeweiligen Farbe eingefärbt, und anschließend mit einem beliebigen Pinsel die Unregelmäßigkeiten hinzugefügt
+Dafür wird in Photoshop eine neue Datei erstellt, diese Fläche dann in der jeweiligen Farbe eingefärbt, und anschließend mit einem beliebigen Pinsel die Unregelmäßigkeiten hinzugefügt.
+
+Sobald dann mehrere Texturen erstellt sind, können diese per Drag&Drop in die Unity Dateien hinzugefügt werden und unter <b> Edit Terrain Layers > Add Layer</b> zu den Terrain Layers hinzugefügt werden. Sobald dann ein Brush ausgewählt und unten die Brush Größe (Brush Size) sowie die Deckkraft (Opacity) eigestellt ist, kann auch der Karte wie auf einem Blatt Papier gemalt werden und die Karte so gefärbt werden, wie man will.
+
+
 
 
 # Das Gameplay

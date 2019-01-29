@@ -364,7 +364,7 @@ Natürlich ist für ein gutes Computerspiel nicht nur eine funktionierende GameE
 
 Damit das Terrain auch einigermaßen aussieht, muss es auch mit Texturen ausgestattet werden. Dafür geht man unter <b>Terrain > Paint Terrain > Paint Texture </b> unten auf einen der Brushes und darpber unter <b>Edit Terrain Layers</b> weitere Texturen hinzufügen. Die Texturen werden in diesem Fall in Microsoft Photoshop erstellt.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/51914562-70de4100-23d9-11e9-8a49-0fe9f11eaaaf.png" width="600px" width="600px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/51914562-70de4100-23d9-11e9-8a49-0fe9f11eaaaf.png" width="600px"></p>
 
 Dafür wird in Photoshop eine neue Datei erstellt, diese Fläche dann in der jeweiligen Farbe eingefärbt, und anschließend mit einem beliebigen Pinsel die Unregelmäßigkeiten hinzugefügt.
 
@@ -372,7 +372,7 @@ Sobald dann mehrere Texturen erstellt sind, können diese per Drag&Drop in die U
 
 Zuden lassen sich auf dem Terrain unter <b> Paint Trees bzw. Paint Details</b> auch Map-Objekte wie Bäume oder Gras hinzufügen. Diese lassen sich entweder aus dem Unity Store als Standart Asset herunterladen oder als eigene Modelle hinzufügen, wie zum Beispiel so:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/51916309-560dcb80-23dd-11e9-9570-ca86b3bcdd7c.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/51916309-560dcb80-23dd-11e9-9570-ca86b3bcdd7c.png" width="600px"></p>
 
 
 # Das Gameplay

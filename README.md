@@ -372,7 +372,7 @@ Sobald dann mehrere Texturen erstellt sind, können diese per Drag&Drop in die U
 
 Zuden lassen sich auf dem Terrain unter <b> Paint Trees bzw. Paint Details</b> auch Map-Objekte wie Bäume oder Gras hinzufügen. Diese lassen sich entweder aus dem Unity Store als Standart Asset herunterladen oder als eigene Modelle hinzufügen, wie zum Beispiel so:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/51916309-560dcb80-23dd-11e9-9570-ca86b3bcdd7c.png" width="600px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/51916309-560dcb80-23dd-11e9-9570-ca86b3bcdd7c.png" width="600px" ></p>
 
 
 # Das Gameplay

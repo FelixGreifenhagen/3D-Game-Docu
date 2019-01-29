@@ -371,7 +371,7 @@ Dafür wird in Photoshop eine neue Datei erstellt, diese Fläche dann in der jew
 Sobald dann mehrere Texturen erstellt sind, können diese per Drag&Drop in die Unity Dateien hinzugefügt werden und unter <b> Edit Terrain Layers > Add Layer</b> zu den Terrain Layers hinzugefügt werden. Sobald dann ein Brush ausgewählt und unten die Brush Größe (Brush Size) sowie die Deckkraft (Opacity) eigestellt ist, kann auch der Karte wie auf einem Blatt Papier gemalt werden und die Karte so gefärbt werden, wie man will.
 
 Zuden lassen sich auf dem Terrain unter <b> Paint Trees bzw. Paint Details</b> auch Map-Objekte wie Bäume oder Gras hinzufügen. Diese lassen sich entweder aus dem Unity Store als Standart Asset herunterladen oder als eigene Modelle hinzufügen, wie zum Beispiel so:
-
+<br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51916309-560dcb80-23dd-11e9-9570-ca86b3bcdd7c.png" width="600px" ></p>
 
 

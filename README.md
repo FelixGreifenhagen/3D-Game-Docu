@@ -18,6 +18,25 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
     + <a href="#">Der Character-Controller</a>
  
 
+<h1>Die Idee</h1>
+
+Die Idee des Projektes bestand darin, ein 3D-Game zu erschaffen, das einer Art Escape-Game gleicht. Dabei sollten sowohl Spielmechanik, als auch Gameplay und Setting des Spiels dem eines anderen Indie-Games in nichts nachstehen. Der Anspruch war dabei, auf so wenig vorgefertigte Assets und Texturen wie möglich zurückzugreifen, um den vollständigen Umfang und Anspruch eines solchen Spiels zu visualiseren. 
+
+<h1>Die benötigten Programme</h1>
+
+Entsprechend dem Anspruch werden für die Erstellung eine Reihe von Programmen benötigt. Diese sind hier in Anwendungsgebiete unterteilt:
+
+* Unity
+* Blender
+* Adobe Photoshop
+* Abobe Fuse (Mixamo)
+* Fl Studio
+* Visual-Studio (kommt mit Unity)
+* Audacity
+
+<b>Unity:</b> Unity ist die Grundlage dieses Spiels. Es ist eine GameEngine, die sowohl Grafiken, als auch Scripte verarbeiten und in einem Overlay mit Preview-Modus darstellen. Unity wird in diesem Fall sowohl zur Erstellung des Charakters mit Bewegung, Animationen etc. als auch zur Erstellung von Setting und Programmeinstellungen wie Menüs genutzt.
+
+<b>Blender:</b> Blender ist der zweite große Baustein dieses Projektes. Sämtliche Modelle, die nicht in Unity erstellt werden können, bzw. über die Modellierungs-Optionen von Unity (die ziemlich beschränkt sind...belastend) hinausgehen, werden in Blender erstellt und dann in Unity importiert</b>
 
 <h1>Die Grundlagen</h1>
 

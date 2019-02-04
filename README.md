@@ -38,6 +38,12 @@ Entsprechend dem Anspruch werden für die Erstellung eine Reihe von Programmen b
 
 <b>Blender:</b> Blender ist der zweite große Baustein dieses Projektes. Sämtliche Modelle, die nicht in Unity erstellt werden können, bzw. über die Modellierungs-Optionen von Unity (die ziemlich beschränkt sind...belastend) hinausgehen, werden in Blender erstellt und dann in Unity importiert</b>
 
+<b>Adobe Photoshop:</b> Adobe Photoshop haben wir benutzt, um Texturen zu malen (z.B. für grünen Boden, Weg, Berge) und den Banner auf der Projektseite anzufertigen. Da wir beiden Photoshop besitzen und Photoshop allgemein sehr gekannt ist, haben wir dieses Bildbearbeitungprogramm für diese Aufgaben benutzt.
+
+<b>Adobe Fuse:</b> Adobe Fuse ist ein neues Programm aus der Creative Cloud, welches sich aktuell in der Beta befindet. Es ist darauf spezialisiert auf einfachem Wege menschliche 3D Modelle zu kreieren. Adobe Fuse haben wir dementsprechend für den vom Spieler gesteuerten Charakter verwendet.
+<b>FL Studio:</b> Da wir jeden Aspekt eines Indie-Games selbst umsetzten wollten, haben wir uns auch vorgenommen selbst einen Soundtrack zu machen. FL Studio kennen wir bereits und ist als Digital Work Station für Musik gut geeignet.
+
+
 <h1>Die Grundlagen</h1>
 
 Zunächst müssen erstmal, um später ein solides Gameplay zu implementieren, die Grundlagen in Unity einrichten. Dazu gehören unter anderem das Charaktermodel, ein Controller um Bewegungen zu steuern, Animationen für den Charakter, ein Terrain mit Border, sowie Menüs und weiteres. 

@@ -403,7 +403,39 @@ Zuden lassen sich auf dem Terrain unter <b> Paint Trees bzw. Paint Details</b> a
 
 ## Die Map-Objekt
 
-Nun kann man natürlich, wie schon bei den Texturen gesagt, nicht nur mit Unity-Internen Modellen und Texturen arbeiten, sondern kann auch unter anderem Objekte wie Bäume oder Steine extern modellieren und dann anschlißend in Unity für den Map-Bau verwenden
+Nun kann man natürlich, wie schon bei den Texturen gesagt, nicht nur mit Unity-Internen Modellen und Texturen arbeiten, sondern kann auch unter anderem Objekte wie Bäume oder Steine extern modellieren und dann anschließend in Unity für den Map-Bau verwenden. In diesem Projekt wurden folgende Objekte in Blender modelliert:
+
+* Bäume/Baumstümpfe
+* Steine
+* Krabbe + Animation
+* Haus + Innenraum
+* Büsche
+* Kakteen
+* Treppen
+* Gras
+
+Daher dass die Objekt modellierung von Unity ziemlich begrenzt ist und sich vor allem auf simple geometrische Formen bezieht, muss für die Modellierung dieser Objekte ein spezielles Modellierungs-Programm, in diesem Fall Blender, zur rate gezogen werden. 
+
+Um diese Objekte dort gut zu modellieren startet man zunächst mit einem simplen geometrischen Körper wie z.B. einem Würfel, einem Zylinder oder einer Icosphäre. Mithilfe verschiedener Shortcuts, kann nun jeder möglicher Körper erschaffen werden.
+Im Fall einer Palme wird mit einem Zylinder begonnen aus dem ein Palmenstamm entstehen soll. Um ein Objekt zu erstellen muss der Shortcut "Shift + A" gedrückt werden und danach der Zylinder ausgewählt werden:
+
+Wie viele Seiten der Zylinder hat, also wie rund dieser im Prinzip ist, kann über "Subdivides" gesteuert werden. In diesem Spiel wird ein gröberer und reduzierter Stil verfolgt, der Stamm der Palme soll also nicht exakt rund sein, aber auch nicht nur 4 Seiten haben:
+
+Um den Zylinder nun wie gewünscht zu bearbeiten muss das richtige Selektionswerkzeug ausgewählt sein. Im nächsten Schritt soll der Zylinder in die Länge gezogen werden um mehr den Maßstäben eines Palmenstamms zu entsprechen, daher muss die Flächenauswahl eingeschaltet werden. Nun ist es möglich die obere Fläche des Zylinders auszuwählen und diese nach oben zu ziehen. Nun ist der Zylinder in die Länge gezogen:
+
+Um die typische Stufen im Stamm zu Formen muss der Zylinder weiter unterteils werden. Mit
+
+Damit der Stamm ein wenig natürlicher aussieht, soll er nicht überall den gleichen Durchmesser haben. Um diesen Effekt zu erreichen, kann die obere Fläche weiterhin ausgewählt bleiben. Mit dem Shortcut "s" wird das Skalierungswerkzeug aktiviert und durch verschieben der Maus kann der Durchmesser der oberen Fläche vergrößert und verkleinert werden:
+
+Was den Stamm ebenfalls dynamischer aussehen lässt ist eine leichte Krümmung. Um diese zu erzielen wird der ganze Stamm ausgewählt und die Taste "g" betätigt. Nun kann man mit dem Mausrad den Kreis vergrößern/verkleinern der an Stelle der Maus angezeigt wird. Wenn man nun die Maus bzw. den Kreis bewegt verformt sich der Stamm der Palme in Richtung der Maus im Bereich des Kreises:
+
+Das letzte Detail am Stamm wird mit dem Shortcut "r" ermöglicht. Es wird wieder die obere Fläche am Stamm ausgewählt und eben erwähnte Taste gedrückt. Nun kann ähnlich wie bei der Skalierung die Maus bewegt werden um die obere Fläche zu drehen, der Rest des Zylinders passt sich dieser Rotation an. Um eine genauere Rotation in die gewünschte Richtung zu erzielen, kann nach drücken der "r" Taste ebenfalls "x","y" oder "z" gedrückt werden um die Rotation auf die jeweilige Achse zu begrenzen. Das kann auch für die anderen bereits bekannten Shortcuts angewendet werden:
+
+Als letzter Schritt wird dem Stamm ein Material hinzugefügt um den Stamm einzufärben. Um ein Material zu erstellen gibt es rechts einen Knopf:
+
+Nun kann die Farbe ausgewählt werden und die Farbe kann mit "assign" dem Objekt hinzugefügt werden:
+
+
 
 # Das Gameplay
 

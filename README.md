@@ -423,9 +423,15 @@ Wie viele Seiten der Zylinder hat, also wie rund dieser im Prinzip ist, kann üb
 
 Um den Zylinder nun wie gewünscht zu bearbeiten muss das richtige Selektionswerkzeug ausgewählt sein. Im nächsten Schritt soll der Zylinder in die Länge gezogen werden um mehr den Maßstäben eines Palmenstamms zu entsprechen, daher muss die Flächenauswahl eingeschaltet werden. Nun ist es möglich die obere Fläche des Zylinders auszuwählen und diese nach oben zu ziehen. Nun ist der Zylinder in die Länge gezogen:
 
-Um die typische Stufen im Stamm zu Formen muss der Zylinder weiter unterteils werden. Mit
-
 Damit der Stamm ein wenig natürlicher aussieht, soll er nicht überall den gleichen Durchmesser haben. Um diesen Effekt zu erreichen, kann die obere Fläche weiterhin ausgewählt bleiben. Mit dem Shortcut "s" wird das Skalierungswerkzeug aktiviert und durch verschieben der Maus kann der Durchmesser der oberen Fläche vergrößert und verkleinert werden:
+
+Um die typische Stufen im Stamm zu Formen muss der Zylinder weiter unterteils werden. Mit einem Shortcut EINFÜGEN DU LAPPEN kann dies durchgeführt werden:
+
+Nun muss von der Flächenauswahl in die Kantenauswahl umgestellt werden:
+
+Nun kann die gesamte Kante, welche eben hinzugefügt wurden mit "Shift + Rechtsklick" ausgewählt werden. Mit dem Shortcut "s" kann nun diese Schnittfläche im Durchmesser vergrößert werden:
+
+Das muss so lange wiederholt werden bis der gesamte Stamm diese Form hat:
 
 Was den Stamm ebenfalls dynamischer aussehen lässt ist eine leichte Krümmung. Um diese zu erzielen wird der ganze Stamm ausgewählt und die Taste "g" betätigt. Nun kann man mit dem Mausrad den Kreis vergrößern/verkleinern der an Stelle der Maus angezeigt wird. Wenn man nun die Maus bzw. den Kreis bewegt verformt sich der Stamm der Palme in Richtung der Maus im Bereich des Kreises:
 
@@ -435,6 +441,19 @@ Als letzter Schritt wird dem Stamm ein Material hinzugefügt um den Stamm einzuf
 
 Nun kann die Farbe ausgewählt werden und die Farbe kann mit "assign" dem Objekt hinzugefügt werden:
 
+Als nächstes müssen die Palmenblätter modelliert werden. Dafür muss wie zu Anfang mit "Shift + A" ein neues Objekt erstellt werden. Macht man das während das alte Objekt noch ausgewählt ist, sind diese miteinander verknüpft und das neue Objekt ist ein Untergeordnetes Objekt zum Stamm:
+
+Diese Fläche muss wieder unterteilt werden. Diesmal wird die Eckenauswahl benutzt. Nun werden die Ecken so verschoben, dass eine Blattform entsteht:
+
+Mit den mittlerweile bekannten Shortcuts kann nun ein Palmenblatt geformt werden:
+
+Auch hier wird wieder ein neues Material erstellt um die grüne Farbe des Palmenblattes zu visualisieren:
+
+Das Palmenblatt kann nun mit "Shift + d" dupliziert werden. Nun werden die Palmenblätter so um den Stamm angefügt, dass eine natürliche Verteilung besteht:
+
+Die fertige Palme kann nun mit "Datei > Exportieren > .fbx" als eine Modelldatei exportiert werden:
+
+Das Filmbox-Format (fbx) kann von Unity ausgelesen werden. Dafür zieht man sie in Unity per Drag and Drop in die Dateien:
 
 
 # Das Gameplay

@@ -439,8 +439,6 @@ Das letzte Detail am Stamm wird mit dem Shortcut "r" ermöglicht. Es wird wieder
 
 Als letzter Schritt wird dem Stamm ein Material hinzugefügt um den Stamm einzufärben. Um ein Material zu erstellen gibt es rechts einen Knopf:
 
-Nun kann die Farbe ausgewählt werden und die Farbe kann mit "assign" dem Objekt hinzugefügt werden:
-
 Als nächstes müssen die Palmenblätter modelliert werden. Dafür muss wie zu Anfang mit "Shift + A" ein neues Objekt erstellt werden. Macht man das während das alte Objekt noch ausgewählt ist, sind diese miteinander verknüpft und das neue Objekt ist ein Untergeordnetes Objekt zum Stamm:
 
 Diese Fläche muss wieder unterteilt werden. Diesmal wird die Eckenauswahl benutzt. Nun werden die Ecken so verschoben, dass eine Blattform entsteht:

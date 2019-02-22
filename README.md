@@ -464,6 +464,107 @@ Zunächst einmal soll der Charakter möglich sein, Objekte aufzusammeln. Die Log
 
 Zunächst einmal muss ein Objekt erstellt werden, welches dann aufgesammelt wird. In diesem Fall ist dies ein Schlüssel. 
 
+<p align="center"><img width="600px" src="https://user-images.githubusercontent.com/42578917/53263002-7b3de300-36d8-11e9-8bf4-d7bd924536ec.png"></p>
+
+Zudem wird ein ganz normaler Cube unter <b> GameObject > 3D Object > Cube </b>hinzugefügt. Dieser wird genau über den Schlüssel gesetzt und wird später genutzt, um den Abstand zwischen Spieler und Schlüssel zu bestimmen. Von diesem wird dann per Rechtsklick auf den Mesh Renderer und <b> Remove Component </b>der Mesh Renderer entfernt. Damit wird das Objekt zwar durchsichtig, bleibt aber als Objekt in der Szene vorhanden und lässt sich im Spiel verwenden. 
+
+Als nächstes wird ein Script geschrieben, welches all diese Schritte vollzieht. Dafür wird ein neuer Ordner mit einem C#-Script mit dem Namen PickUpScript.cs erstellt.  Dort müssen zunächst einmal alle Objekte selektiert werden. Dafür werden drei neue Variablen für GameObject erstellt:
+
+```
+public class PickUpScript:MonoBehaviour {
+    public GameObject KeyBox;
+    public GameObject Player;
+    public GameObject AxeTextUI
+    public float Distance;
+}
+```
+Neben dieser wird eine Variable vom Typ float erstellt, in der später der Abstand zwischen Spieler und Objekt gespeichert wird. Da das Ergebnis des nachher verwendeten Objektes eine Gleitkommazahl ist, muss hier statt einer integer eine Variable vom Typ float verwendet werden. 
+
+Um nun weiter zu verfahren wird ein Text benötigt, welcher den Spieler darauf hinweist, den Schlüssel aufzusammeln. Dies wird auf die selbe Weise erstellt, wie das Escape-Menü erstellt wurde. Dies ist <a href="#">hier</a> nachzulesen. In diesem Fall wird im Canvas statt eines Buttons ein Text erstellt. Dieser kann dann rechts im Inspektor bearbeitet werden. 
+
+Als nächstes wird die Start-Funktion gefüllt:
+
+```
+void Start() {
+    AxeTextUI.SetActive(false);
+}
+```
+Da nämlich aktuell der Schriftzug noch immer dauerhaft angezeigt wird, wird er in dieser Zeile zunächst einmal standartmäßig auf nicht-anzeigen gestellt.
+
+Als nächstes muss dann etwas passieren wenn man sich dem Schlüssel nähert. All die Logik dahinter wird innerhalb der Update() Funktion geschrieben:
+
+```
+void Update() {
+    Distance = Vector3.Distance(KeyBox.transform.position, Player.transform.position);
+}
+```
+Hier wird nun der Abstand des Objektes KeyBox vom Abstand des Objektes Player in der vorher deklarierten Variable Distance gespeichert. Dafür wird das Unity-interne Vector3.Distance() verwendet. Dieses prüft in einem dreidimensionalen Raum (Vector3) den Abstand von zwei Objekten, die in den nachfolgenden Klammern übergeben werden. In diesem Fall sind das die beiden GameObjekts KeyBox und Player. an diese wird noch das .transform.position angehängt, was deklariert, dass hierbei die Position beider Objekte genommen und an die Vector3.Distance übergeben werden. Wie eingangs erwähnt, wird das Ergebnis dieser Operation dann in der Variable Distance gespeichert.
+
+Nachdem nun die Entfernung geprüft wurde, muss auch etwas mit der Information angefangen werden. Dafür wird wie üblich eine if-Schleife verwendet. In dieser sollen dann mehrere Operationen ausgelöst werden.
+```
+if(Distance <=3) {
+    if(GameObject.Find("Schlüssel") != null) {
+        
+    }
+}
+```
+In diesem Fall wird zunächst einmal geprüft, ob der Abstand gleich oder kleiner als drei ist, da nur hierbei eine Aktion (das Anzeigen des Textes) ausgeführt werden soll. Danach wird noch eine weitere if-Schleife verwendet, um zu verhindern, dass eine Aktion ausgeführt wird, wenn der Schlüssel schon längs aufgesammelt wurde. Diese if-Schleife prüft also, ob das Objekt "Schlüssel" noch existiert mittels GameObject.Find("Schlüssel"). Wenn diese Operation ungleich (!=) null ist, der Schlüssel also quasi nicht-nicht, also definitiv existiert, wird diese If-Schleife geöffnet. 
+
+In dieser werden dann folgende Befehle verwendet:
+
+```
+if(GameObject.Find("Schlüssel") != null) {
+    AxeTextUI.SetActive(true);
+    if(Input.GetKey(KeyCode.E)) {
+        Destroy(gameObject)
+        AxeTextUI.SetActive(false);
+    }
+}
+```
+
+Ist nun der Abstand kleiner als 3 und existiert der Schlüssel noch werden diese Aktionen getätigt:
+
+Zuerst wird der Text mit AxeTextUI.SetActive(true) auf "anzeigen" gesetzt, sodass der Spieler diesen auf dem Bildschirm eingeblendet sieht. Als nächstes wird dann geprüft, ob der Spieler E drückt. Wie genau dies funktioniert bzw. was der Code bedeutet, lässt sich <a href="#">hier</a> nachlesen. Wenn der Spieler E drückt, werden zwei Aktionen ausgeführt: Erstens wird der Schlüssel, also das gameObject auf dem das Script drauf ist mittels Destroy(gameObject) zerstört. Zweitens wird der Text, der zum aktuellen Laufzeit-punkt noch eingeblendet ist, ausgeblendet. Der Spieler bekommt also einen Text angezeigt und sobald er E drückt wird dieser wieder ausgeblendet und der Schlüssel zerstört. 
+
+Als letztes muss noch eine Option eingebaut werden, sollte der Spieler sich wieder vom Schlüssel entfernen. Dafür wird ein else an der if-Schleife angebracht, in der geprüft wird, ob der Abstand kleiner als 3 ist. In diese wird folgender Code geschrieben:
+```
+else {
+    AxeTextUI.SetActive(false);
+}
+```
+Der Befehl wurde zuvor bereits erklärt und bewirkt diesmal wieder ein Ausblenden des Textes. Damit ist das Script abgeschlossen. Der gesamte Code sieht dann wie folgt aus:
+
+```
+public class PickUpScript : MonoBehaviour {
+    public GameObject KeyBox;
+    public GameObject Player;
+    public GameObject AxeTextUI;
+    public float Distance;    
+    void Start() {
+        AxeTextUI.SetActive(false);
+    }
+    void Update() {
+        Distance = Vector3.Distance(KeyBox.transform.position,Player.transform.position);
+        print(Distance);
+        if(Distance <= 3) {
+            if (GameObject.Find("Schlüssel") != null) {
+                AxeTextUI.SetActive(true);
+                if (Input.GetKey(KeyCode.E)) {
+                    Destroy(gameObject);
+                    AxeTextUI.SetActive(false);
+                }                   
+            }
+        }
+        else {
+            AxeTextUI.SetActive(false);
+        }
+    }
+}
+
+```
+
+Anschließend wird der Code abgespeichert. Dieser muss nun nur noch "wirkend" gemacht werden. Das Script wird also auf den Schlüssel gezogen. Dort sind dann drei Felder zu sehen, eins für Player, eins für KeyBox und eins für AxeTextUI. Auf das KeyBox-Feld wird der vorher erzeugte Cube gezogen, auf das Player-Feld der der Charakter und auf das AxeTextUI-Feld der erstellte Canvas. 
+
 ### Das Inventory-System
 
 Als nächstes soll ein Inventory System implementiert werden, in dem Objekte gespeichert werden, die zuvor aufgesammelt wurden

@@ -458,7 +458,11 @@ Das Filmbox-Format (fbx) kann von Unity ausgelesen werden. Dafür zieht man sie 
 
 Nachdem nun eine ansprechende Spielwelt erstellt wurde, muss der zuvor implementierte Charakter auch mit dieser Interagieren können. Oft erfolgt dies in Form von Quests/Aufgaben, für die der Spieler etwas finden, sammeln oder auf sonstige Weise mit der Welt interagieren. In diesem Fall beschränken sich die Aktionen vor allem auf das finden und sammeln von Objekten. 
 
+### Objekte aufsammeln
 
+Zunächst einmal soll der Charakter möglich sein, Objekte aufzusammeln. Die Logik dahinter lautet wie folgt: Der Charakter soll in der Nähe des Objektes einen Text angezeigt bekommen, dass er fähig ist, ein bestimmtes Objekt aufzusammeln. Dies allerdings nur, wenn das jeweilige Objekt noch existiert. Wenn der Spieler dann die Taste drückt, wird das Objekt zerstört und der Text wieder ausgeblendet.
+
+Zunächst einmal muss ein Objekt erstellt werden, welches dann aufgesammelt wird. In diesem Fall ist dies ein Schlüssel. 
 
 ### Das Inventory-System
 

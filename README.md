@@ -427,7 +427,7 @@ Wie viele Seiten der Zylinder hat, also wie rund dieser im Prinzip ist, kann üb
 
 Um den Zylinder nun wie gewünscht zu bearbeiten muss das richtige Selektionswerkzeug ausgewählt sein. Im nächsten Schritt soll der Zylinder in die Länge gezogen werden um mehr den Maßstäben eines Palmenstamms zu entsprechen, daher muss die Flächenauswahl eingeschaltet werden. Nun ist es möglich die obere Fläche des Zylinders auszuwählen und diese nach oben zu ziehen. Nun ist der Zylinder in die Länge gezogen:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329291-0d6a0500-38ec-11e9-9dab-89bba2fce64c.png" width="1000px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329436-5de16280-38ec-11e9-8685-36825acd2408.png" width="1000px"></p>
 
 Damit der Stamm ein wenig natürlicher aussieht, soll er nicht überall den gleichen Durchmesser haben. Um diesen Effekt zu erreichen, kann die obere Fläche weiterhin ausgewählt bleiben. Mit dem Shortcut "s" wird das Skalierungswerkzeug aktiviert und durch verschieben der Maus kann der Durchmesser der oberen Fläche vergrößert und verkleinert werden:
 

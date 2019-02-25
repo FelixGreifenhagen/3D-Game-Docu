@@ -455,6 +455,8 @@ Was den Stamm ebenfalls dynamischer aussehen lässt ist eine leichte Krümmung. 
 
 Das letzte Detail am Stamm wird mit dem Shortcut "r" ermöglicht. Es wird wieder die obere Fläche am Stamm ausgewählt und eben erwähnte Taste gedrückt. Nun kann ähnlich wie bei der Skalierung die Maus bewegt werden um die obere Fläche zu drehen, der Rest des Zylinders passt sich dieser Rotation an. Um eine genauere Rotation in die gewünschte Richtung zu erzielen, kann nach drücken der "r" Taste ebenfalls "x","y" oder "z" gedrückt werden um die Rotation auf die jeweilige Achse zu begrenzen. Das kann auch für die anderen bereits bekannten Shortcuts angewendet werden:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53330181-2a073c80-38ee-11e9-9c1e-f8776e5f5d61.png" width="400px"></p>
+
 Als letzter Schritt wird dem Stamm ein Material hinzugefügt um den Stamm einzufärben. Um ein Material zu erstellen gibt es rechts einen Knopf:
 
 Als nächstes müssen die Palmenblätter modelliert werden. Dafür muss wie zu Anfang mit "Shift + A" ein neues Objekt erstellt werden. Macht man das während das alte Objekt noch ausgewählt ist, sind diese miteinander verknüpft und das neue Objekt ist ein Untergeordnetes Objekt zum Stamm:

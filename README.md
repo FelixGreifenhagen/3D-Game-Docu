@@ -401,7 +401,7 @@ Zuden lassen sich auf dem Terrain unter <b> Paint Trees bzw. Paint Details</b> a
 <br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51916309-560dcb80-23dd-11e9-9570-ca86b3bcdd7c.png" width="600px"></p>
 
-## Die Map-Objekt
+## Die Map-Objekte
 
 Nun kann man natürlich, wie schon bei den Texturen gesagt, nicht nur mit Unity-Internen Modellen und Texturen arbeiten, sondern kann auch unter anderem Objekte wie Bäume oder Steine extern modellieren und dann anschließend in Unity für den Map-Bau verwenden. In diesem Projekt wurden folgende Objekte in Blender modelliert:
 
@@ -418,6 +418,8 @@ Daher dass die Objekt modellierung von Unity ziemlich begrenzt ist und sich vor 
 
 Um diese Objekte dort gut zu modellieren startet man zunächst mit einem simplen geometrischen Körper wie z.B. einem Würfel, einem Zylinder oder einer Icosphäre. Mithilfe verschiedener Shortcuts, kann nun jeder möglicher Körper erschaffen werden.
 Im Fall einer Palme wird mit einem Zylinder begonnen aus dem ein Palmenstamm entstehen soll. Um ein Objekt zu erstellen muss der Shortcut "Shift + A" gedrückt werden und danach der Zylinder ausgewählt werden:
+
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328827-1d351980-38eb-11e9-8d07-3266a260eecc.png" width="600px"></p>
 
 Wie viele Seiten der Zylinder hat, also wie rund dieser im Prinzip ist, kann über "Subdivides" gesteuert werden. In diesem Spiel wird ein gröberer und reduzierter Stil verfolgt, der Stamm der Palme soll also nicht exakt rund sein, aber auch nicht nur 4 Seiten haben:
 

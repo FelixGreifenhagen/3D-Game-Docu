@@ -431,6 +431,8 @@ Um den Zylinder nun wie gewünscht zu bearbeiten muss das richtige Selektionswer
 
 Damit der Stamm ein wenig natürlicher aussieht, soll er nicht überall den gleichen Durchmesser haben. Um diesen Effekt zu erreichen, kann die obere Fläche weiterhin ausgewählt bleiben. Mit dem Shortcut "s" wird das Skalierungswerkzeug aktiviert und durch verschieben der Maus kann der Durchmesser der oberen Fläche vergrößert und verkleinert werden:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329653-d516f680-38ec-11e9-9fee-889c19910acd.png" width="500px"></p>
+
 Um die typische Stufen im Stamm zu Formen muss der Zylinder weiter unterteils werden. Mit einem Shortcut "strg + r" kann dies durchgeführt werden:
 
 Nun muss von der Flächenauswahl in die Kantenauswahl umgestellt werden:

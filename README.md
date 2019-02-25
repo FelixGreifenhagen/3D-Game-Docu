@@ -439,6 +439,8 @@ Um die typische Stufen im Stamm zu Formen muss der Zylinder weiter unterteils we
 
 Nun muss von der Flächenauswahl in die Kantenauswahl umgestellt werden:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329890-7bfb9280-38ed-11e9-805d-1a4621728772.png" width="500px"></p>
+
 Nun kann die gesamte Kante, welche eben hinzugefügt wurden mit "Shift + Rechtsklick" ausgewählt werden. Mit dem Shortcut "s" kann nun diese Schnittfläche im Durchmesser vergrößert werden:
 
 Das muss so lange wiederholt werden bis der gesamte Stamm diese Form hat:

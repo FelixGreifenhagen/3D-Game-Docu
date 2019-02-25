@@ -435,6 +435,8 @@ Damit der Stamm ein wenig natürlicher aussieht, soll er nicht überall den glei
 
 Um die typische Stufen im Stamm zu Formen muss der Zylinder weiter unterteils werden. Mit einem Shortcut "strg + r" kann dies durchgeführt werden:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329822-4656a980-38ed-11e9-8fe9-627d33d8d2a3.png" width="400px"></p>
+
 Nun muss von der Flächenauswahl in die Kantenauswahl umgestellt werden:
 
 Nun kann die gesamte Kante, welche eben hinzugefügt wurden mit "Shift + Rechtsklick" ausgewählt werden. Mit dem Shortcut "s" kann nun diese Schnittfläche im Durchmesser vergrößert werden:

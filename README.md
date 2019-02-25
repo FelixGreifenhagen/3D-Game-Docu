@@ -419,9 +419,11 @@ Daher dass die Objekt modellierung von Unity ziemlich begrenzt ist und sich vor 
 Um diese Objekte dort gut zu modellieren startet man zunächst mit einem simplen geometrischen Körper wie z.B. einem Würfel, einem Zylinder oder einer Icosphäre. Mithilfe verschiedener Shortcuts, kann nun jeder möglicher Körper erschaffen werden.
 Im Fall einer Palme wird mit einem Zylinder begonnen aus dem ein Palmenstamm entstehen soll. Um ein Objekt zu erstellen muss der Shortcut "Shift + A" gedrückt werden und danach der Zylinder ausgewählt werden:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328827-1d351980-38eb-11e9-8d07-3266a260eecc.png" width="600px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328827-1d351980-38eb-11e9-8d07-3266a260eecc.png" width="500px"></p>
 
 Wie viele Seiten der Zylinder hat, also wie rund dieser im Prinzip ist, kann über "Subdivides" gesteuert werden. In diesem Spiel wird ein gröberer und reduzierter Stil verfolgt, der Stamm der Palme soll also nicht exakt rund sein, aber auch nicht nur 4 Seiten haben:
+
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328969-5ec5c480-38eb-11e9-9d33-d91af5bbffa2.png" width="500px">
 
 Um den Zylinder nun wie gewünscht zu bearbeiten muss das richtige Selektionswerkzeug ausgewählt sein. Im nächsten Schritt soll der Zylinder in die Länge gezogen werden um mehr den Maßstäben eines Palmenstamms zu entsprechen, daher muss die Flächenauswahl eingeschaltet werden. Nun ist es möglich die obere Fläche des Zylinders auszuwählen und diese nach oben zu ziehen. Nun ist der Zylinder in die Länge gezogen:
 

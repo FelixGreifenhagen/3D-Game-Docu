@@ -443,6 +443,8 @@ Nun muss von der Flächenauswahl in die Kantenauswahl umgestellt werden:
 
 Nun kann die gesamte Kante, welche eben hinzugefügt wurden mit "Shift + Rechtsklick" ausgewählt werden. Mit dem Shortcut "s" kann nun diese Schnittfläche im Durchmesser vergrößert werden:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329947-9fbed880-38ed-11e9-97f8-423a8520d9ab.png" width="500px"></p>
+
 Das muss so lange wiederholt werden bis der gesamte Stamm diese Form hat:
 
 Was den Stamm ebenfalls dynamischer aussehen lässt ist eine leichte Krümmung. Um diese zu erzielen wird der Teil des Stammes ausgewählt, welcher verformt werden soll und die Taste "g" betätigt. Nun kann man mit dem Mausrad den Kreis vergrößern/verkleinern der an Stelle der Maus angezeigt wird. Wenn man nun die Maus bzw. den Kreis bewegt verformt sich der Stamm der Palme in Richtung der Maus im Bereich des Kreises:

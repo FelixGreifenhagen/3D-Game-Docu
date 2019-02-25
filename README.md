@@ -423,7 +423,7 @@ Im Fall einer Palme wird mit einem Zylinder begonnen aus dem ein Palmenstamm ent
 
 Wie viele Seiten der Zylinder hat, also wie rund dieser im Prinzip ist, kann über "Subdivides" gesteuert werden. In diesem Spiel wird ein gröberer und reduzierter Stil verfolgt, der Stamm der Palme soll also nicht exakt rund sein, aber auch nicht nur 4 Seiten haben:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328969-5ec5c480-38eb-11e9-9d33-d91af5bbffa2.png" width="500px">
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328969-5ec5c480-38eb-11e9-9d33-d91af5bbffa2.png" width="500px"></p>
 
 Um den Zylinder nun wie gewünscht zu bearbeiten muss das richtige Selektionswerkzeug ausgewählt sein. Im nächsten Schritt soll der Zylinder in die Länge gezogen werden um mehr den Maßstäben eines Palmenstamms zu entsprechen, daher muss die Flächenauswahl eingeschaltet werden. Nun ist es möglich die obere Fläche des Zylinders auszuwählen und diese nach oben zu ziehen. Nun ist der Zylinder in die Länge gezogen:
 

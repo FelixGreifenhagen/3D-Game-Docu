@@ -447,6 +447,8 @@ Nun kann die gesamte Kante, welche eben hinzugefügt wurden mit "Shift + Rechtsk
 
 Das muss so lange wiederholt werden bis der gesamte Stamm diese Form hat:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53330043-d268d100-38ed-11e9-8998-648f37d2f6a7.png" width="500px"></p>
+
 Was den Stamm ebenfalls dynamischer aussehen lässt ist eine leichte Krümmung. Um diese zu erzielen wird der Teil des Stammes ausgewählt, welcher verformt werden soll und die Taste "g" betätigt. Nun kann man mit dem Mausrad den Kreis vergrößern/verkleinern der an Stelle der Maus angezeigt wird. Wenn man nun die Maus bzw. den Kreis bewegt verformt sich der Stamm der Palme in Richtung der Maus im Bereich des Kreises:
 
 Das letzte Detail am Stamm wird mit dem Shortcut "r" ermöglicht. Es wird wieder die obere Fläche am Stamm ausgewählt und eben erwähnte Taste gedrückt. Nun kann ähnlich wie bei der Skalierung die Maus bewegt werden um die obere Fläche zu drehen, der Rest des Zylinders passt sich dieser Rotation an. Um eine genauere Rotation in die gewünschte Richtung zu erzielen, kann nach drücken der "r" Taste ebenfalls "x","y" oder "z" gedrückt werden um die Rotation auf die jeweilige Achse zu begrenzen. Das kann auch für die anderen bereits bekannten Shortcuts angewendet werden:

@@ -463,6 +463,8 @@ Als letzter Schritt wird dem Stamm ein Material hinzugefügt um den Stamm einzuf
 
 Als nächstes müssen die Palmenblätter modelliert werden. Dafür muss wie zu Anfang mit "Shift + A" ein neues Objekt erstellt werden. Macht man das während das alte Objekt noch ausgewählt ist, sind diese miteinander verknüpft und das neue Objekt ist ein Untergeordnetes Objekt zum Stamm:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53724754-e02cd200-3e6a-11e9-8157-c3f95e232ada.png" width="400px"></p>
+
 Diese Fläche muss wieder unterteilt werden. Diesmal wird die Eckenauswahl benutzt. Nun werden die Ecken so verschoben, dass eine Blattform entsteht:
 
 Mit den mittlerweile bekannten Shortcuts kann nun ein Palmenblatt geformt werden:

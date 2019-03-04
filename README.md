@@ -475,6 +475,8 @@ Das Palmenblatt kann nun mit "Shift + d" dupliziert werden. Nun werden die Palme
 
 Die fertige Palme kann nun mit "Datei > Exportieren > .fbx" als eine Modelldatei exportiert werden:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53724931-49144a00-3e6b-11e9-9343-d40b76d90bc1.png" width="400px"></p>
+
 Das Filmbox-Format (fbx) kann von Unity ausgelesen werden. Dafür zieht man sie in Unity per Drag and Drop in die Dateien:
 
 <p algin="center"><img src="https://user-images.githubusercontent.com/42578917/53724852-1a966f00-3e6b-11e9-9cc7-cddf614d398e.png" width="400px"></p>

@@ -38,9 +38,15 @@ Entsprechend dem Anspruch werden für die Erstellung eine Reihe von Programmen b
 
 Unity definiert sich selber als GameEngine, ist allerdings mehr noch eine Art Schnittstelle zwischen den verschiedenen Disziplinen des GameDesign. So ermöglicht es in einer GUI (Grafic User Interface) sowohl grafische Designelemente wie Modelle und Texturen in eine dreidimensionale Umgebung einzufügen, als auch mittels Programmierung das Verhalten der einzelnen Objekte steuern zu können.
 
-Programmiertechnisch arbeitet Unity vor allem mittels Scripting. Es wird für jedes "Objekt", in diesem Fall also für jede während der Laufzeit zu verändernde Eigenschaft, eine eigene Klasse mit von anderen Klassen unabhängiger Ausführungsstruktur innerhalb eines Scriptes erstellt. Dies macht es möglich nicht nur serielle, sondern auch parallele Befehlsausführung zu gewährleisten, was es in diesem Fall ermöglicht, ein deutlich größeres Netz an parallelen Aktionen zu erstellen, die sich gegenseitig beeinflussen, voneinander abhängen oder hindern. Somit ist die Programmierung in Unity deutlich abstrakter als z.B. auf einem Arduino, da nicht jeder Command einzelnd abgehandelt wird, sondern eine Parallele und eben verflochtene Ausführung von Befehlen genutzt werden kann. So werden erst richtige Spielabläufe möglich, da bei
+Programmiertechnisch arbeitet Unity vor allem mittels Scripting. Es wird für jedes "Objekt", in diesem Fall also für jede während der Laufzeit zu verändernde Eigenschaft, eine eigene Klasse mit von anderen Klassen unabhängiger Ausführungsstruktur innerhalb eines Scriptes erstellt. Dies macht es möglich nicht nur serielle, sondern auch parallele Befehlsausführung zu gewährleisten, was es in diesem Fall ermöglicht, ein deutlich größeres Netz an parallelen Aktionen zu erstellen, die sich gegenseitig beeinflussen, voneinander abhängen oder hindern. Somit ist die Programmierung in Unity deutlich abstrakter als z.B. auf einem Arduino, da nicht jeder Command einzelnd abgehandelt wird, sondern eine parallele und eben verflochtene Ausführung von Befehlen genutzt werden kann. So werden erst richtige Spielabläufe möglich, da bei einem flüssigen Spielablauf nicht immer gewartet werden kann, bis eine Aktion beendet ist, bevor die nächste angefangen wird. Daraus folgt dann, dass es  beispielsweise möglich ist gleichzeitig zu laufen und sich umzusehen oder zu springen und ins menü zu wechseln. 
+
+<a href="https://store.unity.com/download">Hier</a> lässt sich Unity herunterladen
 
 <b>Blender:</b> Blender ist der zweite große Baustein dieses Projektes. Sämtliche Modelle, die nicht in Unity erstellt werden können, bzw. über die Modellierungs-Optionen von Unity (die ziemlich beschränkt sind...belastend) hinausgehen, werden in Blender erstellt und dann in Unity importiert</b>
+
+Da Blender ein gratis Modellier-Tool ist, gibt es bei Blender auch eine riesige Community.
+
+<a href="https://www.blender.org/download/">Hier</a> lässt sich Blender herunterladen
 
 <b>Adobe Photoshop:</b> Adobe Photoshop haben wir benutzt, um Texturen zu malen (z.B. für grünen Boden, Weg, Berge) und den Banner auf der Projektseite anzufertigen. Da wir beiden Photoshop besitzen und Photoshop allgemein sehr gekannt ist, haben wir dieses Bildbearbeitungprogramm für diese Aufgaben benutzt.
 

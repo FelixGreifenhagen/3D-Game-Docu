@@ -189,6 +189,7 @@ Anschließend wird unter diesem mittels <b>Rechtsklick > UI > Panel</b> ein Pane
 Im Anschluss wird unter diesem Panel mit <b>Rechtsklick > UI > Button</b> ein Button erstellt.
 
 <p align="center"><img width="300px" src="https://user-images.githubusercontent.com/42578917/51205414-24d5cb80-1906-11e9-9a3a-44e1af32befe.png"></p>
+<span id="createbuttons"></span>
 
 (HIER MUSS NOCH DIE ERKLÄRUNG HIN, WIE DIE BUTTONS ERSTELLT UND GESTYLED WURDEN)
 
@@ -664,6 +665,9 @@ else if (isPaused == true || checkHealth <= 1) {
 ```
 Damit werden die ausgeübten Aktionen nur ausgeführt, wenn der Spieler sich noch im Spiel befindet. Dann wird die if-schleife ausgeführt. Ansonsten wird geguckt, ob der Spieler im GameOver ist. Dann muss nicht nochmal im HealthScript der Cursor sichtbar gemacht werden, sondern es kann dieser Code einfach wiederverwendet werden. Dafür wird mittels des oder-Operator || einfach noch  hinzugefügt, dass sobald entweder das gamePaused ist ODER das Game vorbei ist, die Maus wieder sichtbar gemacht wird.
 
-Damit das ganze nun auch in Unity wirksam wird, müssen noch einige Einstellungen im GUI getroffen werden. Als erstes muss das healthScript auf den Player gezogen werden. Als nächstes müssen die vorhandenen Variablen zugewiesen werden. Dafür wird auf "Ozean" das Wasser-Objekt gezogen. Als nächstes soll der GameOverScreen zugewiesen werden. Dafür muss zunächst ein solcher Screen erstellt weden. Dafür wird ein neues Canvas mit einem Text und einem Button erstellt und so eingestellt, wie es benötigt wird. Wie das ganze geht, ist <a href="">hier</a> nachzulesen
+Damit das ganze nun auch in Unity wirksam wird, müssen noch einige Einstellungen im GUI getroffen werden. Als erstes muss das healthScript auf den Player gezogen werden. Als nächstes müssen die vorhandenen Variablen zugewiesen werden. Dafür wird auf "Ozean" das Wasser-Objekt gezogen. Als nächstes soll der GameOverScreen zugewiesen werden. Dafür muss zunächst ein solcher Screen erstellt weden. Dafür wird ein neues Canvas mit einem Text und einem Button erstellt und so eingestellt, wie es benötigt wird. Wie das ganze geht, ist <a href="#createbuttons">hier</a> nachzulesen. Dieser Screen wird dann auf das GameOverScreen-Feld gezogen und damit zugewiesen.
 
 Variable im  im CaneraController und VerticalCamera script 
+
+
+

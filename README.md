@@ -227,7 +227,7 @@ public class EscapeMenu:MonoBehaviour {
 ```
 
 Wie bereits im CharacterController wird hier abhängig vom Tastendruck eine Aktion ausgelöst. In diesem Fall ist es die EscapeTaste, die durch die Bedingung Input.GetKeyDown(KeyCode.Escape) (also: Input eines Tastendruckes holen(von der Taste mit dem Code:Escape) abgefragt wird. Wird nun also die Escape-Taste gedrückt, wird der Inhalt der If-Schleife ausgeführt. In dieser If-Schleife ist eine weitere If-Schleife, die dann noch einmal überprüft, in welchem Zustand sich das Spiel gerade befindet, also ob das Pause-Menü offen oder geschlossen ist, in dem es den Inhalt der zuvor initialisierten Variable <b>GamePaused</b> abfragt. Falls das Spiel pausiert ist, führt es nun also die Funktion Resume() aus, die im nächsten Schritt erläutert wird. Ist das Spiel nicht pausiert, wird die Funktion Pause() ausgeführt.
-
+<span id="setuiactive"></span>
 Als nächstes müssen dann die Pause() und die Resume() Funktion geschrieben werden. Diese werden unter der Update Funktion geschrieben und enthalten folgendes: 
 
 ```
@@ -618,15 +618,47 @@ Ein weiterer wichtiger Aspekt für das Gameplay ist ein Health-System. Um dies z
     bool gameIsOver;
 ``` 
 
-In diesem Fall soll der Charakter leben verlieren, wenn er sich im Wasser befindet. Dann soll ein GameOverScreen eingeblendet werden und das Spiel, sowie jegliche Spielinterne Bewegungen blockiert werden. Dafür werden zunächst einmal die GameObjecte ozean und gameOverScreen definiert. Dann wird zudem eine Variable definiert, die den aktuellen Zustand des Lebens definieren soll. In diesem Fall wird das Health von der Zeit im Wasser abhängig gemacht und daher healthTime genannt. Dann wird noch eine Variable benötigt, in der angegeben wird, 
+In diesem Fall soll der Charakter leben verlieren, wenn er sich im Wasser befindet. Dann soll ein GameOverScreen eingeblendet werden und das Spiel, sowie jegliche Spielinterne Bewegungen blockiert werden. Dafür werden zunächst einmal die GameObjecte ozean und gameOverScreen definiert. Dann wird zudem eine Variable definiert, die den aktuellen Zustand des Lebens definieren soll. In diesem Fall wird das Health von der Zeit im Wasser abhängig gemacht und daher healthTime genannt. Dann wird noch eine Variable benötigt, in der angegeben wird, ob das Spiel vorbei ist oder nicht.
+
+```
+private void Start()  {
+    healthTime = 10.0f;
+    gameOverScreen.SetActive(false);
+    gameIsOver = false;
+}
+```
+
+Als allererstes wird das "Leben" auf 10 gesetzt, mittels healthTime = 10.0f;. Anschließend wird der gameOverScreen auf nicht mehr aktiv gesetzt. Was es damit auf sich hat, lässt sich <a href="#setuiactive">hier</a> nachlesen
 
 
 Nun sind allerdings auch in anderen Scripten schon die Maussichtbarkeit und Kamerabewegung etc. beeinflusst worden. Wenn darauf keine Rücksicht genommen wird, blocken sich die Scripte gegenseitig und es passiert am Ende nicht das gewünschte. Deshalb muss nun nocheinmal in einige vorige Scripte gewechselt werden: 
 
 Zunächst im CursorScript.cs: 
 
+Hier muss eine Variable erstellt werden, mit der geprüft wird, ob das GameOver schon ausgelöst wurde. Dies wird ganz simpel mit der healthTime Variable gemacht. Es werden also folgende Code Zeilen hinzugefügt:
+
+```
+public class CursorScript : MonoBehaviour
+{
+    public float checkHealth;
+    void Update()
+    {
+        checkHealth = healthScript.healthTime;
+    }
+}
+```
+Damit wird der Wert aus dem healthScript geholt. Anschließend muss geprüft werden, ob der Wert den "Grenzwert" für GameOver unterschritten hat, da dann die Ereignisse in diesem Script nicht ausgeführt werden sollen. Denn der ganze Cursor-Mechanismus basiert ja aktuell darauf, dass der Spieler sich inGame befindet. Wenn nun das healthScript nicht beachtet wird, tut das Script immer wieder das, was vorgegeben ist. Und achtet dabei nicht darauf, ob vielleicht schon GameOver ist. Da im healthScript der MouseCursor wieder sichtbar gemacht wurde, soll dies natürlich nicht einfach so vom Cursor Script wieder rückgängig gemacht werden. Die vorhandene if-Schleife wird also wie folgt ergänzt:
+
+``` 
+if (isPaused == false && checkHealth > 1) {
+...
+}
+else if (isPaused == true || checkHealth <= 1) {
+...
+}
+```
+Damit werden die ausgeübten Aktionen nur ausgeführt, wenn der Spieler sich noch im Spiel befindet. Dann wird die if-schleife ausgeführt. Ansonsten wird geguckt, ob der Spieler im GameOver ist. Dann muss nicht nochmal im HealthScript der Cursor sichtbar gemacht werden, sondern es kann dieser Code einfach wiederverwendet werden. Dafür wird mittels des oder-Operator || einfach noch  hinzugefügt, dass sobald entweder das gamePaused ist ODER das Game vorbei ist, die Maus wieder sichtbar gemacht wird.
 
 
 
-
-Variable im CursorScript, im CaneraController und VerticalCamera script 
+Variable im  im CaneraController und VerticalCamera script 

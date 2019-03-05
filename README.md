@@ -36,6 +36,10 @@ Entsprechend dem Anspruch werden für die Erstellung eine Reihe von Programmen b
 
 <b>Unity:</b> Unity ist die Grundlage dieses Spiels. Es ist eine GameEngine, die sowohl Grafiken, als auch Scripte verarbeiten und in einem Overlay mit Preview-Modus darstellen. Unity wird in diesem Fall sowohl zur Erstellung des Charakters mit Bewegung, Animationen etc. als auch zur Erstellung von Setting und Programmeinstellungen wie Menüs genutzt.
 
+Unity definiert sich selber als GameEngine, ist allerdings mehr noch eine Art Schnittstelle zwischen den verschiedenen Disziplinen des GameDesign. So ermöglicht es in einer GUI (Grafic User Interface) sowohl grafische Designelemente wie Modelle und Texturen in eine dreidimensionale Umgebung einzufügen, als auch mittels Programmierung das Verhalten der einzelnen Objekte steuern zu können.
+
+Programmiertechnisch arbeitet Unity vor allem mittels Scripting. Es wird für jedes "Objekt", in diesem Fall also für jede während der Laufzeit zu verändernde Eigenschaft, eine eigene Klasse mit von anderen Klassen unabhängiger Ausführungsstruktur innerhalb eines Scriptes erstellt. Dies macht es möglich nicht nur serielle, sondern auch parallele Befehlsausführung zu gewährleisten, was es in diesem Fall ermöglicht, ein deutlich größeres Netz an parallelen Aktionen zu erstellen, die sich gegenseitig beeinflussen, voneinander abhängen oder hindern. Somit ist die Programmierung in Unity deutlich abstrakter als z.B. auf einem Arduino, da nicht jeder Command einzelnd abgehandelt wird, sondern eine Parallele und eben verflochtene Ausführung von Befehlen genutzt werden kann. So werden erst richtige Spielabläufe möglich, da bei
+
 <b>Blender:</b> Blender ist der zweite große Baustein dieses Projektes. Sämtliche Modelle, die nicht in Unity erstellt werden können, bzw. über die Modellierungs-Optionen von Unity (die ziemlich beschränkt sind...belastend) hinausgehen, werden in Blender erstellt und dann in Unity importiert</b>
 
 <b>Adobe Photoshop:</b> Adobe Photoshop haben wir benutzt, um Texturen zu malen (z.B. für grünen Boden, Weg, Berge) und den Banner auf der Projektseite anzufertigen. Da wir beiden Photoshop besitzen und Photoshop allgemein sehr gekannt ist, haben wir dieses Bildbearbeitungprogramm für diese Aufgaben benutzt.
@@ -598,5 +602,25 @@ Als nächstes soll ein Inventory System implementiert werden, in dem Objekte ges
 
 ### Das Health-System
 
-Ein weiterer wichtiger Aspekt für das Gameplay ist ein Health-System.
+Ein weiterer wichtiger Aspekt für das Gameplay ist ein Health-System. Um dies zu implementieren, wird zunächst ein neues Script mit dem Namen healthScript erstellt. In diesem werden dann zunächst folgende Variablen eingeführt: 
 
+```
+    public GameObject ozean;
+    public GameObject gameOverScreen;
+    public static float healthTime;
+    bool touchesWater = false;
+    bool gameIsOver;
+``` 
+
+In diesem Fall soll der Charakter leben verlieren, wenn er sich im Wasser befindet. Dann soll ein GameOverScreen eingeblendet werden und das Spiel, sowie jegliche Spielinterne Bewegungen blockiert werden. Dafür werden zunächst einmal die GameObjecte ozean und gameOverScreen definiert. Dann wird zudem eine Variable definiert, die den aktuellen Zustand des Lebens definieren soll. In diesem Fall wird das Health von der Zeit im Wasser abhängig gemacht und daher healthTime genannt. Dann wird noch eine Variable benötigt, in der angegeben wird, 
+
+
+Nun sind allerdings auch in anderen Scripten schon die Maussichtbarkeit und Kamerabewegung etc. beeinflusst worden. Wenn darauf keine Rücksicht genommen wird, blocken sich die Scripte gegenseitig und es passiert am Ende nicht das gewünschte. Deshalb muss nun nocheinmal in einige vorige Scripte gewechselt werden: 
+
+Zunächst im CursorScript.cs: 
+
+
+
+
+
+Variable im CursorScript, im CaneraController und VerticalCamera script 

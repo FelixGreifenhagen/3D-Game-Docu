@@ -40,7 +40,7 @@ Unity definiert sich selber als GameEngine, ist allerdings mehr noch eine Art Sc
 
 Programmiertechnisch arbeitet Unity vor allem mittels Scripting. Es wird für jedes "Objekt", in diesem Fall also für jede während der Laufzeit zu verändernde Eigenschaft, eine eigene Klasse mit von anderen Klassen unabhängiger Ausführungsstruktur innerhalb eines Scriptes erstellt. Dies macht es möglich nicht nur serielle, sondern auch parallele Befehlsausführung zu gewährleisten, was es in diesem Fall ermöglicht, ein deutlich größeres Netz an parallelen Aktionen zu erstellen, die sich gegenseitig beeinflussen, voneinander abhängen oder hindern. Somit ist die Programmierung in Unity deutlich abstrakter als z.B. auf einem Arduino, da nicht jeder Command einzelnd abgehandelt wird, sondern eine parallele und eben verflochtene Ausführung von Befehlen genutzt werden kann. So werden erst richtige Spielabläufe möglich, da bei einem flüssigen Spielablauf nicht immer gewartet werden kann, bis eine Aktion beendet ist, bevor die nächste angefangen wird. Daraus folgt dann, dass es  beispielsweise möglich ist gleichzeitig zu laufen und sich umzusehen oder zu springen und ins menü zu wechseln. 
 
-<a href="https://store.unity.com/download">Hier</a> lässt sich Unity herunterladen
+<a href="https://store.unity.com/download" target="_blank">Hier</a> lässt sich Unity herunterladen
 
 <b>Blender:</b> Blender ist der zweite große Baustein dieses Projektes. Sämtliche Modelle, die nicht in Unity erstellt werden können, bzw. über die Modellierungs-Optionen von Unity (die ziemlich beschränkt sind...belastend) hinausgehen, werden in Blender erstellt und dann in Unity importiert</b>
 

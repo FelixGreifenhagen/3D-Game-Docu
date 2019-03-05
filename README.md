@@ -631,6 +631,11 @@ private void Start()  {
 Als allererstes wird das "Leben" auf 10 gesetzt, mittels healthTime = 10.0f;. Anschließend wird der gameOverScreen auf nicht mehr aktiv gesetzt. Was es damit auf sich hat, lässt sich <a href="#setuiactive">hier</a> nachlesen
 
 
+
+
+
+
+
 Nun sind allerdings auch in anderen Scripten schon die Maussichtbarkeit und Kamerabewegung etc. beeinflusst worden. Wenn darauf keine Rücksicht genommen wird, blocken sich die Scripte gegenseitig und es passiert am Ende nicht das gewünschte. Deshalb muss nun nocheinmal in einige vorige Scripte gewechselt werden: 
 
 Zunächst im CursorScript.cs: 
@@ -659,6 +664,6 @@ else if (isPaused == true || checkHealth <= 1) {
 ```
 Damit werden die ausgeübten Aktionen nur ausgeführt, wenn der Spieler sich noch im Spiel befindet. Dann wird die if-schleife ausgeführt. Ansonsten wird geguckt, ob der Spieler im GameOver ist. Dann muss nicht nochmal im HealthScript der Cursor sichtbar gemacht werden, sondern es kann dieser Code einfach wiederverwendet werden. Dafür wird mittels des oder-Operator || einfach noch  hinzugefügt, dass sobald entweder das gamePaused ist ODER das Game vorbei ist, die Maus wieder sichtbar gemacht wird.
 
-
+Damit das ganze nun auch in Unity wirksam wird, müssen noch einige Einstellungen im GUI getroffen werden. Als erstes muss das healthScript auf den Player gezogen werden. Als nächstes müssen die vorhandenen Variablen zugewiesen werden. Dafür wird auf "Ozean" das Wasser-Objekt gezogen. Als nächstes soll der GameOverScreen zugewiesen werden. Dafür muss zunächst ein solcher Screen erstellt weden. Dafür wird ein neues Canvas mit einem Text und einem Button erstellt und so eingestellt, wie es benötigt wird. Wie das ganze geht, ist <a href="">hier</a> nachzulesen
 
 Variable im  im CaneraController und VerticalCamera script 

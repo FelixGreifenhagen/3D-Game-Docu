@@ -602,9 +602,15 @@ public class PickUpScript : MonoBehaviour {
 
 Anschließend wird der Code abgespeichert. Dieser muss nun nur noch "wirkend" gemacht werden. Das Script wird also auf den Schlüssel gezogen. Dort sind dann drei Felder zu sehen, eins für Player, eins für KeyBox und eins für AxeTextUI. Auf das KeyBox-Feld wird der vorher erzeugte Cube gezogen, auf das Player-Feld der der Charakter und auf das AxeTextUI-Feld der erstellte Canvas. 
 
-### Das Inventory-System
+<h4>Die Haustür</h4>
 
-Als nächstes soll ein Inventory System implementiert werden, in dem Objekte gespeichert werden, die zuvor aufgesammelt wurden
+Damit nun das Aufsammeln des Schlüssels auch etwas bringt, muss irgendwas passieren, nachdem man ihn aufgesammelt hat. In diesem Fall soll es möglich sein, wenn der Schlüssel aufgesammelt wurde, eine Tür damit zu öffnen. Dafür muss natürlich zunächst einmal ein Haus mit Tür erstellt und in Unity platziert werden:
+
+HIER BILD DES HAUSES IN UNITY
+
+Dafür muss natürlich auch in Blender eine Animation erstellt werden, in der sich die Tür öffnet. Das ganze wird dann in Unity implementiert. Danach wird ein neuer Animator erstellt. Mit <b> Rechtsklick > Create > Animator Controller </b> lässt sich dieser erstellen. Als nächstes muss auf das erstellte Objekt (die Hütte) ein Animator angeheftet werden. Dafür muss man einfach die zuvor in Blender erstellte Animation auf das Modell der Hütte ziehen. Damit wird automatisch einer erstellt. Auf diesen Animator muss nun im Feld Controller der neu erstellte Animator Controller platziert werden. 
+
+neue transition, script erstellen, transistion condition, opendoor script mit inhalt füllen, an objekt anheften, das ui, ui stylen, ui script: ein und ausblenden
 
 ### Das Health-System
 

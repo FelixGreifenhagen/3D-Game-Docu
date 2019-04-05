@@ -53,9 +53,9 @@ Da Blender ein gratis Modellier-Tool ist, gibt es bei Blender auch eine riesige 
 <b>FL Studio:</b> Da wir jeden Aspekt eines Indie-Games selbst umsetzten wollten, haben wir uns auch vorgenommen selbst einen Soundtrack zu machen. FL Studio kennen wir bereits und ist als Digital Work Station für Musik gut geeignet.
 
 
-<h1>Die Grundlagen</h1>
+<h1>Die Spielmechanik</h1>
 
-Zunächst müssen erstmal, um später ein solides Gameplay zu implementieren, die Grundlagen in Unity einrichten. Dazu gehören unter anderem das Charaktermodel, ein Controller um Bewegungen zu steuern, Animationen für den Charakter, ein Terrain mit Border, sowie Menüs und weiteres. 
+Zunächst müssen erstmal, um später ein solides Gameplay zu implementieren, die Grundlagen in Unity einrichten. Dazu gehören unter anderem das Charaktermodel, ein Controller um Bewegungen zu steuern, Animationen für den Charakter, ein Terrain mit Border, sowie Menüs und weiteres. Daher wird in diesem Bereich zunächst einmal alles "außenrum" um das Spiel erstellt. Das bedeutet Charakter, Menüs, Animationen etc. womit das Spiel am Ende schon einmal in eine grobe Mechanik eingebettet wird. Der genaue Inhalt des Spiels und das Aussehen ist das unter "Game-Design" und "Gameplay" zu finden.
 
 <h2 id="charakter">Der Charakter</h2>
 

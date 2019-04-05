@@ -10,12 +10,13 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
 
 * <a href="#">Die Idee</a>
 * <a href="#">Die benötigten Programme</a>
-* <a href="#">Zum Charakter
-    + <a href="#">Die Charaktererstellung</a>
-    + <a href="#">Der Animator-Controller</a>   
-    + <a href="#">Der Capsule-Collider</a>
-    + <a href="#">Der Character-Controller</a>
- 
+* <a href="#">Die Spielmechanik</a>
+    + <a href="#">Zum Charakter
+        * <a href="#">Die Charaktererstellung</a>
+        * <a href="#">Der Animator-Controller</a>   
+        * <a href="#">Der Capsule-Collider</a>
+        * <a href="#">Der Character-Controller</a>
+
 
 <h1>Die Idee</h1>
 

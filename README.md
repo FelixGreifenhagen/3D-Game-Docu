@@ -11,11 +11,16 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
 * <a href="#">Die Idee</a>
 * <a href="#">Die benötigten Programme</a>
 * <a href="#">Die Spielmechanik</a>
-    + <a href="#">Zum Charakter
-        * <a href="#">Die Charaktererstellung</a>
-        * <a href="#">Der Animator-Controller</a>   
-        * <a href="#">Der Capsule-Collider</a>
-        * <a href="#">Der Character-Controller</a>
+    + <a href="#">Der Charakter
+    + <a href="#">Der Animator-Controller</a>   
+    + <a href="#">Der Capsule-Collider</a>
+    + <a href="#">Der Character-Controller</a>
+* <a href="#">Das Game-Design</a>
+* <a href="#">Das Gameplay</a>
+    + <a href="#">Objekte aufsammeln</a>
+    + <a href="#">Das Health-System</a>
+* <a href="#">Das Ergebnis</a>
+    
 
 
 <h1>Die Idee</h1>
@@ -70,7 +75,7 @@ Sobald der Charakter dann beendet ist, lässt sich oben rechts mit "Save to Maxi
 
 Sobald dann auch die Animationen angewandt sind, lässt sich das Modell, sowie die Animationen als .fbx datei exportieren. Diese lässt sich dann per Drag&Drop in Unity importieren.
 
-<h2 id="animationcontroller">Der Animatior-Controller</h2>
+<h2 id="animationcontroller">Der Animator-Controller</h2>
 
 Als nächstes müssen in Unity die zuvor erstellten Animationen auf das Charakter-Modell angewandt werden. Dafür gibt es in Unity ein einfaches Tool: den Animator-Controller!
 
@@ -156,7 +161,7 @@ Dies geschieht, da der Collider ein Capsule-Collider, also teilweise rund, ist. 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/50374612-01627e00-05f1-11e9-8dc4-9331b4d3df2b.png" width="500px"></p>
 Damit sich der Charakter nun bewegt, muss als nächstes ein Player-Controller geschrieben werden:
 
-<h3 id="charactercontroller">Der Player-Controller</h3>
+<h3 id="charactercontroller">Der Character-Controller</h3>
 Als nächstes wird in den Assets ein Character Controller über Rechtsklick > Create > C#-Script erstellt. In diesem werden dann sämtliche Zeilen geschrieben, mit denen sich dann der Charakter im Game bewegt. 
 
 ``` 
@@ -174,7 +179,7 @@ public class PlayerController : MonoBehaviour {
 
 Der Controller hat die Haupt-Klasse: PlayerController. Diese ist vom Typ MonoBehaviour, die Klassenart, die Funktionen wie Start() und Update() bereitsstellt. Zudem die Funktion LateUpdate(), die allerdings erst später wichtig sein wird. In der Klasse sind die Funktionen Start() und Update(). Beide sind void, haben also keinen Rückgabewert. Die Start() Funktion wird zu Beginn des Programmablaufs nur ein einziges Mal aufgerufen. Die Update Funktion wird dann dauerhaft Frame by Frame aufgerufen. Daher werden in dieser die Abfragen wie Tastatureingaben oder Maus-Bewegungen abgerufen und auf das zu bewegende Objekt übertragen. 
 
-
+HIER MUSS NOCH WAS HIN
 
 ## Das Pause-Menü
 

@@ -4,21 +4,36 @@
 <br>
 In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, die schon seit Jahren verlassen ist. Nun muss er sich den Gefahren und Aufgaben dort stellen, um seinen Weg zurück nach Hause zu finden. Von Feinden umgeben und mit rudimentären Informationen muss der Spieler hier alle Teile finden und sammeln, um ein Boot zu bauen um zurück zur Zivilisation zu kommen.
 
-# Das Making-Off
+<h1>Das Making-Off</a>
 
-## Inhaltsverzeichnis
+<h2>Inhaltsverzeichnis</a>
 
 * <a href="#">Die Idee</a>
 * <a href="#">Die benötigten Programme</a>
 * <a href="#">Die Spielmechanik</a>
-    + <a href="#">Der Charakter
+    + <a href="#">Der Charakter</a>
     + <a href="#">Der Animator-Controller</a>   
     + <a href="#">Der Capsule-Collider</a>
     + <a href="#">Der Character-Controller</a>
+    + <a href="#">Das Pause-Menü</a>
+    + <a href="#">Der Mouse-Cursor</a>
+    + <a href="#">Das Hauptmenü</a>
 * <a href="#">Das Game-Design</a>
+    + <a href="#">Die Texturen</a>
+    + <a href="#">Die Map-Objekte</a>
+    + <a href="#">Die Standart Assets</a>
+    + <a href="#">Die Musik</a>
 * <a href="#">Das Gameplay</a>
+    + <a href="#">Das Intro</a>
     + <a href="#">Objekte aufsammeln</a>
+    + <a href="#">Missionen</a>
     + <a href="#">Das Health-System</a>
+    + <a href="#">Spiel-Timer und Vulkanausbruch</a>
+    + <a href="#">Das Outtro</a>
+* <a href="#">Der Export</a>
+    + <a href="#">Der Splashscreen und Icons</a>
+    + <a href="#">Sceneneinbindung</a>
+    + <a href="#">Das Spiel exportieren</a>
 * <a href="#">Das Ergebnis</a>
     
 
@@ -501,6 +516,8 @@ Das Filmbox-Format (fbx) kann von Unity ausgelesen werden. Dafür zieht man sie 
 
 Nachdem nun eine ansprechende Spielwelt erstellt wurde, muss der zuvor implementierte Charakter auch mit dieser Interagieren können. Oft erfolgt dies in Form von Quests/Aufgaben, für die der Spieler etwas finden, sammeln oder auf sonstige Weise mit der Welt interagieren. In diesem Fall beschränken sich die Aktionen vor allem auf das finden und sammeln von Objekten. 
 
+### Intro
+
 ### Objekte aufsammeln
 
 Zunächst einmal soll der Charakter möglich sein, Objekte aufzusammeln. Die Logik dahinter lautet wie folgt: Der Charakter soll in der Nähe des Objektes einen Text angezeigt bekommen, dass er fähig ist, ein bestimmtes Objekt aufzusammeln. Dies allerdings nur, wenn das jeweilige Objekt noch existiert. Wenn der Spieler dann die Taste drückt, wird das Objekt zerstört und der Text wieder ausgeblendet.
@@ -618,6 +635,8 @@ Dafür muss natürlich auch in Blender eine Animation erstellt werden, in der si
 
 neue transition, script erstellen, transistion condition, opendoor script mit inhalt füllen, an objekt anheften, das ui, ui stylen, ui script: ein und ausblenden
 
+### Missionen
+
 ### Das Health-System
 
 Ein weiterer wichtiger Aspekt für das Gameplay ist ein Health-System. Um dies zu implementieren, wird zunächst ein neues Script mit dem Namen healthScript erstellt. In diesem werden dann zunächst folgende Variablen eingeführt: 
@@ -680,5 +699,7 @@ Damit das ganze nun auch in Unity wirksam wird, müssen noch einige Einstellunge
 
 Variable im  im CaneraController und VerticalCamera script 
 
+### Das Outtro
 
+# Das Ergebnis
 

@@ -29,13 +29,13 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
     + <a href="#haustuer">Die Haustür</a>
     + <a href="#missionen">Missionen</a>
     + <a href="#healthsystem">Das Health-System</a>
-    + <a href="#">Spiel-Timer und Vulkanausbruch</a>
-    + <a href="#">Das Outtro</a>
-* <a href="#">Der Export</a>
-    + <a href="#">Der Splashscreen und Icons</a>
-    + <a href="#">Sceneneinbindung</a>
-    + <a href="#">Das Spiel exportieren</a>
-* <a href="#">Das Ergebnis</a>
+    + <a href="#spieltimer">Spiel-Timer und Vulkanausbruch</a>
+    + <a href="#outtro">Das Outtro</a>
+* <a href="#export">Der Export</a>
+    + <a href="#splashscreen">Der Splashscreen und Icons</a>
+    + <a href="#sceneeinbindung">Sceneneinbindung</a>
+    + <a href="#spielexport">Das Spiel exportieren</a>
+* <a href="#ergebnis">Das Ergebnis</a>
     
 
 
@@ -751,7 +751,17 @@ Damit das ganze nun auch in Unity wirksam wird, müssen noch einige Einstellunge
 
 Variable im  im CaneraController und VerticalCamera script 
 
-### Das Outtro
+<h2 id="spieltimer">Spiel-Timer und Vulkanausbruch</h2>
 
-# Das Ergebnis
+<h2 id="outtro">Das Outtro</h2>
+
+<h1 id="export">Der Export</h1>
+
+<h2 id="splashscreen">Der Splashscreen und Icons</h2>
+
+<h2 id="sceneeinbindung">Sceneneinbindung</h2>
+
+<h2 id="spielexport">Das Spiel exportieren</h2>
+
+<h1 id="ergebnis">Das Ergebnis</h1>
 

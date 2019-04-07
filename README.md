@@ -6,7 +6,7 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
 
 <h1>Das Making-Off</a>
 
-<h2>Inhaltsverzeichnis</a>
+<h2>Inhaltsverzeichnis</h2>
 
 * <a href="#">Die Idee</a>
 * <a href="#">Die benötigten Programme</a>

@@ -447,6 +447,8 @@ Als nächstes muss das ganze wirksam gemacht. Dafür wird das Hauptmenü-Script 
 
 Damit wäre das Hauptmenü abgeschlossen. Um die Credits zu öffnen, wird nun lediglich eine neue Szene erstellt namens "Credits" und in dieser ebenfalls ein Menü erstellt. Bloß wird hier unter UI statt eines Panels, einfach ein Text, sowie ein zurück-Button implementiert. Der Text wird dann mit dem Credit-Text gefüllt und auf dem Zurück-Button wird ein Script platziert, in dem steht:
 
+HIER FEHLT NOCH DAS CREDITS SCRIPT
+
 ```
 
 ```
@@ -458,6 +460,8 @@ Natürlich ist für ein gutes Computerspiel nicht nur eine funktionierende GameE
 <p align="center"><img width="300px" src="https://user-images.githubusercontent.com/42578917/51617903-7812d400-1f2d-11e9-8c47-add51e198616.png"></p>
 
 Nun kann man rechts auf <b>Paint Texture > Raise or Lower Terrain</b> mit einem Pinsel das Terrain quasi nach oben und unten "malen". Damit lassen sich verschiedene Landschaften erzeugen, auf denen das Spiel dann stattfindet. 
+
+Im selben Menü lässt sich zudem der Punkt "Smooth Height" auswählen, womit sich scharfe Kanten im Terrain abrunden lassen. 
 
 ## Die Texturen
 
@@ -488,7 +492,9 @@ Nun kann man natürlich, wie schon bei den Texturen gesagt, nicht nur mit Unity-
 
 Daher dass die Objekt modellierung von Unity ziemlich begrenzt ist und sich vor allem auf simple geometrische Formen bezieht, muss für die Modellierung dieser Objekte ein spezielles Modellierungs-Programm, in diesem Fall Blender, zur rate gezogen werden. 
 
-Um diese Objekte dort gut zu modellieren startet man zunächst mit einem simplen geometrischen Körper wie z.B. einem Würfel, einem Zylinder oder einer Icosphäre. Mithilfe verschiedener Shortcuts, kann nun jeder möglicher Körper erschaffen werden.
+In diesem Fall soll einmal beispielhaft gezeigt werden, wie man eine Palme in Blender modelliert. Die Vorgehensweise ist dann für andere Objekte die selbe, nur dass man Form und Farbe etwas anders macht. Da allerdings die Modellierung jedes Objektes hier den Rahmen sprengen würde, und wie gesagt das ganze letztlich in Blender relativ gleich abläuft, wird in diesem Fall die Modellierung der Palme gezeigt:
+
+Um Objekte gut zu modellieren startet man zunächst mit einem simplen geometrischen Körper wie z.B. einem Würfel, einem Zylinder oder einer Icosphäre. Mithilfe verschiedener Shortcuts, kann nun jeder möglicher Körper erschaffen werden.
 Im Fall einer Palme wird mit einem Zylinder begonnen aus dem ein Palmenstamm entstehen soll. Um ein Objekt zu erstellen muss der Shortcut "Shift + A" gedrückt werden und danach der Zylinder ausgewählt werden:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328827-1d351980-38eb-11e9-8d07-3266a260eecc.png" width="500px"></p>

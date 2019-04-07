@@ -17,7 +17,7 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
     + <a href="#charactercontroller">Der Character-Controller</a>
     + <a href="#pausemenu">Das Pause-Menü</a>
     + <a href="#mousecursor">Der Mouse-Cursor</a>
-    + <a href="#">Das Hauptmenü</a>
+    + <a href="#hauptmenu">Das Hauptmenü</a>
 * <a href="#">Das Game-Design</a>
     + <a href="#">Die Texturen</a>
     + <a href="#">Die Map-Objekte</a>

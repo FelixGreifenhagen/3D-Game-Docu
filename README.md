@@ -565,9 +565,11 @@ Das Filmbox-Format (fbx) kann von Unity ausgelesen werden. Dafür zieht man sie 
 
 In Unity gibt es natürlich nicht nur die Möglichkeit, eigene Modelle importieren, sondern es lassen sich auch Modelle von anderen kaufen bzw. einbinden. Dies geht über den Unity Asset Store. Diesen ruft man auf über <b> Window > Asset Store</b>. Hier kann man nun oben in der Suchleiste dann alle möglichen Assets und Modelle suchen, die von anderen erstellt wurden. 
 
+<h2 id="himmelundlicht">Der Himmel und das Licht</h2>
+
 <h2 id="musik">Die Musik</h2>
 
-<h2 id="himmelundlicht">Der Himmel und das Licht</h2>
+
 
 <h1 id="gameplay">Das Gameplay</h1>
 

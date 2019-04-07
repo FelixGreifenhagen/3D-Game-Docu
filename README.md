@@ -565,9 +565,26 @@ Das Filmbox-Format (fbx) kann von Unity ausgelesen werden. Dafür zieht man sie 
 
 In Unity gibt es natürlich nicht nur die Möglichkeit, eigene Modelle importieren, sondern es lassen sich auch Modelle von anderen kaufen bzw. einbinden. Dies geht über den Unity Asset Store. Diesen ruft man auf über <b> Window > Asset Store</b>. Hier kann man nun oben in der Suchleiste dann alle möglichen Assets und Modelle suchen, die von anderen erstellt wurden. 
 
+HIER EIN BILD DES ASSET STORE
+
+Die Standart Assets lassen sich hier finden: <a href="https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-32351">Link</a>
+
+In diesem Projekt wurde auf mehrere Dateien aus den Standart Assets zurückgegriffen. Zum einen das Wasser. Das Wassermodell findet sich nach dem Importieren der Standart Assets unter <b>Assets > Samples
+    
+
+
 <h2 id="himmelundlicht">Der Himmel und das Licht</h2>
 
 <h2 id="musik">Die Musik</h2>
+
+Create Empty "inselzentrum"; Ins zentrum der Insel positionieren; zweites emptry objeekt > "sound manager; auf den sound manager ein Script namens SoundManagerScript; öffnen; darein:
+
+HIER DAS SCRIPT HIN
+
+
+auf insel1 zentrum auch ein script namens radiusinsel1; öffnen, code:
+
+HIER DAS SCRIPT HIN
 
 
 
@@ -576,6 +593,22 @@ In Unity gibt es natürlich nicht nur die Möglichkeit, eigene Modelle importier
 Nachdem nun eine ansprechende Spielwelt erstellt wurde, muss der zuvor implementierte Charakter auch mit dieser Interagieren können. Oft erfolgt dies in Form von Quests/Aufgaben, für die der Spieler etwas finden, sammeln oder auf sonstige Weise mit der Welt interagieren. In diesem Fall beschränken sich die Aktionen vor allem auf das finden und sammeln von Objekten. 
 
 <h2 id="intro">Intro</h2>
+
+Nun soll für das Spiel ein Intro, also eine Einleitung erstellt werden. Bei diesem Projekt soll der Charakter an den Strand angespült werden, eine Krabbe soll zu ihm laufen und ihm die Informationen die der Spieler braucht mitteilen. Dafür muss zunächst einmal eine neue Szene erstellt werden. Diesmal wird allerdings, um die erstellte Umgebung beizubehalten, die normale Szene in den Dateien einfach kopiert und in "Intro" umbenannt. Als nächstes kann erstmal alles, was nicht benötigt wird, gelöscht werden. Zudem wird die Kamera umpositioniert, undzwar so, dass sie den Strand seitlich von oben zeigt.
+
+Als nächstes wurde eine Krabbe in Blender modelliert und mit einer Animation ausgestattet. Diese wird dann in Unity importiert und mit einem Animator ausgestattet. Zudem wird ein neuer AnimatorController namens "crap" erstellt und zusammen mit der Animation auf dem Animator der Krabbe platziert. Das alles wurde bereits einmal beim Hauptcharakter gemacht und lässt sich <a href="#charakter">hier</a> nachlesen. Im Animator Controller wird mit <b> Rechtsklick > Create Empty</a> eine neue leere Animation erstellt. Diese wird dann mit <b>Rechtsklick > Set Layer as Default State</b> zum Standart gemacht, der sofort gestartet wird, wenn das Spiel gestartet wird.
+
+Als nächstes wird mit <b>Rechtsklick > Make Transition</b> eine neue Transition von der Empty State zur Krabben-Bewegungsanimation gemacht. Wie dies geht lässt sich auch unter dem Punkt "Der Charakter" nachlesen. Dafür wird dann links ein neuer Parameter erstellt namens crapMove vom Typ Bool. Die Transition vom Empty State zur Bewegung wird mit der Condition crapMove = true ausgestattet und die andere mit der Condition crapMove = false. 
+
+Das ganze sieht dann so aus:
+
+HIER EIN BID DES CRAP-ANIMATOR CONTROLLER
+
+Nun muss ein Script geschrieben werden, welches diesen Parameter bearbeitet. Dafür wird ein neues C#-Script mit dem Namen crapMove.cs erstellt. In dieses wird dann folgender Code geschrieben:
+
+```
+
+```
 
 <h2 id="objektesammeln">Objekte aufsammeln</h2>
 

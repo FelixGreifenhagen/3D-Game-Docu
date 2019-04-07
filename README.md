@@ -18,16 +18,17 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
     + <a href="#pausemenu">Das Pause-Menü</a>
     + <a href="#mousecursor">Der Mouse-Cursor</a>
     + <a href="#hauptmenu">Das Hauptmenü</a>
-* <a href="#">Das Game-Design</a>
-    + <a href="#">Die Texturen</a>
-    + <a href="#">Die Map-Objekte</a>
-    + <a href="#">Die Standart Assets</a>
-    + <a href="#">Die Musik</a>
-* <a href="#">Das Gameplay</a>
-    + <a href="#">Das Intro</a>
-    + <a href="#">Objekte aufsammeln</a>
-    + <a href="#">Missionen</a>
-    + <a href="#">Das Health-System</a>
+* <a href="#gamedesign">Das Game-Design</a>
+    + <a href="#texturen">Die Texturen</a>
+    + <a href="#mapobjekte">Die Map-Objekte</a>
+    + <a href="#standartassets">Die Standart Assets</a>
+    + <a href="#musik">Die Musik</a>
+* <a href="#gameplay">Das Gameplay</a>
+    + <a href="#intro">Das Intro</a>
+    + <a href="#objektesammeln">Objekte aufsammeln</a>
+    + <a href="#haustuer">Die Haustür</a>
+    + <a href="#missionen">Missionen</a>
+    + <a href="#healthsystem">Das Health-System</a>
     + <a href="#">Spiel-Timer und Vulkanausbruch</a>
     + <a href="#">Das Outtro</a>
 * <a href="#">Der Export</a>
@@ -453,7 +454,7 @@ HIER FEHLT NOCH DAS CREDITS SCRIPT
 
 ```
 
-# Das Game-Design
+<h1 id="gamedesign">Das Game-Design</h1>
 
 Natürlich ist für ein gutes Computerspiel nicht nur eine funktionierende GameEngine mit Animationen und einem Charakter notwendig, sondern es wird auch eine ansprechende Spielwelt benötigt. Dafür wird zunächst einmal ein Untergrund zum Laufen benötigt. Diesen stellt Unity unter <b>GameObject > 3d Object > Terrain</b> bereit. 
 
@@ -461,9 +462,9 @@ Natürlich ist für ein gutes Computerspiel nicht nur eine funktionierende GameE
 
 Nun kann man rechts auf <b>Paint Texture > Raise or Lower Terrain</b> mit einem Pinsel das Terrain quasi nach oben und unten "malen". Damit lassen sich verschiedene Landschaften erzeugen, auf denen das Spiel dann stattfindet. 
 
-Im selben Menü lässt sich zudem der Punkt "Smooth Height" auswählen, womit sich scharfe Kanten im Terrain abrunden lassen. 
+Im selben Menü lässt sich zudem der Punkt "Smooth Height" auswählen, womit sich scharfe Kanten im Terrain abrunden lassen. Außerdem lassen sich über aefgbaergaergaerg importierte Bäume und Gräser auf dem Terrain platzieren.
 
-## Die Texturen
+<h2 id="texturen">Die Texturen</h2>
 
 Damit das Terrain auch einigermaßen aussieht, muss es auch mit Texturen ausgestattet werden. Dafür geht man unter <b>Terrain > Paint Terrain > Paint Texture </b> unten auf einen der Brushes und darpber unter <b>Edit Terrain Layers</b> weitere Texturen hinzufügen. Die Texturen werden in diesem Fall in Microsoft Photoshop erstellt.
 
@@ -477,7 +478,7 @@ Zuden lassen sich auf dem Terrain unter <b> Paint Trees bzw. Paint Details</b> a
 <br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51916309-560dcb80-23dd-11e9-9570-ca86b3bcdd7c.png" width="600px"></p>
 
-## Die Map-Objekte
+<h2 id="mapobjekte">Die Map-Objekte</h2>
 
 Nun kann man natürlich, wie schon bei den Texturen gesagt, nicht nur mit Unity-Internen Modellen und Texturen arbeiten, sondern kann auch unter anderem Objekte wie Bäume oder Steine extern modellieren und dann anschließend in Unity für den Map-Bau verwenden. In diesem Projekt wurden folgende Objekte in Blender modelliert:
 
@@ -559,13 +560,17 @@ Das Filmbox-Format (fbx) kann von Unity ausgelesen werden. Dafür zieht man sie 
 
 <p algin="center"><img src="https://user-images.githubusercontent.com/42578917/53724852-1a966f00-3e6b-11e9-9cc7-cddf614d398e.png" width="400px"></p>
 
-# Das Gameplay
+<h2 id="standartassets">Die Standart Assets</h2>
+
+<h2 id="musik">Die Musik</h2>
+
+<h1 id="gameplay">Das Gameplay</h1>
 
 Nachdem nun eine ansprechende Spielwelt erstellt wurde, muss der zuvor implementierte Charakter auch mit dieser Interagieren können. Oft erfolgt dies in Form von Quests/Aufgaben, für die der Spieler etwas finden, sammeln oder auf sonstige Weise mit der Welt interagieren. In diesem Fall beschränken sich die Aktionen vor allem auf das finden und sammeln von Objekten. 
 
-### Intro
+<h2 id="intro">Intro</h2>
 
-### Objekte aufsammeln
+<h2 id="objektesammeln">Objekte aufsammeln</h2>
 
 Zunächst einmal soll der Charakter möglich sein, Objekte aufzusammeln. Die Logik dahinter lautet wie folgt: Der Charakter soll in der Nähe des Objektes einen Text angezeigt bekommen, dass er fähig ist, ein bestimmtes Objekt aufzusammeln. Dies allerdings nur, wenn das jeweilige Objekt noch existiert. Wenn der Spieler dann die Taste drückt, wird das Objekt zerstört und der Text wieder ausgeblendet.
 
@@ -672,7 +677,7 @@ public class PickUpScript : MonoBehaviour {
 
 Anschließend wird der Code abgespeichert. Dieser muss nun nur noch "wirkend" gemacht werden. Das Script wird also auf den Schlüssel gezogen. Dort sind dann drei Felder zu sehen, eins für Player, eins für KeyBox und eins für AxeTextUI. Auf das KeyBox-Feld wird der vorher erzeugte Cube gezogen, auf das Player-Feld der der Charakter und auf das AxeTextUI-Feld der erstellte Canvas. 
 
-<h4>Die Haustür</h4>
+<h2 id="haustuer">Die Haustür</h2>
 
 Damit nun das Aufsammeln des Schlüssels auch etwas bringt, muss irgendwas passieren, nachdem man ihn aufgesammelt hat. In diesem Fall soll es möglich sein, wenn der Schlüssel aufgesammelt wurde, eine Tür damit zu öffnen. Dafür muss natürlich zunächst einmal ein Haus mit Tür erstellt und in Unity platziert werden:
 
@@ -682,9 +687,9 @@ Dafür muss natürlich auch in Blender eine Animation erstellt werden, in der si
 
 neue transition, script erstellen, transistion condition, opendoor script mit inhalt füllen, an objekt anheften, das ui, ui stylen, ui script: ein und ausblenden
 
-### Missionen
+<h2 id="missionen">Missionen</h2>
 
-### Das Health-System
+<h2 id="healthsystem">Das Health-System</h2>
 
 Ein weiterer wichtiger Aspekt für das Gameplay ist ein Health-System. Um dies zu implementieren, wird zunächst ein neues Script mit dem Namen healthScript erstellt. In diesem werden dann zunächst folgende Variablen eingeführt: 
 

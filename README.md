@@ -10,13 +10,13 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
 
 * <a href="#">Die Idee</a>
 * <a href="#">Die benötigten Programme</a>
-* <a href="#">Die Spielmechanik</a>
-    + <a href="#">Der Charakter</a>
-    + <a href="#">Der Animator-Controller</a>   
-    + <a href="#">Der Capsule-Collider</a>
-    + <a href="#">Der Character-Controller</a>
-    + <a href="#">Das Pause-Menü</a>
-    + <a href="#">Der Mouse-Cursor</a>
+* <a href="#spielmechanik">Die Spielmechanik</a>
+    + <a href="#charakter">Der Charakter</a>
+    + <a href="#animationcontroller">Der Animator-Controller</a>   
+    + <a href="#capsulecollider">Der Capsule-Collider</a>
+    + <a href="#charactercontroller">Der Character-Controller</a>
+    + <a href="#pausemenu">Das Pause-Menü</a>
+    + <a href="#mousecursor">Der Mouse-Cursor</a>
     + <a href="#">Das Hauptmenü</a>
 * <a href="#">Das Game-Design</a>
     + <a href="#">Die Texturen</a>
@@ -74,7 +74,7 @@ Da Blender ein gratis Modellier-Tool ist, gibt es bei Blender auch eine riesige 
 <b>FL Studio:</b> Da wir jeden Aspekt eines Indie-Games selbst umsetzten wollten, haben wir uns auch vorgenommen selbst einen Soundtrack zu machen. FL Studio kennen wir bereits und ist als Digital Work Station für Musik gut geeignet.
 
 
-<h1>Die Spielmechanik</h1>
+<h1 id="spielmechanik">Die Spielmechanik</h1>
 
 Zunächst müssen erstmal, um später ein solides Gameplay zu implementieren, die Grundlagen in Unity einrichten. Dazu gehören unter anderem das Charaktermodel, ein Controller um Bewegungen zu steuern, Animationen für den Charakter, ein Terrain mit Border, sowie Menüs und weiteres. Daher wird in diesem Bereich zunächst einmal alles "außenrum" um das Spiel erstellt. Das bedeutet Charakter, Menüs, Animationen etc. womit das Spiel am Ende schon einmal in eine grobe Mechanik eingebettet wird. Der genaue Inhalt des Spiels und das Aussehen ist das unter "Game-Design" und "Gameplay" zu finden.
 
@@ -196,7 +196,7 @@ Der Controller hat die Haupt-Klasse: PlayerController. Diese ist vom Typ MonoBeh
 
 HIER MUSS NOCH WAS HIN
 
-## Das Pause-Menü
+<h2 id="pausemenu">Das Pause-Menü</h2>
 
 Als nächstes soll ein Pause Menü zum Spiel hinzugefügt werden. Dafür kann in Unity ein Element namens Canvas genutzt werden. Dies lässt sich mittels <b>Rechtsklick in die Assets > UI > Canvas</b> zu den Standart Elementen hinzufügen.
 
@@ -345,7 +345,7 @@ Damit diese Bedingungen und Funktionen nun auch Anwendung finden gibt es in Unit
 <p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/51206209-d45f6d80-1907-11e9-964e-1f93cec748b7.png"></p><br>
 <p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/51206147-b8f46280-1907-11e9-8b6f-918cb9c937eb.png"></p>
 
-## Der Mouse Cursor
+<h2 id="mousecursor">Der Mouse Cursor</h2>
 
 Nachdem nun ein Pause-Menü eingerichtet wurde, lässt sich dies auch normal bedienen. Allerdings fällt noch auf, dass die Maus sowohl im Menü, als auch inGame zu sehen ist. Dies soll natürlich nicht sein, die Maus soll inGame nicht zu sehen sein. Das Problem daran, sie einfach auszublenden, ist, dass sie im Menü ja weiterhin sichtbare sein soll. Also muss in einem Script, abhängig davon ob das Menü geöffnet ist, die Maus aus- oder eben eingeblendet werden. Dafür wird zunächst ein neues C#-Script erstellt und folgendes hinzugefügt:
 
@@ -409,6 +409,47 @@ Andersrum muss natürlich auch der Fall abgedeckt werden, dass man aus dem Spiel
 Als nächstes muss das Script auf die MainCamera gezogen werden. Wenn man nun das Game ausprobiert, sieht man, dass die Maus genau das macht, was erwünscht war.
 
 Nun kommt allerdings noch ein weiteres Problem auf. Wenn man im zuvor erstellten Menü auf Fortsetzen klickt, verschwindet die Maus nicht.
+
+<h2 id="hauptmenu>Das Hauptmenü</h2>
+
+Als nächstes soll nun ein Hauptmenü erstellt werden. In diesem soll man dann das Spiel Starten, Beenden und die Credits anschauen können. Dafür muss zunächst eine neue Szene in Unity erstellt werden. Dies geht oben links unter <b>File > New Scene</b>. In dieser kann nun das Menü erstellt werden. Wie beim Pausemenü wird zunächst ein Canvas erstellt, das dann MainMenu genannt wird. Als nächstes wird mit <b> Rechtsklick > UI > Panel</b> ein Hintergrund erstellt. Dann soll ein Hintergrund erstellt werden. Dafür wurde in diesem Fall einfach ein Screenshot erstellt, in Photoshop etwas bearbeitet und per Drag and Drop in die Unity Dateien gezogen. Anschließend wird dieses Bild ausgewählt und rechts im Inspektor unter "Texture Type" der Punkt "Sprite 2D and UI" ausgewählt. Damit wird das Bild zu einem Sprite gemacht. Anschließend kann man auf das zuvor erstellte Panel gehen und unter Background Image das zuvor erstellte Sprite auswählen. Danach müssen nur noch 3 Buttons erstellt und richtig beschriftet werden. Wie das geht, lässt sich unter dem Punkt <a href="pausemenu">Pausemenü</a> nachlesen.
+
+Nun wird noch ein abschließendes Script benötigt, welches den Buttons ihre Funktion gibt. Dafür wird ein C#-Script namens "MainMenu" erstellt und folgendes reingeschrieben:
+
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MainMenu : MonoBehaviour
+{
+    public void Continue()
+    {
+        SceneManager.LoadScene("Intro");
+    }
+    public void Quit()
+    {
+        Debug.Log("Schließe Spiel...");
+        Application.Quit();
+    }
+    public void Credits() {
+        SceneManager.LoadScene("Credits");
+    }
+}
+```
+
+Wichtig dabei ist vor allem, oben das "using UnityEngine.SceneManagement" hinzuzufügen. Damit wird das SceneManagement von Unity das SceneManagement aktiviert, also wird es möglich, innerhalb eines Scriptes zwischen zwei Szenen zu wechseln. 
+
+Dann werden noch zwei Funktionen geschrieben. Eine namens Continue(), eine namens Quit() und eine namens Credits(). In der Continue()-Funktion wird festgelegt, was passiert, wenn der "Spiel-Starten"-Button gedrückt wird. In der Quit Funktion das gleiche für den "Spiel-beenden"-Button. Bei der Credits-Funktion soll leztlich die Credits-Szene geöffnet werden. Bei Continue wird ganz einfach "SceneManager.LoadScene("Intro");" geschrieben. Damit wird einfach die Szene geöffnet, welche den Namen hat, der in den Klammern dahinter festgelegt ist. In diesem Fall ist es die Szene namens "Intro", was genau diese macht, wird später noch einmal festgelegt. In Quit() wird nun das selbe geschrieben, wie im "Beenden"-Button im Pausemenü. Damit wird einfach das Spiel beendet. Bei Credits() wird ebenfalls einfach eine andere Szene geladen, in diesem Fall die mit dem Namen "Credits". 
+
+Als nächstes muss das ganze wirksam gemacht. Dafür wird das Hauptmenü-Script in der MainMenu-Szene auf ein neues Objekt gezogen. Es wird also unter Create > Empty Object ein neues leeres Objekt erstellt. Es wird "SceneSwitcher" genannt. Nun wird darauf das MainMenu Script gezogen. Als nächstes wird auf dem Menü-Canvas der Continue() - Button ausgewählt. Unten bei der Condition wird bei "None" das GameSwitcher-Objekt ausgewählt. Dann wird rechts daneben im Dropdown-Menü das "Main-Menu"-Script ausgewählt. In dem dann ausklappenden Dropdown-Menü wird dann die jeweilige Funktion ausgewählt: Beim Spiel-Starten-Button die Continue()-Funktion und beim Spiel-Beenden-Button die Quit()-Funktion. Das gleiche gilt für den Credits-Button.
+
+Damit wäre das Hauptmenü abgeschlossen. Um die Credits zu öffnen, wird nun lediglich eine neue Szene erstellt namens "Credits" und in dieser ebenfalls ein Menü erstellt. Bloß wird hier unter UI statt eines Panels, einfach ein Text, sowie ein zurück-Button implementiert. Der Text wird dann mit dem Credit-Text gefüllt und auf dem Zurück-Button wird ein Script platziert, in dem steht:
+
+```
+
+```
 
 # Das Game-Design
 

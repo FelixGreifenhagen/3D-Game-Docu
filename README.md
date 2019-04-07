@@ -569,9 +569,18 @@ HIER EIN BILD DES ASSET STORE
 
 Die Standart Assets lassen sich hier finden: <a href="https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-32351">Link</a>
 
-In diesem Projekt wurde auf mehrere Dateien aus den Standart Assets zurückgegriffen. Zum einen das Wasser. Das Wassermodell findet sich nach dem Importieren der Standart Assets unter <b>Assets > Samples
-    
+In diesem Projekt wurde auf mehrere Dateien aus den Standart Assets zurückgegriffen. Zum einen das Wasser. Die Modell finden sich nach dem Importieren der Standart Assets unter <b>Assets > Samples > Standart Assets</b>
 
+Wie bereits erwähnt wurden in diesem Projekt mehrere Standart Assets verwendet: Zum einen das Wasser Asset. Dieses muss einfach per Drag and Drop in die Szene gezogen und dann die Größe angepasst werden. Nach dem Auswählen lassen sich zudem rechts im Inspektor die Texturen der einzelnen Schichten des Wassers anpassen. In diesem Fall wurde eine andere Textur verwendet um das Wasser dem Stil des Projektes anzugleichen. Dies wurde auch noch einmal vorgenommen, um aus dem Wasser Lava für den Vulkan zu machen.
+
+Es wurde zudem eine Feuer Animation verwendet
+
+Desweiteren wurde, wie später zu sehen, eine Explosion sowie Rauch für den Vulkan verwendet. Die Explosion findet sich unter HIER NOCH PFAD EINFÜGEN und der Rauch unter HIER NOCH PFAD EINFÜGEN.
+HIER NOCH SCHREIbBEN WAS VERÄNDERT WURDe.
+
+Als letztes wurde noch ein Dust Storm verwendet. Diesen findet man unter NOCH RAUSSUCEHN und er kann einfach per Drag and Drop in die Szene gezogen werden. Im Scene-Screen taucht dann ein Feld auf, mit dem man Dichte und Anzahl der Partikel variieren kann.
+    
+Zwar wurden diese in diesem Projekt nicht verwendet, aber die Standart Assets bieten auch noch einen Third Person und einen First Person Controller, Fahrzeuge, mehrere Effekte wie Feuerwerk sowie Flugzeuge usw. 
 
 <h2 id="himmelundlicht">Der Himmel und das Licht</h2>
 

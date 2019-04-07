@@ -8,8 +8,8 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
 
 <h2>Inhaltsverzeichnis</h2>
 
-* <a href="#">Die Idee</a>
-* <a href="#">Die benötigten Programme</a>
+* <a href="#idee">Die Idee</a>
+* <a href="#programme">Die benötigten Programme</a>
 * <a href="#spielmechanik">Die Spielmechanik</a>
     + <a href="#charakter">Der Charakter</a>
     + <a href="#animationcontroller">Der Animator-Controller</a>   
@@ -40,11 +40,11 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
     
 
 
-<h1>Die Idee</h1>
+<h1 id="idee">Die Idee</h1>
 
 Die Idee des Projektes bestand darin, ein 3D-Game zu erschaffen, das einer Art Escape-Game gleicht. Dabei sollten sowohl Spielmechanik, als auch Gameplay und Setting des Spiels dem eines anderen Indie-Games in nichts nachstehen. Der Anspruch war dabei, auf so wenig vorgefertigte Assets und Texturen wie möglich zurückzugreifen, um den vollständigen Umfang und Anspruch eines solchen Spiels zu visualiseren. 
 
-<h1>Die benötigten Programme</h1>
+<h1 id="programme">Die benötigten Programme</h1>
 
 Entsprechend dem Anspruch werden für die Erstellung eine Reihe von Programmen benötigt. Diese sind hier in Anwendungsgebiete unterteilt:
 

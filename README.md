@@ -236,7 +236,7 @@ Im Image(Script) wird die Color auf schwarz gestellt und im Button (Script) werd
 
 Anschließend kann im Text Element noch im Text-Feld der Text eingegeben werden, der im Button angezeigt werden soll. Damit sehen die Buttons im Menü wie folgt aus:
 
-<p align"center"><img src="https://user-images.githubusercontent.com/42578917/55876608-4d353500-5b98-11e9-9b6b-61d0d303cc12.png" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55876608-4d353500-5b98-11e9-9b6b-61d0d303cc12.png" width="400px"></p>
 
 Nun ist das Menü allerdings dauerhaft geöffnet und die Buttons haben keine Funktion. Um dies zu ändern, wird auf dem Canvas ein neues Script namens "EscapeMenu" erstellt. In diesem werden dann alle Bedingungen geschrieben, nach denen das Menü geöffnet wird und alle Aktionen definiert, die die erstellten Buttons ausführen sollen.
 

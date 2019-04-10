@@ -1030,7 +1030,7 @@ Dann werden unten links die Player Settings geöffnet:
 
 In diesen ist dann rechts im Inspektor ein Icon-Reiter zu sehen. Um nun ein Desktop-Icon zu erstellen wird dieser aufgeklappt. Dann wird mittels "Select" bei 1024x1024 ein Fenster geöffnet, in dem das Desktop-Icon geöffnet wird:
 
-<p align="center"><img src="" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55891769-6d272180-5bb5-11e9-80ca-2bccee2e68ca.png" width="400px"></p>
 
 Dieses Bild wird dann für alle Größen übernommen. Damit ist ein Desktop-Icon für das exportierte Spiel eingebunden
 

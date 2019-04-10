@@ -19,6 +19,7 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
     + <a href="#mousecursor">Der Mouse-Cursor</a>
     + <a href="#hauptmenu">Das Hauptmenü</a>
 * <a href="#gamedesign">Das Game-Design</a>
+    + <a href="border">Die Map-Border</a>
     + <a href="#texturen">Die Texturen</a>
     + <a href="#mapobjekte">Die Map-Objekte</a>
     + <a href="#standartassets">Die Standart Assets</a>
@@ -467,6 +468,14 @@ Natürlich ist für ein gutes Computerspiel nicht nur eine funktionierende GameE
 Nun kann man rechts auf <b>Paint Texture > Raise or Lower Terrain</b> mit einem Pinsel das Terrain quasi nach oben und unten "malen". Damit lassen sich verschiedene Landschaften erzeugen, auf denen das Spiel dann stattfindet. 
 
 Im selben Menü lässt sich zudem der Punkt "Smooth Height" auswählen, womit sich scharfe Kanten im Terrain abrunden lassen. Außerdem lassen sich über aefgbaergaergaerg importierte Bäume und Gräser auf dem Terrain platzieren.
+
+<h2 id="border">Die Map-Border</h2>
+
+Aktuell kann der Charakter noch am Rande des zuvor erstellten Terrains runterfallen. Um das zu verhindern implementieren viele Spiele einen Respawn sobald man aus der Map rausläuft. In diesem Fall soll auf eine einfachere Lösung zurückgegriffen werden, auf die auch oft zurückgegriffen wird: Eine unsichtbare Wand. Damit verhindert man, dass der Charakter am Rand runterläuft. Dadurch, dass die Border unsichtbar ist wird zudem verhindert, dass sich der Spieler fühlt, als wenn er in einer großen Kiste herumläuft. Dafür werden in Unity zunächst einmal vier neue Cubes, also Würfel. Das geht oben links unter <b> GameObject > 3D Object > Cube</b>. 
+
+<p align="center"><img src="" width="600px"></p>
+
+
 
 <h2 id="texturen">Die Texturen</h2>
 

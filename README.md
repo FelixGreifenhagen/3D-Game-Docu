@@ -972,7 +972,7 @@ Dies ist einfach ein ganz simples Script, mit dem das zuvor erstellte Canvas ein
 
 Das ganze lässt sich nun auf alle Missionen im Spiel anwenden. Dafür prüft man einfach, ob das Missionsobjekt von Mission 1 zerstört wurde. Wenn das der Fall ist, wird der Text für Mission 2 eingeblendet. Sobald dieses dann zerstört ist, wird der Text für Mission 2 wieder ausgeblendet und der Text für Mission 3 eingeblendet. Das ganze lässt sich dann immer weiter so fortführen, bis man eine ordentliche Reihe von Missionen hat. 
 
-In diesem Fall soll hier nur eine Mission erläutert werden. Das ganze lässt sich aber auch auf alle anderen Missionen ganz einfach anwenden. 
+In diesem Fall soll hier nur eine Mission erläutert werden. Das ganze lässt sich aber auch auf alle anderen Missionen ganz einfach anwenden. Hier wurde das Script für mehrere Missionen zum Sammeln von Floß-Bestandteilen verwendet.
 
 <h2 id="healthsystem">Das Health-System</h2>
 
@@ -1037,6 +1037,86 @@ Damit das ganze nun auch in Unity wirksam wird, müssen noch einige Einstellunge
 Variable im  im CaneraController und VerticalCamera script 
 
 <h2 id="spieltimer">Spiel-Timer und Vulkanausbruch</h2>
+
+Um das ganze etwas spannender zu machen, soll das Spiel auf Zeit laufen. Wie zuvor im healthScript und Intro wird auch diesmal ein timer dafür verwendet. Es wird also ein neues Script erstellt und folgendes hineingeschrieben:
+
+```
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class vulcanoCounter : MonoBehaviour
+{
+    public static float counter;
+    public Text vulcanotext;
+    public static string vulcanoSekunden;
+    public static string vulcanoMinuten;
+    float counterMinutes;
+    float counterSeconds;
+    void Start()
+    {
+        counter = 1800.0f;
+    }
+    void Update()
+    {        
+        counter -= Time.deltaTime;
+        counterMinutes = counter / 60;
+        counterSeconds = counter % 60;
+        
+        if(counterSeconds < 10)
+        {
+            vulcanoSekunden = "0" + ((int)counterSeconds).ToString();
+        }   
+        else
+        {
+            vulcanoSekunden = ((int)counterSeconds).ToString();
+        }
+        if(counterMinutes < 10)
+        {
+            vulcanoMinuten = "0" + ((int)counterMinutes).ToString();
+        }
+        else
+        {
+            vulcanoMinuten = ((int)counterMinutes).ToString();
+        }        
+        vulcanotext.text = vulcanoMinuten + ":" + vulcanoSekunden;
+        if(counter < 1)
+        {
+            SceneManager.LoadScene("Vulkan");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+}
+```
+Ganz oben wird zunächst einmal definiert, dass sowohl auf das Unity User Interface und auf das Unity SceneManagement im Script zurückgegriffen werden kann. Als nächstes werden einige Variablen definiert. Eine für den Counter, eine für den Text vom Typ Text, der den Counter auf dem User-Screen anzeigt, eine für Sekunden und eine für Minuten, die noch im Timer übrig ist, und noch einmal zwei Stück die das Ergebnis einer Rechenaufgabe speichern. 
+
+In der Start() Funktion wird der Timer auf 30 Minuten, also 1800 Sekunden gesetzt. In der Update-Funktion wird zunächst, ähnlich wie beim healthSystem der counter Variable mit -= (das Gegenteil von +=) runtergezählt. Wie das funktioniert, wurde bereits im Kapitel für das <a href="#intro">Intro</a> erläutert. Als nächstes sollen die 1800 Sekunden, die ja für den Spieler relativ schlecht zu erkennen sind, in Minuten und Sekunden-Schreibweise aufgeteilt werden. Dafür wird zuerst einmal der Counter, der aktuell Sekunden enthält durch 60 geteilt. Das Ergebnis gibt die Anzahl an vollen Minuten wieder und wird in der Variable counterMinutes gespeichert. Als nächstes sollen die restlichen Sekunden ermittelt werden. Also alle Sekunden, die nicht eine volle Minute ergeben. Dafür wird der Operator Modulo (%) verwendet. Dieser teilt eine Zahl durch eine andere, aber anstatt das Ergebnis (wie der durch-Operator) zurückzugeben, gibt er den dabei übrig bleibenden Rest zurück. 8 % 3 wäre dann also 2, weil 8/3 = 6 und der Rest 2 ist. In diesem Fall stellt Modulo die Sekunden dar. Bei 125 Sekunden würde damit bei der durch-Rechnung 2 und bei der Modulo-Rechnung 5 rauskommen. Daraus setzt sich aus 125 Sekunden 2 Minuten und 5 Sekunden zusammen.
+
+Da auf dem Text auf dem Screen von Spieler von einem Script aus nur eine String Variable dargestellt werden kann und keine float Variable, muss der Text zum String konvertiert werden. Daher werden im Folgenden alle Ergebnisse für Minuten und Sekunden den zuvor erstellten String Variablen zugeordnet. 
+
+In den nächsten if-Schleifen wird nun geprüft, wie hoch der counter ist. In der ersten if-schleife wird geprüft, ob der sekunden counter unter 10 ist. Wenn dies der Fall ist, wird der Sekunden Counter mittels dem Befehl ((int)counterSeconds).ToString() zu einem String konvertiert. Da der Spieler aber nicht einfach so einen einstelligen Sekundenwert haben soll (also so: 15:1), sondern das normale Stunden und Sekundenformat (also so: 15:01), wird vor dem Befehl, sollte der SekundenCounter unter 10 sein, mittels "0" + eine Null an den String drangehängt. Damit wäre die Zahlenfolge, wenn der Sekundencounter unter 10 läuft wie folgt: 12...11...10...09...08..., also genau wie es benötigt wird. In der nächsten else-Schleife wird der Fall abgedeckt, dass der Counter ÜBER 10 ist, denn dann soll ja nur der wert des SekundenCounters, OHNE die extra 0 als string zugeordnet werden. Im Anschluss wird das ganze noch einmal für die Minuten wiederholt.
+
+Als nächstes werden Sekunden und Minuten zu einem gemeinsamen String erstellt, welcher folgendes Format hat: 10:45. Dafür werden die zuvor  MinutenText und SekundenText strings mit einem + hintereinander "geheftet" dazwischen wird allerdings noch ein Doppelpunkt gesetzt. 
+
+```
+vulcanotext.text = vulcanoMinuten + ":" + vulcanoSekunden;
+```
+Das ganze funktioniert wie folgt. Zuvor wurde eine Variable vom Typ Text mit dem Namen vulcanotext erstellt. Dieser wird später im Unity-Overlay der jeweilige Text zugeordnet. Was nun passiert ist folgendes: mit vulcanotext.text, wird das Text-Script, was von Beginn an auf jedem Textelement ist, angesprochen, genauer gesagt das Textfeld, in dem normalerweise der Text eingegeben wird. In dieses Feld wird der String eingefügt der zuvor aus Minuten und Sekunden erstellt wird. Also der erstellte Counter im Minuten:Sekunden-Format wird jeden Frame mit dem aktuellen Sekunden- und Minutenwert in das Textelement auf dem Spieler-Screen eingefügt. Somit kann der Charakter ihn sehen. 
+
+In der letzten If-schleife wird dann der Fall abgedeckt, dass der Counter abgelaufen ist:
+
+```
+if(counter < 1)
+{
+     SceneManager.LoadScene("Vulkan");
+     Cursor.lockState = CursorLockMode.None;
+     Cursor.visible = true;
+}
+```
+
+Der Szenenwechsel wurde bereits beim Kapitel für das Intro erklärt. Im Anschluss wird noch, damit man auch den Mauszeiger sieht, wenn das Spiel vorbei ist, der Mauszeiger noch auf "ungelock" und auf sichtbar gesetzt. Damit wäre das Script vollständig. 
+
+Als nächstes muss ein Canvas mit einem TextElement erstellt. Dieses wird dann unten am Rand über der Lebensanzeige platziert. Der Text wird wie gewünscht verändert. Das Script wird nun auf das Textelement gezogen. Anschließend wird der Variable Vulcanotext der zuvor erstellte Text zugeordnet. 
 
 <h2 id="outtro">Das Outtro</h2>
 

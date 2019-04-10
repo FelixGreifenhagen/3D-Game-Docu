@@ -226,7 +226,11 @@ Als nächstes soll auf den Text ein Schatten angewendet werden. Dafür wird das 
 
 Die Effekt Distance wird für X und Y auf 4 bzw. -4 gestellt. Zudem wird für die Effekt Color die Farbe schwarz ausgewählt:
 
-<p align="center"><img src="" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55876152-36daa980-5b97-11e9-857b-c2c995d003c4.png" width="400px"></p>
+
+Als letztes müssen noch am Button-Element einige Einstellungen vorgenommen werden:
+
+Im Image(Script) wird die Color auf schwarz gestellt und im Button (Script) werden diese Farbeinstellungen vorgenommen:
 
 
 

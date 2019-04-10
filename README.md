@@ -1034,7 +1034,9 @@ In diesen ist dann rechts im Inspektor ein Icon-Reiter zu sehen. Um nun ein Desk
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55891769-6d272180-5bb5-11e9-80ca-2bccee2e68ca.png" width="300px"></p>
 
-Dieses Bild wird dann für alle Größen übernommen. Damit ist ein Desktop-Icon für das exportierte Spiel eingebunden
+Dieses Bild wird dann für alle Größen übernommen. Damit ist ein Desktop-Icon für das exportierte Spiel eingebunden. Im selben Fenster lässt sich oben auch der Name für das Spiel vergeben:
+
+<p align="center"><img src="" width="400px"></p>
 
 <h2 id="sceneeinbindung">Sceneneinbindung</h2>
 

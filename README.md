@@ -619,11 +619,7 @@ Als nächstes müssen die Palmenblätter modelliert werden. Dafür muss wie zu A
 
 Diese Fläche muss wieder unterteilt werden. Diesmal wird die Eckenauswahl benutzt. Nun werden die Ecken so verschoben, dass eine Blattform entsteht:
 
-Mit den mittlerweile bekannten Shortcuts kann nun ein Palmenblatt geformt werden:
-
-Auch hier wird wieder ein neues Material erstellt um die grüne Farbe des Palmenblattes zu visualisieren:
-
-Das Palmenblatt kann nun mit "Shift + d" dupliziert werden. Nun werden die Palmenblätter so um den Stamm angefügt, dass eine natürliche Verteilung besteht:
+Mit den mittlerweile bekannten Shortcuts kann nun ein Palmenblatt geformt werden. Auch hier wird wieder ein neues Material erstellt um die grüne Farbe des Palmenblattes zu visualisieren. Das Palmenblatt kann nun mit "Shift + d" dupliziert werden. Nun werden die Palmenblätter so um den Stamm angefügt, dass eine natürliche Verteilung besteht.
 
 Die fertige Palme kann nun mit "Datei > Exportieren > .fbx" als eine Modelldatei exportiert werden:
 

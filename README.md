@@ -1014,7 +1014,15 @@ Variable im  im CaneraController und VerticalCamera script
 
 <h1 id="export">Der Export</h1>
 
+Das ganze Spiel ist jetzt nun fertig und lässt sich auch in Unity sehr gut spielen. Allerdings soll der Nutzer am Ende nicht jedes Mal Unity installieren und das ganze darin importiere müssen. Daher sollen im folgenden alle Einstellungen getroffen und das Spiel für den Nutzer spielbar, also exportiert werden.
+
 <h2 id="splashscreen">Der Splashscreen und Icons</h2>
+
+Zunächst einmal sollen die Einstellungen getroffen werden, womit das Spiel als Programm auf dem Desktop gut aussieht. Also Desktop-Icon, Splashscreen und Startbildschirm. 
+
+Dafür werden zunächst einmal unter <b>File > Build Settings</b> die Exporteinstellungen geöffnet:
+
+<p align="center"><img src="" width="300px"></p>
 
 <h2 id="sceneeinbindung">Sceneneinbindung</h2>
 

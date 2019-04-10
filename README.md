@@ -473,9 +473,11 @@ Im selben Menü lässt sich zudem der Punkt "Smooth Height" auswählen, womit si
 
 Aktuell kann der Charakter noch am Rande des zuvor erstellten Terrains runterfallen. Um das zu verhindern implementieren viele Spiele einen Respawn sobald man aus der Map rausläuft. In diesem Fall soll auf eine einfachere Lösung zurückgegriffen werden, auf die auch oft zurückgegriffen wird: Eine unsichtbare Wand. Damit verhindert man, dass der Charakter am Rand runterläuft. Dadurch, dass die Border unsichtbar ist wird zudem verhindert, dass sich der Spieler fühlt, als wenn er in einer großen Kiste herumläuft. Dafür werden in Unity zunächst einmal vier neue Cubes, also Würfel. Das geht oben links unter <b> GameObject > 3D Object > Cube</b>. 
 
-<p align="center"><img src="" width="600px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55874085-a3eb4080-5b91-11e9-8adc-3edfe54323c4.png" width="600px"></p>
 
+Nun werden die Würfel so lang und so hoch gezogen, wie es nötig ist, um vier Wände für die Map zu erstellen. Die Würfel müssen also in der Größe verändert werden. Das geht, wenn man den Würfel ausgewählt hat, oben links:
 
+<p align="center"><img src="" width="400px"></p>
 
 <h2 id="texturen">Die Texturen</h2>
 

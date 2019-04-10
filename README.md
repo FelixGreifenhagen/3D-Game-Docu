@@ -1040,6 +1040,10 @@ Dieses Bild wird dann für alle Größen übernommen. Damit ist ein Desktop-Icon
 
 Als nächstes sollen der Splashscreen und das Hauptlogo beim Spielstart verändert wurde. Für den Splashscreen muss einfach der Reiter "Splash Image" geöffnet werden. Dort kann bei "Application Config Dialog Bar" und "Virtual Reality Splash Image" das Bild selektiert werden. Damit sieht das ganze dann wie folgt aus:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55895048-b1b5bb80-5bbb-11e9-859e-25576791f1a6.png" width="600px"></p>
+
+Als letztes soll nun ein Start_image erstellt werden. Das wird ebenfalls im Splash Image - Reiter festgelegt. Dort kann unter "Logos" ein Logo hinzugefügt werden, was zum Start des Spiels angezeigt werden soll. Zudem können einige Einstellungen vorgenommen werden, mit denen die Dauer und Farbe dieses Startbildschirms verändert werden können. In diesem Fall wurde dies nicht vorgenommen. Bei dem Logo lässt sich ein zusätzliches Logo importieren. In diesem Fall wurde ein PNG ohne Hintergrund verwendet, um einen Schriftzug auf dem dunklen Hintergrund zu erstellen:
+
 <p align="center"><img src="" width="600px"></p>
 
 <h2 id="sceneeinbindung">Sceneneinbindung</h2>

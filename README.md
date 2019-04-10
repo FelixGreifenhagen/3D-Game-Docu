@@ -1022,6 +1022,10 @@ Zunächst einmal sollen die Einstellungen getroffen werden, womit das Spiel als 
 
 Dafür werden zunächst einmal unter <b>File > Build Settings</b> die Exporteinstellungen geöffnet:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55891432-d9555580-5bb4-11e9-8cd7-523e690ce896.png" width="300px"></p>
+
+Dann werden unten links die Player Settings geöffnet:
+
 <p align="center"><img src="" width="300px"></p>
 
 <h2 id="sceneeinbindung">Sceneneinbindung</h2>

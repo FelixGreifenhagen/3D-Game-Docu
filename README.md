@@ -1048,7 +1048,7 @@ Da nun alle Einstellungen getroffen wurden, kann das Spiel final exportiert werd
 
 Dafür geht man in den Build Settings unten rechts auf "Build". Damit öffnet sich dann ein Fenster, in dem der zuvor erstellte Ordner für den Export ausgewählt werden kann. Dieser muss dann ausgewählt werden und der Knopf "Ordner auswählen" wird betätigt:
 
-<p align="center"><img src="" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55893886-6e5a4d80-5bb9-11e9-88a8-4b2dd185fb6e.png" width="400px"></p>
 
 Sobald der Ordner ausgewählt wurde, beginnt der Export. Wenn vor dem Export alle in der Konsole angezeigten Fehler korrigiert wurden, müsste der Export nach etwa 2-3 Minuten beendet sein. Anschließend daran öffnet sich der Ordner, in der Export gespeichert wurde. In dieser sind dann alle Dateien vorhanden, die für den Start des Spiels benötigt werden und eine .exe Datei. Wenn diese gestartet wird, öffnet sich ein kleines Fenster, in der man zuvor Bildschirmgröße und Auflösung ausgewählt werden können und wo man das Spiel starten kann. 
 

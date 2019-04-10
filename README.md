@@ -72,9 +72,12 @@ Da Blender ein gratis Modellier-Tool ist, gibt es bei Blender auch eine riesige 
 
 <b>Adobe Photoshop:</b> Adobe Photoshop haben wir benutzt, um Texturen zu malen (z.B. für grünen Boden, Weg, Berge) und den Banner auf der Projektseite anzufertigen. Da wir beiden Photoshop besitzen und Photoshop allgemein sehr gekannt ist, haben wir dieses Bildbearbeitungprogramm für diese Aufgaben benutzt.
 
+<a href="https://www.adobe.com/de/products/photoshop.html" target="_blank">Hier</a> lässt sich Adobe Photoshop kaufen
+
 <b>Adobe Fuse:</b> Adobe Fuse ist ein neues Programm aus der Creative Cloud, welches sich aktuell in der Beta befindet. Es ist darauf spezialisiert auf einfachem Wege menschliche 3D Modelle zu kreieren. Adobe Fuse haben wir dementsprechend für den vom Spieler gesteuerten Charakter verwendet.
 <b>FL Studio:</b> Da wir jeden Aspekt eines Indie-Games selbst umsetzten wollten, haben wir uns auch vorgenommen selbst einen Soundtrack zu machen. FL Studio kennen wir bereits und ist als Digital Work Station für Musik gut geeignet.
 
+<a href="https://www.adobe.com/de/products/fuse.html" target="_blank">Hier</a> lässt sich Adobe Fuse herunterladen
 
 <h1 id="spielmechanik">Die Spielmechanik</h1>
 

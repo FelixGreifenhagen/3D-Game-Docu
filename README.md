@@ -38,6 +38,8 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
     + <a href="#sceneeinbindung">Sceneneinbindung</a>
     + <a href="#spielexport">Das Spiel exportieren</a>
 * <a href="#ergebnis">Das Ergebnis</a>
+* <a href="#nachwort">Nachwort</a>
+* <a href="#quellen">Quellen</a>
     
 
 
@@ -1042,5 +1044,19 @@ Damit das Spiel dann exportiert werden kann und alle Szenen, die zuvor erstellt 
 
 <h2 id="spielexport">Das Spiel exportieren</h2>
 
+Da nun alle Einstellungen getroffen wurden, kann das Spiel final exportiert werden. Dafür muss zunächst auf dem Desktop, in den Dateien, oder eben wo man das Spiel am Ende hin haben will, ein Ordner für den Export erstellt werden. Im Anschluss daran wird das Spiel exportiert.
+
+Dafür geht man in den Build Settings unten rechts auf "Build". Damit öffnet sich dann ein Fenster, in dem der zuvor erstellte Ordner für den Export ausgewählt werden kann. Dieser muss dann ausgewählt werden und der Knopf "Ordner auswählen" wird betätigt:
+
+<p align="center"><img src="" width="400px"></p>
+
+Sobald der Ordner ausgewählt wurde, beginnt der Export. Wenn vor dem Export alle in der Konsole angezeigten Fehler korrigiert wurden, müsste der Export nach etwa 2-3 Minuten beendet sein. Anschließend daran öffnet sich der Ordner, in der Export gespeichert wurde. In dieser sind dann alle Dateien vorhanden, die für den Start des Spiels benötigt werden und eine .exe Datei. Wenn diese gestartet wird, öffnet sich ein kleines Fenster, in der man zuvor Bildschirmgröße und Auflösung ausgewählt werden können und wo man das Spiel starten kann. 
+
 <h1 id="ergebnis">Das Ergebnis</h1>
+
+
+<h1 id="nachwort">Nachwort</h1>
+<h1 id="quellen">Quellen</h1>
+
+
 

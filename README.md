@@ -767,6 +767,8 @@ Damit nun was passiert, muss das ganze implementiert werden. Das Script wird auf
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55887426-c8551600-5bad-11e9-8c89-501fbe11ca4d.png" width="400px"></p>
 
+Wie zu erkennen wurde die MinDistance auf 124 und die MaxDistance auf 125 gesetzt. Zudem wurde dem Player Objekt der Hauptcharakter zugeordnet, das EmptyObject dem Insel1Zentrum zugeordnet, und der Name des AudioTracks ("Insel1") eingegeben. Wie schon erwähnt, wird der AudioClip aus einem Ordner namens Resources geladen. Dieser wird also nun im selben Ordner angelegt, in dem das Script liegt. Darein wird dann der AudioClip abgelegt.
+
 <h1 id="gameplay">Das Gameplay</h1>
 
 Nachdem nun eine ansprechende Spielwelt erstellt wurde, muss der zuvor implementierte Charakter auch mit dieser Interagieren können. Oft erfolgt dies in Form von Quests/Aufgaben, für die der Spieler etwas finden, sammeln oder auf sonstige Weise mit der Welt interagieren. In diesem Fall beschränken sich die Aktionen vor allem auf das finden und sammeln von Objekten. 

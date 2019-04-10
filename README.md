@@ -1044,7 +1044,7 @@ Als nächstes sollen der Splashscreen und das Hauptlogo beim Spielstart verände
 
 Als letztes soll nun ein Start_image erstellt werden. Das wird ebenfalls im Splash Image - Reiter festgelegt. Dort kann unter "Logos" ein Logo hinzugefügt werden, was zum Start des Spiels angezeigt werden soll. Zudem können einige Einstellungen vorgenommen werden, mit denen die Dauer und Farbe dieses Startbildschirms verändert werden können. In diesem Fall wurde dies nicht vorgenommen. Bei dem Logo lässt sich ein zusätzliches Logo importieren. In diesem Fall wurde ein PNG ohne Hintergrund verwendet, um einen Schriftzug auf dem dunklen Hintergrund zu erstellen:
 
-<p align="center"><img src="" width="600px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55895609-c3e42980-5bbc-11e9-9a49-c7c569894224.png" width="600px"></p>
 
 <h2 id="sceneeinbindung">Sceneneinbindung</h2>
 

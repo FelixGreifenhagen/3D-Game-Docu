@@ -222,20 +222,87 @@ Zunächst werden einige Variablen benötigt:
 ```
 public class PlayerController : MonoBehaviour {
     public float moveSpeed;
-    private float mouseX = 0.0f;
-    private float mouseY = 0.0f;
-    public float speedX = 2.0f;
-    public float speedY = 2.0f;
+    private float mouseX = 0.0f;   
+    public float speedX = 2.0f;   
     void Start() {       
     }
     void Update() {
     }
 }
 ```
+Da der Controller nicht nur Bewegung sondern auch Rotation des Charakters definieren soll, werden die meisten Variablen für die Rotation benötigt. Die erste float ist die Bewegungsgeschwindigkeit. Da man sie später innerhalb des Unity-Interface noch optimieren können soll, wird sie public definiert. Dann werden für die X Mausbewegung Stärke und Geschwindigkeit der Rotation in vier Variablen definiert. 
 
-WARUM IST MOUSEX AUCH AUF 0 GESETZT???? KONTROLLIEREN!!!
+Da mouseX später eh überschrieben wird, wird sie zunächst beide auf 0 gesetzt. Der speedX ist für die Geschwindigkeit der Mausbewegung zuständig. Sie wird daher auf 2 gesetzt.
 
-Da der Controller nicht nur Bewegung sondern auch Rotation des Charakters definieren soll, werden die meisten Variablen für die Rotation benötigt. Die erste float ist die Bewegungsgeschwindigkeit. Da man sie später innerhalb des Unity-Interface noch optimieren können soll, wird sie public definiert. Dann werden für die X und Y Mausbewegung stärke und Geschwindigkeit der Rotation in vier Variablen definiert.
+Als nächstes wird die Start() funktion gefüllt: 
+
+```
+void Start() {
+   moveSpeed = 1.5f;        
+}
+```
+Darin wird der moveSpeed auf 1.5f gesetzt. So schnell soll der Spieler sich am Ende bewegen können. In die Update() Funktion wird dann folgendes geschrieben:
+
+```
+void Update() {
+        mouseX += speedX * Input.GetAxis("Mouse X");       
+}
+```
+Darin wird zunächst einmal definiert, wie sich die Maus in X und Y Richtung bewegt. Die mouseX wird dann mit folgendem überschrieben: Da die Geschwindigkeit abhängig von der speedX Variable sein soll, also die Bewegung nur mit dem Geschwindigkeitsfaktor aus speedX ausgeführt werden soll, wird das ganze mit speedX multipliziert. Dahinter steht der Befehl Input.GetAxis("Mouse X");. Dieser fragt ganz einfach einen Input ab, undzwar den der Mouse X, also der X bewegung (nach links und rechts) der Maus. Das Ergebnis wird dann mit speedX multipliziert und in mouseX gespeichert. 
+
+Dies stellt allerdings nur die Stärke der Bewegung dar, aber nicht die Bewegung selber. Daher wird darunter folgendes ergänzt:
+
+```
+transform.eulerAngles = new Vector3(0.0f, mouseX, 0.0f);
+```
+
+Ein transform ist in der Programmierung erst einmal eine Veränderung eines Objektes im zwei- bzw. dreidimensionalen Raum. Oftmals beschreibt dies eine Veränderung in Position, Rotation oder Größe. In diesem Fall soll es eine Rotation sein. Daher wird eine Rotation nach den drei Eulerwinkeln vorgenommen. Also eine transform.eulerAngles. Die Eulerschen Winkel sind ein oft verwendetes Modell bei der Drehung von Objekten in der Programmierung, da es sich hierbei um bestimmte Achsen im Raum handelt. Genaueres lässt sich <a href="https://de.wikipedia.org/wiki/Eulersche_Winkel">hier</a> nachlesen.
+
+Nun muss diese Rotation auch irgendwie ausgeführt werden. Daher wird dieser transform.eulerAngles folgendes zugewiesen: new Vector3(0.0f, mouseX, 0.0f);
+
+Ein Vector3 ist eine Veränderung in Unity im dreidimensionalen Raum, die ja eine Rotation ist. Würde man ein 2D Spiel programmieren, müsste es Vector2 heissen. Diesem Vector3 werden auf den drei Achsen folgende Werte übergeben. Auf der X Achse (die im Spiel die dritte achse eines zweidimensionalen Koordinatensystem ist, also beim zweidimensionalen koordinatensystem "in das Papier hinein") wird 0 übergeben, da hier keine Drehung stattfinden soll (Die Variable heisst zwar mouseX, da sie die X Bewegung im zweidimensionalen Koordinatensystem darstellt, eigentlich ist es aber verantwortlich für die y-Achse, da im dreidimensionalen Koordinatensystem die X achse quasi die Y-Achse ist). Für die Y-Achse wird der zuvor in mouseX gespeicherte Wert übergeben, da die Maus sich ja auf der Y-Achse bewegen soll, und für die z-achse wird wieder 0 übergeben.
+Das new davor bedeutet einfach, dass es sich um eine neue Bewegung handelt und keine kontinuierliche. Würde da kein new stehen, würde sich das Objekt mit jeder Ausführung des Scriptes (also jeden Frame) um den Faktor der Position der Maus drehen, anstatt dies nur dann zu tun, wenn man die Maus bewegt.
+
+Damit ist eine von der Mausbewegung abhängige Bewegung in der X (Y) Richtung implementiert. Als nächstes sollen einige Bewegungen innerhalb des Koordinatensystems definiert werden:
+
+```
+
+
+if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
+{
+    moveSpeed = 4f;
+}
+
+if (Input.GetKey(KeyCode.S))
+{
+    moveSpeed = 1f;
+}
+transform.Translate(moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
+
+moveSpeed = 1.5f;  
+```
+Zunächst wird einmal geprüft, ob die W-Taste UND die Shift-Taste gedrückt ist. Da der Charakter beim Drücken beider Tasten Sprinten soll und sich damit schneller Bewegen soll, wird dann die Variable moveSpeed, also die Variable in der die Laufgeschwindigkeit gespeichert ist, erhöht auf 4. Zudem wird geprüft, ob der Spieler S drückt, also rückwärts läuft. Wenn dies der Fall ist, soll er sich langsamer Bewegen, da die Rückwärts-Laufen-Animation auch langsamer ist, also wird die Bewegungsgeschwindigkeit auch niedriger gesetzt als der Default. 
+
+Als nächstes findet die eigentliche Bewegung statt. Da Unity bereits Standartmäßig für die Bewegung WASD als Tasten definiert hat, werden hier keine if-schleifen oder sonstiges benötigt. Nun wird also, wie zuvor bei der Rotation, wieder ein transform, also eine veränderung im dreidimensionalen Raum gemacht. Statt eines eulerAngle, wird diesmal ein Translate verwendet. Dies ist in der programmierung auch eine SEHR oft verwendete Bezeichnung für die Veränderung der Position eines Objektes. Dieses Translate wird dann mit den Werten, die in der Klammer dahinter übergeben werden ausgeführt. Wieder findet das ganze über die einzelnen Achsen statt: Für die X Achse, also nach vorne und hinten, wird in diesem Fall folgendes übergeben: Die Bewegungsgeschwindigkeit mulipliziert mit der Input.GetAxis("Horizontal"). Unity verwendet das Input.GetAxis("Horizontal") als 3D-Modell der Tasteneingabe. Die Achse "Horizontal" wird dabei immer verändert, wenn W oder S gedrückt werden. Wenn also Input.GetAxis("Horizontal") abgefragt wird, wird die Veränderung in der W-S-Achse, also das Drücken der W und S Taste abgefragt. Im Klartext bedeutet das, dass die Bewegung auf der X Achse, also nach vorne und hinten, abhängig von der Veränderung der "Horizontal" Achse, also vom Drücken der W und der S Taste, verändert werden soll. Damit das ganze auch z.B. beim Pause-Drücken des Spiels pausiert werden kann, wird es noch mit Time.deltaTime multipliziert (Was das ist, wird später auch nocheinmal erläutert). Damit ist die ganze Bewegung abhängig von der Spielinternen zeit und wird damit gestoppt oder eben wieder gestartet. 
+
+Da sich der Charakter nicht auf der Y Achse, also nach oben und unten bewegen soll (zumindest nicht in diesem Fall, später allerdings mit einem Sprungscript schon), wird diese auf 0 gesetzt. Als letztes wird das selbe mit der Z-Achse wie mit der X-Achse gemacht. Nur dieses mal mit der "Vertical"-Achse, also der Achse für links und rechts, also A und D - Tasten.
+
+Als letztes muss noch das ergänzt werden:
+
+```
+moveSpeed = 1.5f;  
+``` 
+
+Dies setzt den moveSpeed wieder auf 1.5. Dies muss getan werden, da sonst, wenn der Spieler z.B. gesprintet ist, die moveSpeed auf 4 ist. Im nächsten Frame würde die Variable dann weiterhin auf 4 stehen, obwohl der Spieler vielleicht gar nicht mehr Sprintet. Daher muss sie vor Ende des Frames noch einmal wieder auf 1.5 gesetzt werden, damit quasi wieder die selbe "Ausgangslage" geschaffen wird.
+
+Das war soweit die Bewegung und Rotation auf der X Achse. Das gesamte Script wird dann auf das Charaktermodell gezogen. Im Feld "Rigidbody" muss dann noch der Charakter selbst zugewiesen werden:
+
+HIER EIN BILD VON DER ZUWEISUNG
+
+Nun muss der Charakter allerdings noch nach oben und unten schauen können. Dafür wird
+
+HIER DIE ERLÄUTERUNG VOM CAMERASCRIPT USW.
+
 
 <h2 id="pausemenu">Das Pause-Menü</h2>
 

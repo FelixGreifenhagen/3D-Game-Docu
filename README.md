@@ -232,6 +232,9 @@ Als letztes müssen noch am Button-Element einige Einstellungen vorgenommen werd
 
 Im Image(Script) wird die Color auf schwarz gestellt und im Button (Script) werden diese Farbeinstellungen vorgenommen:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55876424-e6b01700-5b97-11e9-8d9d-ee844e0f3661.png" width="400px"></p>
+
+Anschließend kann im Text Element noch im Text-Feld der Text eingegeben werden, der im Button angezeigt werden soll. Damit sehen die Buttons im Menü wie folgt aus:
 
 
 

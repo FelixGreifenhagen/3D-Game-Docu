@@ -481,7 +481,7 @@ Nun werden die Würfel so lang und so hoch gezogen, wie es nötig ist, um vier W
 
 Damit kann man dann die Größe der Würfel verändern. Als letztes müssel die Würfel noch unsichtbar gemacht werden. Dafür muss der sogenannte Mesh Renderer auf ihnen entfernt werden, der dafür sorgt, dass eine Textur auf dem Würfel gerendert wird. Dafür wählt man den Würfel aus, geht mit Rechtsklick rechts im Inspektor auf den Mesh Renderer und wählt "Remove Component" aus:
 
-<p align="center"><img src="" width="500px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55874364-718e1300-5b92-11e9-8e5f-582874db5e1e.png" width="500px"></p>
 
 <h2 id="texturen">Die Texturen</h2>
 

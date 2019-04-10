@@ -655,16 +655,115 @@ Zwar wurden diese in diesem Projekt nicht verwendet, aber die Standart Assets bi
 
 <h2 id="musik">Die Musik</h2>
 
-Create Empty "inselzentrum"; Ins zentrum der Insel positionieren; zweites emptry objeekt > "sound manager; auf den sound manager ein Script namens SoundManagerScript; öffnen; darein:
+Nun soll ein wenig Musik in das Spiel hinein. Dafür wird natürlich zunächst einmal Musik benötigt. In diesem Fall wurde online Musik verwendet, die bei Verlinkung der Quelle zur öffentlichen Nutzung steht. 
 
-HIER DAS SCRIPT HIN
+Dies ist die Quelle für die Verwendete Musik: <a href="#">Link</a> DA MUSS NOCH EIN LINK REIN
 
+Die Besonderheit bei der Einbindung in diesem Fall ist, dass das Hören der Musik nur in einem begrenzten Radius verfügbar sein soll. Vereinfacht also: Wenn sich der Spieler in einem bestimmten Umkreis um die Quelle befindet, soll die Musik abgespielt werden.
 
-auf insel1 zentrum auch ein script namens radiusinsel1; öffnen, code:
+Um diese zu erreichen, wird zunächst einmal ein neues leeres Element erstellt. Dies geschieht unter <b>GameObject > Create Empty</b>. Dieses Empty GameObject wird nun ins Zentrum einer der Inseln positioniert. Als nächstes wird ein neues Script erstellt namens InselZentrum1.cs. In diesem werden erst einmal folgende Variablen definiert:
 
-HIER DAS SCRIPT HIN
+```
+    public GameObject Player;
+    public static AudioClip Insel1;
+    static AudioSource audioSrc1;
+    public string AudioName1;
+    public float MinDis1;
+    public float MaxDis1;
+    public float Distance1;
+```
+Zunächst einmal der Spieler, denn von diesem wird der Abstand zur MusikQuelle abhängig gemacht. Dann wird ein neuer AudioClip definiert. Also ein Element vom Typ AudioClip. dieses wird public static gesetzt, um es später in Unity zuweisen zu können. Dann wird eine AudioSource, also ein Objekt, welches auf dem Empty-Element in Unity liegt. Dieses AudioObjekt wird dem Element zugewiesen und in ihm können Musik und die Quelle verwaltet werden. Es wird hiermit, vom Element auf dem auch dieses Script liegt, selektiert. Zudem wird ein public string gesetzt, wo später der Name des Musiktitels eingetragen wird. Da nämlich ein später verwendetes Element einen string braucht, um den Titel zu finden und nicht einfach einen AudioClip, wie er vorher definiert wurde, ist dies noch einmal notwendig zu definieren. Dann werden noch drei float Variablen definiert: Eine für den Minimalen und Maximalen Abstand, die nötig sind, um das Audio abzuspielen und eine Distance Variable, in der der Abstand zwischen Spieler und Musik-Objekt, welche später dauerhaft geprüft wird, gespeichert wird.
 
+Nun wird folgendes in der Start() Funktion definiert:
 
+```
+void Start()
+    {
+        Insel1 = Resources.Load<AudioClip>(AudioName1);
+        audioSrc1 = GetComponent<AudioSource>();
+    }
+```
+Damit wird dem AudioClip Insel1 ein Titel zugeordnet, der aus dem Ordner Resources und mit dem Namen AudioName1, welcher später noch zugeordnet wird, geladen wird. Zudem wird noch der Variable audioSrc1 die AudioSource-Komponente, die auf dem selben Objekt liegt, zugeordnet.
+
+Als nächstes wird folgendes in die Update() Funktion geschrieben:
+
+```
+void Update()
+    {
+        Distance1 = Vector3.Distance(InselZentrum1.transform.position, Player.transform.position);
+        if (Distance1 > MinDis1 && Distance1 < MaxDis1)
+        {
+            playSound();
+        }
+        if (Distance1 > MaxDis1)
+        {
+            stopSound();
+        }
+    }
+```
+Darin wird der Variable Distance1 das Ergebnis der Abfrage: Vector3.Distance(InselZentrum1.transform.position, Player.transform.position); zugeordnet. Diese Abfrage bedeutet Folgendes: 
+
+Es wird das Unity-interne Vector3.Distance() verwendet. Dieses prüft in einem dreidimensionalen Raum (Vector3) den Abstand von zwei Objekten, die in den nachfolgenden Klammern übergeben werden. In diesem Fall sind das die beiden GameObjekts Insel1Zentrum und Player. An diese wird noch das .transform.position angehängt, was deklariert, dass hierbei die Position beider Objekte genommen und an die Vector3.Distance übergeben werden. Im Klartext bedeutet dies also: führe eine Abstands-Abfrage (Distance) im dreidimensionalen Raum (Vector3) aus, in der du die zwei Eigenschaften (transform.position) der nachfolgenden Elemente (Insel1Zentrum und Player) vergleichst und das Ergebnis dieser Abfrage in der Variable Distance1 speicherst.
+
+Als nächstes wird in einer if-Schleife (was die Bedingung bedeutet wurde bereits mehrfach erläutert) folgendes ausgeführt:
+```
+playSound()
+```
+Dies ist der Abruf einer Funktion. Diese Funktion wird später noch definiert. Das selbe gilt für die zweite if-Schleife, in der die Funktion stopSound() ausgeführt wird.
+
+Da die Funktionen abgerufen werden sollen, müssen sie nun auch definiert werden. Also wird unter der Update()-Funktion folendes ergänzt:
+
+```
+public static void playSound()
+    {
+        audioSrc1.Play(0);
+    }
+     public static void stopSound()
+    {
+        audioSrc1.Stop();
+    } 
+```
+Dies sind im Grund genommen zwei simple Kommandos: In der Funktion playSound() wird ausgeführt: audioSrc1.Play(0). Dies spielt einfach nur den AudioClip ab, der in der Variable audioSrc1 gespeichert wurde. Die null hinter dem Play bedeutetNOCH EINFÜGEN WAS DIE 0 BEDEUTET!!!!!
+Das zweite Kommando in der void StopSound() führt einen ähnlichen Befehl aus: audioSrc1.Stop(). Wie vielleicht schon zu erahnen ist, stoppt dies einfach nur das Audio.
+
+Das wäre auch schon das komplette Script. Zusammen sieht es wie folgt aus:
+
+```
+public GameObject InselZentrum1;
+    public GameObject Player;
+    public static AudioClip Insel1;
+    static AudioSource audioSrc1;
+    public string AudioName1;
+    public float MinDis1;
+    public float MaxDis1;
+    public float Distance1;
+    void Start()
+    {
+        Insel1 = Resources.Load<AudioClip>(AudioName1);
+        audioSrc1 = GetComponent<AudioSource>();
+    }
+    void Update()
+    {
+        Distance1 = Vector3.Distance(InselZentrum1.transform.position, Player.transform.position);
+        if (Distance1 > MinDis1 && Distance1 < MaxDis1)
+        {
+            playSound();
+        }
+        if (Distance1 > MaxDis1)
+        {
+            stopSound();
+        }
+    }
+    public static void playSound()
+    {
+        audioSrc1.Play(0);
+    }
+     public static void stopSound()
+    {
+        audioSrc1.Stop();
+    } 
+```
+Damit nun was passiert, muss das ganze implementiert werden. Das Script wird auf das vorher erstellte Objekt gezogen. Als nächstes wird 
 
 <h1 id="gameplay">Das Gameplay</h1>
 
@@ -764,7 +863,7 @@ void Update() {
     Distance = Vector3.Distance(KeyBox.transform.position, Player.transform.position);
 }
 ```
-Hier wird nun der Abstand des Objektes KeyBox vom Abstand des Objektes Player in der vorher deklarierten Variable Distance gespeichert. Dafür wird das Unity-interne Vector3.Distance() verwendet. Dieses prüft in einem dreidimensionalen Raum (Vector3) den Abstand von zwei Objekten, die in den nachfolgenden Klammern übergeben werden. In diesem Fall sind das die beiden GameObjekts KeyBox und Player. an diese wird noch das .transform.position angehängt, was deklariert, dass hierbei die Position beider Objekte genommen und an die Vector3.Distance übergeben werden. Wie eingangs erwähnt, wird das Ergebnis dieser Operation dann in der Variable Distance gespeichert.
+Hier wird nun der Abstand des Objektes KeyBox vom Abstand des Objektes Player in der vorher deklarierten Variable Distance gespeichert. Wie diese Funktioniert, wurde bereits im Abschnitt <a href="#musik">Musik</a> erläutert
 
 Nachdem nun die Entfernung geprüft wurde, muss auch etwas mit der Information angefangen werden. Dafür wird wie üblich eine if-Schleife verwendet. In dieser sollen dann mehrere Operationen ausgelöst werden.
 ```

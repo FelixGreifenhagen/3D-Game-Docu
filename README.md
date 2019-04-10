@@ -1175,5 +1175,7 @@ Sobald der Ordner ausgewählt wurde, beginnt der Export. Wenn vor dem Export all
 <h1 id="nachwort">Nachwort</h1>
 <h1 id="quellen">Quellen</h1>
 
-
+* Design-Inspiration: https://www.artstation.com/emekozben
+* Musik: www.zapsplat.com
+* Tutorial Objektbewegung: https://www.youtube.com/channel/UCGOgRqMyWE6VPSCG-qxVkmw (kinan gh) 
 

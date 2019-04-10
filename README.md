@@ -948,7 +948,31 @@ neue transition, script erstellen, transistion condition, opendoor script mit in
 
 <h2 id="missionen">Missionen</h2>
 
-Nun soll der Spieler auch wissen, was er machen soll, um im Spiel weiter zu kommen. Dafür wird zunächst ein Missionstext erstellt. Wie man das Canvas und diesen Text erstellt, lässt sich 
+Nun soll der Spieler auch wissen, was er machen soll, um im Spiel weiter zu kommen. Dafür wird zunächst ein Missionstext erstellt. Wie man das Canvas und diesen Text erstellt, lässt sich im Kapitel <a href="#">Objekte aufsammeln</a> nachlesen. Dieser wird nun oben rechts am Bildschirmrand platziert und mit dem benötigten Text gefüllt. Als nächstes wird ein neues Script erstellt namens keyMission.cs. Dort kommt folgender Text hinein:
+
+```
+public class keyMission : MonoBehaviour
+{
+    public GameObject missionText;
+    public string gameObjectName;
+    void Start()
+    {
+        missionText.SetActive(true);
+    }
+    void Update()
+    {
+        if(GameObject.Find(gameObjectName) == null)
+        {
+            missionText.SetActive(false);
+        }        
+    }
+}
+```
+Dies ist einfach ein ganz simples Script, mit dem das zuvor erstellte Canvas ein und ausgeblendet wird. Dies wird darüber gelöst, dass in einer if-Schleife mittels des Befehls: GameObject.Find(gameObjectName) == null geprüft wird, ob das Objekt noch da ist. In diesem Fall wird der missionstext zu beginn des Spiels eingeblendet. Wenn nun der Schlüssel aufgesammelt, also das Element zerstört wird, ist das Ergebnis der Abfrage GameObject.Find(gameObjectName) null, also dass es nicht mehr da ist. Wenn es also = null ist, wird der missionstext ausgeblendet. 
+
+Das ganze lässt sich nun auf alle Missionen im Spiel anwenden. Dafür prüft man einfach, ob das Missionsobjekt von Mission 1 zerstört wurde. Wenn das der Fall ist, wird der Text für Mission 2 eingeblendet. Sobald dieses dann zerstört ist, wird der Text für Mission 2 wieder ausgeblendet und der Text für Mission 3 eingeblendet. Das ganze lässt sich dann immer weiter so fortführen, bis man eine ordentliche Reihe von Missionen hat. 
+
+In diesem Fall soll hier nur eine Mission erläutert werden. Das ganze lässt sich aber auch auf alle anderen Missionen ganz einfach anwenden. 
 
 <h2 id="healthsystem">Das Health-System</h2>
 

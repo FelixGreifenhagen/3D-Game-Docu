@@ -643,10 +643,11 @@ Wie bereits erwähnt wurden in diesem Projekt mehrere Standart Assets verwendet:
 
 Es wurde zudem eine Feuer Animation verwendet
 
-Desweiteren wurde, wie später zu sehen, eine Explosion sowie Rauch für den Vulkan verwendet. Die Explosion findet sich unter HIER NOCH PFAD EINFÜGEN und der Rauch unter HIER NOCH PFAD EINFÜGEN.
+Desweiteren wurde, wie später zu sehen, eine Explosion sowie Rauch für den Vulkan verwendet. Die Explosion findet sich unter <b>Assets > Standart Assets > ParticleSystems > Prefabs > Explosion</b> und der Rauch unter <b>Assets > Standart Assets > ParticleSystems > Prefabs > Smoke</b>
+
 HIER NOCH SCHREIbBEN WAS VERÄNDERT WURDe.
 
-Als letztes wurde noch ein Dust Storm verwendet. Diesen findet man unter NOCH RAUSSUCEHN und er kann einfach per Drag and Drop in die Szene gezogen werden. Im Scene-Screen taucht dann ein Feld auf, mit dem man Dichte und Anzahl der Partikel variieren kann.
+Als letztes wurde noch ein Dust Storm verwendet. Diesen findet man unter <b>Assets > Standart Assets > ParticleSystems > DustStorm</b> und er kann einfach per Drag and Drop in die Szene gezogen werden. Im Scene-Screen taucht dann ein Feld auf, mit dem man Dichte und Anzahl der Partikel variieren kann.
     
 Zwar wurden diese in diesem Projekt nicht verwendet, aber die Standart Assets bieten auch noch einen Third Person und einen First Person Controller, Fahrzeuge, mehrere Effekte wie Feuerwerk sowie Flugzeuge usw. 
 

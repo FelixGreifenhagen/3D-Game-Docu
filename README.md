@@ -1026,7 +1026,13 @@ Dafür werden zunächst einmal unter <b>File > Build Settings</b> die Exporteins
 
 Dann werden unten links die Player Settings geöffnet:
 
-<p align="center"><img src="" width="300px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55891542-06a20380-5bb5-11e9-8835-1c21b887e4b9.png" width="300px"></p>
+
+In diesen ist dann rechts im Inspektor ein Icon-Reiter zu sehen. Um nun ein Desktop-Icon zu erstellen wird dieser aufgeklappt. Dann wird mittels "Select" bei 1024x1024 ein Fenster geöffnet, in dem das Desktop-Icon geöffnet wird:
+
+<p align="center"><img src="" width="400px"></p>
+
+Dieses Bild wird dann für alle Größen übernommen. Damit ist ein Desktop-Icon für das exportierte Spiel eingebunden
 
 <h2 id="sceneeinbindung">Sceneneinbindung</h2>
 

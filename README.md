@@ -477,7 +477,11 @@ Aktuell kann der Charakter noch am Rande des zuvor erstellten Terrains runterfal
 
 Nun werden die Würfel so lang und so hoch gezogen, wie es nötig ist, um vier Wände für die Map zu erstellen. Die Würfel müssen also in der Größe verändert werden. Das geht, wenn man den Würfel ausgewählt hat, oben links:
 
-<p align="center"><img src="" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55874176-e9a80900-5b91-11e9-8d94-0f8b218a08dd.png" width="400px"></p>
+
+Damit kann man dann die Größe der Würfel verändern. Als letztes müssel die Würfel noch unsichtbar gemacht werden. Dafür muss der sogenannte Mesh Renderer auf ihnen entfernt werden, der dafür sorgt, dass eine Textur auf dem Würfel gerendert wird. Dafür wählt man den Würfel aus, geht mit Rechtsklick rechts im Inspektor auf den Mesh Renderer und wählt "Remove Component" aus:
+
+<p align="center"><img src="" width="500px"></p>
 
 <h2 id="texturen">Die Texturen</h2>
 

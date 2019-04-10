@@ -1022,15 +1022,15 @@ Zunächst einmal sollen die Einstellungen getroffen werden, womit das Spiel als 
 
 Dafür werden zunächst einmal unter <b>File > Build Settings</b> die Exporteinstellungen geöffnet:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55891432-d9555580-5bb4-11e9-8cd7-523e690ce896.png" width="300px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55891432-d9555580-5bb4-11e9-8cd7-523e690ce896.png" width="200px"></p>
 
 Dann werden unten links die Player Settings geöffnet:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55891542-06a20380-5bb5-11e9-8835-1c21b887e4b9.png" width="300px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55891542-06a20380-5bb5-11e9-8835-1c21b887e4b9.png" width="200px"></p>
 
 In diesen ist dann rechts im Inspektor ein Icon-Reiter zu sehen. Um nun ein Desktop-Icon zu erstellen wird dieser aufgeklappt. Dann wird mittels "Select" bei 1024x1024 ein Fenster geöffnet, in dem das Desktop-Icon geöffnet wird:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55891769-6d272180-5bb5-11e9-80ca-2bccee2e68ca.png" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55891769-6d272180-5bb5-11e9-80ca-2bccee2e68ca.png" width="300px"></p>
 
 Dieses Bild wird dann für alle Größen übernommen. Damit ist ein Desktop-Icon für das exportierte Spiel eingebunden
 

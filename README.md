@@ -582,7 +582,7 @@ Die fertige Palme kann nun mit "Datei > Exportieren > .fbx" als eine Modelldatei
 
 Das Filmbox-Format (fbx) kann von Unity ausgelesen werden. Dafür zieht man sie in Unity per Drag and Drop in die Dateien:
 
-<p algin="center"><img src="https://user-images.githubusercontent.com/42578917/53724852-1a966f00-3e6b-11e9-9cc7-cddf614d398e.png" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53724852-1a966f00-3e6b-11e9-9cc7-cddf614d398e.png" width="400px"></p>
 
 <h2 id="standartassets">Die Standart Assets</h2>
 

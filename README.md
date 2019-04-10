@@ -1034,9 +1034,13 @@ In diesen ist dann rechts im Inspektor ein Icon-Reiter zu sehen. Um nun ein Desk
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55891769-6d272180-5bb5-11e9-80ca-2bccee2e68ca.png" width="300px"></p>
 
-Dieses Bild wird dann für alle Größen übernommen. Damit ist ein Desktop-Icon für das exportierte Spiel eingebunden. Im selben Fenster lässt sich oben auch der Name für das Spiel vergeben:
+Dieses Bild wird dann für alle Größen übernommen. Damit ist ein Desktop-Icon für das exportierte Spiel eingebunden. Es muss allerdings noch als default icon übernommen werden. Dies lässt sich im selben Fenster darüber vornehmen. Da drüber lässt sich zudem der Name für das Spiel vergeben:
 
-<p align="center"><img src="" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55894564-95fde580-5bba-11e9-9521-fb610e8e3d49.png" width="400px"></p>
+
+Als nächstes sollen der Splashscreen und das Hauptlogo beim Spielstart verändert wurde. Für den Splashscreen muss einfach der Reiter "Splash Image" geöffnet werden. Dort kann bei "Application Config Dialog Bar" und "Virtual Reality Splash Image" das Bild selektiert werden. Damit sieht das ganze dann wie folgt aus:
+
+<p align="center"><img src="" width="600px"></p>
 
 <h2 id="sceneeinbindung">Sceneneinbindung</h2>
 

@@ -110,8 +110,7 @@ Als nächstes werden dann Charakter und Animationen unten in die Projektdatein g
     
 In diesen ist bereits der Controller (wird automatisch hinzugefügt und kann dabei belassen werden) und der Avatar (der in diesem Fall den Charakter mitsamt Animation darstellt. In Unity werden diese zusammen konvertiert, das Endergebnis zeigt aber nur einen Charakter, den aber mit mehreren Animationen an). Zudem ist zu beobachten, dass im Animatior-Controller mit dem Hinzufügen von neuen Animation auch kleine neue Kästchen entstehen:
 
-FOTO VOM ANIMATOR CONTROLLER
-
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55874822-c9794980-5b93-11e9-896f-20b43a0ffb0b.png" width="400px"></p>
 Das ist die Besonderheit vom Animator in einer Engine wie Unity: die Verwaltung von Animationen erfolgt grafisch! 
 
 Noch ist zu erkennen, dass es ein orangenes Kästchen und mehrere graue gibt. Das Orangene ist dabei der IDLE, also die Standart Animation, und die grauen sind die anderen Animationen. Per <b>Rechtsklick auf ein Kästchen > Set as Layer Default State </b> lässt sich auch ein anderes Kästchen als IDLE/Default bestimmen. 

@@ -680,13 +680,49 @@ Als nächstes wird mit <b>Rechtsklick > Make Transition</b> eine neue Transition
 
 Das ganze sieht dann so aus:
 
-HIER EIN BID DES CRAP-ANIMATOR CONTROLLER
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55882402-c5095c80-5ba4-11e9-886a-fb8b7dcdcbbc.png" width="400px"></p>
 
 Nun muss ein Script geschrieben werden, welches diesen Parameter bearbeitet. Dafür wird ein neues C#-Script mit dem Namen crapMove.cs erstellt. In dieses wird dann folgender Code geschrieben:
 
 ```
+public class crapMove : MonoBehaviour
+{
+    public Animator crap;
+    public float timer;
+    void Start()
+    {
+        crap = GetComponent<Animator>();
+        crap.SetBool("crapMove", true);
+        timer = 0.0f;
+    }    
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if(timer > 40)
+        {
+            crap.SetBool("crapMove", false);
+        }
+    }
+}
+```
+Die Funktionsweise der einzelnen Kommandos wurde bereits zuvor in dieser Dokumentation erläutert, daher in Kurzform: Der crap-Animator wird ausgewählt und angesprochen. In diesem wird unter bestimmten Bedingungen die crapMove-Condition auf true oder false gesetzt. Nun noch einmal zum timer. In diesem Script wird das Schalten der Variable von einem Timer abhängig gemacht. Die timer Variable wird zunächst in der Start() Funktion auf null gesetzt. Anschließend wird sie während der Update() Funktion mit dem += Operator mit Time.deltaTime hochgezählt. Der Operator macht in C# quasi eine Zuordnung, in der er den alten Wert nimmt und einen neuen draufaddiert. Er ist im Grunde genommen eine Kurzform hiervon:
+```
+timer = timer + Time.deltaTime;
+
+timer += Time.deltaTime
+```
+Beide Zeilen machen im Script theoretisch das gleiche. 
+
+Time.deltaTime ist die Unity-Interne zeitangabe. Time.deltaTime ist quasi eine Stoppuhr, die in Unity ab dem Start des Spiels anfängt  zu laufen. Sie kann aber auch mittels Script manipuliert oder angehalten werden. In diesem Fall wird damit einfach ein Timer initialisiert. Der Vorteil davon, diesen zu verwenden ist, dass im PauseScript ja Time.deltaTime auf null gesetzt wird. Da der Timer in diesem Fall von Time.deltaTime abhängig ist, wird auch dieser Timer gestoppt, wenn das PauseMenü geöffnet wird. In diesem Projekt wurden alle timer mit Time.deltaTime gesteuert. Daher stoppen die Timer alle, wenn auch das Spiel mittels Esc.-Taste gestoppt wird.
+
+
+HIER MUSS NOHC EINE ERLÄUTERUNG HIN, WIE DIE KRABBE LÄUFT ETC.
 
 ```
+HIER DAS CRAPSCRIPT CRAPMOVEMENT
+```
+
+Als 
 
 <h2 id="objektesammeln">Objekte aufsammeln</h2>
 

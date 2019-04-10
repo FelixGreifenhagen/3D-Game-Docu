@@ -725,7 +725,8 @@ public static void playSound()
         audioSrc1.Stop();
     } 
 ```
-Dies sind im Grund genommen zwei simple Kommandos: In der Funktion playSound() wird ausgeführt: audioSrc1.Play(0). Dies spielt einfach nur den AudioClip ab, der in der Variable audioSrc1 gespeichert wurde. Die null hinter dem Play bedeutetNOCH EINFÜGEN WAS DIE 0 BEDEUTET!!!!!
+Dies sind im Grund genommen zwei simple Kommandos: In der Funktion playSound() wird ausgeführt: audioSrc1.Play(0). Dies spielt einfach nur den AudioClip ab, der in der Variable audioSrc1 gespeichert wurde. Die null hinter dem Play bedeutet, dass die Datei von Anfang an abgespielt werden soll.
+
 Das zweite Kommando in der void StopSound() führt einen ähnlichen Befehl aus: audioSrc1.Stop(). Wie vielleicht schon zu erahnen ist, stoppt dies einfach nur das Audio.
 
 Das wäre auch schon das komplette Script. Zusammen sieht es wie folgt aus:

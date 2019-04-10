@@ -220,7 +220,7 @@ Die Buttons sind aktuell noch nicht besonders ansehnlich. Damit diese nun schön
 
 Im Text(Script) wird zunächst einmal folgendes eingestellt: Das Font-Style wird auf Bold gestellt, die Font size wird auf 50 gestellt und die Color auf weiß:
 
-
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55875660-e151cd00-5b95-11e9-973a-2b2df7a516c1.png" width="400px"></p>
 
 Nun ist das Menü allerdings dauerhaft geöffnet und die Buttons haben keine Funktion. Um dies zu ändern, wird auf dem Canvas ein neues Script namens "EscapeMenu" erstellt. In diesem werden dann alle Bedingungen geschrieben, nach denen das Menü geöffnet wird und alle Aktionen definiert, die die erstellten Buttons ausführen sollen.
 

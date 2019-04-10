@@ -81,7 +81,7 @@ Da Blender ein gratis Modellier-Tool ist, gibt es bei Blender auch eine riesige 
 
 <h1 id="spielmechanik">Die Spielmechanik</h1>
 
-Zunächst müssen erstmal, um später ein solides Gameplay zu implementieren, die Grundlagen in Unity einrichten. Dazu gehören unter anderem das Charaktermodel, ein Controller um Bewegungen zu steuern, Animationen für den Charakter, ein Terrain mit Border, sowie Menüs und weiteres. Daher wird in diesem Bereich zunächst einmal alles "außenrum" um das Spiel erstellt. Das bedeutet Charakter, Menüs, Animationen etc. womit das Spiel am Ende schon einmal in eine grobe Mechanik eingebettet wird. Der genaue Inhalt des Spiels und das Aussehen ist das unter "Game-Design" und "Gameplay" zu finden.
+Zunächst müssen erstmal, um später ein solides Gameplay zu implementieren, die Grundlagen in Unity eingerichtet werden. Dazu gehören unter anderem das Charaktermodel, ein Controller um Bewegungen zu steuern, Animationen für den Charakter, ein Terrain mit Border, sowie Menüs und weiteres. Daher wird in diesem Bereich zunächst einmal alles "außenrum" um das Spiel erstellt. Das bedeutet Charakter, Menüs, Animationen etc. womit das Spiel am Ende schon einmal in eine grobe Mechanik eingebettet wird. Der genaue Inhalt des Spiels und das Aussehen ist das unter "Game-Design" und "Gameplay" zu finden.
 
 <h2 id="charakter">Der Charakter</h2>
 

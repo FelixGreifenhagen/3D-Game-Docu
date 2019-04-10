@@ -1036,6 +1036,10 @@ Dieses Bild wird dann für alle Größen übernommen. Damit ist ein Desktop-Icon
 
 <h2 id="sceneeinbindung">Sceneneinbindung</h2>
 
+Damit das Spiel dann exportiert werden kann und alle Szenen, die zuvor erstellt werden, auf korrekte Weise geladen und verwendet werden, muss zunächst der Export-Funktion von Unity gesagt werden, welche Szenen dabei mit eingebunden werden sollen. Dafür werden, wie zuvor bei der Erstellung eines Desktop-Icons und Splashscreens, die Build Settings geöffnet. Als nächstes müssen alle vorhanden Szenen in den Build hinzugefügt werden. Dafür werden die Szenen nacheinander geöffnet und jedesmal in den Build Settings oben rechts bei "Add Open Scene" in die Build Settings eingefügt. Als letztes müssen die Szenen noch in die richtige Reihenfolge gebracht werden. Soll z.B. das Hauptmenü als erstes geladen werden, muss die jeweilige Szene auch die links zu sehende Id 0 haben. Die Szenen können dabei frei beweglich mit der Maus in ihrer Reihenfolge geändert werden. In den Build Settings sieht das dann wie folgt aus:
+
+<p align="center"><img src="" width="400px"></p>
+
 <h2 id="spielexport">Das Spiel exportieren</h2>
 
 <h1 id="ergebnis">Das Ergebnis</h1>

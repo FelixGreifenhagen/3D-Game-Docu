@@ -222,6 +222,15 @@ Im Text(Script) wird zunächst einmal folgendes eingestellt: Das Font-Style wird
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55875660-e151cd00-5b95-11e9-973a-2b2df7a516c1.png" width="400px"></p>
 
+Als nächstes soll auf den Text ein Schatten angewendet werden. Dafür wird das für Texte vorbereitete Shadow-Script von Unity verwendet. Beim Text wird also über <b>Add Component > Shadow</b> das Script hinzugefügt und folgendes eingestellt:
+
+Die Effekt Distance wird für X und Y auf 4 bzw. -4 gestellt. Zudem wird für die Effekt Color die Farbe schwarz ausgewählt:
+
+<p align="center"><img src="" width="400px"></p>
+
+
+
+
 Nun ist das Menü allerdings dauerhaft geöffnet und die Buttons haben keine Funktion. Um dies zu ändern, wird auf dem Canvas ein neues Script namens "EscapeMenu" erstellt. In diesem werden dann alle Bedingungen geschrieben, nach denen das Menü geöffnet wird und alle Aktionen definiert, die die erstellten Buttons ausführen sollen.
 
 Wie alle C# Scripte in Unity hat auch dieses zu Beginneine Start() und eine Update() Funktion. Die Start()-Funktion kann gelöst werden, da sie in diesem Fall nicht benötigt wird.
@@ -291,7 +300,6 @@ public class EscapeMenu:MonoBehaviour {
 ```
 Zunächst zur Pause() Funktion:
 Diese hat den ausgangspunkt, dass das Menü geschlossen ist. Um es daher zu öffnen (da ja beim pausieren das Pausemenü geöffnet werden muss) wird das zu Beginn gesetzte GameObject pauseMenuUI mit dem Befehl pauseMenuUI.SetActive(true) auf aktiv gesetzt, wodurch es dem Spieler sichtbar wird. Als nächsten Schritt muss dafür gesorgt werden, dass das Spiel währenddessen nicht weiterläuft. Dies geschieht, indem die im Spiel vorhandene Zeit auf null gesetzt wird. Das geschieht mithilfe des Befehls Time.timeScale = 0f; - die Time.timeScale (also die "Spielzeit") wird auf null gesetzt, sie wird angehalten. Als letzten Schritt muss noch die Variable GamePaused auf true gesetzt werden, um beim nächsten Escape-drücken signalisiert wird, dass das Spiel sich aktuell im Pause-Modus befindet. 
-
 
 Nun zur Resume() Funktion
 Sobald diese ausgeführt wird, muss natürlich das Menü nach dem Tastendruck wieder verschwinden. Um dies zu erreichen, wird pauseMenuUI, also das zuvor initialisierte GameObject, mittels pauseMenuUI.SetActive(false) als nicht aktiv (false) gesetzt. Es wird also deaktiviert! Als nächsten Schritt muss natürlich die Spielzeit wieder auf "normal" gesetzt werden. Daher wird hier einfach Time.timeScale = 1f; gesetzt. Als letztes wird die GamePaused Variable auf false gesetzt, das Spiel geht nämlich von hier an weiter.

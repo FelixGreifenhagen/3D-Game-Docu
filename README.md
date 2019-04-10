@@ -763,7 +763,9 @@ public GameObject InselZentrum1;
         audioSrc1.Stop();
     } 
 ```
-Damit nun was passiert, muss das ganze implementiert werden. Das Script wird auf das vorher erstellte Objekt gezogen. Als nächstes wird 
+Damit nun was passiert, muss das ganze implementiert werden. Das Script wird auf das vorher erstellte Objekt gezogen. Als nächstes wird unter Add Components eine AudioSource hinzugefügt:
+
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55887426-c8551600-5bad-11e9-8c89-501fbe11ca4d.png" width="400px"></p>
 
 <h1 id="gameplay">Das Gameplay</h1>
 

@@ -845,7 +845,7 @@ Als nächstes wird ein Script geschrieben, welches all diese Schritte vollzieht.
 public class PickUpScript:MonoBehaviour {
     public GameObject KeyBox;
     public GameObject Player;
-    public GameObject AxeTextUI
+    public GameObject KeyTextUI
     public float Distance;
 }
 ```
@@ -857,7 +857,7 @@ Als nächstes wird die Start-Funktion gefüllt:
 
 ```
 void Start() {
-    AxeTextUI.SetActive(false);
+    KeyTextUI.SetActive(false);
 }
 ```
 Da nämlich aktuell der Schriftzug noch immer dauerhaft angezeigt wird, wird er in dieser Zeile zunächst einmal standartmäßig auf nicht-anzeigen gestellt.
@@ -885,22 +885,22 @@ In dieser werden dann folgende Befehle verwendet:
 
 ```
 if(GameObject.Find("Schlüssel") != null) {
-    AxeTextUI.SetActive(true);
+    KeyTextUI.SetActive(true);
     if(Input.GetKey(KeyCode.E)) {
         Destroy(gameObject)
-        AxeTextUI.SetActive(false);
+        KeyTextUI.SetActive(false);
     }
 }
 ```
 
 Ist nun der Abstand kleiner als 3 und existiert der Schlüssel noch werden diese Aktionen getätigt:
 
-Zuerst wird der Text mit AxeTextUI.SetActive(true) auf "anzeigen" gesetzt, sodass der Spieler diesen auf dem Bildschirm eingeblendet sieht. Als nächstes wird dann geprüft, ob der Spieler E drückt. Wie genau dies funktioniert bzw. was der Code bedeutet, lässt sich <a href="#">hier</a> nachlesen. Wenn der Spieler E drückt, werden zwei Aktionen ausgeführt: Erstens wird der Schlüssel, also das gameObject auf dem das Script drauf ist mittels Destroy(gameObject) zerstört. Zweitens wird der Text, der zum aktuellen Laufzeit-punkt noch eingeblendet ist, ausgeblendet. Der Spieler bekommt also einen Text angezeigt und sobald er E drückt wird dieser wieder ausgeblendet und der Schlüssel zerstört. 
+Zuerst wird der Text mit KeyTextUI.SetActive(true) auf "anzeigen" gesetzt, sodass der Spieler diesen auf dem Bildschirm eingeblendet sieht. Als nächstes wird dann geprüft, ob der Spieler E drückt. Wie genau dies funktioniert bzw. was der Code bedeutet, lässt sich <a href="#">hier</a> nachlesen. Wenn der Spieler E drückt, werden zwei Aktionen ausgeführt: Erstens wird der Schlüssel, also das gameObject auf dem das Script drauf ist mittels Destroy(gameObject) zerstört. Zweitens wird der Text, der zum aktuellen Laufzeit-punkt noch eingeblendet ist, ausgeblendet. Der Spieler bekommt also einen Text angezeigt und sobald er E drückt wird dieser wieder ausgeblendet und der Schlüssel zerstört. 
 
 Als letztes muss noch eine Option eingebaut werden, sollte der Spieler sich wieder vom Schlüssel entfernen. Dafür wird ein else an der if-Schleife angebracht, in der geprüft wird, ob der Abstand kleiner als 3 ist. In diese wird folgender Code geschrieben:
 ```
 else {
-    AxeTextUI.SetActive(false);
+    KeyTextUI.SetActive(false);
 }
 ```
 Der Befehl wurde zuvor bereits erklärt und bewirkt diesmal wieder ein Ausblenden des Textes. Damit ist das Script abgeschlossen. Der gesamte Code sieht dann wie folgt aus:
@@ -909,10 +909,10 @@ Der Befehl wurde zuvor bereits erklärt und bewirkt diesmal wieder ein Ausblende
 public class PickUpScript : MonoBehaviour {
     public GameObject KeyBox;
     public GameObject Player;
-    public GameObject AxeTextUI;
+    public GameObject KeyTextUI;
     public float Distance;    
     void Start() {
-        AxeTextUI.SetActive(false);
+        KeyTextUI.SetActive(false);
     }
     void Update() {
         Distance = Vector3.Distance(KeyBox.transform.position,Player.transform.position);
@@ -922,12 +922,12 @@ public class PickUpScript : MonoBehaviour {
                 AxeTextUI.SetActive(true);
                 if (Input.GetKey(KeyCode.E)) {
                     Destroy(gameObject);
-                    AxeTextUI.SetActive(false);
+                    KeyTextUI.SetActive(false);
                 }                   
             }
         }
         else {
-            AxeTextUI.SetActive(false);
+            KeyTextUI.SetActive(false);
         }
     }
 }
@@ -947,6 +947,8 @@ Dafür muss natürlich auch in Blender eine Animation erstellt werden, in der si
 neue transition, script erstellen, transistion condition, opendoor script mit inhalt füllen, an objekt anheften, das ui, ui stylen, ui script: ein und ausblenden
 
 <h2 id="missionen">Missionen</h2>
+
+Nun soll der Spieler auch wissen, was er machen soll, um im Spiel weiter zu kommen. Dafür wird zunächst ein Missionstext erstellt. Wie man das Canvas und diesen Text erstellt, lässt sich 
 
 <h2 id="healthsystem">Das Health-System</h2>
 

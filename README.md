@@ -199,7 +199,41 @@ public class PlayerController : MonoBehaviour {
 
 Der Controller hat die Haupt-Klasse: PlayerController. Diese ist vom Typ MonoBehaviour, die Klassenart, die Funktionen wie Start() und Update() bereitsstellt. Zudem die Funktion LateUpdate(), die allerdings erst später wichtig sein wird. In der Klasse sind die Funktionen Start() und Update(). Beide sind void, haben also keinen Rückgabewert. Die Start() Funktion wird zu Beginn des Programmablaufs nur ein einziges Mal aufgerufen. Die Update Funktion wird dann dauerhaft Frame by Frame aufgerufen. Daher werden in dieser die Abfragen wie Tastatureingaben oder Maus-Bewegungen abgerufen und auf das zu bewegende Objekt übertragen. 
 
-HIER MUSS NOCH WAS HIN
+Damit man nun Laufen kann muss zunächst außerhalb der Hauptklasse folgendes ergänzt werden:
+
+```
+[RequireComponent(typeof(Rigidbody))] 
+
+public class PlayerController : MonoBehaviour {
+    void Start() {       
+    }
+    void Update() {
+    }
+}
+```
+Dies definiert, dass im Controller von Elementen (wie dem Hauptcharakter) ein Komponent (wie es auch Collider, Scripte etc sind) der Component "Rigidbody" angesprochen werden darf. Der Rigidbody ist verantwortlich dafür, ein Element in Unity, in diesem Fall den Charakter, von A nach B zu bewegen. Die Zeile erlaubt es also,  den Rigidbody auf dem Element, auf dem auch dieses Script liegt, innerhalb des Scriptes zu verändern, sprich, innerhalb des Scriptes dürfen Veränderungen in der Position des Charakters vorgenommen werden.
+
+Als nächstes müssen innerhalb der Funktionen folgende Zeilen ergänzt werden:
+
+Zunächst werden einige Variablen benötigt:
+
+```
+public class PlayerController : MonoBehaviour {
+    public float moveSpeed;
+    private float mouseX = 0.0f;
+    private float mouseY = 0.0f;
+    public float speedX = 2.0f;
+    public float speedY = 2.0f;
+    void Start() {       
+    }
+    void Update() {
+    }
+}
+```
+
+WARUM IST MOUSEX AUCH AUF 0 GESETZT???? KONTROLLIEREN!!!
+
+Da der Controller nicht nur Bewegung sondern auch Rotation des Charakters definieren soll, werden die meisten Variablen für die Rotation benötigt. Die erste float ist die Bewegungsgeschwindigkeit. Da man sie später innerhalb des Unity-Interface noch optimieren können soll, wird sie public definiert. Dann werden für die X und Y Mausbewegung stärke und Geschwindigkeit der Rotation in vier Variablen definiert.
 
 <h2 id="pausemenu">Das Pause-Menü</h2>
 

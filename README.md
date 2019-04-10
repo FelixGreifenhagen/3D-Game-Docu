@@ -216,7 +216,11 @@ Im Anschluss wird unter diesem Panel mit <b>Rechtsklick > UI > Button</b> ein Bu
 <p align="center"><img width="300px" src="https://user-images.githubusercontent.com/42578917/51205414-24d5cb80-1906-11e9-9a3a-44e1af32befe.png"></p>
 <span id="createbuttons"></span>
 
-(HIER MUSS NOCH DIE ERKLÄRUNG HIN, WIE DIE BUTTONS ERSTELLT UND GESTYLED WURDEN)
+Die Buttons sind aktuell noch nicht besonders ansehnlich. Damit diese nun schöner sind, werden sie noch etwas verändert. Dafür muss zunächst einmal die Schrift verändert werden. Im Buttons-Element wird also das untergeordnete Text-Element ausgewählt und rechts im Inspektor folgendes verändert:
+
+Im Text(Script) wird zunächst einmal folgendes eingestellt: Das Font-Style wird auf Bold gestellt, die Font size wird auf 50 gestellt und die Color auf weiß:
+
+
 
 Nun ist das Menü allerdings dauerhaft geöffnet und die Buttons haben keine Funktion. Um dies zu ändern, wird auf dem Canvas ein neues Script namens "EscapeMenu" erstellt. In diesem werden dann alle Bedingungen geschrieben, nach denen das Menü geöffnet wird und alle Aktionen definiert, die die erstellten Buttons ausführen sollen.
 

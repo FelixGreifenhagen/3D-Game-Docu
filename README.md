@@ -483,6 +483,8 @@ Damit kann man dann die Größe der Würfel verändern. Als letztes müssel die 
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55874364-718e1300-5b92-11e9-8e5f-582874db5e1e.png" width="500px"></p>
 
+Da der Collider weiterhin auf dem Würfel bleibt, hat man weiterhin den Collisionswiederstand auf ihnen. Nun hat man also unsichtbare Wände, durch die man NICHT hindurchlaufen kann. Als letztes werden die Würfel noch als Wände angeordnet und schafft so eine Border für den Charakter und die Spielwelt.
+
 <h2 id="texturen">Die Texturen</h2>
 
 Damit das Terrain auch einigermaßen aussieht, muss es auch mit Texturen ausgestattet werden. Dafür geht man unter <b>Terrain > Paint Terrain > Paint Texture </b> unten auf einen der Brushes und darpber unter <b>Edit Terrain Layers</b> weitere Texturen hinzufügen. Die Texturen werden in diesem Fall in Microsoft Photoshop erstellt.

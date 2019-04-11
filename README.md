@@ -319,19 +319,19 @@ Der zweite Wert in der Klammer ist Mathf.Max(-50, mouseY -= speedY * Input.GetAx
 
 Man geht davon aus dass mouseY für den Anfang 0 ist:
 
-1. Die Maus wird stark nach oben bewegt: Dann ist das Ergebnis von Mathf.Max(-50, mouseY -= speedY * Input.GetAxis("Mouse Y")) dass mouseY sehr klein ist. Kleiner als -50. Also wird -50 zurückgegeben. Dann wird in der Klammer von Mathf.Min(50 und -50) verglichen und entsprechend -50 zurückgeliefert. Daher ist die Ausgabe wenn man die Maus start nach oben bewegt -50 und damit ist -50 der maximal mögliche Drehwinkel nach oben
+1. Die Maus wird stark nach oben bewegt: Dann ist das Ergebnis von Mathf.Max(-50, mouseY -= speedY * Input.GetAxis("Mouse Y")) dass mouseY sehr klein ist. Kleiner als -50. Also wird -50 zurückgegeben. Dann wird in der Klammer von Mathf.Min(50 und -50) verglichen und entsprechend -50 zurückgeliefert. Daher ist die Ausgabe wenn man die Kamera start nach oben bewegt -50 und damit ist -50 der maximal mögliche Drehwinkel nach oben
 
 2. Die Maus wird leicht nach oben bewegt: Dann ist mouseY in der Mathf.Max Klammer größer als -50 und wird daher zurückgeliefert. Da es aber immernoch im Minusbereich liegt, wird es bei der Mathf.Min Klammer auch zurückgeliefert. Daher wird es also um den Faktor der Mausbewegung gedreht, der ja aber größer als -50 aber kleiner als 0 sein muss. 
 
-3. Die Maus wird leicht nach unten bewegt: Dann ist mouseY positiv. Dadurch wird auch dieser Positive Wert von Mathf.Max zurückgegeben. Verglichen werden in Mathf.Min dann ein die Werte 50 und X < 50. Es wird also X zurückgeliefert und die Maus um den Wert X gedreht
+3. Die Maus wird leicht nach unten bewegt: Dann ist mouseY positiv. Dadurch wird auch dieser Positive Wert von Mathf.Max zurückgegeben. Verglichen werden in Mathf.Min dann ein die Werte 50 und X < 50. Es wird also X zurückgeliefert und die Kamera um den Wert X gedreht
 
-4. Die Maus wird stark nach unten bewegt: mouseY wird über +50, wird daher in der Mathf.Max Klammer als Ergebnis geliefert. Da aber dann 50 und X > 50 in der Mathf.Min Klammer verglichen werden, wird 50 geliefert und die Maus wird um +50 gedreht.
+4. Die Maus wird stark nach unten bewegt: mouseY wird über +50, wird daher in der Mathf.Max Klammer als Ergebnis geliefert. Da aber dann 50 und X > 50 in der Mathf.Min Klammer verglichen werden, wird 50 geliefert und die Kamera wird um +50 gedreht.
 
 Die Ergebnisse der Szenarien sind also:
 
 1. Stark nach oben: Kamera wird um -50 gedreht
-2. leicht nach oben: Kamera wird um  0 > X > -50 gedreht
-3. leicht nach unten: Kamera wird um 0 < X < 50 gedreht
+2. Leicht nach oben: Kamera wird um  0 > X > -50 gedreht
+3. Leicht nach unten: Kamera wird um 0 < X < 50 gedreht
 4. Stark nach unten:  Kamera wird um +50 gedreht
 
 Wie zu erkennen, ist, egal welche Eingabe der Maus vorgenommen wird, die Rotation der Maus immer auf den Faktor X zwischen +50 und -50 begrenzt. So wird dann also auch die gesamte Kamerabewegung begrenzt.

@@ -184,6 +184,7 @@ Dies geschieht, da der Collider ein Capsule-Collider, also teilweise rund, ist. 
 Damit sich der Charakter nun bewegt, muss als nächstes ein Player-Controller geschrieben werden:
 
 <h3 id="charactercontroller">Der Character-Controller</h3>
+    
 Als nächstes wird in den Assets ein Character Controller über Rechtsklick > Create > C#-Script erstellt. In diesem werden dann sämtliche Zeilen geschrieben, mit denen sich dann der Charakter im Game bewegt. 
 
 ``` 
@@ -299,10 +300,23 @@ Das war soweit die Bewegung und Rotation auf der X Achse. Das gesamte Script wir
 
 HIER EIN BILD VON DER ZUWEISUNG
 
-Nun muss der Charakter allerdings noch nach oben und unten schauen können. Dafür wird
+Nun muss der Charakter allerdings noch nach oben und unten schauen können. Dafür wird ein neues Script names VerticalCameraMovement.cs erstellt.
 
-HIER DIE ERLÄUTERUNG VOM CAMERASCRIPT USW.
+```
+public class VerticalCameraMovement : MonoBehaviour
+{
+    public float speedY = 2.0f; 
+    private float mouseY = 0.0f;
+    void Update()
+    {         
+        mouseY = Mathf.Min(50, Mathf.Max(-50, mouseY -= speedY * Input.GetAxis("Mouse Y")));
+        transform.eulerAngles = new Vector3(mouseY, 0.0f, 0.0f);     
+    }
+}
+```
+Die Funktionsweise ist sehr ähnlich der von der X-Achsen Bewegung, daher soll diesmal nur das erläutert werden, was sich geändert hat. Undzwar soll sich die Kamera nach oben und unten ebenfalls mit der Maus bewegen. Nur diesmal soll die Rotation nur bis zu einem bestimmten Winkel stattfinden. Darüber hinaus soll die Rotation geblockt werden, damit man die Kamera nicht "obenrum" im Kreis drehen kann. Also wird die mouseY
 
+Der Rest wird genauso gehändelt, wie die X-Bewegung der Kamera. Nur wird das Script diesmal nicht auf den Charakter, sondern auf die MainCamera gezogen. Dies wird gemacht, da nicht der Charakter, mit angehängter Kamera gedreht werden soll, sondern nur die Kamera. 
 
 <h2 id="pausemenu">Das Pause-Menü</h2>
 
@@ -471,6 +485,34 @@ Damit diese Bedingungen und Funktionen nun auch Anwendung finden gibt es in Unit
 
 <p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/51206209-d45f6d80-1907-11e9-964e-1f93cec748b7.png"></p><br>
 <p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/51206147-b8f46280-1907-11e9-8b6f-918cb9c937eb.png"></p>
+
+Als letztes soll natürlich auch alles im Spiel gestoppt werden, wenn das Spiel gestoppt wird. Also muss noch, wenn das Escape-Menü geöffnet ist, die Bewegung des Charakters und die Bewegung der Kamera blockiert werden. Daher wird in beiden Scripten noch folgendes eingefügt:
+
+Im PlayerController:
+
+```
+bool isPaused = EscapeMenu.GamePaused;
+if (isPaused == false) 
+{
+    mouseX += speedX * Input.GetAxis("Mouse X");
+    mouseY -= speedY * 0f;
+}
+```
+Damit wird abgefragt, ob das Spiel im EscapeMenu Script pausiert ist. Durch die if-Schleife wird die Rotation des Charakters nur dann erlaubt, wenn das Spiel nicht pausiert wird.
+
+Und im VerticalCameraMovement Script:
+
+```
+bool isPaused = EscapeMenu.GamePaused;     
+if(isPaused == false)
+{
+    mouseX += speedX * Input.GetAxis("Mouse X");
+    mouseY = Mathf.Min(50, Mathf.Max(-50,
+    mouseY -= speedY * Input.GetAxis("Mouse Y")));
+    transform.eulerAngles = new Vector3(mouseY, mouseX, 0.0f);
+}
+```
+Auch hier wird abgefragt ob das Spiel pausiert ist und dann mittels einer if-schleife im Zweifel die Kamera-Bewegung blockiert wird.
 
 <h2 id="mousecursor">Der Mouse Cursor</h2>
 
@@ -1294,7 +1336,17 @@ Damit werden die ausgeübten Aktionen nur ausgeführt, wenn der Spieler sich noc
 
 Damit das ganze nun auch in Unity wirksam wird, müssen noch einige Einstellungen im GUI getroffen werden. Als erstes muss das healthScript auf den Player gezogen werden. Als nächstes müssen die vorhandenen Variablen zugewiesen werden. Dafür wird auf "Ozean" das Wasser-Objekt gezogen. Als nächstes soll der GameOverScreen zugewiesen werden. Dafür muss zunächst ein solcher Screen erstellt weden. Dafür wird ein neues Canvas mit einem Text und einem Button erstellt und so eingestellt, wie es benötigt wird. Wie das ganze geht, ist <a href="#createbuttons">hier</a> nachzulesen. Dieser Screen wird dann auf das GameOverScreen-Feld gezogen und damit zugewiesen.
 
-Variable im  im CaneraController und VerticalCamera script 
+Das selbe gilt für das VerticalCameraMovement Script und den PlayerController. Hier wurde bereits als Rücksicht auf das Pause-Menü eine if-Schleife eingefügt. Diese if-Schleife muss um folgendes ergänzt werden:
+
+```
+ float checkHealth = healthScript.healthTime;
+ if(isPaused == false && checkHealth > 1)
+ {
+      ...
+ }
+```
+
+In beiden Scripten sorgt das dafür, dass die Aktionen in der if-Schleife nur dann erlaubt sind, wenn das Spiel nicht pausiert ist UND der Spieler noch lebt. 
 
 <h2 id="spieltimer">Spiel-Timer und Vulkanausbruch</h2>
 

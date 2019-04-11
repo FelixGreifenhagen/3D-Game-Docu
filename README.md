@@ -948,7 +948,7 @@ public class crapTalk : MonoBehaviour
 
 ```
 
-Die Funktionsweise ist relativ simpel. Was die einzelnen Befehle bedeuten bzw. was sie machen wird im Kapitel <a href="#objektesammeln">Objekte aufsammeln</a> ausführlich erläutert. In diesem Fall wird von Beginn an ein Timer hochgezählt (Timer wird im Kapitel <a href="#spieltimer">Spiel-Timer und Vulkanausbruch</a> erläutert) und abhängig von dem Timer werden die einzelnen Texte ein und ausgeblendet. Zuletzt muss das erstellte Script noch auf die Krabbe gezogen und alle Texte und Objekte zugeordnet werden.
+Die Funktionsweise ist relativ simpel. Was die einzelnen Befehle bedeuten bzw. was sie machen wird im Kapitel <a href="#objektesammeln">Objekte aufsammeln</a> ausführlich erläutert. In diesem Fall wird von Beginn an ein Timer hochgezählt (Timer wurde bereits zuvor erläutert) und abhängig von dem Timer werden die einzelnen Texte ein und ausgeblendet. Zuletzt muss das erstellte Script noch auf die Krabbe gezogen und alle Texte und Objekte zugeordnet werden.
 
 Wenn die Krabbe fertig mit dem Reden ist, soll die Szene auf die Hauptszene geändert werden. Dafür wird ein neues Script namens IntroTimer.cs erstellt und folgender Code eingefügt:
 
@@ -972,7 +972,7 @@ public class IntroTimer : MonoBehaviour
     }
 }
 ```
-Auch hier wird ein Timer hochgezählt und bei einem bestimmten Wert die Hauptszene geladen. Wie bereits erwähnt wird der Timer im Kapitel  <a href="#spieltimer">Spiel-Timer und Vulkanausbruch</a> genauer erläutert. Damit das Script funktioniert, wird ein neues Empty GameObject erstellt und das Script draufgezogen. Das reicht aus um es wirksam zu machen.
+Auch hier wird ein Timer hochgezählt und bei einem bestimmten Wert die Hauptszene geladen. Damit das Script funktioniert, wird ein neues Empty GameObject erstellt und das Script draufgezogen. Das reicht aus um es wirksam zu machen.
 
 Als allerletztes soll, nach dem Wechsel von Intro zur Hauptszene zunächst ein Blackscreen erscheinen, der langsam ausgeblendet wird, also ein Fade-Out hat. Dafür wird auf die Hauptszene gewechselt und dort ein neues Canvas erstellt. Dann wird ein Panel erstellt und dem Canvas untergeordnet. Die Farbe des Panels wird auf komplett schwarz geändert. Zudem wird der AlphaKanal komplett hochgestellt, damit der Bildschirm komplett schwarz ist. Als nächstes wird ein neues Script namens mainSceneBlack.cs erstellt:
 
@@ -1013,7 +1013,7 @@ Daran muss nichts mehr konfiguriert werden. CanvasGroup ist simpel gesagt eine K
 
 Mit dem Script, der CanvasGroup-Komponente und der richtigen Farbe sieht das Panel dann wie folgt aus:
 
-<p align="center"><img src="" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55969208-b04cc780-5c7d-11e9-82b5-67b6daec1f3d.png" width="400px"></p>
 
 <h2 id="objektesammeln">Objekte aufsammeln</h2>
 

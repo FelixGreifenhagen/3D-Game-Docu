@@ -888,6 +888,11 @@ Beide Zeilen machen im Script theoretisch das gleiche.
 
 Time.deltaTime ist die Unity-Interne zeitangabe. Time.deltaTime ist quasi eine Stoppuhr, die in Unity ab dem Start des Spiels anfängt  zu laufen. Sie kann aber auch mittels Script manipuliert oder angehalten werden. In diesem Fall wird damit einfach ein Timer initialisiert. Der Vorteil davon, diesen zu verwenden ist, dass im PauseScript ja Time.deltaTime auf null gesetzt wird. Da der Timer in diesem Fall von Time.deltaTime abhängig ist, wird auch dieser Timer gestoppt, wenn das PauseMenü geöffnet wird. In diesem Projekt wurden alle timer mit Time.deltaTime gesteuert. Daher stoppen die Timer alle, wenn auch das Spiel mittels Esc.-Taste gestoppt wird.
 
+Nun soll sich die Krabbe aber auch fortbewegen. Dies aber nicht einfach so oder auch dauerhaft, sondern sie soll einen bestimmten Weg eine bestimmte Zeit lang entlanglaufen. Um das zu erreichen, wurde in diesem Fall auf ein bereits bestehendes Script zurückgegriffen. 
+
+Der Youtuber kinan gh hat in einem Tutorial auf Youtube ein Script verfasst, welches genutzt werden kann, um ein GameObjekt in Unity bestimmte zuvor manuell gesetzte Waypoints ablaufen zu lassen und dann stehenzubleiben. Die Quelle für dieses Video ist unten in dieser Dokumentation unter <a href="#quellen">Quellen</a> bzw. dieser <a href="https://www.youtube.com/channel/UCGOgRqMyWE6VPSCG-qxVkmw">Link</a>
+
+Quelle: https://www.youtube.com/channel/UCGOgRqMyWE6VPSCG-qxVkmw (kinan gh) 
 
 HIER MUSS NOHC EINE ERLÄUTERUNG HIN, WIE DIE KRABBE LÄUFT ETC.
 

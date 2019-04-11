@@ -1126,11 +1126,75 @@ Anschließend wird der Code abgespeichert. Dieser muss nun nur noch "wirkend" ge
 
 Damit nun das Aufsammeln des Schlüssels auch etwas bringt, muss irgendwas passieren, nachdem man ihn aufgesammelt hat. In diesem Fall soll es möglich sein, wenn der Schlüssel aufgesammelt wurde, eine Tür damit zu öffnen. Dafür muss natürlich zunächst einmal ein Haus mit Tür erstellt und in Unity platziert werden:
 
-HIER BILD DES HAUSES IN UNITY
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55969895-d9218c80-5c7e-11e9-9ef3-75500f4fe662.png" width="500px"></p>
 
 Dafür muss natürlich auch in Blender eine Animation erstellt werden, in der sich die Tür öffnet. Das ganze wird dann in Unity implementiert. Danach wird ein neuer Animator erstellt. Mit <b> Rechtsklick > Create > Animator Controller </b> lässt sich dieser erstellen. Als nächstes muss auf das erstellte Objekt (die Hütte) ein Animator angeheftet werden. Dafür muss man einfach die zuvor in Blender erstellte Animation auf das Modell der Hütte ziehen. Damit wird automatisch einer erstellt. Auf diesen Animator muss nun im Feld Controller der neu erstellte Animator Controller platziert werden. 
 
-neue transition, script erstellen, transistion condition, opendoor script mit inhalt füllen, an objekt anheften, das ui, ui stylen, ui script: ein und ausblenden
+Als nächstes wird der Animator Controller geöffnet. In diesem wird eine neue Transition erstellt und ein Parameter namens openDoor. (für eine Erläuterung s.h. <a href="#animationcontroller">Der Animator-Controller</a>). Nun wird ein gleichnamiges Script erstellt mit folgendem Inhalt:
+
+```
+public class openDoor : MonoBehaviour
+{
+    public Animator HouseAnimation;
+    public GameObject door;
+    public float Distance;
+    public GameObject Player;
+    void Start()
+    {
+        HouseAnimation = GetComponent<Animator>();
+    }
+    void Update()
+    {
+        Distance = Vector3.Distance(door.transform.position, Player.transform.position);
+        if (GameObject.Find("Schlüssel") == null && Distance <= 8) { 
+            if(Input.GetKey(KeyCode.E))
+            {
+                HouseAnimatiomn.SetBool("openDoor", true);
+            }            
+        }
+    }
+}
+```
+Es wird wieder der Animator Controller selektiert und darin die Boolean Condition "openDoor" geschaltet. Diesmal ist es allerdings nicht abhängig von einem Tastendruck oder Timer, sondern davon, ob der Schlüssel, den man ja erst einsammeln muss, um die Tür zu öffnen, noch existiert. Dafür ist der Befehl GameObject.Find("Schlüssel") == null zuständig. Zudem wird wieder geprüft, ob der Spieler sich in einem gewissen Umkreis um die Tür befindet, damit er nicht einfach so die Tür von 200 Metern weit weg öffnen kann. Wenn das der Fall ist, und der Spieler dann E drückt, wird die Variable auf true geschaltet und somit die Animation der Tür ausgeführt. Eine Erläuterung der Distance und des GameObject.Find("Schlüssel") == null findet sich im Kapitel <a href="objektesammeln">Objekte aufsammeln</a>.
+
+Als letztes soll noch ein Text ein und ausgeblendet werden wenn es möglich ist, die Tür zu öffnen. Dafür kann allerdings auch das Script für das aufsammeln des Schlüssels (<a href="objektesammeln">Objekte aufsammeln</a>) verwendet werden, da es nahezu identisch in der Funktionsweise ist. Es wird lediglich um folgende if-Schleife ergänzt:
+
+```
+if (GameObject.Find("Schlüssel") == null && Distance <= 8) {
+}        
+```
+Damit wird geprüft, ob der Schlüssel noch existiert. Mit dieser Ergänzung sieht das Script zum öffnen der Tür wie folgt aus:
+
+```
+public class openDoorText : MonoBehaviour
+{
+    public GameObject GameTextUI;
+    public GameObject door;
+    public float Distance;
+    public GameObject Player;
+    public bool doorOpen;    
+    void Update()
+    {
+        Distance = Vector3.Distance(door.transform.position, Player.transform.position);
+        if (GameObject.Find("Schlüssel") == null && Distance <= 8) {
+            if(doorOpen == false)
+            {
+                GameTextUI.SetActive(true);
+            }            
+            if(Input.GetKey(KeyCode.E))
+            {
+                doorOpen = true;
+            }
+        }
+        if(Distance > 8 || doorOpen == true)
+        {
+            GameTextUI.SetActive(false);
+        }
+    }
+}
+```
+
+Zuletzt muss natürlich wieder ein Text erstellt, gestylt und positioniert, sowie richtig zugeordnet werden. 
 
 <h2 id="missionen">Missionen</h2>
 

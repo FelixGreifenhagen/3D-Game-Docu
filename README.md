@@ -726,7 +726,11 @@ Als nächstes soll ein wenig Atmosphäre in das Spiel gebracht werden. Um das zu
 
 Um die Farbe des Lichts zu verändern, wählt man in den Elementen das "Directional Light" aus, welches standartmäßig in jeder Szene vorhanden ist. Links im Inspektor lässt sich dann im Reiter "Light" unter "Color" die Farbe auswählen:
 
-<p align="center"><img src="" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55971757-6a463280-5c82-11e9-9eef-6d3f951c5b34.png" width="400px"></p>
+
+Zudem kann in Unity die Textur und das Verhalten des Himmels verändert werden
+
+HIER EINE ERLÄUTERUNG WIE DER HIMMEL GESTALTET WURDE
 
 <h2 id="musik">Die Musik</h2>
 

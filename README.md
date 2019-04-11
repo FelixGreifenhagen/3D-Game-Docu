@@ -1542,6 +1542,11 @@ Sobald der Ordner ausgewählt wurde, beginnt der Export. Wenn vor dem Export all
 <p>(Zum Ansehen des Walkthrough vom fertigen Spiel bitte auf das Bild oder <a href="https://www.youtube.com/watch?v=K6oZPDii_Wo&feature=youtu.be">hier</a> klicken!)</p>
 
 <h1 id="nachwort">Nachwort</h1>
+
+Diese Dokumentation soll natürlich nur einen kleinen Einblick in die Arbeit der letzten Wochen am Spiel WHYlands geben. Natürlich spiegelt sie nicht die komplette Arbeitszeit von über 100 Stunden an diesem Projekt dar, aber sie erläutert gut die Mechanismen und Vorgehensweise, wie ein Dritter dieses Projekt reproduzieren oder als Grundlage für sein eigenes Projekt nutzen kann. Der Umfang von der Unity Engine ist natürlich ersichtlich und es ist zu erkennen, welche Möglichkeiten sie gibt für Anfänger, ein erstes eigenes Spiel zu produzieren. Auch umfangreichere Spiele lassen sich eindeutig mit Unity umsetzen. Dennoch ist auffällig, dass bereits in diesem Projekt Unity an seine Grenzen gestoßen ist. Dies könnte einerseits an der in diesem Projekt verwendeten Gratis-Version und dessen limitierter Engine-Leistung liegen, andererseits auch an der Ausrichtung von Unity auf vor allem Mini-Games und Anfängerprojekte. Daher kann sie gut genutzt werden, um Mini-Games oder kleine Projekte für den Anfang umzusetzten, aber sollte auch darauf geachtet werden, dass bei der Umsetzung von deutlich größeren Projekten vielleicht eine andere Engine wie die Unreal Engine oder die CryEngine verwendet werden muss.
+
+Dennoch war es sie für dieses Projekt mehr als ausreichend und kann Anfängern sehr gut die  Anfänge der Spiele-Entwicklung nahebringen und zeigen, wo die Grenzen sind und was ein einzelner für ein Spiel realisieren kann. 
+
 <h1 id="quellen">Quellen</h1>
 
 * Design-Inspiration: https://www.artstation.com/emekozben

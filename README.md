@@ -722,6 +722,12 @@ Zwar wurden diese in diesem Projekt nicht verwendet, aber die Standart Assets bi
 
 <h2 id="himmelundlicht">Der Himmel und das Licht</h2>
 
+Als nächstes soll ein wenig Atmosphäre in das Spiel gebracht werden. Um das zu erreichen, lässt sich in Unity die Farbe des Lichtes und die Textur des Himmels anpassen. 
+
+Um die Farbe des Lichts zu verändern, wählt man in den Elementen das "Directional Light" aus, welches standartmäßig in jeder Szene vorhanden ist. Links im Inspektor lässt sich dann im Reiter "Light" unter "Color" die Farbe auswählen:
+
+<p align="center"><img src="" width="400px"></p>
+
 <h2 id="musik">Die Musik</h2>
 
 Nun soll ein wenig Musik in das Spiel hinein. Dafür wird natürlich zunächst einmal Musik benötigt. In diesem Fall wurde online Musik verwendet, die bei Verlinkung der Quelle zur öffentlichen Nutzung steht. 

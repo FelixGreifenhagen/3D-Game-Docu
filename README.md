@@ -1237,13 +1237,7 @@ Dafür geht man in den Build Settings unten rechts auf "Build". Damit öffnet si
 Sobald der Ordner ausgewählt wurde, beginnt der Export. Wenn vor dem Export alle in der Konsole angezeigten Fehler korrigiert wurden, müsste der Export nach etwa 2-3 Minuten beendet sein. Anschließend daran öffnet sich der Ordner, in der Export gespeichert wurde. In dieser sind dann alle Dateien vorhanden, die für den Start des Spiels benötigt werden und eine .exe Datei. Wenn diese gestartet wird, öffnet sich ein kleines Fenster, in der man zuvor Bildschirmgröße und Auflösung ausgewählt werden können und wo man das Spiel starten kann. 
 
 <h1 id="ergebnis">Das Ergebnis</h1>
-<object width="425" height="350">
-  <param name="movie" value="http://www.youtube.com/user/wwwLoveWatercom?v=BTRN1YETpyg" />
-  <param name="wmode" value="transparent" />
-  <embed src="https://www.youtube.com/watch?v=K6oZPDii_Wo&feature=youtu.be"
-         type="application/x-shockwave-flash"
-         wmode="transparent" width="425" height="350" />
-</object>
+[![Walkthrough WHYlands](https://img.youtube.com/vi/K6oZPDii_Wo/0.jpg)](https://www.youtube.com/watch?v=K6oZPDii_Wo&feature=youtu.be)
 
 <h1 id="nachwort">Nachwort</h1>
 <h1 id="quellen">Quellen</h1>

@@ -900,13 +900,120 @@ In diesem Video ist das verwendete Script inklusive einer Erläuterung zu sehen.
 
 Mittels einer Eingabe unter "Size" lässt sich die Menge an Objekten einstellen, die das Objekt (die Krabbe) entlang laufen soll. Hier wird, da zuvor vier Objekte als Waypoints erstellt wurden, eine vier eingetragen. Dadurch erstellen sich automatisch vier Felder, in die man die GameObjects, die als Waypoints dienen sollen, zuweisen kann. Diese werden also nun zugewiesen. Darunter lässt sich zudem die Geschwindigkeit einstellen, mit der sich das Objekt fortbewegen soll. In diesem Fall wurde sie auf 1.2 gestellt. Richtig konfiguriert sieht das Script auf der Krabbe dann wie folgt aus:
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55965917-c6f02000-5c77-11e9-8dba-aee0292899df.png" width="400px"></p>
+
+Damit wäre die Bewegung der Krabbe abgeschlossen. Um nun das Intro so hinzubekommen, wie es im Spiel vorhanden ist, wird das gleiche noch einmal auf den Hauptcharakter (diesmal in der Position, dass er quasi "angespült" wird) und einmal auf die Kamera angewand. So hat man dann eine Kamerafahrt hin zum Charakter. 
+
+Als nächstes soll die Krabbe etwas zum Spieler sagen. Der Text wird dabei verfasst und in drei Text-Elemente aufgeteilt, die hintereinander angezeigt werden sollen. Zudem soll ein viertes Textelement eine "Überschrift" darstellen. Also werden nun vier Textelemente erstellt und richtig positioniert.  Als nächstes wird dann ein Script namens crapTalk erstellt. Hier wird folgendes hineingeschrieben:
+
+```
+public class crapTalk : MonoBehaviour
+{
+    public GameObject Talk1;
+    public GameObject Talk2;
+    public GameObject Talk3;
+    public GameObject title;
+    public float timer;
+    void Start()  {
+        Talk1.SetActive(false);
+        Talk2.SetActive(false);
+        Talk3.SetActive(false);
+        title.SetActive(false);
+        timer = 0.0f;
+    }    
+    void Update()  {
+        timer += Time.deltaTime;
+        if(timer > 40)
+        {
+            title.SetActive(true);
+            Talk1.SetActive(true);
+            if(timer > 50)
+            {
+                Talk1.SetActive(false);
+                Talk2.SetActive(true);
+                if(timer > 60)
+                {
+                    Talk2.SetActive(false);
+                    Talk3.SetActive(true);
+                    if(timer == 70)
+                    {
+                        Talk3.SetActive(false);
+                        title.SetActive(false);
+                    }
+                }                
+            }
+        }
+    }
+}
+
+```
+
+Die Funktionsweise ist relativ simpel. Was die einzelnen Befehle bedeuten bzw. was sie machen wird im Kapitel <a href="#objektesammeln">Objekte aufsammeln</a> ausführlich erläutert. In diesem Fall wird von Beginn an ein Timer hochgezählt (Timer wird im Kapitel <a href="#spieltimer">Spiel-Timer und Vulkanausbruch</a> erläutert) und abhängig von dem Timer werden die einzelnen Texte ein und ausgeblendet. Zuletzt muss das erstellte Script noch auf die Krabbe gezogen und alle Texte und Objekte zugeordnet werden.
+
+Wenn die Krabbe fertig mit dem Reden ist, soll die Szene auf die Hauptszene geändert werden. Dafür wird ein neues Script namens IntroTimer.cs erstellt und folgender Code eingefügt:
+
+```
+public class IntroTimer : MonoBehaviour
+{
+    public float timer;
+    void Start()
+    {
+        timer = 0.0f;
+    }    
+    void Update()
+    {
+        timer += Time.deltaTime;
+        print(timer);
+        if(timer > 70)
+        {
+            SceneManager.LoadScene("MainScene");
+        }
+
+    }
+}
+```
+Auch hier wird ein Timer hochgezählt und bei einem bestimmten Wert die Hauptszene geladen. Wie bereits erwähnt wird der Timer im Kapitel  <a href="#spieltimer">Spiel-Timer und Vulkanausbruch</a> genauer erläutert. Damit das Script funktioniert, wird ein neues Empty GameObject erstellt und das Script draufgezogen. Das reicht aus um es wirksam zu machen.
+
+Als allerletztes soll, nach dem Wechsel von Intro zur Hauptszene zunächst ein Blackscreen erscheinen, der langsam ausgeblendet wird, also ein Fade-Out hat. Dafür wird auf die Hauptszene gewechselt und dort ein neues Canvas erstellt. Dann wird ein Panel erstellt und dem Canvas untergeordnet. Die Farbe des Panels wird auf komplett schwarz geändert. Zudem wird der AlphaKanal komplett hochgestellt, damit der Bildschirm komplett schwarz ist. Als nächstes wird ein neues Script namens mainSceneBlack.cs erstellt:
+
+```
+using UnityEngine.UI;
+
+public class mainSceneBlack : MonoBehaviour
+{
+    public CanvasGroup canvasGroup;
+    public float timer;
+    void Start()
+    {        
+        canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup.alpha = 1;
+    }
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > 13)
+        {            
+            if (canvasGroup.alpha > 0)
+            {
+                canvasGroup.alpha -= Time.deltaTime / 10;
+            }            
+        }
+    }
+}
+```
+Zunächst wird definiert, dass von diesem Script aus die UnityEngine UI, also UI objekte (wie das zuvor erstellte Panel) bearbeitet werden kann. Als nächstes wird eine Variable erstellt. Dies ist eine CanvasGroup. Das ist eine Variable, die später eine CanvasGroup, welche auf dem Objekt liegt, speichert. Dann wird eine Timer Variable erstellt. In der Start()-Funktion wird der CanvasGroup Variable der Component CanvasGroup zugeordnet. CanvasGRoup ist ein Komponent von GameObjects, wie es auch Collider und Mesh Renderer sind. Mit diesem Befehl wird die CanvasGroup-Komponente auf dem GameObject ausgewählt, auf dem auch dieses Script liegt, also von dem Panel. ALs nächstes wird der Alphakanal von der CanvasGroup auf 1, also auf den höchsten Wert gesetzt. Damit ist der Screen mit einem schwarzen Bild bedeckt. 
+
+Als nächstes wird die Update Funtktion gefüllt. Hier wird ein Timer initialisiert. Dann wird in einer if-schleife geprüft, ob der timer über 13 sekunden ist, weil der BlackScreen so lange eingeblendet bleiben soll. In dieser if-Schleife wird eine weitere if-Schleife geprüft, ob der AlphaKanal des Panel noch über 0 ist, also quasi noch ein bisschen "schwarz" auf dem Bildschirm zu sehen ist. Wenn das der Fall ist, wird der Alphakanal um Time.deltaTime/10 also pro sekunde um 0.1 (1/10 = 0.1) verringert. Somit wird der Alphakanal Stück für Stück auf null verringert. Damit ist der Fade-Out-Effekt erstellt. 
+
+Nun muss noch die CanvasGroup zugeordnet werden, welche im Script angesprochen wird. Diese ist zu finden unter <b> Add Component > CanvasGroup</b>. 
+
 <p align="center"><img src="" width="400px"></p>
 
-```
-HIER DAS CRAPSCRIPT CRAPMOVEMENT
-```
+Daran muss nichts mehr konfiguriert werden. CanvasGroup ist simpel gesagt eine Komponente, die zur verwaltung bestimmter Eigenschaften eines Canvas (wie z.b. dem Alphakanal) vorgesehen ist. Sie lässt sich durch ein Script sehr simpel ansprechen und manipulieren, wodurch Effekte wie der eben erstellte Fade-Out entstehen können.
 
-Als 
+Mit dem Script, der CanvasGroup-Komponente und der richtigen Farbe sieht das Panel dann wie folgt aus:
+
+<p align="center"><img src="" width="400px"></p>
 
 <h2 id="objektesammeln">Objekte aufsammeln</h2>
 

@@ -153,7 +153,6 @@ Es werden wird wie im Character Controller wieder der Zustand der Taste W abgefr
 
 Nachdem das Script gespeichert wurde, kann die Condition im Animator gesetzt werden. Dafür muss zunächst ein neuer Parameter definiert werden: Dafür geht man links unter Parameters auf das + und wählt Bool aus (da ja am Ende auch eine Boolean Condition verwendet werden soll). 
 
-
 Anschließend wird der Parameter genauso genannt wie das zuvor erstellte Script, in diesem Fall "Moving". Zuletzt kann noch mit klicken auf einen der Pfeile, mit dem Plus bei Condition eine Condition ausgewählt werden, und daneben gewählt, in welchem Zustand diese ausgeführt wird. In diesem Fall soll bei Moving = true der Pfeil von der Idle Animation zur Lauf-Animation getriggered werden. Also wird dies in der Condition definiert: 
 
 <p align="center"><img width="600px" src="https://user-images.githubusercontent.com/42578917/51623012-0e4bf780-1f38-11e9-98ae-08a092c2a803.png"></p>
@@ -618,10 +617,15 @@ Als nächstes muss das ganze wirksam gemacht. Dafür wird das Hauptmenü-Script 
 
 Damit wäre das Hauptmenü abgeschlossen. Um die Credits zu öffnen, wird nun lediglich eine neue Szene erstellt namens "Credits" und in dieser ebenfalls ein Menü erstellt. Bloß wird hier unter UI statt eines Panels, einfach ein Text, sowie ein zurück-Button implementiert. Der Text wird dann mit dem Credit-Text gefüllt und auf dem Zurück-Button wird ein Script platziert, in dem steht:
 
-HIER FEHLT NOCH DAS CREDITS SCRIPT
 
 ```
-
+public class Credits : MonoBehaviour
+{
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+}
 ```
 
 <h1 id="gamedesign">Das Game-Design</h1>

@@ -1380,6 +1380,58 @@ Als nächstes muss ein Canvas mit einem TextElement erstellt. Dieses wird dann u
 
 <h2 id="outtro">Das Outtro</h2>
 
+Das Outtro wurde im Grunde genommen wie das Intro gestaltet. Diesmal wurden das Floß und die Kamera dafür bewegt. Wie sich das einrichten lässt, lässt sich <a href="#intro">hier</a> nachlesen.
+
+In diesem Fall wurde statt eines Fade-Out eines schwarzen Bildes ein Fade-In gewählt, also ein langsames einblenden mit einem darauffolgenden Szenenwechsel. Der Szenenwechsel wurde bereits mehrfach erläutert. Für einen Fade-Out wird alles so eingerichtet wie in einem Fade-In im Intro, aber es wird folgendes Script verwendet:
+
+```
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class Outtro : MonoBehaviour
+{
+    public CanvasGroup canvasGroup;
+    public float timer;
+    public string restZeitMin;
+    public string restZeitSec;
+    public string restZeit;
+    public Text restText;
+    void Start()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup.alpha = 0;
+        timer = 0;
+    }
+    void Update()
+    {
+        restZeitMin = vulcanoCounter.vulcanoMinuten;
+        restZeitSec = vulcanoCounter.vulcanoSekunden;
+        restZeit = "Du hattest noch " + restZeitMin + ":" + restZeitSec + " um dich vor dem Vulkanausbruch zu retten!";
+        restText.text = restZeit;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        timer += Time.deltaTime;
+        if(timer > 20)
+        {
+            if (canvasGroup.alpha < 1)
+            {
+                canvasGroup.alpha += Time.deltaTime / 6;
+                print(canvasGroup.alpha);
+            }
+            if(timer > 30)
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+        }        
+    }    
+}
+
+```
+
+Die besonderheit ist, dass in diesem Fall noch die Restzeit angezeigt werden soll. Dafür wurde ein Text erstellt, der mit dem Text aus dem Script gefüllt werden soll. Wie das geht lässt sich unter <a href="#spieltimer">Spiel-Timer und Vulkanausbruch</a> nachlesen. Im Grund genommen werden einfach die restlichen Sekunden und Minuten aus dem vulcanoCounter Script geholt und so aufbereitet, dass sie in einem Satz sichtbar sind. Wieder wird ein timer verwendet, womit diesmal der Alphakanal von 0 zu 1 HOCHgezählt wird und der bei 30 Sekunden einen Szenenwechsel zurück zum Hauptmenü veranlasst. All dies ist im Kapitel für den <a href="#spieltimer">Vulkan</a> und für das <a href="#intro">Intro</a> nachzulesen.
+
+
+
 <h1 id="export">Der Export</h1>
 
 Das ganze Spiel ist jetzt nun fertig und lässt sich auch in Unity sehr gut spielen. Allerdings soll der Nutzer am Ende nicht jedes Mal Unity installieren und das ganze darin importiere müssen. Daher sollen im folgenden alle Einstellungen getroffen und das Spiel für den Nutzer spielbar, also exportiert werden.

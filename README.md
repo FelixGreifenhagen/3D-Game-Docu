@@ -316,6 +316,8 @@ public class VerticalCameraMovement : MonoBehaviour
 ```
 Die Funktionsweise ist sehr ähnlich der von der X-Achsen Bewegung, daher soll diesmal nur das erläutert werden, was sich geändert hat. Undzwar soll sich die Kamera nach oben und unten ebenfalls mit der Maus bewegen. Nur diesmal soll die Rotation nur bis zu einem bestimmten Winkel stattfinden. Darüber hinaus soll die Rotation geblockt werden, damit man die Kamera nicht "obenrum" im Kreis drehen kann. Also wird die mouseY
 
+HIER NOCH ERLÄUTERN WAS MATHF UDN SO IST!!!
+
 Der Rest wird genauso gehändelt, wie die X-Bewegung der Kamera. Nur wird das Script diesmal nicht auf den Charakter, sondern auf die MainCamera gezogen. Dies wird gemacht, da nicht der Charakter, mit angehängter Kamera gedreht werden soll, sondern nur die Kamera. 
 
 <h2 id="pausemenu">Das Pause-Menü</h2>

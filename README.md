@@ -686,19 +686,19 @@ In diesem Fall soll einmal beispielhaft gezeigt werden, wie man eine Palme in Bl
 Um Objekte gut zu modellieren startet man zunächst mit einem simplen geometrischen Körper wie z.B. einem Würfel, einem Zylinder oder einer Icosphäre. Mithilfe verschiedener Shortcuts, kann nun jeder möglicher Körper erschaffen werden.
 Im Fall einer Palme wird mit einem Zylinder begonnen aus dem ein Palmenstamm entstehen soll. Um ein Objekt zu erstellen muss der Shortcut "Shift + A" gedrückt werden und danach der Zylinder ausgewählt werden:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328827-1d351980-38eb-11e9-8d07-3266a260eecc.png" width="500px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328827-1d351980-38eb-11e9-8d07-3266a260eecc.png" width="400px"></p>
 
 Wie viele Seiten der Zylinder hat, also wie rund dieser im Prinzip ist, kann über "Subdivides" gesteuert werden. In diesem Spiel wird ein gröberer und reduzierter Stil verfolgt, der Stamm der Palme soll also nicht exakt rund sein, aber auch nicht nur 4 Seiten haben:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328969-5ec5c480-38eb-11e9-9d33-d91af5bbffa2.png" width="500px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328969-5ec5c480-38eb-11e9-9d33-d91af5bbffa2.png" width="400px"></p>
 
 Um den Zylinder nun wie gewünscht zu bearbeiten muss das richtige Selektionswerkzeug ausgewählt sein. Im nächsten Schritt soll der Zylinder in die Länge gezogen werden um mehr den Maßstäben eines Palmenstamms zu entsprechen, daher muss die Flächenauswahl eingeschaltet werden. Nun ist es möglich die obere Fläche des Zylinders auszuwählen und diese nach oben zu ziehen. Nun ist der Zylinder in die Länge gezogen:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329436-5de16280-38ec-11e9-8685-36825acd2408.png" width="1000px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329436-5de16280-38ec-11e9-8685-36825acd2408.png" width="800px"></p>
 
 Damit der Stamm ein wenig natürlicher aussieht, soll er nicht überall den gleichen Durchmesser haben. Um diesen Effekt zu erreichen, kann die obere Fläche weiterhin ausgewählt bleiben. Mit dem Shortcut "s" wird das Skalierungswerkzeug aktiviert und durch verschieben der Maus kann der Durchmesser der oberen Fläche vergrößert und verkleinert werden:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329653-d516f680-38ec-11e9-9fee-889c19910acd.png" width="500px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329653-d516f680-38ec-11e9-9fee-889c19910acd.png" width="400px"></p>
 
 Um die typische Stufen im Stamm zu Formen muss der Zylinder weiter unterteils werden. Mit einem Shortcut "strg + r" kann dies durchgeführt werden:
 
@@ -706,19 +706,19 @@ Um die typische Stufen im Stamm zu Formen muss der Zylinder weiter unterteils we
 
 Nun muss von der Flächenauswahl in die Kantenauswahl umgestellt werden:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329890-7bfb9280-38ed-11e9-805d-1a4621728772.png" width="500px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329890-7bfb9280-38ed-11e9-805d-1a4621728772.png" width="400px"></p>
 
 Nun kann die gesamte Kante, welche eben hinzugefügt wurden mit "Shift + Rechtsklick" ausgewählt werden. Mit dem Shortcut "s" kann nun diese Schnittfläche im Durchmesser vergrößert werden:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329947-9fbed880-38ed-11e9-97f8-423a8520d9ab.png" width="500px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329947-9fbed880-38ed-11e9-97f8-423a8520d9ab.png" width="400px"></p>
 
 Das muss so lange wiederholt werden bis der gesamte Stamm diese Form hat:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53330043-d268d100-38ed-11e9-8998-648f37d2f6a7.png" width="500px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53330043-d268d100-38ed-11e9-8998-648f37d2f6a7.png" width="400px"></p>
 
 Was den Stamm ebenfalls dynamischer aussehen lässt ist eine leichte Krümmung. Um diese zu erzielen wird der Teil des Stammes ausgewählt, welcher verformt werden soll und die Taste "g" betätigt. Nun kann man mit dem Mausrad den Kreis vergrößern/verkleinern der an Stelle der Maus angezeigt wird. Wenn man nun die Maus bzw. den Kreis bewegt verformt sich der Stamm der Palme in Richtung der Maus im Bereich des Kreises:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53330106-f88e7100-38ed-11e9-923c-0e84120b896c.png" width="500px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/53330106-f88e7100-38ed-11e9-923c-0e84120b896c.png" width="400px"></p>
 
 Das letzte Detail am Stamm wird mit dem Shortcut "r" ermöglicht. Es wird wieder die obere Fläche am Stamm ausgewählt und eben erwähnte Taste gedrückt. Nun kann ähnlich wie bei der Skalierung die Maus bewegt werden um die obere Fläche zu drehen, der Rest des Zylinders passt sich dieser Rotation an. Um eine genauere Rotation in die gewünschte Richtung zu erzielen, kann nach drücken der "r" Taste ebenfalls "x","y" oder "z" gedrückt werden um die Rotation auf die jeweilige Achse zu begrenzen. Das kann auch für die anderen bereits bekannten Shortcuts angewendet werden:
 

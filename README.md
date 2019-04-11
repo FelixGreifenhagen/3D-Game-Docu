@@ -1239,7 +1239,7 @@ Sobald der Ordner ausgewählt wurde, beginnt der Export. Wenn vor dem Export all
 <h1 id="ergebnis">Das Ergebnis</h1>
 
 <a href="https://www.youtube.com/watch?v=K6oZPDii_Wo&feature=youtu.be"><p align="center"><img src="https://user-images.githubusercontent.com/42578917/55962567-7249a680-5c71-11e9-8959-c22bffc1c31e.png"></p></a>
-<p>(Zum Ansehen des Walkthrough vom fertigen Spiel bitte auf das Bild klicken!)</p>
+<p>(Zum Ansehen des Walkthrough vom fertigen Spiel bitte auf das Bild oder <a href="https://www.youtube.com/watch?v=K6oZPDii_Wo&feature=youtu.be">hier</a> klicken!)</p>
 
 <h1 id="nachwort">Nachwort</h1>
 <h1 id="quellen">Quellen</h1>

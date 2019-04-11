@@ -266,8 +266,6 @@ Das new davor bedeutet einfach, dass es sich um eine neue Bewegung handelt und k
 Damit ist eine von der Mausbewegung abhängige Bewegung in der X (Y) Richtung implementiert. Als nächstes sollen einige Bewegungen innerhalb des Koordinatensystems definiert werden:
 
 ```
-
-
 if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
 {
     moveSpeed = 4f;
@@ -297,7 +295,7 @@ Dies setzt den moveSpeed wieder auf 1.5. Dies muss getan werden, da sonst, wenn 
 
 Das war soweit die Bewegung und Rotation auf der X Achse. Das gesamte Script wird dann auf das Charaktermodell gezogen. Im Feld "Rigidbody" muss dann noch der Charakter selbst zugewiesen werden:
 
-HIER EIN BILD VON DER ZUWEISUNG
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55975096-7e416280-5c89-11e9-932d-d104d340f8a0.png" width="400px"></p>
 
 Nun muss der Charakter allerdings noch nach oben und unten schauen können. Dafür wird ein neues Script names VerticalCameraMovement.cs erstellt.
 

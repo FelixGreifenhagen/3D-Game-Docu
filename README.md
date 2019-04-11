@@ -896,7 +896,7 @@ Quelle: https://www.youtube.com/channel/UCGOgRqMyWE6VPSCG-qxVkmw (kinan gh)
 
 In diesem Video ist das verwendete Script inklusive einer Erläuterung zu sehen. Die Konfiguration für die Krabbe wurde wie folgt vorgenommen: Es wurden zunächst einmal vier neue Empty Objects in Unity erstellt. Diese stellen die Waypoints dar, die die Krabbe entlangläuft. Diese wurden dann an die richtigen Stellen (also die Stellen die die Krabbe entlang laufen soll) platziert und korrekt benannt. Anschließend wurde das Script von kinan gh auf die Krabbe gezogen. Nun ist folgendes am Script zu erkennen:
 
-<p align="center"><img src="" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55965825-9f995300-5c77-11e9-937b-0752034514ee.png" width="400px"></p>
 
 Mittels einer Eingabe unter "Size" lässt sich die Menge an Objekten einstellen, die das Objekt (die Krabbe) entlang laufen soll. Hier wird, da zuvor vier Objekte als Waypoints erstellt wurden, eine vier eingetragen. Dadurch erstellen sich automatisch vier Felder, in die man die GameObjects, die als Waypoints dienen sollen, zuweisen kann. Diese werden also nun zugewiesen. Darunter lässt sich zudem die Geschwindigkeit einstellen, mit der sich das Objekt fortbewegen soll. In diesem Fall wurde sie auf 1.2 gestellt. Richtig konfiguriert sieht das Script auf der Krabbe dann wie folgt aus:
 

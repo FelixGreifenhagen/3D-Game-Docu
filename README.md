@@ -1007,7 +1007,7 @@ Als nächstes wird die Update Funtktion gefüllt. Hier wird ein Timer initialisi
 
 Nun muss noch die CanvasGroup zugeordnet werden, welche im Script angesprochen wird. Diese ist zu finden unter <b> Add Component > CanvasGroup</b>. 
 
-<p align="center"><img src="" width="400px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/55969129-901d0880-5c7d-11e9-849c-a10a07220959.png" width="400px"></p>
 
 Daran muss nichts mehr konfiguriert werden. CanvasGroup ist simpel gesagt eine Komponente, die zur verwaltung bestimmter Eigenschaften eines Canvas (wie z.b. dem Alphakanal) vorgesehen ist. Sie lässt sich durch ein Script sehr simpel ansprechen und manipulieren, wodurch Effekte wie der eben erstellte Fade-Out entstehen können.
 

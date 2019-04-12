@@ -35,7 +35,7 @@ In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, di
     + <a href="#outtro">Das Outtro</a>
 * <a href="#export">Der Export</a>
     + <a href="#splashscreen">Der Splashscreen und Icons</a>
-    + <a href="#sceneeinbindung">Sceneneinbindung</a>
+    + <a href="#sceneeinbindung">Szeneneinbindung</a>
     + <a href="#spielexport">Das Spiel exportieren</a>
 * <a href="#ergebnis">Das Ergebnis</a>
 * <a href="#nachwort">Nachwort</a>

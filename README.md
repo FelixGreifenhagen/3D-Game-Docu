@@ -1,4 +1,3 @@
-&lambda;
 <img src="https://user-images.githubusercontent.com/42578917/51550957-c19bea00-1e6d-11e9-9baf-56e92610e7fe.png">
 <b>Beschreibung: Ein Abenteurer strandet auf einer einsamen Insel, die schon seit Jahren verlassen ist. Nun muss er viele Probleme lösen und Gegenstände sammeln um der Insel zu entkommen und sich selbst zu retten...</b>
 <br>

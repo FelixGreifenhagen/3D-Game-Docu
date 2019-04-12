@@ -81,7 +81,7 @@ Da Blender ein gratis Modellier-Tool ist, gibt es bei Blender auch eine riesige 
 
 <a href="https://www.adobe.com/de/products/fuse.html" target="_blank">Hier</a> lässt sich Adobe Fuse herunterladen
 
-<b>FL Studio:</b> Da wir jeden Aspekt eines Indie-Games selbst umsetzten wollten, haben wir uns auch vorgenommen Musik einzubauen. FL Studio haben wir genutzt um die gedownloadeten Soundtracks in Länge, Lautstärke usw. zu bearbeiten.
+<b>FL Studio & Audacity:</b> Da wir jeden Aspekt eines Indie-Games selbst umsetzten wollten, haben wir uns auch vorgenommen Musik einzubauen. FL Studio haben wir genutzt um die gedownloadeten Soundtracks in Länge, Lautstärke usw. zu bearbeiten und Audacity um Rauschen aus den Soundtracks herauszufiltern.
 
 
 <h1 id="spielmechanik">Die Spielmechanik</h1>

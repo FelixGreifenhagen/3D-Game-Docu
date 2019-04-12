@@ -59,37 +59,36 @@ Entsprechend dem Anspruch werden für die Erstellung eine Reihe von Programmen b
 * Visual-Studio (kommt mit Unity)
 * Audacity
 
-<b>Unity:</b> Unity ist die Grundlage dieses Spiels. Es ist eine GameEngine, die sowohl Grafiken, als auch Scripte verarbeiten und in einem Overlay mit Preview-Modus darstellen. Unity wird in diesem Fall sowohl zur Erstellung des Charakters mit Bewegung, Animationen etc. als auch zur Erstellung von Setting und Programmeinstellungen wie Menüs genutzt.
+<b>Unity:</b> Unity ist die Grundlage dieses Spiels. Es ist eine GameEngine, die sowohl Grafiken, als auch Scripte verarbeitet und in einem Overlay mit Preview-Modus darstellt. Unity wird in diesem Fall sowohl zur Erstellung des Charakters mit Bewegung, Animationen etc. als auch zur Erstellung von Setting und Programmeinstellungen wie Menüs genutzt.
 
-Unity definiert sich selber als GameEngine, ist allerdings mehr noch eine Art Schnittstelle zwischen den verschiedenen Disziplinen des GameDesign. So ermöglicht es in einer GUI (Grafic User Interface) sowohl grafische Designelemente wie Modelle und Texturen in eine dreidimensionale Umgebung einzufügen, als auch mittels Programmierung das Verhalten der einzelnen Objekte steuern zu können.
+Unity definiert sich selber als GameEngine, ist allerdings mehr noch eine Art Schnittstelle zwischen den verschiedenen Disziplinen des GameDesign. So ermöglicht es in einem GUI (Grafic User Interface) sowohl grafische Designelemente wie Modelle und Texturen in eine dreidimensionale Umgebung einzufügen, als auch mittels Programmierung das Verhalten der einzelnen Objekte zu steuern.
 
-Programmiertechnisch arbeitet Unity vor allem mittels Scripting. Es wird für jedes "Objekt", in diesem Fall also für jede während der Laufzeit zu verändernde Eigenschaft, eine eigene Klasse mit von anderen Klassen unabhängiger Ausführungsstruktur innerhalb eines Scriptes erstellt. Dies macht es möglich nicht nur serielle, sondern auch parallele Befehlsausführung zu gewährleisten, was es in diesem Fall ermöglicht, ein deutlich größeres Netz an parallelen Aktionen zu erstellen, die sich gegenseitig beeinflussen, voneinander abhängen oder hindern. Somit ist die Programmierung in Unity deutlich abstrakter als z.B. auf einem Arduino, da nicht jeder Command einzelnd abgehandelt wird, sondern eine parallele und eben verflochtene Ausführung von Befehlen genutzt werden kann. So werden erst richtige Spielabläufe möglich, da bei einem flüssigen Spielablauf nicht immer gewartet werden kann, bis eine Aktion beendet ist, bevor die nächste angefangen wird. Daraus folgt dann, dass es  beispielsweise möglich ist gleichzeitig zu laufen und sich umzusehen oder zu springen und ins menü zu wechseln. 
+Programmiertechnisch arbeitet Unity vor allem mittels Scripting. Es wird für jedes "Objekt", in diesem Fall also für jede während der Laufzeit zu verändernde Eigenschaft, eine eigene Klasse mit von anderen Klassen unabhängiger Ausführungsstruktur innerhalb eines Scriptes erstellt. Dies macht es möglich nicht nur serielle, sondern auch parallele Befehlsausführung zu gewährleisten, was es in diesem Fall ermöglicht, ein deutlich größeres Netz an parallelen Aktionen zu erstellen, die sich gegenseitig beeinflussen, voneinander abhängen oder sich behindern. Somit ist die Programmierung in Unity deutlich abstrakter als z.B. auf einem Arduino, da nicht jeder Command einzelnd abgehandelt wird, sondern eine parallele und eben verflochtene Ausführung von Befehlen genutzt werden kann. So werden erst richtige Spielabläufe möglich, da bei einem flüssigen Spielablauf nicht immer gewartet werden kann, bis eine Aktion beendet ist, bevor die Nächste angefangen wird. Daraus folgt dann, dass es  beispielsweise möglich ist gleichzeitig zu laufen und sich umzusehen oder zu springen und ins Menü zu wechseln. 
 
 <a href="https://store.unity.com/download" target="_blank">Hier</a> lässt sich Unity herunterladen
 
-<b>Blender:</b> Blender ist der zweite große Baustein dieses Projektes. Sämtliche Modelle, die nicht in Unity erstellt werden können, bzw. über die Modellierungs-Optionen von Unity (die ziemlich beschränkt sind...belastend) hinausgehen, werden in Blender erstellt und dann in Unity importiert</b>
+<b>Blender:</b> Blender ist der zweite große Baustein dieses Projektes. Sämtliche Modelle, die nicht in Unity erstellt werden können, bzw. über die Modellierungs-Optionen von Unity (die ziemlich beschränkt sind) hinausgehen, werden in Blender erstellt und dann in Unity importiert</b>
 
 Da Blender ein gratis Modellier-Tool ist, gibt es bei Blender auch eine riesige Community.
 
 <a href="https://www.blender.org/download/">Hier</a> lässt sich Blender herunterladen
 
-<b>Adobe Photoshop:</b> Adobe Photoshop haben wir benutzt, um Texturen zu malen (z.B. für grünen Boden, Weg, Berge) und den Banner auf der Projektseite anzufertigen. Da wir beiden Photoshop besitzen und Photoshop allgemein sehr gekannt ist, haben wir dieses Bildbearbeitungprogramm für diese Aufgaben benutzt.
+<b>Adobe Photoshop:</b> Adobe Photoshop haben wurde benutzt, um Texturen zu malen (z.B. für grünen Boden, Weg, Berge) und das Banner auf der Projektseite anzufertigen. Da Photoshop allgemein sehr gekannt ist, wurde dieses Bildbearbeitungprogramm für diese Aufgaben benutzt.
 
 <a href="https://www.adobe.com/de/products/photoshop.html" target="_blank">Hier</a> lässt sich Adobe Photoshop kaufen
 
-<b>Adobe Fuse:</b> Adobe Fuse ist ein neues Programm aus der Creative Cloud, welches sich aktuell in der Beta befindet. Es ist darauf spezialisiert auf einfachem Wege menschliche 3D Modelle zu kreieren. Adobe Fuse haben wir dementsprechend für den vom Spieler gesteuerten Charakter verwendet.
+<b>Adobe Fuse:</b> Adobe Fuse ist ein neues Programm aus der Creative Cloud, welches sich aktuell in der Beta befindet. Es ist darauf spezialisiert auf einfachem Wege menschliche 3D Modelle zu kreieren. Adobe Fuse wurde dementsprechend für den vom Spieler gesteuerten Charakter verwendet.
 
 <a href="https://www.adobe.com/de/products/fuse.html" target="_blank">Hier</a> lässt sich Adobe Fuse herunterladen
 
-<b>FL Studio & Audacity:</b> Da wir jeden Aspekt eines Indie-Games selbst umsetzten wollten, haben wir uns auch vorgenommen Musik einzubauen. FL Studio haben wir genutzt um die gedownloadeten Soundtracks in Länge, Lautstärke usw. zu bearbeiten und Audacity um Rauschen aus den Soundtracks herauszufiltern.
+<b>FL Studio & Audacity:</b> Da jeder Aspekt eines Indie-Games selbst umgesetzt werden sollte, wurde auch geplant Musik einzubauen. FL Studio wurde genutzt um die gedownloadeten Soundtracks in Länge, Lautstärke usw. zu bearbeiten und Audacity um Rauschen aus den Soundtracks herauszufiltern.
 
 <a href="https://support.image-line.com/jshop/shop.php" target="_blank">Hier</a> lässt sich FL Studio kaufen, 
 <a href="https://www.audacity.de/download-de/" target="_blank">Hier</a> lässt sich Audacity herunterladen
 
-
 <h1 id="spielmechanik">Die Spielmechanik</h1>
 
-Zunächst müssen erstmal, um später ein solides Gameplay zu implementieren, die Grundlagen in Unity eingerichtet werden. Dazu gehören unter anderem das Charaktermodel, ein Controller um Bewegungen zu steuern, Animationen für den Charakter, ein Terrain mit Border, sowie Menüs und weiteres. Daher wird in diesem Bereich zunächst einmal alles "außenrum" um das Spiel erstellt. Das bedeutet Charakter, Menüs, Animationen etc. womit das Spiel am Ende schon einmal in eine grobe Mechanik eingebettet wird. Der genaue Inhalt des Spiels und das Aussehen ist das unter "Game-Design" und "Gameplay" zu finden.
+Zunächst müssen erstmal, um später ein solides Gameplay zu implementieren, die Grundlagen in Unity eingerichtet werden. Dazu gehören unter anderem das Charaktermodel, ein Controller um Bewegungen zu steuern, Animationen für den Charakter, sowie Menüs und weiteres. Daher wird in diesem Bereich zunächst einmal alles "außenrum" um das Spiel erstellt. Das bedeutet Charakter, Menüs, Animationen etc. womit das Spiel am Ende schon einmal in eine grobe Mechanik eingebettet wird. Der genaue Inhalt des Spiels und das Aussehen ist unter "Game-Design" und "Gameplay" zu finden.
 
 <h2 id="charakter">Der Charakter</h2>
 
@@ -97,7 +96,7 @@ In diesem Fall wird, um das Modell später zu animieren, ein Character-Model ben
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/50374742-923a5900-05f3-11e9-930f-a08619cca564.png" width="600px"></p>
 
-Sobald der Charakter dann beendet ist, lässt sich oben rechts mit "Save to Maximo" in Maximo exportieren. In Mixamo lassen sich dann Animationen auf einen Charakter anwenden bzw. eigene Animationen mithilfe des von Fuse angewandten Exoskelett erstellen:
+Sobald der Charakter dann beendet ist, lässt sich oben rechts mit "Save to Maximo" in Maximo exportieren. In Maximo lassen sich dann Animationen auf einen Charakter anwenden bzw. eigene Animationen mithilfe des von Fuse angewandten Exoskelett erstellen:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51466760-3e926b00-1d6b-11e9-921a-4b39743ccb33.png" width="600px"></p>
 

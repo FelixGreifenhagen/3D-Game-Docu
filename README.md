@@ -83,7 +83,7 @@ Da Blender ein gratis Modellier-Tool ist, gibt es bei Blender auch eine riesige 
 
 <b>FL Studio & Audacity:</b> Da wir jeden Aspekt eines Indie-Games selbst umsetzten wollten, haben wir uns auch vorgenommen Musik einzubauen. FL Studio haben wir genutzt um die gedownloadeten Soundtracks in Länge, Lautstärke usw. zu bearbeiten und Audacity um Rauschen aus den Soundtracks herauszufiltern.
 
-<a href="https://support.image-line.com/jshop/shop.php" target="_blank">Hier</a> lässt sich Audacity herunterladen
+<a href="https://support.image-line.com/jshop/shop.php" target="_blank">Hier</a> lässt sich Audacity herunterladen, 
 <a href="https://www.audacity.de/download-de/" target="_blank">Hier</a> lässt sich Audacity herunterladen
 
 

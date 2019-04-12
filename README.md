@@ -868,7 +868,7 @@ playSound()
 ```
 Dies ist der Abruf einer Funktion namens playSound. Diese Funktion wird später noch definiert. Das selbe gilt für die zweite if-Schleife, in der die Funktion stopSound() ausgeführt wird.
 
-Da die Funktionen abgerufen werden sollen, müssen sie nun auch definiert werden. Also wird unter der Update()-Funktion folendes ergänzt:
+Da die Funktionen abgerufen werden sollen, müssen sie nun auch definiert werden. Also wird unter der Update()-Funktion folgendes ergänzt:
 
 ```
 public static void playSound()
@@ -880,7 +880,7 @@ public static void playSound()
         audioSrc1.Stop();
     } 
 ```
-Dies sind im Grund genommen zwei simple Kommandos: In der Funktion playSound() wird ausgeführt: audioSrc1.Play(0). Dies spielt einfach nur den AudioClip ab, der in der Variable audioSrc1 gespeichert wurde. Die null hinter dem Play bedeutet, dass die Datei von Anfang an abgespielt werden soll.
+Dies sind im Grunde genommen zwei simple Kommandos: In der Funktion playSound() wird ausgeführt: audioSrc1.Play(0). Dies spielt einfach nur den AudioClip ab, der in der Variable audioSrc1 gespeichert wurde. Die null hinter dem Play bedeutet, dass die Datei von Anfang an abgespielt werden soll.
 
 Das zweite Kommando in der void StopSound() führt einen ähnlichen Befehl aus: audioSrc1.Stop(). Wie vielleicht schon zu erahnen ist, stoppt dies einfach nur das Audio.
 
@@ -921,19 +921,19 @@ public GameObject InselZentrum1;
         audioSrc1.Stop();
     } 
 ```
-Damit nun was passiert, muss das ganze implementiert werden. Das Script wird auf das vorher erstellte Objekt gezogen. Als nächstes wird unter Add Components eine AudioSource hinzugefügt:
+Damit nun etwas passiert, muss das Ganze implementiert werden. Das Script wird auf das vorher erstellte Objekt gezogen. Als nächstes wird unter Add Components eine AudioSource hinzugefügt:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55887426-c8551600-5bad-11e9-8c89-501fbe11ca4d.png" width="400px"></p>
 
-Wie zu erkennen wurde die MinDistance auf 124 und die MaxDistance auf 125 gesetzt. Zudem wurde dem Player Objekt der Hauptcharakter zugeordnet, das EmptyObject dem Insel1Zentrum zugeordnet und der Name des AudioTracks ("Insel1") eingegeben. Wie schon erwähnt, wird der AudioClip aus einem Ordner namens Resources geladen. Dieser wird also nun im selben Ordner angelegt, in dem das Script liegt. Darein wird dann der AudioClip abgelegt.
+Wie zu erkennen wurde die MinDistance auf 124 und die MaxDistance auf 125 gesetzt. Zudem wurde dem Player Objekt der Hauptcharakter zugeordnet, das EmptyObject dem Insel1Zentrum zugeordnet und der Name des AudioTracks ("Insel1") eingegeben. Wie schon erwähnt, wird der AudioClip aus einem Ordner namens Resources geladen. Dieser wird also nun im selben Ordner angelegt, in dem das Script liegt. Dort hinein wird dann der AudioClip abgelegt.
 
 <h1 id="gameplay">Das Gameplay</h1>
 
-Nachdem nun eine ansprechende Spielwelt erstellt wurde, muss der zuvor implementierte Charakter auch mit dieser interagieren können. Oft erfolgt dies in Form von Quests/Aufgaben, für die der Spieler etwas finden, sammeln oder auf sonstige Weise mit der Welt interagieren muss. In diesem Fall beschränken sich die Aktionen vor allem auf das Finden und Sammeln von Objekten. 
+Nachdem nun eine ansprechende Spielwelt erstellt wurde, muss der zuvor implementierte Charakter auch mit dieser interagieren können. Oft erfolgt dies in Form von Quests/Aufgaben, für die der Spieler etwas finden, sammeln oder auf sonstige Weise mit der Welt interagieren muss. In diesem Fall beschränken sich die Aktionen vor allem auf das Finden und Sammeln von Objekten. Zunächst soll der Spieler allerdings in die Spielwelt eingeführt werden. 
 
 <h2 id="intro">Intro</h2>
 
-Nun soll für das Spiel ein Intro, also eine Einleitung erstellt werden. Bei diesem Projekt soll der Charakter an den Strand angespült werden, eine Krabbe soll zu ihm laufen und ihm die Informationen die der Spieler braucht mitteilen. Dafür muss zunächst einmal eine neue Szene erstellt werden. Diesmal wird allerdings, um die erstellte Umgebung beizubehalten, die normale Szene in den Dateien einfach kopiert und in "Intro" umbenannt. Als nächstes kann erstmal alles, was nicht benötigt wird, gelöscht werden. Zudem wird die Kamera umpositioniert, und zwar so, dass sie den Strand seitlich von oben zeigt.
+Nun soll für das Spiel ein Intro, also eine Einleitung erstellt werden. Bei diesem Projekt soll der Charakter an den Strand angespült werden, eine Krabbe soll zu ihm laufen und ihm die Informationen die der Spieler braucht mitteilen. Dafür muss zunächst einmal eine neue Szene erstellt werden. Diesmal wird allerdings, um die erstellte Umgebung beizubehalten, die normale Szene in den Dateien einfach dupliziert und in "Intro" umbenannt. Als nächstes kann erstmal alles, was nicht benötigt wird, gelöscht werden. Zudem wird die Kamera umpositioniert, und zwar so, dass sie den Strand seitlich von oben zeigt.
 
 Als Nächstes wurde eine Krabbe in Blender modelliert und mit einer Animation ausgestattet. Diese wird dann in Unity importiert und mit einem Animator ausgestattet. Zudem wird ein neuer AnimatorController namens "crap" erstellt und zusammen mit der Animation auf dem Animator der Krabbe platziert. Das alles wurde bereits einmal beim Hauptcharakter gemacht und lässt sich <a href="#charakter">hier</a> nachlesen. Im Animator Controller wird mit <b> Rechtsklick > Create Empty</b> eine neue leere Animation erstellt. Diese wird dann mit <b>Rechtsklick > Set Layer as Default State</b> zum Default gemacht, der sofort gestartet wird, wenn das Spiel gestartet wird.
 
@@ -974,11 +974,11 @@ timer += Time.deltaTime
 ```
 Beide Zeilen machen im Script theoretisch das Gleiche. 
 
-Time.deltaTime ist die Unity-Interne Zeitangabe. Time.deltaTime ist quasi eine Stoppuhr, die in Unity ab dem Start des Spiels anfängt  zu laufen. Sie kann aber auch mittels Script manipuliert oder angehalten werden. In diesem Fall wird damit einfach ein Timer initialisiert. Der Vorteil davon, diesen zu verwenden ist, dass im PauseScript ja Time.deltaTime auf null gesetzt wird. Da der Timer in diesem Fall von Time.deltaTime abhängig ist, wird auch dieser Timer gestoppt, wenn das PauseMenü geöffnet wird. In diesem Projekt wurden alle Timer mit Time.deltaTime gesteuert. Daher stoppen die Timer alle, wenn auch das Spiel mittels Esc.-Taste gestoppt wird.
+Time.deltaTime ist die Unity-Interne Zeitangabe. Time.deltaTime ist quasi eine Stoppuhr, die in Unity ab dem Start des Spiels anfängt  zu laufen. Sie kann aber auch mittels Script manipuliert oder angehalten werden. In diesem Fall wird damit einfach ein Timer initialisiert. Der Vorteil davon, diesen zu verwenden ist, dass im PauseScript Time.deltaTime auf null gesetzt wird. Da der Timer in diesem Fall von Time.deltaTime abhängig ist, wird auch dieser Timer gestoppt, wenn das PauseMenü geöffnet wird. In diesem Projekt wurden alle Timer mit Time.deltaTime gesteuert. Daher stoppen die Timer alle, wenn auch das Spiel mittels Esc.-Taste gestoppt wird.
 
 Nun soll sich die Krabbe aber auch fortbewegen. Dies aber nicht einfach so oder auch dauerhaft, sondern sie soll einen bestimmten Weg eine bestimmte Zeit lang entlanglaufen. Um das zu erreichen, wurde in diesem Fall auf ein bereits bestehendes Script zurückgegriffen. 
 
-Der Youtuber kinan gh hat in einem Tutorial auf Youtube ein Script verfasst, welches genutzt werden kann, um ein GameObjekt in Unity bestimmte zuvor manuell gesetzte Waypoints ablaufen zu lassen und dann stehenzubleiben. Die Quelle für dieses Video ist unten in dieser Dokumentation unter <a href="#quellen">Quellen</a> bzw. dieser <a href="https://www.youtube.com/channel/UCGOgRqMyWE6VPSCG-qxVkmw">Link</a>
+Der Youtuber kinan gh hat in einem Tutorial auf Youtube ein Script verfasst, welches genutzt werden kann, um ein GameObjekt in Unity bestimmte zuvor manuell gesetzte Waypoints ablaufen zu lassen und dann stehenzubleiben. Die Quelle für dieses Video ist unten in dieser Dokumentation unter <a href="#quellen">Quellen</a> zu finden bzw. dieser <a href="https://www.youtube.com/channel/UCGOgRqMyWE6VPSCG-qxVkmw">Link</a>
 
 Quelle: https://www.youtube.com/channel/UCGOgRqMyWE6VPSCG-qxVkmw (kinan gh) 
 

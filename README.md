@@ -150,27 +150,25 @@ void Update() {
     }
 }
 ```
-Es wird wie im Character Controller wieder der Zustand der Taste W abgefragt. Diesmal wird allerding etwas anderes dabei ausgelöst: Undzwar wird auf mittels move.SetBool() im Animator move (der vorher definiert wurde) auf eine Variable zugegriffen und sie "gesetted" (daher das "SetBool"). In den Klammern danach wird zunächst dargestellt, um welche Variable es geht (nämlich "Moving") und auf was sie gesetzt wird (false bzw. true). Der volle Command move.SetBool("Moving", false) nimmt sich (das verhältnis von conditions und variablen in diesem Script wurde zuvor bereits angeschnitten) die Condition "Moving" im move-Animator, und setzt sie als bool false. Andersrum wird das ganze mit true natürlich auch gemacht.
+Es wird wie im Character Controller wieder der Zustand der Taste W abgefragt. Diesmal wird allerding etwas anderes dabei ausgelöst: Undzwar wird auf mittels move.SetBool() im Animator move (der vorher definiert wurde) auf eine Variable zugegriffen und sie "gesetted" (daher das "SetBool"). In den Klammern danach wird zunächst dargestellt, um welche Variable es geht (nämlich "Moving") und auf was sie gesetzt wird (false bzw. true). Der volle Command move.SetBool("Moving", false) nimmt sich (das verhältnis von conditions und variablen in diesem Script wurde zuvor bereits angeschnitten) die Condition "Moving" im move-Animator, und setzt sie als bool false. Andersherum wird das ganze mit true natürlich auch gemacht.
 
-Nachdem das Script gespeichert wurde, kann die Condition im Animator gesetzt werden. Dafür muss zunächst ein neuer Parameter definiert werden: Dafür geht man links unter Parameters auf das + und wählt Bool aus (da ja am Ende auch eine Boolean Condition verwendet werden soll). 
-
-Anschließend wird der Parameter genauso genannt wie das zuvor erstellte Script, in diesem Fall "Moving". Zuletzt kann noch mit klicken auf einen der Pfeile, mit dem Plus bei Condition eine Condition ausgewählt werden, und daneben gewählt, in welchem Zustand diese ausgeführt wird. In diesem Fall soll bei Moving = true der Pfeil von der Idle Animation zur Lauf-Animation getriggered werden. Also wird dies in der Condition definiert: 
+Nachdem das Script gespeichert wurde, kann die Condition im Animator gesetzt werden. Dafür muss zunächst ein neuer Parameter definiert werden: Dafür geht man links unter "Parameters" auf das + und wählt Bool aus (da ja am Ende auch eine Boolean Condition verwendet werden soll). Anschließend wird der Parameter genauso genannt wie das zuvor erstellte Script, in diesem Fall "Moving". Zuletzt kann noch mit klicken auf einen der Pfeile, mit dem Plus bei Condition eine Condition ausgewählt werden, und daneben gewählt, in welchem Zustand diese ausgeführt wird. In diesem Fall soll bei Moving = true der Pfeil von der Idle Animation zur Lauf-Animation getriggered werden. Also wird dies in der Condition definiert: 
 
 <p align="center"><img width="600px" src="https://user-images.githubusercontent.com/42578917/51623012-0e4bf780-1f38-11e9-98ae-08a092c2a803.png"></p>
 
-Das ganze kann natürlich auch mit Moving = false in die andere Richtung gemacht werden, sodass, wenn der Charakter aufhört zu laufen, zurück in die Idle Animation gewechselt werden. 
+Das Ganze kann natürlich auch mit Moving = false in die andere Richtung gemacht werden, sodass, wenn der Charakter aufhört zu laufen, zurück in die Idle Animation gewechselt werden. 
 
-Nun ist die Condition erstellt und der Animator Controller eingerichtet. Als letztes muss noch ein kleiner Haken im Inspektor entfernt werden:
+Nun ist die Condition erstellt und der Animator Controller eingerichtet. Als Letztes muss noch ein kleiner Haken im Inspektor entfernt werden:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51623180-6551cc80-1f38-11e9-920e-5c2bc512e829.png" width="400px"></p>
 
 Der Haken sorgt dafür, das die Animation, sobald sie beendet ist, aufhört, und der Animator Controller wieder in die Idle Animation wechselt. Da dies nicht erwünscht ist (die Animation soll sich beim Laufen ja schließlich die ganze Zeit wiederholen), muss der Haken entfernt werden.
 
-Sobald dies erledigt ist, ist die Animation für das Laufen eingerichtet und kann verwendet werden. Das gleiche kann natürlich auch mit anderen Tasten und anderen Animationen ausgeführt werden. Dafür müssen lediglich neue Scripte mit anderem Namen erstellt werden und weitere Conditions erstellt werden. Zudem muss in den Scripten in der If-Schleiffe die Taste geändert werden, mit der die Animation gestartet werden soll. Nachdem all die Animationen hinzugefügt wurden, kann der Charakter sauber und schön in alle Richtungen laufen.
+Sobald dies erledigt ist, ist die Animation für das Laufen eingerichtet und kann verwendet werden. Das Gleiche kann natürlich auch mit anderen Tasten und anderen Animationen ausgeführt werden. Dafür müssen lediglich neue Scripte mit anderem Namen und weitere Conditions erstellt werden. Zudem muss in den Scripten in der If-Schleife die Taste geändert werden, mit der die Animation gestartet werden soll. Nachdem all die Animationen hinzugefügt wurden, kann der Charakter sauber und schön alle Animationen ausführen.
 
 <h2 id="capsulecollider">Der Capsule-Collider</h2>
 
-Nun ist der Charakter erstellt und importiert. Allerdings fällt dieser noch durch das vorhandene Terrain durch. Damit dies nicht passiert brauchen alle Objekte, die bei einer Berührung eine Bewegung ausführen sollen (wie z.B. dass der Charakter nicht durch den Boden fällt) einen von Unity bereitgestellten Collider. Dieser wird hinzugefügt, indem man den Charakter auswählt und dann auf Component > Physics > SphereCollider geht:
+Nun ist der Charakter erstellt und importiert. Allerdings fällt dieser noch durch das vorhandene Terrain durch. Damit das nicht passiert brauchen alle Objekte, die bei einer Berührung eine Bewegung ausführen sollen (wie z.B. dass der Charakter nicht durch den Boden fällt) einen von Unity bereitgestellten Collider. Dieser wird hinzugefügt, indem man den Charakter auswählt und dann auf Component > Physics > CapsuleCollider geht:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/50374528-cd3a8d80-05ef-11e9-9d0b-a028d61841c1.png" width="500px"></p>
 
@@ -178,10 +176,9 @@ Damit wird dann ein Collider auf den Charakter hinzugefügt und der Charakter f�
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/50374574-64074a00-05f0-11e9-973e-3f3b572bebf8.png" width="500px"></p>
 
-Dies geschieht, da der Collider ein Capsule-Collider, also teilweise rund, ist. Eine Lösung wäre es, einen BoxCollider auf den Charakter zu setzen. Das würde allerdings nur dafür sorgen, dass der Charakter nicht wie eine Kugel, sondern wie ein Quader nach hinten kippt. Also ist das Problem damit nicht gelöst. Gelöst wird es, indem das Charakter-Model editiert wird. Dafür wird der Charakter ausgewählt und auf dem Rigidbody unter "Constraints" bei "Freeze Rotation" die Box für X, Y und Z ausgewählt:
+Dies geschieht, da der Collider ein Capsule-Collider, also teilweise rund, ist. Eine Lösung wäre, einen BoxCollider auf den Charakter zu setzen. Das würde allerdings nur dafür sorgen, dass der Charakter nicht wie eine Kugel, sondern wie ein Quader nach hinten kippt. Also ist das Problem damit nicht gelöst. Gelöst wird es, indem das Charakter-Model editiert wird. Dafür wird der Charakter ausgewählt und auf dem Rigidbody unter "Constraints" bei "Freeze Rotation" die Box für X, Y und Z ausgewählt:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/50374612-01627e00-05f1-11e9-8dc4-9331b4d3df2b.png" width="500px"></p>
-Damit sich der Charakter nun bewegt, muss als nächstes ein Player-Controller geschrieben werden:
 
 <h3 id="charactercontroller">Der Character-Controller</h3>
     
@@ -202,7 +199,7 @@ public class PlayerController : MonoBehaviour {
 
 Der Controller hat die Haupt-Klasse: PlayerController. Diese ist vom Typ MonoBehaviour, die Klassenart, die Funktionen wie Start() und Update() bereitsstellt. Zudem die Funktion LateUpdate(), die allerdings erst später wichtig sein wird. In der Klasse sind die Funktionen Start() und Update(). Beide sind void, haben also keinen Rückgabewert. Die Start() Funktion wird zu Beginn des Programmablaufs nur ein einziges Mal aufgerufen. Die Update Funktion wird dann dauerhaft Frame by Frame aufgerufen. Daher werden in dieser die Abfragen wie Tastatureingaben oder Maus-Bewegungen abgerufen und auf das zu bewegende Objekt übertragen. 
 
-Damit man nun Laufen kann muss zunächst außerhalb der Hauptklasse folgendes ergänzt werden:
+Damit man nun Laufen kann muss zunächst außerhalb der Hauptklasse Folgendes ergänzt werden:
 
 ```
 [RequireComponent(typeof(Rigidbody))] 
@@ -216,7 +213,7 @@ public class PlayerController : MonoBehaviour {
 ```
 Dies definiert, dass im Controller von Elementen (wie dem Hauptcharakter) ein Komponent (wie es auch Collider, Scripte etc sind) der Component "Rigidbody" angesprochen werden darf. Der Rigidbody ist verantwortlich dafür, ein Element in Unity, in diesem Fall den Charakter, von A nach B zu bewegen. Die Zeile erlaubt es also,  den Rigidbody auf dem Element, auf dem auch dieses Script liegt, innerhalb des Scriptes zu verändern, sprich, innerhalb des Scriptes dürfen Veränderungen in der Position des Charakters vorgenommen werden.
 
-Als nächstes müssen innerhalb der Funktionen folgende Zeilen ergänzt werden:
+Als nächstes müssen innerhalb der Funktionen folgende Zeilen ergänzt werden: 
 
 Zunächst werden einige Variablen benötigt:
 
@@ -233,7 +230,7 @@ public class PlayerController : MonoBehaviour {
 ```
 Da der Controller nicht nur Bewegung sondern auch Rotation des Charakters definieren soll, werden die meisten Variablen für die Rotation benötigt. Die erste float ist die Bewegungsgeschwindigkeit. Da man sie später innerhalb des Unity-Interface noch optimieren können soll, wird sie public definiert. Dann werden für die X Mausbewegung Stärke und Geschwindigkeit der Rotation in vier Variablen definiert. 
 
-Da mouseX später eh überschrieben wird, wird sie zunächst beide auf 0 gesetzt. Der speedX ist für die Geschwindigkeit der Mausbewegung zuständig. Sie wird daher auf 2 gesetzt.
+Da mouseX später sowieso überschrieben wird, wird sie zunächst auf 0 gesetzt. Der speedX ist für die Geschwindigkeit der Mausbewegung zuständig. Sie wird daher auf 2 gesetzt.
 
 Als nächstes wird die Start() funktion gefüllt: 
 
@@ -242,16 +239,16 @@ void Start() {
    moveSpeed = 1.5f;        
 }
 ```
-Darin wird der moveSpeed auf 1.5f gesetzt. So schnell soll der Spieler sich am Ende bewegen können. In die Update() Funktion wird dann folgendes geschrieben:
+Darin wird der moveSpeed auf 1.5f gesetzt. So schnell soll der Spieler sich am Ende bewegen können. In die Update() Funktion wird dann Folgendes geschrieben:
 
 ```
 void Update() {
         mouseX += speedX * Input.GetAxis("Mouse X");       
 }
 ```
-Darin wird zunächst einmal definiert, wie sich die Maus in X und Y Richtung bewegt. Die mouseX wird dann mit folgendem überschrieben: Da die Geschwindigkeit abhängig von der speedX Variable sein soll, also die Bewegung nur mit dem Geschwindigkeitsfaktor aus speedX ausgeführt werden soll, wird das ganze mit speedX multipliziert. Dahinter steht der Befehl Input.GetAxis("Mouse X");. Dieser fragt ganz einfach einen Input ab, undzwar den der Mouse X, also der X bewegung (nach links und rechts) der Maus. Das Ergebnis wird dann mit speedX multipliziert und in mouseX gespeichert. 
+Darin wird zunächst einmal definiert, wie sich die Maus in X Richtung bewegt. Die mouseX wird dann mit folgendem überschrieben: Da die Geschwindigkeit abhängig von der speedX Variable sein soll, also die Bewegung nur mit dem Geschwindigkeitsfaktor aus speedX ausgeführt werden soll, wird das ganze mit speedX multipliziert. Dahinter steht der Befehl Input.GetAxis("Mouse X"). Dieser fragt ganz einfach einen Input ab, undzwar den der Mouse X, also der X Bewegung (nach links und rechts) der Maus. Das Ergebnis wird dann mit speedX multipliziert und in mouseX gespeichert. 
 
-Dies stellt allerdings nur die Stärke der Bewegung dar, aber nicht die Bewegung selber. Daher wird darunter folgendes ergänzt:
+Dies stellt allerdings nur die Stärke der Bewegung dar, aber nicht die Bewegung selber. Daher wird darunter Folgendes ergänzt:
 
 ```
 transform.eulerAngles = new Vector3(0.0f, mouseX, 0.0f);
@@ -259,9 +256,9 @@ transform.eulerAngles = new Vector3(0.0f, mouseX, 0.0f);
 
 Ein transform ist in der Programmierung erst einmal eine Veränderung eines Objektes im zwei- bzw. dreidimensionalen Raum. Oftmals beschreibt dies eine Veränderung in Position, Rotation oder Größe. In diesem Fall soll es eine Rotation sein. Daher wird eine Rotation nach den drei Eulerwinkeln vorgenommen. Also eine transform.eulerAngles. Die Eulerschen Winkel sind ein oft verwendetes Modell bei der Drehung von Objekten in der Programmierung, da es sich hierbei um bestimmte Achsen im Raum handelt. Genaueres lässt sich <a href="https://de.wikipedia.org/wiki/Eulersche_Winkel">hier</a> nachlesen.
 
-Nun muss diese Rotation auch irgendwie ausgeführt werden. Daher wird dieser transform.eulerAngles folgendes zugewiesen: new Vector3(0.0f, mouseX, 0.0f);
+Nun muss diese Rotation auch irgendwie ausgeführt werden. Daher wird dieser transform.eulerAngles Folgendes zugewiesen: new Vector3(0.0f, mouseX, 0.0f);
 
-Ein Vector3 ist eine Veränderung in Unity im dreidimensionalen Raum, die ja eine Rotation ist. Würde man ein 2D Spiel programmieren, müsste es Vector2 heissen. Diesem Vector3 werden auf den drei Achsen folgende Werte übergeben. Auf der X Achse (die im Spiel die dritte achse eines zweidimensionalen Koordinatensystem ist, also beim zweidimensionalen koordinatensystem "in das Papier hinein") wird 0 übergeben, da hier keine Drehung stattfinden soll (Die Variable heisst zwar mouseX, da sie die X Bewegung im zweidimensionalen Koordinatensystem darstellt, eigentlich ist es aber verantwortlich für die y-Achse, da im dreidimensionalen Koordinatensystem die X achse quasi die Y-Achse ist). Für die Y-Achse wird der zuvor in mouseX gespeicherte Wert übergeben, da die Maus sich ja auf der Y-Achse bewegen soll, und für die z-achse wird wieder 0 übergeben.
+Ein Vector3 ist eine Veränderung in Unity im dreidimensionalen Raum, die ja eine Rotation ist. Würde man ein 2D Spiel programmieren, müsste es Vector2 heißen. Diesem Vector3 werden auf den drei Achsen folgende Werte übergeben. Auf der X Achse (die im Spiel die dritte Achse eines zweidimensionalen Koordinatensystems ist, also beim zweidimensionalen Koordinatensystem "in das Papier hinein") wird 0 übergeben, da hier keine Drehung stattfinden soll (Die Variable heißt zwar mouseX, da sie die X Bewegung im zweidimensionalen Koordinatensystem darstellt, eigentlich ist es aber verantwortlich für die Y-Achse, da im dreidimensionalen Koordinatensystem die X-Achse quasi die Y-Achse ist). Für die Y-Achse wird der zuvor in mouseX gespeicherte Wert übergeben, da die Maus sich ja auf der Y-Achse bewegen soll, und für die z-achse wird wieder 0 übergeben.
 Das new davor bedeutet einfach, dass es sich um eine neue Bewegung handelt und keine kontinuierliche. Würde da kein new stehen, würde sich das Objekt mit jeder Ausführung des Scriptes (also jeden Frame) um den Faktor der Position der Maus drehen, anstatt dies nur dann zu tun, wenn man die Maus bewegt.
 
 Damit ist eine von der Mausbewegung abhängige Bewegung in der X (Y) Richtung implementiert. Als nächstes sollen einige Bewegungen innerhalb des Koordinatensystems definiert werden:

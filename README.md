@@ -4,7 +4,7 @@
 <br>
 In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, die schon seit Jahren verlassen ist. Nun muss er sich den Gefahren und Aufgaben dort stellen, um seinen Weg zurück nach Hause zu finden. Von Feinden umgeben und mit rudimentären Informationen muss der Spieler hier alle Teile finden und sammeln, um ein Boot zu bauen um zurück zur Zivilisation zu gelangen.
 
-<h1>Vorwort</a>
+<h1>Vorwort</h1>
 
 Diese Dokumentation stellt den Prozess dar, wie mithilfe der Unity Engine und einigen weiteren Programmen das Computerspiel WHYlands erstellt wurde. Wichtig ist dabei zu sagen, dass das Ausmaß der Modellierung, Programmierung und Konfigurierung in diesem Projekt eindeutig zu groß dafür ist, um es hier zu zeigen. Daher sind in dieser Dokumentation alle notwendigen Programmbefehle und Schritte erläutert, die notwendig sind, um dieses Spiel selber zu erstellen, aber nicht alle Schritte die insgesamt notwendig waren, um ein solches Spiel zu erstellen. Daher ist es zwar für jederman möglich, durch Lesen dieser Dokumentation, ein gleichrangiges Spiel zu kreieren, aber nicht möglich, dieses Spiel zu reproduzieren, indem man die Dokumenation 1 zu 1 mitschreibt.  
 

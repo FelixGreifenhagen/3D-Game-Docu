@@ -1312,7 +1312,7 @@ In diesem Fall sollte hier nur eine Mission erläutert werden. Das Ganze lässt 
 
 <h2 id="healthsystem">Das Health-System</h2>
 
-Ein weiterer wichtiger Aspekt für das Gameplay ist ein Health-System. Um dies zu implementieren, wird zunächst ein neues Script mit dem Namen healthScript erstellt. In diesem werden dann zunächst folgende Variablen eingeführt: 
+Ein weiterer wichtiger Aspekt für das Gameplay ist ein Health-System. Um dies zu implementieren wird zunächst ein neues Script mit dem Namen healthScript erstellt. In diesem werden dann zunächst folgende Variablen eingeführt: 
 
 ```
     public GameObject ozean;
@@ -1328,7 +1328,7 @@ Ein weiterer wichtiger Aspekt für das Gameplay ist ein Health-System. Um dies z
     public GameObject FourLife;    
 ``` 
 
-In diesem Fall soll der Charakter leben verlieren, wenn er sich im Wasser befindet. Dann soll ein GameOverScreen eingeblendet werden und das Spiel, sowie jegliche spielinterne Bewegungen blockiert werden. Dafür werden zunächst einmal die GameObjekte ozean und gameOverScreen definiert. Dann wird zudem eine Variable definiert, die den aktuellen Zustand des Lebens definieren soll. In diesem Fall wird das Health von der Zeit im Wasser abhängig gemacht und daher healthTime genannt. Dann wird noch eine Variable benötigt, in der angegeben wird, ob das Spiel vorbei ist oder nicht. Daneben werden Variablen benötigt, die anzeigen, ob Lava und Kakteen berührt werden und es werden 4 Variablen benötigt für die Herzen, die ein- und ausgeblendet werden sollen.
+In diesem Fall soll der Charakter leben verlieren, wenn er sich im Wasser befindet. Dann soll ein GameOverScreen eingeblendet werden und das Spiel, sowie jegliche spielinterne Bewegungen blockiert werden. Dafür werden zunächst einmal die GameObjekte ozean und gameOverScreen definiert. Dann wird zudem eine Variable definiert, die den aktuellen Zustand des Lebens definieren soll. In diesem Fall wird das Health von der Zeit im Wasser abhängig gemacht und daher healthTime genannt. Dann wird noch eine Variable benötigt, in der angegeben wird, ob das Spiel vorbei ist oder nicht. Daneben werden Variablen benötigt die anzeigen, ob Lava und Kakteen berührt werden und es werden 4 Variablen benötigt für die Herzen, die ein- und ausgeblendet werden sollen.
 
 ```
 private void Start()  {
@@ -1339,7 +1339,7 @@ private void Start()  {
 }
 ```
 
-Als Allererstes wird das "Leben" auf 10 gesetzt, mittels healthTime = 10.0f;. Anschließend wird der gameOverScreen auf nicht mehr aktiv gesetzt. Was es damit auf sich hat, lässt sich <a href="#setuiactive">hier</a> nachlesen. Dann wird noch gameIsOver auf false und touchesCactus auf false gesetzt, da diese Aktionen noch nicht eingetreten sind
+Als Allererstes wird das "Leben" auf 10 gesetzt mittels healthTime = 10.0f;. Anschließend wird der gameOverScreen auf nicht mehr aktiv gesetzt. Was es damit auf sich hat, lässt sich <a href="#setuiactive">hier</a> nachlesen. Dann wird noch gameIsOver auf false und touchesCactus auf false gesetzt, da diese Aktionen noch nicht eingetreten sind
 
 Als Nächstes kommt dies in die Update Funktion:
 
@@ -1477,7 +1477,7 @@ else if (isPaused == true || checkHealth <= 1) {
 ```
 Damit werden die ausgeübten Aktionen nur ausgeführt, wenn der Spieler sich noch im Spiel befindet. Dann wird die if-schleife ausgeführt. Ansonsten wird geguckt, ob der Spieler im GameOver ist. Dann muss nicht nochmal im HealthScript der Cursor sichtbar gemacht werden, sondern es kann dieser Code einfach wiederverwendet werden. Dafür wird mittels des oder-Operator || einfach noch  hinzugefügt, dass sobald entweder das gamePaused ist ODER das Game vorbei ist, die Maus wieder sichtbar gemacht wird.
 
-Damit das Ganze nun auch in Unity wirksam wird, müssen noch einige Einstellungen im GUI getroffen werden. Als erstes muss das healthScript auf den Player gezogen werden. Als Nächstes müssen die vorhandenen Variablen zugewiesen werden. Dafür wird auf "Ozean" das Wasser-Objekt gezogen. Dann muss der GameOverScreen zugewiesen werden. Dafür muss zunächst ein solcher Screen erstellt weden. Dafür wird ein neues Canvas mit einem Text und einem Button erstellt und so eingestellt, wie es benötigt wird. Wie das ganze geht, ist <a href="#createbuttons">hier</a> nachzulesen. Dieser Screen wird dann auf das GameOverScreen-Feld gezogen und damit zugewiesen.
+Damit das Ganze nun auch in Unity wirksam wird, müssen noch einige Einstellungen im GUI getroffen werden. Als erstes muss das healthScript auf den Player gezogen werden. Als Nächstes müssen die vorhandenen Variablen zugewiesen werden. Dafür wird auf "Ozean" das Wasser-Objekt gezogen. Dann muss der GameOverScreen zugewiesen werden. Dafür muss zunächst ein solcher Screen erstellt werden. Dafür wird ein neues Canvas mit einem Text und einem Button erstellt und so eingestellt, wie es benötigt wird. Wie das geht, ist <a href="#createbuttons">hier</a> nachzulesen. Dieser Screen wird dann auf das GameOverScreen-Feld gezogen und damit zugewiesen.
 
 Das Selbe gilt für das VerticalCameraMovement Script und den PlayerController. Hier wurde bereits als Rücksicht auf das Pause-Menü eine if-Schleife eingefügt. Diese if-Schleife muss um folgendes ergänzt werden:
 
@@ -1545,11 +1545,11 @@ public class vulcanoCounter : MonoBehaviour
 ```
 Ganz oben wird zunächst einmal definiert, dass sowohl auf das Unity User Interface und auf das Unity SceneManagement im Script zurückgegriffen werden kann. Als Nächstes werden einige Variablen definiert. Eine für den Counter, eine für den Text vom Typ Text, der den Counter auf dem User-Screen anzeigt, eine für Sekunden und eine für Minuten, die noch im Timer übrig ist, und noch einmal zwei Stück die das Ergebnis einer Rechenaufgabe speichern. 
 
-In der Start() Funktion wird der Timer auf 30 Minuten, also 1800 Sekunden gesetzt. In der Update-Funktion wird zunächst, ähnlich wie beim healthSystem, der counter Variable mit -= (das Gegenteil von +=) runtergezählt. Wie das funktioniert, wurde bereits im Kapitel für das <a href="#intro">Intro</a> erläutert. Als Nächstes sollen die 1800 Sekunden, die ja für den Spieler relativ schlecht zu erkennen sind, in Minuten und Sekunden-Schreibweise aufgeteilt werden. Dafür wird zuerst einmal der Counter, der aktuell Sekunden enthält durch 60 geteilt. Das Ergebnis gibt die Anzahl an vollen Minuten wieder und wird in der Variable counterMinutes gespeichert. Als Nächstes sollen die restlichen Sekunden ermittelt werden. Also alle Sekunden, die nicht eine volle Minute ergeben. Dafür wird der Operator Modulo (%) verwendet. Dieser teilt eine Zahl durch eine andere, aber anstatt das Ergebnis (wie der durch-Operator) zurückzugeben, gibt er den dabei übrig bleibenden Rest zurück. 8 % 3 wäre dann also 2, weil 8/3 = 6 und der Rest 2 ist. In diesem Fall stellt Modulo die Sekunden dar. Bei 125 Sekunden würde damit bei der durch-Rechnung 2 und bei der Modulo-Rechnung 5 rauskommen. Daraus setzt sich aus 125 Sekunden 2 Minuten und 5 Sekunden zusammen.
+In der Start() Funktion wird der Timer auf 30 Minuten, also 1800 Sekunden gesetzt. In der Update-Funktion wird zunächst, ähnlich wie beim healthSystem, der counter Variable mit -= (das Gegenteil von +=) runtergezählt. Wie das funktioniert, wurde bereits im Kapitel für das <a href="#intro">Intro</a> erläutert. Als Nächstes sollen die 1800 Sekunden, die ja für den Spieler relativ schlecht zu erkennen sind, in Minuten und Sekunden-Schreibweise aufgeteilt werden. Dafür wird zuerst einmal der Counter, der aktuell Sekunden enthält durch 60 geteilt. Das Ergebnis gibt die Anzahl an vollen Minuten wieder und wird in der Variable counterMinutes gespeichert. Als Nächstes sollen die restlichen Sekunden ermittelt werden. Also alle Sekunden, die nicht eine volle Minute ergeben. Dafür wird der Operator Modulo (%) verwendet. Dieser teilt eine Zahl durch eine andere, aber anstatt das Ergebnis (wie der durch-Operator) zurückzugeben, gibt er den dabei übrig bleibenden Rest zurück. 8 % 3 wäre dann also 2, weil 8/3 = 6 und der Rest 2 ist. In diesem Fall stellt Modulo die Sekunden dar. Bei 125 Sekunden würde damit bei der Durch-Rechnung 2 und bei der Modulo-Rechnung 5 rauskommen. Daraus setzt sich aus 125 Sekunden 2 Minuten und 5 Sekunden zusammen.
 
 Da im Text auf dem Screen vom Spieler von einem Script aus nur eine String Variable dargestellt werden kann und keine float Variable, muss der Counter zum String konvertiert werden. Daher werden im Folgenden alle Ergebnisse für Minuten und Sekunden den zuvor erstellten String Variablen zugeordnet. 
 
-In den nächsten if-Schleifen wird nun geprüft, wie hoch der counter ist. In der ersten if-schleife wird geprüft, ob der Sekunden counter unter 10 ist. Wenn dies der Fall ist, wird der Sekunden Counter mittels dem Befehl ((int)counterSeconds).ToString() zu einem String konvertiert. Da der Spieler aber nicht einfach so einen einstelligen Sekundenwert haben soll (also so: 15:1), sondern das normale Stunden und Sekundenformat (also so: 15:01), wird vor dem Befehl, sollte der SekundenCounter unter 10 sein, mittels "0" + eine Null an den String drangehängt. Damit wäre die Zahlenfolge, wenn der Sekundencounter unter 10 läuft wie folgt: 12...11...10...09...08..., also genau wie es benötigt wird. In der nächsten else-Schleife wird der Fall abgedeckt, dass der Counter ÜBER 10 ist, denn dann soll ja nur der Wert des SekundenCounters, OHNE die extra 0 als String zugeordnet werden. Im Anschluss wird das Ganze noch einmal für die Minuten wiederholt.
+In den nächsten if-Schleifen wird nun geprüft, wie hoch der Counter ist. In der ersten if-schleife wird geprüft, ob der Sekunden counter unter 10 ist. Wenn dies der Fall ist, wird der Sekunden Counter mittels dem Befehl ((int)counterSeconds).ToString() zu einem String konvertiert. Da der Spieler aber nicht einfach so einen einstelligen Sekundenwert haben soll (also so: 15:1), sondern das normale Stunden und Sekundenformat (also so: 15:01), wird vor dem Befehl, sollte der SekundenCounter unter 10 sein, mittels "0" + eine Null an den String drangehängt. Damit wäre die Zahlenfolge, wenn der Sekundencounter unter 10 läuft wie folgt: 12...11...10...09...08..., also genau wie es benötigt wird. In der nächsten else-Schleife wird der Fall abgedeckt, dass der Counter ÜBER 10 ist, denn dann soll ja nur der Wert des SekundenCounters, OHNE die extra 0 als String zugeordnet werden. Im Anschluss wird das Ganze noch einmal für die Minuten wiederholt.
 
 Als Nächstes werden Sekunden und Minuten zu einem gemeinsamen String erstellt, welcher folgendes Format hat: 10:45. Dafür werden die zuvor MinutenText und SekundenText strings mit einem + hintereinander "geheftet" dazwischen wird allerdings noch ein Doppelpunkt gesetzt. 
 
@@ -1569,7 +1569,7 @@ if(counter < 1)
 }
 ```
 
-Der Szenenwechsel wurde bereits beim Kapitel für das Intro erklärt. Im Anschluss wird noch, damit man auch den Mauszeiger sieht, wenn das Spiel vorbei ist, der Mauszeiger noch auf "ungelocked" und auf sichtbar gesetzt. Damit wäre das Script vollständig. 
+Der Szenenwechsel wurde bereits beim Kapitel für das Intro erklärt. Im Anschluss wird noch, damit man auch den Mauszeiger sieht, wenn das Spiel vorbei ist, der Mauszeiger noch auf "unlocked" und auf sichtbar gesetzt. Damit wäre das Script vollständig. 
 
 Als nächstes muss ein Canvas mit einem TextElement erstellt werden. Dieses wird dann unten am Rand über der Lebensanzeige platziert. Der Text wird wie gewünscht verändert. Das Script wird nun auf das Textelement gezogen. Anschließend wird der Variable Vulcanotext der zuvor erstellte Text zugeordnet. 
 
@@ -1627,7 +1627,7 @@ Die Besonderheit ist, dass in diesem Fall noch die Restzeit angezeigt werden sol
 
 <h1 id="export">Der Export</h1>
 
-Das ganze Spiel ist jetzt nun fertig und lässt sich auch in Unity sehr gut spielen. Allerdings soll der Nutzer am Ende nicht jedes Mal Unity installieren und das Ganze darin importieren müssen. Daher sollen im Folgenden alle Einstellungen getroffen und das Spiel für den Nutzer spielbar gemacht, also exportiert werden.
+Das ganze Spiel ist jetzt nun fertig und lässt sich auch in Unity sehr gut spielen. Allerdings soll der Nutzer am Ende nicht jedes Mal Unity installieren und das Projekt darin importieren müssen. Daher sollen im Folgenden alle Einstellungen getroffen und das Spiel für den Nutzer spielbar gemacht, also exportiert werden.
 
 <h2 id="splashscreen">Der Splashscreen und Icons</h2>
 
@@ -1680,9 +1680,9 @@ Sobald der Ordner ausgewählt wurde, beginnt der Export. Wenn vor dem Export all
 
 <h1 id="nachwort">Nachwort</h1>
 
-Diese Dokumentation soll nur einen kleinen Einblick in die Arbeit der letzten Wochen am Spiel WHYlands geben. Natürlich spiegelt sie nicht die komplette Arbeitszeit von über 100 Stunden an diesem Projekt dar, aber sie erläutert gut die Mechanismen und Vorgehensweise, wie ein Dritter dieses Projekt reproduzieren oder als Grundlage für sein eigenes Projekt nutzen kann. Der Umfang von der Unity Engine ist natürlich ersichtlich und es ist zu erkennen, welche Möglichkeiten sie gibt für Anfänger, ein erstes eigenes Spiel zu produzieren. Auch umfangreichere Spiele lassen sich eindeutig mit Unity umsetzen. Dennoch ist auch auffällig, dass bereits in diesem Projekt Unity an seine Grenzen gestoßen ist. Dies könnte einerseits an der in diesem Projekt verwendeten Gratis-Version und dessen limitierter Engine-Leistung liegen, andererseits auch an der Ausrichtung von Unity auf vor allem Mini-Games und Anfängerprojekte. Zudem wurden natürlich alle in diesem Projekt verwendete Audio-, fbx- und Bilddateien nicht kompromiert, was natürlich ebenfalls die Ladezeiten erhöht. Daher kann sie gut genutzt werden, um Mini-Games oder kleine Projekte für den Anfang umzusetzten, aber es sollte auch darauf geachtet werden, dass bei der Umsetzung von deutlich größeren Projekten vielleicht eine andere Engine wie die Unreal Engine oder die CryEngine verwendet werden muss.
+Diese Dokumentation soll nur einen kleinen Einblick in die Arbeit der letzten Monate am Spiel WHYlands geben. Natürlich spiegelt sie nicht die komplette Arbeitszeit von weit über 100 Stunden an diesem Projekt dar, aber sie erläutert gut die Mechanismen und Vorgehensweise, wie ein Dritter dieses Projekt reproduzieren oder als Grundlage für sein eigenes Projekt nutzen kann. Der Umfang von der Unity Engine ist natürlich ersichtlich und es ist zu erkennen, welche Möglichkeiten sie gibt für Anfänger, ein erstes eigenes Spiel zu produzieren. Auch umfangreichere Spiele lassen sich eindeutig mit Unity umsetzen. Dennoch ist auch auffällig, dass bereits in diesem Projekt Unity an seine Grenzen gestoßen ist. Dies könnte einerseits an der in diesem Projekt verwendeten Gratis-Version und dessen limitierter Engine-Leistung liegen, andererseits auch an der Ausrichtung von Unity auf vor allem Mini-Games und Anfängerprojekte. Zudem wurden natürlich alle in diesem Projekt verwendete Audio-, fbx- und Bilddateien nicht kompromiert, was natürlich ebenfalls die Ladezeiten erhöht. Daher kann sie gut genutzt werden, um Mini-Games oder kleine Projekte für den Anfang umzusetzten, aber es sollte auch darauf geachtet werden, dass bei der Umsetzung von deutlich größeren Projekten vielleicht eine andere Engine wie die Unreal Engine oder die CryEngine verwendet werden muss.
 
-Dennoch war es sie für dieses Projekt mehr als ausreichend und kann Anfängern sehr gut die  Anfänge der Spiele-Entwicklung nahebringen und zeigen, wo die Grenzen sind und was ein Einzelner für ein Spiel realisieren kann. 
+Dennoch war es sie für dieses Projekt mehr als ausreichend und kann Anfängern sehr gut die Anfänge der Spiele-Entwicklung nahebringen und zeigen, wo die Grenzen sind und was einzelne nicht professionelle Spieleentwickler für ein Spiel realisieren können. 
 
 <h1 id="quellen">Quellen</h1>
 

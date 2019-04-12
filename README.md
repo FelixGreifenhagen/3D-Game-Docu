@@ -100,7 +100,7 @@ Sobald der Charakter dann beendet ist, lässt sich oben rechts mit "Save to Maxi
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51466760-3e926b00-1d6b-11e9-921a-4b39743ccb33.png" width="600px"></p>
 
-Sobald dann auch die Animationen angewandt sind, lässt sich das Modell, sowie die Animationen als .fbx datei exportieren. Diese lässt sich dann per Drag&Drop in Unity importieren.
+Sobald dann auch die Animationen angewandt sind, lässt sich das Modell sowie die Animationen als .fbx datei exportieren. Diese lässt sich dann per Drag&Drop in Unity importieren.
 
 <h2 id="animationcontroller">Der Animator-Controller</h2>
 
@@ -110,38 +110,35 @@ In diesem werden sämtliche Animationen hinzugefügt und verwaltet. Man erreicht
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51618452-a7761080-1f2e-11e9-843d-71d63eb24277.png" width="300px"></p>
 
-Als nächstes werden dann Charakter und Animationen unten in die Projektdatein gezogen. Sobald der Charakter dann in der Szene paltziert ist, kann in den Dateien eine Animation ausgewählt und auf den Charakter gezogen werden. Damit erstellt Unity einen sogenannten <b>Animator </b>:
+Als nächstes werden dann Charakter und Animationen unten in die Projektdatein gezogen. Sobald der Charakter dann in der Szene platziert ist, kann in den Dateien eine Animation ausgewählt und auf den Charakter gezogen werden. Damit erstellt Unity einen sogenannten <b>Animator</b>:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51619541-d8efdb80-1f30-11e9-8319-9dd0df862037.png" width="400px">
     
-In diesen ist bereits der Controller (wird automatisch hinzugefügt und kann dabei belassen werden) und der Avatar (der in diesem Fall den Charakter mitsamt Animation darstellt. In Unity werden diese zusammen konvertiert, das Endergebnis zeigt aber nur einen Charakter, den aber mit mehreren Animationen an). Zudem ist zu beobachten, dass im Animatior-Controller mit dem Hinzufügen von neuen Animation auch kleine neue Kästchen entstehen:
+In diesen ist bereits der Controller (wird automatisch hinzugefügt und kann dabei belassen werden) und der Avatar (der in diesem Fall den Charakter mitsamt Animation darstellt. In Unity werden diese zusammen konvertiert, das Endergebnis zeigt aber nur einen Charakter, den aber mit mehreren Animationen, an). Zudem ist zu beobachten, dass im Animator-Controller mit dem Hinzufügen von neuen Animationen auch kleine neue Kästchen entstehen:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55874822-c9794980-5b93-11e9-896f-20b43a0ffb0b.png" width="400px"></p>
 Das ist die Besonderheit vom Animator in einer Engine wie Unity: die Verwaltung von Animationen erfolgt grafisch! 
 
-Noch ist zu erkennen, dass es ein orangenes Kästchen und mehrere graue gibt. Das Orangene ist dabei der IDLE, also die Standart Animation, und die grauen sind die anderen Animationen. Per <b>Rechtsklick auf ein Kästchen > Set as Layer Default State </b> lässt sich auch ein anderes Kästchen als IDLE/Default bestimmen. 
+Noch ist zu erkennen, dass es ein orangenes Kästchen und mehrere graue gibt. Das Orangene ist dabei der IDLE, also die Standart Animation, und die grauen sind die anderen Animationen. Per <b>Rechtsklick auf ein Kästchen > Set as Layer Default State </b> lässt sich auch ein anderes Kästchen als IDLE/Default bestimmen. In diesem Fall soll die Animation, in der der Charakter einfach dasteht und atmet als IDLE gesetzt werden.
 
-Sobald dann sämtliche Animationen zum Animator-Controller hinzugefügt wurden, sind schon einige Pfeile zwischen den verschiedenen Kästen zu erkennen. Diese stellen "Übergänge" zwischen den Animationen da und lassen sich mit <b> Rechtsklick > Make Transition </b> hinzufügen. Anschließend kann mit einem Klick auf den Pfeil rechts im Inspektor die Bedingung (unter "Conditions" eingefügt werden. 
+Sobald dann sämtliche Animationen zum Animator-Controller hinzugefügt wurden, sind schon einige Pfeile zwischen den verschiedenen Kästen zu erkennen. Diese stellen "Übergänge" (Transitions) zwischen den Animationen da und lassen sich mit <b> Rechtsklick > Make Transition </b> hinzufügen. Anschließend kann mit einem Klick auf den Pfeil rechts im Inspektor die Bedingung (unter "Conditions") eingefügt werden. Eine solche Condition ist eine Bedingung, die erfüllt werden muss, damit dieser Übergang (Wechsel) zwischen den Animationen ausgeführt wird.
 
 <p align="center"><img width="400" src="https://user-images.githubusercontent.com/42578917/51620344-713a9000-1f32-11e9-8c1e-4dc91c343fa0.png"></p>
 
-Um dort eine Condition auswählen zu können, muss zuerst eine erstellt werden! Eine Condition wird von Unity als ein Script mit einer gleichnamigen Boolean Variable verstanden, welche in abhängigkeit die Werte true oder false annimmt. Um also eine Condition zu erstellen, muss zunächst ein neues C#-Script erstellt werden. Dies wird "Moving" genannt und geöffnet. 
+Um dort eine Condition auswählen zu können, muss zuerst eine erstellt werden! Eine Condition wird von Unity als ein Script mit einer gleichnamigen Boolean Variable verstanden, welche in Abhängigkeit die Werte true oder false annimmt. Um also eine Condition zu erstellen, muss zunächst ein neues C#-Script erstellt werden. Dies wird "Moving" genannt und geöffnet. 
 
 Da das Script selber von Unity als eine Boolean Variable verstanden wird, muss diese nicht mehr definiert werden. Allerdings muss zuvor noch definiert werden, dass dies ein Script ist, welches im Animator verwendet wird. Dafür muss zunächst ein neuer public Animator namens move definiert werden. Dies holt sich quasi den Animator ins Script und kann in diesem den Zustand von Conditions ändern. Damit dieser auch erreicht wird, muss er zudem in der void Start() initialisiert werden:
 
 ```
 public class Moving:MonoBehaviour {
-    public Animator move;
-    
+    public Animator move;    
     void Start() {
         move = GetComponent<Animator>();
     }
 }
 
 ```
-Das stellt quasi dar: "Ich brauche einen neuen Animator, das ist dieser und in ihm sollen später die Veränderungen Wirkung finden".
-
-als nächstes soll natürlich auch irgendein Ereignis im Script stattfinden. Dafür wird in die void Update() folgendes geschrieben:
+Das stellt quasi dar: "Ich brauche einen neuen Animator, das ist dieser und in ihm sollen später die Veränderungen Wirkung finden". Als nächstes soll natürlich auch irgendein Ereignis im Script stattfinden. Dafür wird in die void Update() folgendes geschrieben:
 
 ```
 void Update() {
@@ -153,7 +150,7 @@ void Update() {
     }
 }
 ```
-Es werden wird wie im Character Controller wieder der Zustand der Taste W abgefragt. Diesmal wird allerding etwas anderes dabei ausgelöst: Undzwar wird auf mittels move.SetBool() im Animator move (der vorher definiert wurde) auf eine Variable zugegriffen und sie "gesetted" (daher das "SetBool"). In den Klammern danach wird zunächst dargestellt, um welche Variable es geht (nämlich "Moving") und auf was sie gesetzt wird (false bzw. true). Der volle Command move.SetBool("Moving", false) nimmt sich (das verhältnis von conditions und variablen in diesem Script wurde zuvor bereits angeschnitten) die Condition "Moving" im move-Animator, und setzt sie als bool false. Andersrum wird das ganze mit true natürlich auch gemacht.
+Es wird wie im Character Controller wieder der Zustand der Taste W abgefragt. Diesmal wird allerding etwas anderes dabei ausgelöst: Undzwar wird auf mittels move.SetBool() im Animator move (der vorher definiert wurde) auf eine Variable zugegriffen und sie "gesetted" (daher das "SetBool"). In den Klammern danach wird zunächst dargestellt, um welche Variable es geht (nämlich "Moving") und auf was sie gesetzt wird (false bzw. true). Der volle Command move.SetBool("Moving", false) nimmt sich (das verhältnis von conditions und variablen in diesem Script wurde zuvor bereits angeschnitten) die Condition "Moving" im move-Animator, und setzt sie als bool false. Andersrum wird das ganze mit true natürlich auch gemacht.
 
 Nachdem das Script gespeichert wurde, kann die Condition im Animator gesetzt werden. Dafür muss zunächst ein neuer Parameter definiert werden: Dafür geht man links unter Parameters auf das + und wählt Bool aus (da ja am Ende auch eine Boolean Condition verwendet werden soll). 
 

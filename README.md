@@ -1209,9 +1209,9 @@ Damit nun das Aufsammeln des Schlüssels auch etwas bringt, muss irgendwas passi
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55969895-d9218c80-5c7e-11e9-9ef3-75500f4fe662.png" width="500px"></p>
 
-Dafür muss natürlich auch in Blender eine Animation erstellt werden, in der sich die Tür öffnet. Das ganze wird dann in Unity implementiert. Danach wird ein neuer Animator erstellt. Mit <b> Rechtsklick > Create > Animator Controller </b> lässt sich dieser erstellen. Als nächstes muss auf das erstellte Objekt (die Hütte) ein Animator angeheftet werden. Dafür muss man einfach die zuvor in Blender erstellte Animation auf das Modell der Hütte ziehen. Damit wird automatisch einer erstellt. Auf diesen Animator muss nun im Feld Controller der neu erstellte Animator Controller platziert werden. 
+Dafür muss natürlich auch in Blender eine Animation erstellt werden, in der sich die Tür öffnet. Das ganze wird dann in Unity implementiert. Danach wird ein neuer Animator erstellt. Mit <b> Rechtsklick > Create > Animator Controller </b> lässt sich dieser erstellen. Als Nächstes muss auf das erstellte Objekt (die Hütte) ein Animator angeheftet werden. Dafür muss man einfach die zuvor in Blender erstellte Animation auf das Modell der Hütte ziehen. Damit wird automatisch einer erstellt. Auf diesen Animator muss nun im Feld Controller der neu erstellte Animator Controller platziert werden. 
 
-Als nächstes wird der Animator Controller geöffnet. In diesem wird eine neue Transition erstellt und ein Parameter namens openDoor. (für eine Erläuterung s.h. <a href="#animationcontroller">Der Animator-Controller</a>). Nun wird ein gleichnamiges Script erstellt mit folgendem Inhalt:
+Als Nächstes wird der Animator Controller geöffnet. In diesem wird eine neue Transition erstellt und ein Parameter namens openDoor.(Für eine Erläuterung s.h. <a href="#animationcontroller">Der Animator-Controller</a>). Nun wird ein gleichnamiges Script erstellt mit folgendem Inhalt:
 
 ```
 public class openDoor : MonoBehaviour
@@ -1238,13 +1238,13 @@ public class openDoor : MonoBehaviour
 ```
 Es wird wieder der Animator Controller selektiert und darin die Boolean Condition "openDoor" geschaltet. Diesmal ist es allerdings nicht abhängig von einem Tastendruck oder Timer, sondern davon, ob der Schlüssel, den man ja erst einsammeln muss, um die Tür zu öffnen, noch existiert. Dafür ist der Befehl GameObject.Find("Schlüssel") == null zuständig. Zudem wird wieder geprüft, ob der Spieler sich in einem gewissen Umkreis um die Tür befindet, damit er nicht einfach so die Tür von 200 Metern weit weg öffnen kann. Wenn das der Fall ist, und der Spieler dann E drückt, wird die Variable auf true geschaltet und somit die Animation der Tür ausgeführt. Eine Erläuterung der Distance und des GameObject.Find("Schlüssel") == null findet sich im Kapitel <a href="objektesammeln">Objekte aufsammeln</a>.
 
-Als letztes soll noch ein Text ein und ausgeblendet werden wenn es möglich ist, die Tür zu öffnen. Dafür kann allerdings auch das Script für das aufsammeln des Schlüssels (<a href="objektesammeln">Objekte aufsammeln</a>) verwendet werden, da es nahezu identisch in der Funktionsweise ist. Es wird lediglich um folgende if-Schleife ergänzt:
+Als Letztes soll noch ein Text ein und ausgeblendet werden wenn es möglich ist, die Tür zu öffnen. Dafür kann allerdings auch das Script für das Aufsammeln des Schlüssels (<a href="objektesammeln">Objekte aufsammeln</a>) verwendet werden, da es nahezu identisch in der Funktionsweise ist. Es wird lediglich um folgende if-Schleife ergänzt:
 
 ```
 if (GameObject.Find("Schlüssel") == null && Distance <= 8) {
 }        
 ```
-Damit wird geprüft, ob der Schlüssel noch existiert. Mit dieser Ergänzung sieht das Script zum öffnen der Tür wie folgt aus:
+Damit wird geprüft, ob der Schlüssel noch existiert. Mit dieser Ergänzung sieht das Script zum Öffnen der Tür wie folgt aus:
 
 ```
 public class openDoorText : MonoBehaviour
@@ -1275,11 +1275,11 @@ public class openDoorText : MonoBehaviour
 }
 ```
 
-Zuletzt muss natürlich wieder ein Text erstellt, gestylt und positioniert, sowie richtig zugeordnet werden. 
+Zuletzt muss natürlich wieder ein Text erstellt, gestyled und positioniert, sowie richtig zugeordnet werden. 
 
 <h2 id="missionen">Missionen</h2>
 
-Nun soll der Spieler auch wissen, was er machen soll, um im Spiel weiter zu kommen. Dafür wird zunächst ein Missionstext erstellt. Wie man das Canvas und diesen Text erstellt, lässt sich im Kapitel <a href="#">Objekte aufsammeln</a> nachlesen. Dieser wird nun oben rechts am Bildschirmrand platziert und mit dem benötigten Text gefüllt. Als nächstes wird ein neues Script erstellt namens keyMission.cs. Dort kommt folgender Text hinein:
+Nun soll der Spieler auch wissen, was er machen soll, um im Spiel weiter zu kommen. Dafür wird zunächst ein Missionstext erstellt. Wie man das Canvas und diesen Text erstellt, lässt sich im Kapitel <a href="#">Objekte aufsammeln</a> nachlesen. Dieser wird nun oben rechts am Bildschirmrand platziert und mit dem benötigten Text gefüllt. Als Nächstes wird ein neues Script erstellt namens keyMission.cs. Dort kommt folgender Text hinein:
 
 ```
 public class keyMission : MonoBehaviour
@@ -1299,11 +1299,11 @@ public class keyMission : MonoBehaviour
     }
 }
 ```
-Dies ist einfach ein ganz simples Script, mit dem das zuvor erstellte Canvas ein und ausgeblendet wird. Dies wird darüber gelöst, dass in einer if-Schleife mittels des Befehls: GameObject.Find(gameObjectName) == null geprüft wird, ob das Objekt noch da ist. In diesem Fall wird der missionstext zu beginn des Spiels eingeblendet. Wenn nun der Schlüssel aufgesammelt, also das Element zerstört wird, ist das Ergebnis der Abfrage GameObject.Find(gameObjectName) null, also dass es nicht mehr da ist. Wenn es also = null ist, wird der missionstext ausgeblendet. 
+Dies ist einfach ein ganz simples Script, mit dem das zuvor erstellte Canvas ein und ausgeblendet wird. Dies wird darüber gelöst, dass in einer if-Schleife mittels des Befehls: GameObject.Find(gameObjectName) == null geprüft wird, ob das Objekt noch da ist. In diesem Fall wird der Missionstext zu Beginn des Spiels eingeblendet. Wenn nun der Schlüssel aufgesammelt, also das Element zerstört wird, ist das Ergebnis der Abfrage GameObject.Find(gameObjectName) null, also dass es nicht mehr da ist. Wenn es also = null ist, wird der Missionstext ausgeblendet. 
 
-Das ganze lässt sich nun auf alle Missionen im Spiel anwenden. Dafür prüft man einfach, ob das Missionsobjekt von Mission 1 zerstört wurde. Wenn das der Fall ist, wird der Text für Mission 2 eingeblendet. Sobald dieses dann zerstört ist, wird der Text für Mission 2 wieder ausgeblendet und der Text für Mission 3 eingeblendet. Das ganze lässt sich dann immer weiter so fortführen, bis man eine ordentliche Reihe von Missionen hat. 
+Das Ganze lässt sich nun auf alle Missionen im Spiel anwenden. Dafür prüft man einfach, ob das Missionsobjekt von Mission 1 zerstört wurde. Wenn das der Fall ist, wird der Text für Mission 2 eingeblendet. Sobald dieses dann zerstört ist, wird der Text für Mission 2 wieder ausgeblendet und der Text für Mission 3 eingeblendet. Das ganze lässt sich dann immer weiter so fortführen, bis man eine ordentliche Reihe von Missionen hat. 
 
-In diesem Fall soll hier nur eine Mission erläutert werden. Das ganze lässt sich aber auch auf alle anderen Missionen ganz einfach anwenden. Hier wurde das Script für mehrere Missionen zum Sammeln von Floß-Bestandteilen verwendet.
+In diesem Fall soll hier nur eine Mission erläutert werden. Das Ganze lässt sich aber auch auf alle anderen Missionen ganz einfach anwenden. Hier wurde das Script für mehrere Missionen zum Sammeln von Floß-Bestandteilen verwendet.
 
 <h2 id="healthsystem">Das Health-System</h2>
 
@@ -1317,7 +1317,7 @@ Ein weiterer wichtiger Aspekt für das Gameplay ist ein Health-System. Um dies z
     bool gameIsOver;
 ``` 
 
-In diesem Fall soll der Charakter leben verlieren, wenn er sich im Wasser befindet. Dann soll ein GameOverScreen eingeblendet werden und das Spiel, sowie jegliche Spielinterne Bewegungen blockiert werden. Dafür werden zunächst einmal die GameObjecte ozean und gameOverScreen definiert. Dann wird zudem eine Variable definiert, die den aktuellen Zustand des Lebens definieren soll. In diesem Fall wird das Health von der Zeit im Wasser abhängig gemacht und daher healthTime genannt. Dann wird noch eine Variable benötigt, in der angegeben wird, ob das Spiel vorbei ist oder nicht.
+In diesem Fall soll der Charakter leben verlieren, wenn er sich im Wasser befindet. Dann soll ein GameOverScreen eingeblendet werden und das Spiel, sowie jegliche spielinterne Bewegungen blockiert werden. Dafür werden zunächst einmal die GameObjekte ozean und gameOverScreen definiert. Dann wird zudem eine Variable definiert, die den aktuellen Zustand des Lebens definieren soll. In diesem Fall wird das Health von der Zeit im Wasser abhängig gemacht und daher healthTime genannt. Dann wird noch eine Variable benötigt, in der angegeben wird, ob das Spiel vorbei ist oder nicht.
 
 ```
 private void Start()  {
@@ -1329,9 +1329,7 @@ private void Start()  {
 
 Als allererstes wird das "Leben" auf 10 gesetzt, mittels healthTime = 10.0f;. Anschließend wird der gameOverScreen auf nicht mehr aktiv gesetzt. Was es damit auf sich hat, lässt sich <a href="#setuiactive">hier</a> nachlesen
 
-
-
-
+HIER FEHLT NOCH WAS
 
 
 
@@ -1351,7 +1349,7 @@ public class CursorScript : MonoBehaviour
     }
 }
 ```
-Damit wird der Wert aus dem healthScript geholt. Anschließend muss geprüft werden, ob der Wert den "Grenzwert" für GameOver unterschritten hat, da dann die Ereignisse in diesem Script nicht ausgeführt werden sollen. Denn der ganze Cursor-Mechanismus basiert ja aktuell darauf, dass der Spieler sich inGame befindet. Wenn nun das healthScript nicht beachtet wird, tut das Script immer wieder das, was vorgegeben ist. Und achtet dabei nicht darauf, ob vielleicht schon GameOver ist. Da im healthScript der MouseCursor wieder sichtbar gemacht wurde, soll dies natürlich nicht einfach so vom Cursor Script wieder rückgängig gemacht werden. Die vorhandene if-Schleife wird also wie folgt ergänzt:
+Damit wird der Wert aus dem healthScript geholt. Anschließend muss geprüft werden, ob der Wert den "Grenzwert" für GameOver unterschritten hat, da dann die Ereignisse in diesem Script nicht ausgeführt werden sollen. Denn der ganze Cursor-Mechanismus basiert ja aktuell darauf, dass der Spieler sich inGame befindet. Wenn nun das healthScript nicht beachtet wird, tut das Script immer wieder das, was vorgegeben ist. Und achtet dabei nicht darauf, ob vielleicht schon GameOver ist. Da im healthScript der MouseCursor wieder sichtbar gemacht wurde, soll dies natürlich nicht einfach so vom CursorScript wieder rückgängig gemacht werden. Die vorhandene if-Schleife wird also wie folgt ergänzt:
 
 ``` 
 if (isPaused == false && checkHealth > 1) {
@@ -1363,9 +1361,9 @@ else if (isPaused == true || checkHealth <= 1) {
 ```
 Damit werden die ausgeübten Aktionen nur ausgeführt, wenn der Spieler sich noch im Spiel befindet. Dann wird die if-schleife ausgeführt. Ansonsten wird geguckt, ob der Spieler im GameOver ist. Dann muss nicht nochmal im HealthScript der Cursor sichtbar gemacht werden, sondern es kann dieser Code einfach wiederverwendet werden. Dafür wird mittels des oder-Operator || einfach noch  hinzugefügt, dass sobald entweder das gamePaused ist ODER das Game vorbei ist, die Maus wieder sichtbar gemacht wird.
 
-Damit das ganze nun auch in Unity wirksam wird, müssen noch einige Einstellungen im GUI getroffen werden. Als erstes muss das healthScript auf den Player gezogen werden. Als nächstes müssen die vorhandenen Variablen zugewiesen werden. Dafür wird auf "Ozean" das Wasser-Objekt gezogen. Als nächstes soll der GameOverScreen zugewiesen werden. Dafür muss zunächst ein solcher Screen erstellt weden. Dafür wird ein neues Canvas mit einem Text und einem Button erstellt und so eingestellt, wie es benötigt wird. Wie das ganze geht, ist <a href="#createbuttons">hier</a> nachzulesen. Dieser Screen wird dann auf das GameOverScreen-Feld gezogen und damit zugewiesen.
+Damit das Ganze nun auch in Unity wirksam wird, müssen noch einige Einstellungen im GUI getroffen werden. Als erstes muss das healthScript auf den Player gezogen werden. Als Nächstes müssen die vorhandenen Variablen zugewiesen werden. Dafür wird auf "Ozean" das Wasser-Objekt gezogen. Dann muss der GameOverScreen zugewiesen werden. Dafür muss zunächst ein solcher Screen erstellt weden. Dafür wird ein neues Canvas mit einem Text und einem Button erstellt und so eingestellt, wie es benötigt wird. Wie das ganze geht, ist <a href="#createbuttons">hier</a> nachzulesen. Dieser Screen wird dann auf das GameOverScreen-Feld gezogen und damit zugewiesen.
 
-Das selbe gilt für das VerticalCameraMovement Script und den PlayerController. Hier wurde bereits als Rücksicht auf das Pause-Menü eine if-Schleife eingefügt. Diese if-Schleife muss um folgendes ergänzt werden:
+Das Selbe gilt für das VerticalCameraMovement Script und den PlayerController. Hier wurde bereits als Rücksicht auf das Pause-Menü eine if-Schleife eingefügt. Diese if-Schleife muss um folgendes ergänzt werden:
 
 ```
  float checkHealth = healthScript.healthTime;
@@ -1379,7 +1377,7 @@ In beiden Scripten sorgt das dafür, dass die Aktionen in der if-Schleife nur da
 
 <h2 id="spieltimer">Spiel-Timer und Vulkanausbruch</h2>
 
-Um das ganze etwas spannender zu machen, soll das Spiel auf Zeit laufen. Wie zuvor im healthScript und Intro wird auch diesmal ein timer dafür verwendet. Es wird also ein neues Script erstellt und folgendes hineingeschrieben:
+Um das ganze etwas spannender zu machen, soll das Spiel auf Zeit laufen. Wie zuvor im healthScript und Intro wird auch diesmal ein Timer dafür verwendet. Es wird also ein neues Script erstellt und Folgendes hineingeschrieben:
 
 ```
 using UnityEngine.UI;
@@ -1429,7 +1427,7 @@ public class vulcanoCounter : MonoBehaviour
     }
 }
 ```
-Ganz oben wird zunächst einmal definiert, dass sowohl auf das Unity User Interface und auf das Unity SceneManagement im Script zurückgegriffen werden kann. Als nächstes werden einige Variablen definiert. Eine für den Counter, eine für den Text vom Typ Text, der den Counter auf dem User-Screen anzeigt, eine für Sekunden und eine für Minuten, die noch im Timer übrig ist, und noch einmal zwei Stück die das Ergebnis einer Rechenaufgabe speichern. 
+Ganz oben wird zunächst einmal definiert, dass sowohl auf das Unity User Interface und auf das Unity SceneManagement im Script zurückgegriffen werden kann. Als Nächstes werden einige Variablen definiert. Eine für den Counter, eine für den Text vom Typ Text, der den Counter auf dem User-Screen anzeigt, eine für Sekunden und eine für Minuten, die noch im Timer übrig ist, und noch einmal zwei Stück die das Ergebnis einer Rechenaufgabe speichern. 
 
 In der Start() Funktion wird der Timer auf 30 Minuten, also 1800 Sekunden gesetzt. In der Update-Funktion wird zunächst, ähnlich wie beim healthSystem der counter Variable mit -= (das Gegenteil von +=) runtergezählt. Wie das funktioniert, wurde bereits im Kapitel für das <a href="#intro">Intro</a> erläutert. Als nächstes sollen die 1800 Sekunden, die ja für den Spieler relativ schlecht zu erkennen sind, in Minuten und Sekunden-Schreibweise aufgeteilt werden. Dafür wird zuerst einmal der Counter, der aktuell Sekunden enthält durch 60 geteilt. Das Ergebnis gibt die Anzahl an vollen Minuten wieder und wird in der Variable counterMinutes gespeichert. Als nächstes sollen die restlichen Sekunden ermittelt werden. Also alle Sekunden, die nicht eine volle Minute ergeben. Dafür wird der Operator Modulo (%) verwendet. Dieser teilt eine Zahl durch eine andere, aber anstatt das Ergebnis (wie der durch-Operator) zurückzugeben, gibt er den dabei übrig bleibenden Rest zurück. 8 % 3 wäre dann also 2, weil 8/3 = 6 und der Rest 2 ist. In diesem Fall stellt Modulo die Sekunden dar. Bei 125 Sekunden würde damit bei der durch-Rechnung 2 und bei der Modulo-Rechnung 5 rauskommen. Daraus setzt sich aus 125 Sekunden 2 Minuten und 5 Sekunden zusammen.
 

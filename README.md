@@ -1319,23 +1319,134 @@ Ein weiterer wichtiger Aspekt für das Gameplay ist ein Health-System. Um dies z
     public static float healthTime;
     bool touchesWater = false;
     bool gameIsOver;
+    bool touchesCactus;
+    bool touchesLava;
+    public GameObject OneLife;
+    public GameObject TwoLife;
+    public GameObject ThreeLife;
+    public GameObject FourLife;    
 ``` 
 
-In diesem Fall soll der Charakter leben verlieren, wenn er sich im Wasser befindet. Dann soll ein GameOverScreen eingeblendet werden und das Spiel, sowie jegliche spielinterne Bewegungen blockiert werden. Dafür werden zunächst einmal die GameObjekte ozean und gameOverScreen definiert. Dann wird zudem eine Variable definiert, die den aktuellen Zustand des Lebens definieren soll. In diesem Fall wird das Health von der Zeit im Wasser abhängig gemacht und daher healthTime genannt. Dann wird noch eine Variable benötigt, in der angegeben wird, ob das Spiel vorbei ist oder nicht.
+In diesem Fall soll der Charakter leben verlieren, wenn er sich im Wasser befindet. Dann soll ein GameOverScreen eingeblendet werden und das Spiel, sowie jegliche spielinterne Bewegungen blockiert werden. Dafür werden zunächst einmal die GameObjekte ozean und gameOverScreen definiert. Dann wird zudem eine Variable definiert, die den aktuellen Zustand des Lebens definieren soll. In diesem Fall wird das Health von der Zeit im Wasser abhängig gemacht und daher healthTime genannt. Dann wird noch eine Variable benötigt, in der angegeben wird, ob das Spiel vorbei ist oder nicht. Daneben werden Variablen benötigt, die anzeigen, ob Lava und Kakteen berührt werden und es werden 4 Variablen benötigt für die Herzen, die ein- und ausgeblendet werden sollen.
 
 ```
 private void Start()  {
-    healthTime = 10.0f;
+    healthTime = 6.0f;
     gameOverScreen.SetActive(false);
     gameIsOver = false;
+    touchesCactus = false;
 }
 ```
 
-Als allererstes wird das "Leben" auf 10 gesetzt, mittels healthTime = 10.0f;. Anschließend wird der gameOverScreen auf nicht mehr aktiv gesetzt. Was es damit auf sich hat, lässt sich <a href="#setuiactive">hier</a> nachlesen
+Als Allererstes wird das "Leben" auf 10 gesetzt, mittels healthTime = 10.0f;. Anschließend wird der gameOverScreen auf nicht mehr aktiv gesetzt. Was es damit auf sich hat, lässt sich <a href="#setuiactive">hier</a> nachlesen. Dann wird noch gameIsOver auf false und touchesCactus auf false gesetzt, da diese Aktionen noch nicht eingetreten sind
 
-HIER FEHLT NOCH WAS
+Als Nächstes kommt dies in die Update Funktion:
 
+```
+void Update()
+    {       
+        if(touchesLava == true)
+        {
+            healthTime -= 20;
+        }
+        if (touchesCactus == true || touchesWater == true)
+        {
+            healthTime -= Time.deltaTime;
+        }
+        if(healthTime < 5)
+          {              
+              FourLife.SetActive(false);
+              if(healthTime <= 4)
+              {
+                  ThreeLife.SetActive(false);
+                  if(healthTime <= 2)
+                  {
+                      TwoLife.SetActive(false);
+                      if(healthTime <= 1)
+                      {
+                          OneLife.SetActive(false);
+                          gameIsOver = true;
+                          CursorScript.CursorLockedVar = false;
+                          gameOverScreen.SetActive(true);
+                          Time.timeScale = 0f;
+                      }
+                  }
+              }
+          } 
+        
+    }
+```
+Viele dieser Befehle wurden bereits zuvor erläutert. Grundsätzlich wird zu Beginn in einer if-Schleife geprüft, ob der Spieler sich in Lava befindet. Wenn ja, wird das Leben sofort auf 0 gesetzt. Dann wird mittels der erstellten Variablen geprüft, ob der Spieler Wasser oder Kakteen berührt. Wenn ja, wird durch den -= Operator das Leben langsam runtergezählt. Dann wird in einer if-Schleife der Zustand des Lebens geprüft: Wenn er unter 5 fällt, wird das erste Herz ausgeblendet, unter 4 das zweite usw. Sobald dann das Leben unter 1 fällt, wird auch das letzte Leben ausgeblendet und gameOver wird auf true gesetzt (von dieser Variable hängen noch andere Scripte ab). Dann wird durch den Befehl CursorScript.CursorLockedVar = false; auf das CursorScript zugegriffen und dort eine Variable auf false gesetzt. Dies bewirkt, dass, wenn der Spieler tot ist, der Cursor nicht mehr gelocked, also nicht mehr fixiert ist. Dann wird noch der gameOverScreen aktiviert und die Zeit auf 0 gesetzt, sodass das Spiel anhält, wenn der Spieler tot ist.
 
+Als Nächstes müssen noch zwei weitere Funktionen definiert werden, mit denen geprüft wird, ob der Spieler Wasser oder Kakteen berührt:
+
+```
+void OnCollisionEnter(Collision theCollision)
+    {
+        if (theCollision.gameObject.name == "Ozean")
+        {
+            touchesWater = true;           
+        }
+        else
+        {
+            touchesWater = false;
+        }
+        if (theCollision.gameObject.name == "Kaktus")
+        {
+            touchesCactus = true;
+        }
+        else
+        {
+            touchesCactus = false;
+        }
+        if(theCollision.gameObject.name == "Lava")
+        {
+            touchesLava = true;
+        }
+        else
+        {
+            touchesLava = false;
+        }
+    }
+    void OnCollisionExit(Collision theCollision)
+    {
+        if (theCollision.gameObject.name == "Ozean")
+        {
+            touchesWater = false;
+        }
+        if (theCollision.gameObject.name == "Kaktus")
+        {
+            touchesCactus = false;
+        }
+        if(theCollision.gameObject.name == "Lava")
+        {
+            touchesLava = false;
+        }
+    }
+```
+Diese zwei Funktionstypen werden von der UnityEngine bereitgestellt. Wenn sie ausgeführt werden, prüfen sie, ob eine Kollision stattfindet. Dies geschieht, indem man in der Klammer dahinter ein neues Objekt vom Typ "Collision" definiert. Innerhalb des Funktionskörpers kann man dann definieren, was diese Collision ausmacht. Dies wird durch eine if-Schleife gelöst: 
+
+```
+if (theCollision.gameObject.name == "Ozean")
+{
+    touchesWater = true;           
+}
+```
+Es wird auf das Collision Objekt namens theCollision zurückgegriffen, was durch dieses Script auf dem Element in Unity erstellt und angewendet wird, auf dem das Script liegt, und prüft eine Collision dieses Objektes mit einem anderen GameObject. In diesem Fall mit einem anderen GameObject namens "Ozean".
+
+Ist dies der Fall, wird touchesWater auf true gesetzt. Ist dies nicht der Fall, wird in der else Schleife touchesWater auf false gesetzt. Das Selbe wird dann noch einmal auf den Kaktus angewandt. Das war nun die Funktion OnCollisionEnter, also eine Funktion, die nur im Falle einer Kollision ausgeführt wird.
+
+Nun gibt es auch noch die verwendete OnCollisionExit Funktion. Sie wird nur ausgeführt, wenn eine Collison stattgefunden hat und nun beendet ist. Dort wird das Ganze umgekehrt definiert: Da diese Funktion nur dann ausgeführt wird, wenn zwei Objekte sich NICHT MEHR berühren, ist das Objekt "Collision" eine "nicht-mehr-Kollison". Wenn diese Kollision, die nicht mehr stattfindet, ausgeführt wird, also wenn sich dann zwei Objekte nicht mehr berühren, werden die jeweiligen Variablen wieder auf false gesetzt. Das ist notwendig, weil sie sonst dauerhaft auf true blieben und der Spieler dadurch dauerhaft Leben verlieren würde.
+
+Zuletzt wird noch einmal eine Funktion geschrieben, die später auf den Button angewendet werden soll, mit dem man vom GameOverScreen zurück ins Hauptmenü kommt:
+
+```
+public void mainScreen()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+```
+Wie dies zugewiesen wird, wurde bereits erläutert.
 
 Nun sind allerdings auch in anderen Scripten schon die Maussichtbarkeit und Kamerabewegung etc. beeinflusst worden. Wenn darauf keine Rücksicht genommen wird, blocken sich die Scripte gegenseitig und es passiert am Ende nicht das gewünschte. Deshalb muss nun nocheinmal in einige vorige Scripte gewechselt werden: 
 

@@ -641,7 +641,7 @@ Wichtig dabei ist vor allem, oben das "using UnityEngine.SceneManagement" hinzuz
 
 Dann werden noch drei Funktionen geschrieben. Eine namens Continue(), eine namens Quit() und eine namens Credits(). In der Continue()-Funktion wird festgelegt, was passiert, wenn der "Spiel-Starten"-Button gedrückt wird. In der Quit Funktion das gleiche für den "Spiel-beenden"-Button. Bei der Credits-Funktion soll letztlich die Credits-Szene geöffnet werden. Bei Continue wird ganz einfach "SceneManager.LoadScene("Intro");" geschrieben. Damit wird einfach die Szene geöffnet, welche den Namen hat, der in den Klammern dahinter festgelegt ist. In diesem Fall ist es die Szene namens "Intro", was genau diese macht, wird später noch einmal festgelegt. In Quit() wird nun das selbe geschrieben, wie im "Beenden"-Button im Pausemenü. Damit wird einfach das Spiel beendet. Bei Credits() wird ebenfalls eine andere Szene geladen, in diesem Fall die mit dem Namen "Credits". 
 
-Als nächstes muss das ganze wirksam gemacht. Dafür wird das Hauptmenü-Script in der MainMenu-Szene auf ein neues Objekt gezogen. Es wird also unter Create > Empty Object ein neues leeres Objekt erstellt. Dies wird "SceneSwitcher" genannt. Nun wird darauf das MainMenu Script gezogen. Als nächstes wird auf dem Menü-Canvas der Continue() - Button ausgewählt. Unten bei der Condition wird bei "None" das GameSwitcher-Objekt ausgewählt. Dann wird rechts daneben im Dropdown-Menü das "Main-Menu"-Script ausgewählt. In dem dann ausklappenden Dropdown-Menü wird dann die jeweilige Funktion ausgewählt: Beim Spiel-Starten-Button die Continue()-Funktion und beim Spiel-Beenden-Button die Quit()-Funktion. Das gleiche gilt für den Credits-Button.
+Als nächstes muss das ganze wirksam gemacht werden. Dafür wird das Hauptmenü-Script in der MainMenu-Szene auf ein neues Objekt gezogen. Es wird also unter Create > Empty Object ein neues leeres Objekt erstellt. Dies wird "SceneSwitcher" genannt. Nun wird darauf das MainMenu Script gezogen. Als nächstes wird auf dem Menü-Canvas der Continue() - Button ausgewählt. Unten bei der Condition wird bei "None" das GameSwitcher-Objekt angeklickt. Dann wird rechts daneben im Dropdown-Menü das "Main-Menu"-Script ausgewählt. In dem dann ausklappenden Dropdown-Menü wird dann die jeweilige Funktion ausgewählt: Beim Spiel-Starten-Button die Continue()-Funktion und beim Spiel-Beenden-Button die Quit()-Funktion. Das gleiche gilt für den Credits-Button.
 
 Damit wäre das Hauptmenü abgeschlossen. Um die Credits zu öffnen, wird nun lediglich eine neue Szene erstellt namens "Credits" und in dieser ebenfalls ein Menü erstellt. Bloß wird hier unter UI statt eines Panels, einfach ein Text, sowie ein zurück-Button implementiert. Der Text wird dann mit dem Credit-Text gefüllt und auf dem Zurück-Button wird ein Script platziert, in dem steht:
 
@@ -676,7 +676,7 @@ Nun werden die Würfel so lang und so hoch gezogen, wie es nötig ist, um vier W
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55874176-e9a80900-5b91-11e9-8d94-0f8b218a08dd.png" width="400px"></p>
 
-Damit kann man dann die Größe der Würfel verändern. Als letztes müssel die Würfel noch unsichtbar gemacht werden. Dafür muss der sogenannte Mesh Renderer auf ihnen entfernt werden, der dafür sorgt, dass eine Textur auf dem Würfel gerendert wird. Dafür wählt man den Würfel aus, geht mit Rechtsklick rechts im Inspektor auf den Mesh Renderer und wählt "Remove Component" aus:
+Damit kann man dann die Größe der Würfel verändern. Als letztes müssen die Würfel noch unsichtbar gemacht werden. Dafür muss der sogenannte Mesh Renderer auf ihnen entfernt werden, der dafür sorgt, dass eine Textur auf dem Würfel gerendert wird. Dafür wählt man den Würfel aus, geht mit Rechtsklick rechts im Inspektor auf den Mesh Renderer und wählt "Remove Component" aus:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55874364-718e1300-5b92-11e9-8e5f-582874db5e1e.png" width="500px"></p>
 
@@ -684,7 +684,7 @@ Da der Collider weiterhin auf dem Würfel bleibt, hat man weiterhin den Collisio
 
 <h2 id="texturen">Die Texturen</h2>
 
-Damit das Terrain auch einigermaßen aussieht, muss es auch mit Texturen ausgestattet werden. Dafür geht man unter <b>Terrain > Paint Terrain > Paint Texture </b> unten auf einen der Brushes und darüber unter <b>Edit Terrain Layers</b> weitere Texturen hinzufügen. Die Texturen werden in diesem Fall in Microsoft Photoshop erstellt.
+Damit das Terrain auch einigermaßen aussieht, muss es auch mit Texturen ausgestattet werden. Dafür geht man unter <b>Terrain > Paint Terrain > Paint Texture </b> unten auf einen der Brushes und darüber unter <b>Edit Terrain Layers</b> weitere Texturen hinzufügen. Die Texturen werden in diesem Fall in Adobe Photoshop erstellt.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51914562-70de4100-23d9-11e9-8a49-0fe9f11eaaaf.png" width="600px"></p>
 
@@ -700,15 +700,18 @@ Zuden lassen sich auf dem Terrain unter <b> Paint Trees bzw. Paint Details</b> a
 
 Nun kann man natürlich, wie schon bei den Texturen gesagt, nicht nur mit Unity-Internen Modellen und Texturen arbeiten, sondern kann auch unter anderem Objekte wie Bäume oder Steine extern modellieren und dann anschließend in Unity für den Map-Bau verwenden. In diesem Projekt wurden folgende Objekte in Blender modelliert:
 
-* Berge
+* Berge/Vulkan
 * Bäume/Baumstümpfe
 * Steine
 * Krabbe + Animation
-* Haus + Innenraum
+* Vogel
+* Haus + Innenraum + Schlüssel
 * Büsche
 * Kakteen
-* Treppen
+* Treppen/Brücken
 * Gras
+* Floß
+
 
 Daher dass die Objekt-Modellierung von Unity ziemlich begrenzt ist und sich vor allem auf simple geometrische Formen bezieht, muss für die Modellierung dieser Objekte ein spezielles Modellierungs-Programm, in diesem Fall Blender, zu Rate gezogen werden. 
 

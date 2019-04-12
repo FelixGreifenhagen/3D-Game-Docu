@@ -978,11 +978,9 @@ Time.deltaTime ist die Unity-Interne Zeitangabe. Time.deltaTime ist quasi eine S
 
 Nun soll sich die Krabbe aber auch fortbewegen. Dies aber nicht einfach so oder auch dauerhaft, sondern sie soll einen bestimmten Weg eine bestimmte Zeit lang entlanglaufen. Um das zu erreichen, wurde in diesem Fall auf ein bereits bestehendes Script zurückgegriffen. 
 
-Der Youtuber kinan gh hat in einem Tutorial auf Youtube ein Script verfasst, welches genutzt werden kann, um ein GameObjekt in Unity bestimmte zuvor manuell gesetzte Waypoints ablaufen zu lassen und dann stehenzubleiben. Die Quelle für dieses Video ist unten in dieser Dokumentation unter <a href="#quellen">Quellen</a> zu finden bzw. dieser <a href="https://www.youtube.com/channel/UCGOgRqMyWE6VPSCG-qxVkmw">Link</a>
+Der Youtuber kinan gh hat in einem Tutorial auf Youtube ein Script verfasst, welches genutzt werden kann, um ein GameObjekt in Unity bestimmte zuvor manuell gesetzte Waypoints ablaufen zu lassen und dann stehenzubleiben. Die Quelle für dieses Video ist unten in dieser Dokumentation unter <a href="#quellen">Quellen</a> zu finden bzw. dieser <a href="https://www.youtube.com/channel/UCGOgRqMyWE6VPSCG-qxVkmw">Link</a>.
 
-Quelle: https://www.youtube.com/channel/UCGOgRqMyWE6VPSCG-qxVkmw (kinan gh) 
-
-In diesem Video ist das verwendete Script inklusive einer Erläuterung zu sehen. Die Konfiguration für die Krabbe wurde wie folgt vorgenommen: Es wurden zunächst einmal vier neue Empty Objects in Unity erstellt. Diese stellen die Waypoints dar, die die Krabbe entlangläuft. Diese wurden dann an die richtigen Stellen (also die Stellen die die Krabbe entlang laufen soll) platziert und korrekt benannt. Anschließend wurde das Script von kinan gh auf die Krabbe gezogen. Nun ist folgendes am Script zu erkennen:
+In seinem Video "unity 5 how to make objects follow a path|| KinanGh" ist das verwendete Script inklusive einer Erläuterung zu sehen. Die Konfiguration für die Krabbe wurde wie folgt vorgenommen: Es wurden zunächst einmal vier neue Empty Objects in Unity erstellt. Diese stellen die Waypoints dar, die die Krabbe entlangläuft. Diese wurden dann an die richtigen Stellen (also die Stellen, die die Krabbe entlang laufen soll) platziert und korrekt benannt. Anschließend wurde das Script von kinan gh auf die Krabbe gezogen. Nun ist folgendes am Script zu erkennen:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55965825-9f995300-5c77-11e9-937b-0752034514ee.png" width="400px"></p>
 
@@ -1091,7 +1089,7 @@ public class mainSceneBlack : MonoBehaviour
 ```
 Zunächst wird definiert, dass von diesem Script aus die UnityEngine UI, also UI Objekte (wie das zuvor erstellte Panel) bearbeitet werden kann. Als Nächstes wird eine Variable erstellt. Dies ist eine CanvasGroup. Das ist eine Variable, die später eine CanvasGroup, welche auf dem Objekt liegt, speichert. Dann wird eine Timer Variable erstellt. In der Start()-Funktion wird der CanvasGroup Variable der Component CanvasGroup zugeordnet. CanvasGroup ist ein Komponent von GameObjects, wie es auch Collider und Mesh Renderer sind. Mit diesem Befehl wird die CanvasGroup-Komponente auf dem GameObject ausgewählt, auf dem auch dieses Script liegt, also von dem Panel. Als Nächstes wird der Alphakanal von der CanvasGroup auf 1, also auf den höchsten Wert gesetzt. Damit ist der Screen mit einem schwarzen Bild bedeckt. 
 
-Dann wird die Update Funtktion gefüllt. Hier wird ein Timer initialisiert. Es wird in einer if-schleife geprüft, ob der Timer über 13 Sekunden ist, weil der BlackScreen so lange eingeblendet bleiben soll. In dieser if-Schleife wird eine weitere if-Schleife geprüft, ob der AlphaKanal des Panel noch über 0 ist, also quasi noch ein bisschen "schwarz" auf dem Bildschirm zu sehen ist. Wenn das der Fall ist, wird der Alphakanal um Time.deltaTime/10 also pro sekunde um 0.1 (1/10 = 0.1) verringert. Somit wird der Alphakanal Stück für Stück auf null verringert. Damit ist der Fade-Out-Effekt erstellt. 
+Dann wird die Update Funktion gefüllt. Hier wird ein Timer initialisiert. Es wird in einer if-Schleife geprüft, ob der Timer über 13 Sekunden ist, weil der BlackScreen so lange eingeblendet bleiben soll. In dieser if-Schleife wird in einer weiteren if-Schleife geprüft, ob der AlphaKanal des Panel noch über 0 ist, also quasi noch ein bisschen "schwarz" auf dem Bildschirm zu sehen ist. Wenn das der Fall ist, wird der Alphakanal um Time.deltaTime/10 also pro sekunde um 0.1 (1/10 = 0.1) verringert. Somit wird der Alphakanal Stück für Stück auf null verringert. Damit ist der Fade-Out-Effekt erstellt. 
 
 Nun muss noch die CanvasGroup zugeordnet werden, welche im Script angesprochen wird. Diese ist zu finden unter <b> Add Component > CanvasGroup</b>. 
 
@@ -1113,7 +1111,7 @@ Zunächst einmal muss ein Objekt erstellt werden, welches dann aufgesammelt wird
 
 Zudem wird ein ganz normaler Cube unter <b> GameObject > 3D Object > Cube </b>hinzugefügt. Dieser wird genau über den Schlüssel gesetzt und wird später genutzt, um den Abstand zwischen Spieler und Schlüssel zu bestimmen. Von diesem wird dann per Rechtsklick auf den Mesh Renderer und <b> Remove Component </b>der Mesh Renderer entfernt. Damit wird das Objekt zwar durchsichtig, bleibt aber als Objekt in der Szene vorhanden und lässt sich im Spiel verwenden. Ein extra Cube wird benötigt, da nämlich eine Distance zwischen dem Charakter und dem Objekt geprüft wird. Wird das Objekt dann durch das Aufsammeln zerstört, existiert es nicht mehr und es kann keine Distance mehr gemessen werden. Dies würde eine Fehlermeldung erzeugen. Daher wird hier ein extra Würfel verwendet. 
 
-Nun wird ein Script geschrieben, welches all diese Schritte vollzieht. Dafür wird ein neuer Ordner mit einem C#-Script mit dem Namen PickUpScript.cs erstellt.  Dort müssen zunächst einmal alle Objekte selektiert werden. Dafür werden drei neue Variablen für GameObject erstellt:
+Nun wird ein Script geschrieben, welches alle diese Schritte vollzieht. Dafür wird ein neuer Ordner mit einem C#-Script mit dem Namen PickUpScript.cs erstellt. Dort müssen zunächst einmal alle Objekte selektiert werden. Dafür werden drei neue Variablen für GameObject erstellt:
 
 ```
 public class PickUpScript:MonoBehaviour {
@@ -1153,7 +1151,7 @@ if(Distance <=3) {
     }
 }
 ```
-In diesem Fall wird zunächst einmal geprüft, ob der Abstand gleich oder kleiner als drei ist, da nur hierbei eine Aktion (das Anzeigen des Textes) ausgeführt werden soll. Danach wird noch eine weitere if-Schleife verwendet, um zu verhindern, dass eine Aktion ausgeführt wird, wenn der Schlüssel schon längs aufgesammelt wurde. Diese if-Schleife prüft also, ob das Objekt "Schlüssel" noch existiert mittels GameObject.Find("Schlüssel"). Wenn diese Operation ungleich (!=) null ist, der Schlüssel also quasi nicht-nicht, also definitiv existiert, wird diese If-Schleife geöffnet. 
+In diesem Fall wird zunächst einmal geprüft, ob der Abstand gleich oder kleiner als drei ist, da nur hierbei eine Aktion (das Anzeigen des Textes) ausgeführt werden soll. Danach wird noch eine weitere if-Schleife verwendet, um zu verhindern, dass eine Aktion ausgeführt wird, wenn der Schlüssel schon längst aufgesammelt wurde. Diese if-Schleife prüft also, ob das Objekt "Schlüssel" noch existiert mittels GameObject.Find("Schlüssel"). Wenn diese Operation ungleich (!=) null ist, der Schlüssel also quasi nicht-nicht, also definitiv existiert, wird diese If-Schleife geöffnet. 
 
 In dieser werden dann folgende Befehle verwendet:
 
@@ -1167,9 +1165,9 @@ if(GameObject.Find("Schlüssel") != null) {
 }
 ```
 
-Ist nun der Abstand kleiner als 3 und existiert der Schlüssel noch werden diese Aktionen getätigt:
+Ist nun der Abstand kleiner als 3 und existiert der Schlüssel noch, werden diese Aktionen getätigt:
 
-Zuerst wird der Text mit KeyTextUI.SetActive(true) auf "anzeigen" gesetzt, sodass der Spieler diesen auf dem Bildschirm eingeblendet sieht. Als nächstes wird dann geprüft, ob der Spieler E drückt. Wie genau dies funktioniert bzw. was der Code bedeutet, lässt sich <a href="#pausemenu">hier</a> nachlesen. Wenn der Spieler E drückt, werden zwei Aktionen ausgeführt: Erstens wird der Schlüssel, also das gameObject auf dem das Script drauf ist, mittels Destroy(gameObject) zerstört. Zweitens wird der Text, der zum aktuellen Laufzeit-punkt noch eingeblendet ist, ausgeblendet. Der Spieler bekommt also einen Text angezeigt und sobald er E drückt wird dieser wieder ausgeblendet und der Schlüssel zerstört. 
+Zuerst wird der Text mit KeyTextUI.SetActive(true) auf "anzeigen" gesetzt, sodass der Spieler diesen auf dem Bildschirm eingeblendet sieht. Als nächstes wird dann geprüft, ob der Spieler "E" drückt. Wie genau dies funktioniert bzw. was der Code bedeutet, lässt sich <a href="#pausemenu">hier</a> nachlesen. Wenn der Spieler "E" drückt, werden zwei Aktionen ausgeführt: Erstens wird der Schlüssel, also das GameObject auf dem das Script drauf ist, mittels Destroy(gameObject) zerstört. Zweitens wird der Text, der zum aktuellen Laufzeitpunkt noch eingeblendet ist, ausgeblendet. Der Spieler bekommt also einen Text angezeigt und sobald er E drückt wird dieser wieder ausgeblendet und der Schlüssel zerstört. 
 
 Als Letztes muss noch eine Option eingebaut werden, sollte der Spieler sich wieder vom Schlüssel entfernen. Dafür wird ein else an der if-Schleife angebracht, in der geschrieben wird, was passiert, wenn der Abstand größer als 3 ist. In diese wird folgender Code geschrieben:
 
@@ -1245,7 +1243,7 @@ public class openDoor : MonoBehaviour
 ```
 Es wird wieder der Animator Controller selektiert und darin die Boolean Condition "openDoor" geschaltet. Diesmal ist es allerdings nicht abhängig von einem Tastendruck oder Timer, sondern davon, ob der Schlüssel, den man ja erst einsammeln muss, um die Tür zu öffnen, noch existiert. Dafür ist der Befehl GameObject.Find("Schlüssel") == null zuständig. Zudem wird wieder geprüft, ob der Spieler sich in einem gewissen Umkreis um die Tür befindet, damit er nicht einfach so die Tür von 200 Metern weit weg öffnen kann. Wenn das der Fall ist, und der Spieler dann E drückt, wird die Variable auf true geschaltet und somit die Animation der Tür ausgeführt. Eine Erläuterung der Distance und des GameObject.Find("Schlüssel") == null findet sich im Kapitel <a href="objektesammeln">Objekte aufsammeln</a>.
 
-Als Letztes soll noch ein Text ein und ausgeblendet werden wenn es möglich ist, die Tür zu öffnen. Dafür kann allerdings auch das Script für das Aufsammeln des Schlüssels (<a href="objektesammeln">Objekte aufsammeln</a>) verwendet werden, da es nahezu identisch in der Funktionsweise ist. Es wird lediglich um folgende if-Schleife ergänzt:
+Als Letztes soll noch ein Text ein und ausgeblendet werden, wenn es möglich ist die Tür zu öffnen. Dafür kann allerdings auch das Script für das Aufsammeln des Schlüssels (<a href="objektesammeln">Objekte aufsammeln</a>) verwendet werden, da es nahezu identisch in der Funktionsweise ist. Es wird lediglich um folgende if-Schleife ergänzt:
 
 ```
 if (GameObject.Find("Schlüssel") == null && Distance <= 8) {
@@ -1306,11 +1304,11 @@ public class keyMission : MonoBehaviour
     }
 }
 ```
-Dies ist einfach ein ganz simples Script, mit dem das zuvor erstellte Canvas ein und ausgeblendet wird. Dies wird darüber gelöst, dass in einer if-Schleife mittels des Befehls: GameObject.Find(gameObjectName) == null geprüft wird, ob das Objekt noch da ist. In diesem Fall wird der Missionstext zu Beginn des Spiels eingeblendet. Wenn nun der Schlüssel aufgesammelt, also das Element zerstört wird, ist das Ergebnis der Abfrage GameObject.Find(gameObjectName) null, also dass es nicht mehr da ist. Wenn es also = null ist, wird der Missionstext ausgeblendet. 
+Dies ist ein ganz simples Script, mit dem das zuvor erstellte Canvas ein und ausgeblendet wird. Dies wird darüber gelöst, dass in einer if-Schleife mittels des Befehls: GameObject.Find(gameObjectName) == null geprüft wird, ob das Objekt noch da ist. In diesem Fall wird der Missionstext zu Beginn des Spiels eingeblendet. Wenn nun der Schlüssel aufgesammelt, also das Element zerstört wird, ist das Ergebnis der Abfrage GameObject.Find(gameObjectName) null, also dass es nicht mehr da ist. Wenn es also = null ist, wird der Missionstext ausgeblendet. 
 
 Das Ganze lässt sich nun auf alle Missionen im Spiel anwenden. Dafür prüft man einfach, ob das Missionsobjekt von Mission 1 zerstört wurde. Wenn das der Fall ist, wird der Text für Mission 2 eingeblendet. Sobald dieses dann zerstört ist, wird der Text für Mission 2 wieder ausgeblendet und der Text für Mission 3 eingeblendet. Das ganze lässt sich dann immer weiter so fortführen, bis man eine ordentliche Reihe von Missionen hat. 
 
-In diesem Fall soll hier nur eine Mission erläutert werden. Das Ganze lässt sich aber auch auf alle anderen Missionen ganz einfach anwenden. Hier wurde das Script für mehrere Missionen zum Sammeln von Floß-Bestandteilen verwendet.
+In diesem Fall sollte hier nur eine Mission erläutert werden. Das Ganze lässt sich aber auch auf alle anderen Missionen ganz einfach anwenden. Das Script für den Schlüssel wurde auch auf sämtliche andere Floßbestandteile angewandt.
 
 <h2 id="healthsystem">Das Health-System</h2>
 

@@ -1,8 +1,8 @@
 <img src="https://user-images.githubusercontent.com/42578917/51550957-c19bea00-1e6d-11e9-9baf-56e92610e7fe.png">
-<b>Beschreibung: Ein Abenteurer strandet auf einer einsamen Insel, die schon seit Jahren verlassen ist. Nun muss er viele Probleme lösen und Sachen sammeln um der Insel zu entkommen und sich selbst zu retten...</b>
+<b>Beschreibung: Ein Abenteurer strandet auf einer einsamen Insel, die schon seit Jahren verlassen ist. Nun muss er viele Probleme lösen und Gegenstände sammeln um der Insel zu entkommen und sich selbst zu retten...</b>
 <br>
 <br>
-In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, die schon seit Jahren verlassen ist. Nun muss er sich den Gefahren und Aufgaben dort stellen, um seinen Weg zurück nach Hause zu finden. Von Feinden umgeben und mit rudimentären Informationen muss der Spieler hier alle Teile finden und sammeln, um ein Boot zu bauen um zurück zur Zivilisation zu kommen.
+In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, die schon seit Jahren verlassen ist. Nun muss er sich den Gefahren und Aufgaben dort stellen, um seinen Weg zurück nach Hause zu finden. Von Feinden umgeben und mit rudimentären Informationen muss der Spieler hier alle Teile finden und sammeln, um ein Boot zu bauen um zurück zur Zivilisation zu gelangen.
 
 <h1>Das Making-Off</a>
 
@@ -78,9 +78,11 @@ Da Blender ein gratis Modellier-Tool ist, gibt es bei Blender auch eine riesige 
 <a href="https://www.adobe.com/de/products/photoshop.html" target="_blank">Hier</a> lässt sich Adobe Photoshop kaufen
 
 <b>Adobe Fuse:</b> Adobe Fuse ist ein neues Programm aus der Creative Cloud, welches sich aktuell in der Beta befindet. Es ist darauf spezialisiert auf einfachem Wege menschliche 3D Modelle zu kreieren. Adobe Fuse haben wir dementsprechend für den vom Spieler gesteuerten Charakter verwendet.
-<b>FL Studio:</b> Da wir jeden Aspekt eines Indie-Games selbst umsetzten wollten, haben wir uns auch vorgenommen selbst einen Soundtrack zu machen. FL Studio kennen wir bereits und ist als Digital Work Station für Musik gut geeignet.
 
 <a href="https://www.adobe.com/de/products/fuse.html" target="_blank">Hier</a> lässt sich Adobe Fuse herunterladen
+
+<b>FL Studio:</b> Da wir jeden Aspekt eines Indie-Games selbst umsetzten wollten, haben wir uns auch vorgenommen Musik einzubauen. FL Studio haben wir genutzt um die gedownloadeten Soundtracks in Länge, Lautstärke usw. zu bearbeiten.
+
 
 <h1 id="spielmechanik">Die Spielmechanik</h1>
 

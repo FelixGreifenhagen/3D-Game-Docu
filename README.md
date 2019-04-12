@@ -633,11 +633,11 @@ public class MainMenu : MonoBehaviour
 }
 ```
 
-Wichtig dabei ist vor allem, oben das "using UnityEngine.SceneManagement" hinzuzufügen. Damit wird das SceneManagement von Unity das SceneManagement aktiviert, also wird es möglich, innerhalb eines Scriptes zwischen zwei Szenen zu wechseln. 
+Wichtig dabei ist vor allem, oben das "using UnityEngine.SceneManagement" hinzuzufügen. Damit wird das SceneManagement von Unity aktiviert, es wird also möglich innerhalb eines Scriptes zwischen zwei Szenen zu wechseln. 
 
-Dann werden noch zwei Funktionen geschrieben. Eine namens Continue(), eine namens Quit() und eine namens Credits(). In der Continue()-Funktion wird festgelegt, was passiert, wenn der "Spiel-Starten"-Button gedrückt wird. In der Quit Funktion das gleiche für den "Spiel-beenden"-Button. Bei der Credits-Funktion soll leztlich die Credits-Szene geöffnet werden. Bei Continue wird ganz einfach "SceneManager.LoadScene("Intro");" geschrieben. Damit wird einfach die Szene geöffnet, welche den Namen hat, der in den Klammern dahinter festgelegt ist. In diesem Fall ist es die Szene namens "Intro", was genau diese macht, wird später noch einmal festgelegt. In Quit() wird nun das selbe geschrieben, wie im "Beenden"-Button im Pausemenü. Damit wird einfach das Spiel beendet. Bei Credits() wird ebenfalls einfach eine andere Szene geladen, in diesem Fall die mit dem Namen "Credits". 
+Dann werden noch drei Funktionen geschrieben. Eine namens Continue(), eine namens Quit() und eine namens Credits(). In der Continue()-Funktion wird festgelegt, was passiert, wenn der "Spiel-Starten"-Button gedrückt wird. In der Quit Funktion das gleiche für den "Spiel-beenden"-Button. Bei der Credits-Funktion soll leztlich die Credits-Szene geöffnet werden. Bei Continue wird ganz einfach "SceneManager.LoadScene("Intro");" geschrieben. Damit wird einfach die Szene geöffnet, welche den Namen hat, der in den Klammern dahinter festgelegt ist. In diesem Fall ist es die Szene namens "Intro", was genau diese macht, wird später noch einmal festgelegt. In Quit() wird nun das selbe geschrieben, wie im "Beenden"-Button im Pausemenü. Damit wird einfach das Spiel beendet. Bei Credits() wird ebenfalls eine andere Szene geladen, in diesem Fall die mit dem Namen "Credits". 
 
-Als nächstes muss das ganze wirksam gemacht. Dafür wird das Hauptmenü-Script in der MainMenu-Szene auf ein neues Objekt gezogen. Es wird also unter Create > Empty Object ein neues leeres Objekt erstellt. Es wird "SceneSwitcher" genannt. Nun wird darauf das MainMenu Script gezogen. Als nächstes wird auf dem Menü-Canvas der Continue() - Button ausgewählt. Unten bei der Condition wird bei "None" das GameSwitcher-Objekt ausgewählt. Dann wird rechts daneben im Dropdown-Menü das "Main-Menu"-Script ausgewählt. In dem dann ausklappenden Dropdown-Menü wird dann die jeweilige Funktion ausgewählt: Beim Spiel-Starten-Button die Continue()-Funktion und beim Spiel-Beenden-Button die Quit()-Funktion. Das gleiche gilt für den Credits-Button.
+Als nächstes muss das ganze wirksam gemacht. Dafür wird das Hauptmenü-Script in der MainMenu-Szene auf ein neues Objekt gezogen. Es wird also unter Create > Empty Object ein neues leeres Objekt erstellt. Dies wird "SceneSwitcher" genannt. Nun wird darauf das MainMenu Script gezogen. Als nächstes wird auf dem Menü-Canvas der Continue() - Button ausgewählt. Unten bei der Condition wird bei "None" das GameSwitcher-Objekt ausgewählt. Dann wird rechts daneben im Dropdown-Menü das "Main-Menu"-Script ausgewählt. In dem dann ausklappenden Dropdown-Menü wird dann die jeweilige Funktion ausgewählt: Beim Spiel-Starten-Button die Continue()-Funktion und beim Spiel-Beenden-Button die Quit()-Funktion. Das gleiche gilt für den Credits-Button.
 
 Damit wäre das Hauptmenü abgeschlossen. Um die Credits zu öffnen, wird nun lediglich eine neue Szene erstellt namens "Credits" und in dieser ebenfalls ein Menü erstellt. Bloß wird hier unter UI statt eines Panels, einfach ein Text, sowie ein zurück-Button implementiert. Der Text wird dann mit dem Credit-Text gefüllt und auf dem Zurück-Button wird ein Script platziert, in dem steht:
 
@@ -660,11 +660,11 @@ Natürlich ist für ein gutes Computerspiel nicht nur eine funktionierende GameE
 
 Nun kann man rechts auf <b>Paint Texture > Raise or Lower Terrain</b> mit einem Pinsel das Terrain quasi nach oben und unten "malen". Damit lassen sich verschiedene Landschaften erzeugen, auf denen das Spiel dann stattfindet. 
 
-Im selben Menü lässt sich zudem der Punkt "Smooth Height" auswählen, womit sich scharfe Kanten im Terrain abrunden lassen. Außerdem lassen sich über aefgbaergaergaerg importierte Bäume und Gräser auf dem Terrain platzieren.
+Im selben Menü lässt sich zudem der Punkt "Smooth Height" auswählen, womit sich scharfe Kanten im Terrain abrunden lassen. Außerdem lassen sich importierte Bäume und Gräser auf dem Terrain platzieren.
 
 <h2 id="border">Die Map-Border</h2>
 
-Aktuell kann der Charakter noch am Rande des zuvor erstellten Terrains runterfallen. Um das zu verhindern implementieren viele Spiele einen Respawn sobald man aus der Map rausläuft. In diesem Fall soll auf eine einfachere Lösung zurückgegriffen werden, auf die auch oft zurückgegriffen wird: Eine unsichtbare Wand. Damit verhindert man, dass der Charakter am Rand runterläuft. Dadurch, dass die Border unsichtbar ist wird zudem verhindert, dass sich der Spieler fühlt, als wenn er in einer großen Kiste herumläuft. Dafür werden in Unity zunächst einmal vier neue Cubes, also Würfel. Das geht oben links unter <b> GameObject > 3D Object > Cube</b>. 
+Aktuell kann der Charakter noch am Rande des zuvor erstellten Terrains runterfallen. Um das zu verhindern implementieren viele Spiele einen Respawn sobald man aus der Map rausläuft. In diesem Fall soll auf eine einfachere Lösung zurückgegriffen werden, auf die ebenfalls oft zurückgegriffen wird: Eine unsichtbare Wand. Damit verhindert man, dass der Charakter am Rand runterläuft. Dadurch, dass die Border unsichtbar ist wird zudem verhindert, dass sich der Spieler fühlt, als wenn er in einer großen Kiste herumläuft. Dafür werden in Unity zunächst einmal vier neue Cubes, also Würfel, erstellt. Das geht oben links unter <b> GameObject > 3D Object > Cube</b>. 
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55874085-a3eb4080-5b91-11e9-8adc-3edfe54323c4.png" width="600px"></p>
 
@@ -676,11 +676,11 @@ Damit kann man dann die Größe der Würfel verändern. Als letztes müssel die 
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55874364-718e1300-5b92-11e9-8e5f-582874db5e1e.png" width="500px"></p>
 
-Da der Collider weiterhin auf dem Würfel bleibt, hat man weiterhin den Collisionswiederstand auf ihnen. Nun hat man also unsichtbare Wände, durch die man NICHT hindurchlaufen kann. Als letztes werden die Würfel noch als Wände angeordnet und schafft so eine Border für den Charakter und die Spielwelt.
+Da der Collider weiterhin auf dem Würfel bleibt, hat man weiterhin den Collisionswiederstand auf ihnen. Nun hat man also unsichtbare Wände, durch die man NICHT hindurchlaufen kann. Als Letztes werden die Würfel noch als Wände angeordnet und schaffen so eine Border für den Charakter und die Spielwelt.
 
 <h2 id="texturen">Die Texturen</h2>
 
-Damit das Terrain auch einigermaßen aussieht, muss es auch mit Texturen ausgestattet werden. Dafür geht man unter <b>Terrain > Paint Terrain > Paint Texture </b> unten auf einen der Brushes und darpber unter <b>Edit Terrain Layers</b> weitere Texturen hinzufügen. Die Texturen werden in diesem Fall in Microsoft Photoshop erstellt.
+Damit das Terrain auch einigermaßen aussieht, muss es auch mit Texturen ausgestattet werden. Dafür geht man unter <b>Terrain > Paint Terrain > Paint Texture </b> unten auf einen der Brushes und darüber unter <b>Edit Terrain Layers</b> weitere Texturen hinzufügen. Die Texturen werden in diesem Fall in Microsoft Photoshop erstellt.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51914562-70de4100-23d9-11e9-8a49-0fe9f11eaaaf.png" width="600px"></p>
 
@@ -696,6 +696,7 @@ Zuden lassen sich auf dem Terrain unter <b> Paint Trees bzw. Paint Details</b> a
 
 Nun kann man natürlich, wie schon bei den Texturen gesagt, nicht nur mit Unity-Internen Modellen und Texturen arbeiten, sondern kann auch unter anderem Objekte wie Bäume oder Steine extern modellieren und dann anschließend in Unity für den Map-Bau verwenden. In diesem Projekt wurden folgende Objekte in Blender modelliert:
 
+* Berge
 * Bäume/Baumstümpfe
 * Steine
 * Krabbe + Animation
@@ -705,20 +706,20 @@ Nun kann man natürlich, wie schon bei den Texturen gesagt, nicht nur mit Unity-
 * Treppen
 * Gras
 
-Daher dass die Objekt modellierung von Unity ziemlich begrenzt ist und sich vor allem auf simple geometrische Formen bezieht, muss für die Modellierung dieser Objekte ein spezielles Modellierungs-Programm, in diesem Fall Blender, zur rate gezogen werden. 
+Daher dass die Objekt-Modellierung von Unity ziemlich begrenzt ist und sich vor allem auf simple geometrische Formen bezieht, muss für die Modellierung dieser Objekte ein spezielles Modellierungs-Programm, in diesem Fall Blender, zu Rate gezogen werden. 
 
-In diesem Fall soll einmal beispielhaft gezeigt werden, wie man eine Palme in Blender modelliert. Die Vorgehensweise ist dann für andere Objekte die selbe, nur dass man Form und Farbe etwas anders macht. Da allerdings die Modellierung jedes Objektes hier den Rahmen sprengen würde, und wie gesagt das ganze letztlich in Blender relativ gleich abläuft, wird in diesem Fall die Modellierung der Palme gezeigt:
+In diesem Fall soll einmal beispielhaft gezeigt werden, wie man eine Palme in Blender modelliert. Die Vorgehensweise ist dann für andere Objekte die selbe, nur dass man Form und Farbe etwas anders gestaltet. Da allerdings die Modellierung jedes Objektes hier den Rahmen sprengen würde, und wie gesagt das ganze letztlich in Blender relativ gleich abläuft, wird in diesem Fall nur die Modellierung der Palme gezeigt:
 
-Um Objekte gut zu modellieren startet man zunächst mit einem simplen geometrischen Körper wie z.B. einem Würfel, einem Zylinder oder einer Icosphäre. Mithilfe verschiedener Shortcuts, kann nun jeder möglicher Körper erschaffen werden.
+Um Objekte zu modellieren startet man zunächst mit einem simplen geometrischen Körper wie z.B. einem Würfel, einem Zylinder oder einer Icosphäre. Mithilfe verschiedener Shortcuts, kann nun jeder möglicher Körper erschaffen werden.
 Im Fall einer Palme wird mit einem Zylinder begonnen aus dem ein Palmenstamm entstehen soll. Um ein Objekt zu erstellen muss der Shortcut "Shift + A" gedrückt werden und danach der Zylinder ausgewählt werden:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328827-1d351980-38eb-11e9-8d07-3266a260eecc.png" width="400px"></p>
 
-Wie viele Seiten der Zylinder hat, also wie rund dieser im Prinzip ist, kann über "Subdivides" gesteuert werden. In diesem Spiel wird ein gröberer und reduzierter Stil verfolgt, der Stamm der Palme soll also nicht exakt rund sein, aber auch nicht nur 4 Seiten haben:
+Wie viele Seiten der Zylinder hat, also wie rund dieser im Prinzip ist, kann über sogenannte "Subdivides" gesteuert werden. In diesem Spiel wird ein gröberer und reduzierter Stil verfolgt, der Stamm der Palme soll also nicht exakt rund sein, aber auch nicht nur 4 Seiten haben:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/53328969-5ec5c480-38eb-11e9-9d33-d91af5bbffa2.png" width="400px"></p>
 
-Um den Zylinder nun wie gewünscht zu bearbeiten muss das richtige Selektionswerkzeug ausgewählt sein. Im nächsten Schritt soll der Zylinder in die Länge gezogen werden um mehr den Maßstäben eines Palmenstamms zu entsprechen, daher muss die Flächenauswahl eingeschaltet werden. Nun ist es möglich die obere Fläche des Zylinders auszuwählen und diese nach oben zu ziehen. Nun ist der Zylinder in die Länge gezogen:
+Um den Zylinder nun wie gewünscht zu bearbeiten muss das richtige Selektionswerkzeug ausgewählt sein. Im nächsten Schritt soll der Zylinder in die Länge gezogen werden um mehr den Maßstäben eines Palmenstamms zu entsprechen, daher muss die Flächenauswahl eingeschaltet werden. Nun ist es möglich die obere Fläche des Zylinders auszuwählen und diese nach oben zu ziehen. Damit ist der Zylinder in die Länge gezogen:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329436-5de16280-38ec-11e9-8685-36825acd2408.png" width="800px"></p>
 
@@ -726,7 +727,7 @@ Damit der Stamm ein wenig natürlicher aussieht, soll er nicht überall den glei
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329653-d516f680-38ec-11e9-9fee-889c19910acd.png" width="400px"></p>
 
-Um die typische Stufen im Stamm zu Formen muss der Zylinder weiter unterteils werden. Mit einem Shortcut "strg + r" kann dies durchgeführt werden:
+Um die typische Stufen im Stamm zu Formen muss der Zylinder weiter unterteilt werden. Mit einem Shortcut "strg + r" kann dies durchgeführt werden:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329822-4656a980-38ed-11e9-8fe9-627d33d8d2a3.png" width="400px"></p>
 
@@ -734,7 +735,7 @@ Nun muss von der Flächenauswahl in die Kantenauswahl umgestellt werden:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329890-7bfb9280-38ed-11e9-805d-1a4621728772.png" width="400px"></p>
 
-Nun kann die gesamte Kante, welche eben hinzugefügt wurden mit "Shift + Rechtsklick" ausgewählt werden. Mit dem Shortcut "s" kann nun diese Schnittfläche im Durchmesser vergrößert werden:
+Dann kann die gesamte Kante, welche eben hinzugefügt wurde, mit "Shift + Rechtsklick" ausgewählt werden. Mit dem Shortcut "s" kann nun diese Schnittfläche im Durchmesser vergrößert werden:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/53329947-9fbed880-38ed-11e9-97f8-423a8520d9ab.png" width="400px"></p>
 
@@ -760,13 +761,13 @@ Als nächstes müssen die Palmenblätter modelliert werden. Dafür muss wie zu A
 
 Diese Fläche muss wieder unterteilt werden. Diesmal wird die Eckenauswahl benutzt. Nun werden die Ecken so verschoben, dass eine Blattform entsteht:
 
-Mit den mittlerweile bekannten Shortcuts kann nun ein Palmenblatt geformt werden. Auch hier wird wieder ein neues Material erstellt um die grüne Farbe des Palmenblattes zu visualisieren. Das Palmenblatt kann nun mit "Shift + d" dupliziert werden. Nun werden die Palmenblätter so um den Stamm angefügt, dass eine natürliche Verteilung besteht.
+Mit den mittlerweile bekannten Shortcuts kann nun ein Palmenblatt geformt werden. Auch hier wird wieder ein neues Material erstellt um die grüne Farbe des Palmenblattes zu erzeugen. Das Palmenblatt kann nun mit "Shift + d" dupliziert werden. Die Palmenblätter werden so um den Stamm angefügt, dass eine natürliche Verteilung besteht.
 
 Die fertige Palme kann nun mit "Datei > Exportieren > .fbx" als eine Modelldatei exportiert werden:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/53724931-49144a00-3e6b-11e9-9343-d40b76d90bc1.png" width="400px"></p>
 
-Das Filmbox-Format (fbx) kann von Unity ausgelesen werden. Dafür zieht man sie in Unity per Drag and Drop in die Dateien:
+Das Filmbox-Format (.fbx) kann von Unity ausgelesen werden. Dafür zieht man sie in Unity per Drag and Drop in die Dateien:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/53724852-1a966f00-3e6b-11e9-9cc7-cddf614d398e.png" width="400px"></p>
 
@@ -778,7 +779,7 @@ In Unity gibt es natürlich nicht nur die Möglichkeit, eigene Modelle importier
 
 Die Standart Assets lassen sich hier finden: <a href="https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-32351">Link</a>
 
-In diesem Projekt wurde auf mehrere Dateien aus den Standart Assets zurückgegriffen. Zum einen das Wasser. Die Modell finden sich nach dem Importieren der Standart Assets unter <b>Assets > Samples > Standart Assets</b>
+In diesem Projekt wurde auf mehrere Dateien aus den Standart Assets zurückgegriffen. Die Modelle finden sich nach dem Importieren der Standart Assets unter <b>Assets > Samples > Standart Assets</b>
 
 Wie bereits erwähnt wurden in diesem Projekt mehrere Standart Assets verwendet: Zum einen das Wasser Asset. Dieses muss einfach per Drag and Drop in die Szene gezogen und dann die Größe angepasst werden. Nach dem Auswählen lassen sich zudem rechts im Inspektor die Texturen der einzelnen Schichten des Wassers anpassen. In diesem Fall wurde eine andere Textur verwendet um das Wasser dem Stil des Projektes anzugleichen. Dies wurde auch noch einmal vorgenommen, um aus dem Wasser Lava für den Vulkan zu machen.
 
@@ -797,28 +798,29 @@ Um die Farbe des Lichts zu verändern, wählt man in den Elementen das "Directio
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55971757-6a463280-5c82-11e9-9eef-6d3f951c5b34.png" width="400px"></p>
 
-Zudem kann in Unity die Textur und das Verhalten des Himmels verändert werden. Dafür haben wir erneut auf ein gedownloadetes Asset zurückgegriffen. Der Himmel kann durch Drag n' Drop in den Himmel der Szene hinzugefügt werden. Die dazugehörige Animation ist automatisch aktiviert.
+Zudem kann in Unity die Textur und das Verhalten des Himmels verändert werden. Dafür wurde erneut auf ein gedownloadetes Asset zurückgegriffen. Der Himmel kann durch Drag n' Drop in den Himmel der Szene hinzugefügt werden. Die dazugehörige Animation ist automatisch aktiviert.
 
 <h2 id="musik">Die Musik</h2>
 
 Nun soll ein wenig Musik in das Spiel hinein. Dafür wird natürlich zunächst einmal Musik benötigt. In diesem Fall wurde online Musik verwendet, die bei Verlinkung der Quelle zur öffentlichen Nutzung steht. 
 
-Dies ist die Quelle für die Verwendete Musik: <a href="#">https://www.zapsplat.com/</a>
+Dies ist die Quelle für die Verwendete Musik: <a href="https://www.zapsplat.com/">https://www.zapsplat.com/</a>
 
 Die Besonderheit bei der Einbindung in diesem Fall ist, dass das Hören der Musik nur in einem begrenzten Radius verfügbar sein soll. Vereinfacht also: Wenn sich der Spieler in einem bestimmten Umkreis um die Quelle befindet, soll die Musik abgespielt werden.
 
-Um diese zu erreichen, wird zunächst einmal ein neues leeres Element erstellt. Dies geschieht unter <b>GameObject > Create Empty</b>. Dieses Empty GameObject wird nun ins Zentrum einer der Inseln positioniert. Als nächstes wird ein neues Script erstellt namens InselZentrum1.cs. In diesem werden erst einmal folgende Variablen definiert:
+Um dies zu erreichen, wird zunächst einmal ein neues leeres Element erstellt. Dies geschieht unter <b>GameObject > Create Empty</b>. Dieses Empty GameObject wird nun ins Zentrum einer der Inseln positioniert. Als nächstes wird ein neues Script erstellt namens InselZentrum1.cs. In diesem werden erst einmal folgende Variablen definiert:
 
 ```
     public GameObject Player;
-    public static AudioClip Insel1;
+    public AudioClip Insel1;
     static AudioSource audioSrc1;
     public string AudioName1;
     public float MinDis1;
     public float MaxDis1;
     public float Distance1;
 ```
-Zunächst einmal der Spieler, denn von diesem wird der Abstand zur MusikQuelle abhängig gemacht. Dann wird ein neuer AudioClip definiert. Also ein Element vom Typ AudioClip. dieses wird public static gesetzt, um es später in Unity zuweisen zu können. Dann wird eine AudioSource, also ein Objekt, welches auf dem Empty-Element in Unity liegt. Dieses AudioObjekt wird dem Element zugewiesen und in ihm können Musik und die Quelle verwaltet werden. Es wird hiermit, vom Element auf dem auch dieses Script liegt, selektiert. Zudem wird ein public string gesetzt, wo später der Name des Musiktitels eingetragen wird. Da nämlich ein später verwendetes Element einen string braucht, um den Titel zu finden und nicht einfach einen AudioClip, wie er vorher definiert wurde, ist dies noch einmal notwendig zu definieren. Dann werden noch drei float Variablen definiert: Eine für den Minimalen und Maximalen Abstand, die nötig sind, um das Audio abzuspielen und eine Distance Variable, in der der Abstand zwischen Spieler und Musik-Objekt, welche später dauerhaft geprüft wird, gespeichert wird.
+
+Zunächst einmal der Spieler, denn von diesem wird der Abstand zur MusikQuelle abhängig gemacht. Dann wird ein neuer AudioClip definiert. Also ein Element vom Typ AudioClip. Dieses wird public gesetzt, um es später in Unity zuweisen zu können. Dann wird eine AudioSource, also ein Objekt, welches auf dem Empty-Element in Unity liegt, definiert. Dieses AudioObjekt wird dem Element zugewiesen und in ihm können Musik und die Quelle verwaltet werden. Es wird hiermit, vom Element auf dem auch dieses Script liegt, selektiert. Zudem wird ein public string gesetzt, wo später der Name des Musiktitels eingetragen wird. Da nämlich ein später verwendetes Element einen string braucht, um den Titel zu finden, und nicht einfach einen AudioClip, wie er vorher definiert wurde, ist dies noch einmal notwendig zu definieren. Dann werden noch drei float Variablen definiert: Eine für den Minimalen und Maximalen Abstand, die nötig sind, um das Audio abzuspielen und eine Distance Variable, in der der Abstand zwischen Spieler und Musik-Objekt, welche später dauerhaft geprüft wird, gespeichert wird.
 
 Nun wird folgendes in der Start() Funktion definiert:
 
@@ -829,6 +831,7 @@ void Start()
         audioSrc1 = GetComponent<AudioSource>();
     }
 ```
+
 Damit wird dem AudioClip Insel1 ein Titel zugeordnet, der aus dem Ordner Resources und mit dem Namen AudioName1, welcher später noch zugeordnet wird, geladen wird. Zudem wird noch der Variable audioSrc1 die AudioSource-Komponente, die auf dem selben Objekt liegt, zugeordnet.
 
 Als nächstes wird folgendes in die Update() Funktion geschrieben:
@@ -847,15 +850,16 @@ void Update()
         }
     }
 ```
-Darin wird der Variable Distance1 das Ergebnis der Abfrage: Vector3.Distance(InselZentrum1.transform.position, Player.transform.position); zugeordnet. Diese Abfrage bedeutet Folgendes: 
+
+Darin wird der Variable Distance1 das Ergebnis der Abfrage: Vector3.Distance(InselZentrum1.transform.position, Player.transform.position) zugeordnet. Diese Abfrage bedeutet Folgendes: 
 
 Es wird das Unity-interne Vector3.Distance() verwendet. Dieses prüft in einem dreidimensionalen Raum (Vector3) den Abstand von zwei Objekten, die in den nachfolgenden Klammern übergeben werden. In diesem Fall sind das die beiden GameObjekts Insel1Zentrum und Player. An diese wird noch das .transform.position angehängt, was deklariert, dass hierbei die Position beider Objekte genommen und an die Vector3.Distance übergeben werden. Im Klartext bedeutet dies also: führe eine Abstands-Abfrage (Distance) im dreidimensionalen Raum (Vector3) aus, in der du die zwei Eigenschaften (transform.position) der nachfolgenden Elemente (Insel1Zentrum und Player) vergleichst und das Ergebnis dieser Abfrage in der Variable Distance1 speicherst.
 
-Als nächstes wird in einer if-Schleife (was die Bedingung bedeutet wurde bereits mehrfach erläutert) folgendes ausgeführt:
+Als nächstes wird in einer if-Schleife (was die Bedingung bedeutet wurde bereits mehrfach erläutert) Folgendes ausgeführt:
 ```
 playSound()
 ```
-Dies ist der Abruf einer Funktion. Diese Funktion wird später noch definiert. Das selbe gilt für die zweite if-Schleife, in der die Funktion stopSound() ausgeführt wird.
+Dies ist der Abruf einer Funktion namens playSound. Diese Funktion wird später noch definiert. Das selbe gilt für die zweite if-Schleife, in der die Funktion stopSound() ausgeführt wird.
 
 Da die Funktionen abgerufen werden sollen, müssen sie nun auch definiert werden. Also wird unter der Update()-Funktion folendes ergänzt:
 
@@ -914,19 +918,19 @@ Damit nun was passiert, muss das ganze implementiert werden. Das Script wird auf
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55887426-c8551600-5bad-11e9-8c89-501fbe11ca4d.png" width="400px"></p>
 
-Wie zu erkennen wurde die MinDistance auf 124 und die MaxDistance auf 125 gesetzt. Zudem wurde dem Player Objekt der Hauptcharakter zugeordnet, das EmptyObject dem Insel1Zentrum zugeordnet, und der Name des AudioTracks ("Insel1") eingegeben. Wie schon erwähnt, wird der AudioClip aus einem Ordner namens Resources geladen. Dieser wird also nun im selben Ordner angelegt, in dem das Script liegt. Darein wird dann der AudioClip abgelegt.
+Wie zu erkennen wurde die MinDistance auf 124 und die MaxDistance auf 125 gesetzt. Zudem wurde dem Player Objekt der Hauptcharakter zugeordnet, das EmptyObject dem Insel1Zentrum zugeordnet und der Name des AudioTracks ("Insel1") eingegeben. Wie schon erwähnt, wird der AudioClip aus einem Ordner namens Resources geladen. Dieser wird also nun im selben Ordner angelegt, in dem das Script liegt. Darein wird dann der AudioClip abgelegt.
 
 <h1 id="gameplay">Das Gameplay</h1>
 
-Nachdem nun eine ansprechende Spielwelt erstellt wurde, muss der zuvor implementierte Charakter auch mit dieser Interagieren können. Oft erfolgt dies in Form von Quests/Aufgaben, für die der Spieler etwas finden, sammeln oder auf sonstige Weise mit der Welt interagieren. In diesem Fall beschränken sich die Aktionen vor allem auf das finden und sammeln von Objekten. 
+Nachdem nun eine ansprechende Spielwelt erstellt wurde, muss der zuvor implementierte Charakter auch mit dieser interagieren können. Oft erfolgt dies in Form von Quests/Aufgaben, für die der Spieler etwas finden, sammeln oder auf sonstige Weise mit der Welt interagieren muss. In diesem Fall beschränken sich die Aktionen vor allem auf das Finden und Sammeln von Objekten. 
 
 <h2 id="intro">Intro</h2>
 
-Nun soll für das Spiel ein Intro, also eine Einleitung erstellt werden. Bei diesem Projekt soll der Charakter an den Strand angespült werden, eine Krabbe soll zu ihm laufen und ihm die Informationen die der Spieler braucht mitteilen. Dafür muss zunächst einmal eine neue Szene erstellt werden. Diesmal wird allerdings, um die erstellte Umgebung beizubehalten, die normale Szene in den Dateien einfach kopiert und in "Intro" umbenannt. Als nächstes kann erstmal alles, was nicht benötigt wird, gelöscht werden. Zudem wird die Kamera umpositioniert, undzwar so, dass sie den Strand seitlich von oben zeigt.
+Nun soll für das Spiel ein Intro, also eine Einleitung erstellt werden. Bei diesem Projekt soll der Charakter an den Strand angespült werden, eine Krabbe soll zu ihm laufen und ihm die Informationen die der Spieler braucht mitteilen. Dafür muss zunächst einmal eine neue Szene erstellt werden. Diesmal wird allerdings, um die erstellte Umgebung beizubehalten, die normale Szene in den Dateien einfach kopiert und in "Intro" umbenannt. Als nächstes kann erstmal alles, was nicht benötigt wird, gelöscht werden. Zudem wird die Kamera umpositioniert, und zwar so, dass sie den Strand seitlich von oben zeigt.
 
-Als nächstes wurde eine Krabbe in Blender modelliert und mit einer Animation ausgestattet. Diese wird dann in Unity importiert und mit einem Animator ausgestattet. Zudem wird ein neuer AnimatorController namens "crap" erstellt und zusammen mit der Animation auf dem Animator der Krabbe platziert. Das alles wurde bereits einmal beim Hauptcharakter gemacht und lässt sich <a href="#charakter">hier</a> nachlesen. Im Animator Controller wird mit <b> Rechtsklick > Create Empty</b> eine neue leere Animation erstellt. Diese wird dann mit <b>Rechtsklick > Set Layer as Default State</b> zum Standart gemacht, der sofort gestartet wird, wenn das Spiel gestartet wird.
+Als Nächstes wurde eine Krabbe in Blender modelliert und mit einer Animation ausgestattet. Diese wird dann in Unity importiert und mit einem Animator ausgestattet. Zudem wird ein neuer AnimatorController namens "crap" erstellt und zusammen mit der Animation auf dem Animator der Krabbe platziert. Das alles wurde bereits einmal beim Hauptcharakter gemacht und lässt sich <a href="#charakter">hier</a> nachlesen. Im Animator Controller wird mit <b> Rechtsklick > Create Empty</b> eine neue leere Animation erstellt. Diese wird dann mit <b>Rechtsklick > Set Layer as Default State</b> zum Default gemacht, der sofort gestartet wird, wenn das Spiel gestartet wird.
 
-Als nächstes wird mit <b>Rechtsklick > Make Transition</b> eine neue Transition von der Empty State zur Krabben-Bewegungsanimation gemacht. Wie dies geht lässt sich auch unter dem Punkt "Der Charakter" nachlesen. Dafür wird dann links ein neuer Parameter erstellt namens crapMove vom Typ Bool. Die Transition vom Empty State zur Bewegung wird mit der Condition crapMove = true ausgestattet und die andere mit der Condition crapMove = false. 
+Als Nächstes wird mit <b>Rechtsklick > Make Transition</b> eine neue Transition von der Empty State zur Krabben-Bewegungsanimation gemacht. Wie dies geht lässt sich auch unter dem Punkt "Der Charakter" nachlesen. Dafür wird dann links ein neuer Parameter erstellt namens crapMove vom Typ Bool. Die Transition vom Empty State zur Bewegung wird mit der Condition crapMove = true ausgestattet und die andere mit der Condition crapMove = false. 
 
 Das ganze sieht dann so aus:
 
@@ -961,9 +965,9 @@ timer = timer + Time.deltaTime;
 
 timer += Time.deltaTime
 ```
-Beide Zeilen machen im Script theoretisch das gleiche. 
+Beide Zeilen machen im Script theoretisch das Gleiche. 
 
-Time.deltaTime ist die Unity-Interne zeitangabe. Time.deltaTime ist quasi eine Stoppuhr, die in Unity ab dem Start des Spiels anfängt  zu laufen. Sie kann aber auch mittels Script manipuliert oder angehalten werden. In diesem Fall wird damit einfach ein Timer initialisiert. Der Vorteil davon, diesen zu verwenden ist, dass im PauseScript ja Time.deltaTime auf null gesetzt wird. Da der Timer in diesem Fall von Time.deltaTime abhängig ist, wird auch dieser Timer gestoppt, wenn das PauseMenü geöffnet wird. In diesem Projekt wurden alle timer mit Time.deltaTime gesteuert. Daher stoppen die Timer alle, wenn auch das Spiel mittels Esc.-Taste gestoppt wird.
+Time.deltaTime ist die Unity-Interne Zeitangabe. Time.deltaTime ist quasi eine Stoppuhr, die in Unity ab dem Start des Spiels anfängt  zu laufen. Sie kann aber auch mittels Script manipuliert oder angehalten werden. In diesem Fall wird damit einfach ein Timer initialisiert. Der Vorteil davon, diesen zu verwenden ist, dass im PauseScript ja Time.deltaTime auf null gesetzt wird. Da der Timer in diesem Fall von Time.deltaTime abhängig ist, wird auch dieser Timer gestoppt, wenn das PauseMenü geöffnet wird. In diesem Projekt wurden alle Timer mit Time.deltaTime gesteuert. Daher stoppen die Timer alle, wenn auch das Spiel mittels Esc.-Taste gestoppt wird.
 
 Nun soll sich die Krabbe aber auch fortbewegen. Dies aber nicht einfach so oder auch dauerhaft, sondern sie soll einen bestimmten Weg eine bestimmte Zeit lang entlanglaufen. Um das zu erreichen, wurde in diesem Fall auf ein bereits bestehendes Script zurückgegriffen. 
 
@@ -979,7 +983,7 @@ Mittels einer Eingabe unter "Size" lässt sich die Menge an Objekten einstellen,
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55965917-c6f02000-5c77-11e9-8dba-aee0292899df.png" width="400px"></p>
 
-Damit wäre die Bewegung der Krabbe abgeschlossen. Um nun das Intro so hinzubekommen, wie es im Spiel vorhanden ist, wird das gleiche noch einmal auf den Hauptcharakter (diesmal in der Position, dass er quasi "angespült" wird) und einmal auf die Kamera angewand. So hat man dann eine Kamerafahrt hin zum Charakter. 
+Damit wäre die Bewegung der Krabbe abgeschlossen. Um nun das Intro so hinzubekommen, wie es im Spiel vorhanden ist, wird das gleiche noch einmal auf den Hauptcharakter (diesmal in der Position, dass er quasi "angespült" wird) und einmal auf die Kamera angewandt. So hat man dann eine Kamerafahrt hin zum Charakter. 
 
 Als nächstes soll die Krabbe etwas zum Spieler sagen. Der Text wird dabei verfasst und in drei Text-Elemente aufgeteilt, die hintereinander angezeigt werden sollen. Zudem soll ein viertes Textelement eine "Überschrift" darstellen. Also werden nun vier Textelemente erstellt und richtig positioniert.  Als nächstes wird dann ein Script namens crapTalk erstellt. Hier wird folgendes hineingeschrieben:
 
@@ -1078,15 +1082,15 @@ public class mainSceneBlack : MonoBehaviour
     }
 }
 ```
-Zunächst wird definiert, dass von diesem Script aus die UnityEngine UI, also UI objekte (wie das zuvor erstellte Panel) bearbeitet werden kann. Als nächstes wird eine Variable erstellt. Dies ist eine CanvasGroup. Das ist eine Variable, die später eine CanvasGroup, welche auf dem Objekt liegt, speichert. Dann wird eine Timer Variable erstellt. In der Start()-Funktion wird der CanvasGroup Variable der Component CanvasGroup zugeordnet. CanvasGRoup ist ein Komponent von GameObjects, wie es auch Collider und Mesh Renderer sind. Mit diesem Befehl wird die CanvasGroup-Komponente auf dem GameObject ausgewählt, auf dem auch dieses Script liegt, also von dem Panel. ALs nächstes wird der Alphakanal von der CanvasGroup auf 1, also auf den höchsten Wert gesetzt. Damit ist der Screen mit einem schwarzen Bild bedeckt. 
+Zunächst wird definiert, dass von diesem Script aus die UnityEngine UI, also UI Objekte (wie das zuvor erstellte Panel) bearbeitet werden kann. Als Nächstes wird eine Variable erstellt. Dies ist eine CanvasGroup. Das ist eine Variable, die später eine CanvasGroup, welche auf dem Objekt liegt, speichert. Dann wird eine Timer Variable erstellt. In der Start()-Funktion wird der CanvasGroup Variable der Component CanvasGroup zugeordnet. CanvasGroup ist ein Komponent von GameObjects, wie es auch Collider und Mesh Renderer sind. Mit diesem Befehl wird die CanvasGroup-Komponente auf dem GameObject ausgewählt, auf dem auch dieses Script liegt, also von dem Panel. Als Nächstes wird der Alphakanal von der CanvasGroup auf 1, also auf den höchsten Wert gesetzt. Damit ist der Screen mit einem schwarzen Bild bedeckt. 
 
-Als nächstes wird die Update Funtktion gefüllt. Hier wird ein Timer initialisiert. Dann wird in einer if-schleife geprüft, ob der timer über 13 sekunden ist, weil der BlackScreen so lange eingeblendet bleiben soll. In dieser if-Schleife wird eine weitere if-Schleife geprüft, ob der AlphaKanal des Panel noch über 0 ist, also quasi noch ein bisschen "schwarz" auf dem Bildschirm zu sehen ist. Wenn das der Fall ist, wird der Alphakanal um Time.deltaTime/10 also pro sekunde um 0.1 (1/10 = 0.1) verringert. Somit wird der Alphakanal Stück für Stück auf null verringert. Damit ist der Fade-Out-Effekt erstellt. 
+Dann wird die Update Funtktion gefüllt. Hier wird ein Timer initialisiert. Es wird in einer if-schleife geprüft, ob der Timer über 13 Sekunden ist, weil der BlackScreen so lange eingeblendet bleiben soll. In dieser if-Schleife wird eine weitere if-Schleife geprüft, ob der AlphaKanal des Panel noch über 0 ist, also quasi noch ein bisschen "schwarz" auf dem Bildschirm zu sehen ist. Wenn das der Fall ist, wird der Alphakanal um Time.deltaTime/10 also pro sekunde um 0.1 (1/10 = 0.1) verringert. Somit wird der Alphakanal Stück für Stück auf null verringert. Damit ist der Fade-Out-Effekt erstellt. 
 
 Nun muss noch die CanvasGroup zugeordnet werden, welche im Script angesprochen wird. Diese ist zu finden unter <b> Add Component > CanvasGroup</b>. 
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55969129-901d0880-5c7d-11e9-849c-a10a07220959.png" width="400px"></p>
 
-Daran muss nichts mehr konfiguriert werden. CanvasGroup ist simpel gesagt eine Komponente, die zur verwaltung bestimmter Eigenschaften eines Canvas (wie z.b. dem Alphakanal) vorgesehen ist. Sie lässt sich durch ein Script sehr simpel ansprechen und manipulieren, wodurch Effekte wie der eben erstellte Fade-Out entstehen können.
+Daran muss nichts mehr konfiguriert werden. CanvasGroup ist simpel gesagt eine Komponente, die zur Verwaltung bestimmter Eigenschaften eines Canvas (wie z.b. dem Alphakanal) vorgesehen ist. Sie lässt sich durch ein Script sehr simpel ansprechen und manipulieren, wodurch Effekte wie der eben erstellte Fade-Out entstehen können.
 
 Mit dem Script, der CanvasGroup-Komponente und der richtigen Farbe sieht das Panel dann wie folgt aus:
 
@@ -1094,15 +1098,15 @@ Mit dem Script, der CanvasGroup-Komponente und der richtigen Farbe sieht das Pan
 
 <h2 id="objektesammeln">Objekte aufsammeln</h2>
 
-Zunächst einmal soll der Charakter möglich sein, Objekte aufzusammeln. Die Logik dahinter lautet wie folgt: Der Charakter soll in der Nähe des Objektes einen Text angezeigt bekommen, dass er fähig ist, ein bestimmtes Objekt aufzusammeln. Dies allerdings nur, wenn das jeweilige Objekt noch existiert. Wenn der Spieler dann die Taste drückt, wird das Objekt zerstört und der Text wieder ausgeblendet.
+Zunächst einmal soll der Charakter fähig sein, Objekte aufzusammeln. Die Logik dahinter lautet wie folgt: Der Charakter soll in der Nähe des Objektes einen Text angezeigt bekommen, dass es möglich ist, ein bestimmtes Objekt aufzusammeln. Dies allerdings nur, wenn das jeweilige Objekt noch existiert. Wenn der Spieler dann die Taste drückt, wird das Objekt zerstört und der Text wieder ausgeblendet.
 
 Zunächst einmal muss ein Objekt erstellt werden, welches dann aufgesammelt wird. In diesem Fall ist dies ein Schlüssel. 
 
 <p align="center"><img width="600px" src="https://user-images.githubusercontent.com/42578917/53263002-7b3de300-36d8-11e9-8bf4-d7bd924536ec.png"></p>
 
-Zudem wird ein ganz normaler Cube unter <b> GameObject > 3D Object > Cube </b>hinzugefügt. Dieser wird genau über den Schlüssel gesetzt und wird später genutzt, um den Abstand zwischen Spieler und Schlüssel zu bestimmen. Von diesem wird dann per Rechtsklick auf den Mesh Renderer und <b> Remove Component </b>der Mesh Renderer entfernt. Damit wird das Objekt zwar durchsichtig, bleibt aber als Objekt in der Szene vorhanden und lässt sich im Spiel verwenden. 
+Zudem wird ein ganz normaler Cube unter <b> GameObject > 3D Object > Cube </b>hinzugefügt. Dieser wird genau über den Schlüssel gesetzt und wird später genutzt, um den Abstand zwischen Spieler und Schlüssel zu bestimmen. Von diesem wird dann per Rechtsklick auf den Mesh Renderer und <b> Remove Component </b>der Mesh Renderer entfernt. Damit wird das Objekt zwar durchsichtig, bleibt aber als Objekt in der Szene vorhanden und lässt sich im Spiel verwenden. Ein extra Cube wird benötigt, da nämlich eine Distance zwischen dem Charakter und dem Objekt geprüft wird. Wird das Objekt dann durch das Aufsammeln zerstört, existiert es nicht mehr und es kann keine Distance mehr gemessen werden. Dies würde eine Fehlermeldung erzeugen. Daher wird hier ein extra Würfel verwendet. 
 
-Als nächstes wird ein Script geschrieben, welches all diese Schritte vollzieht. Dafür wird ein neuer Ordner mit einem C#-Script mit dem Namen PickUpScript.cs erstellt.  Dort müssen zunächst einmal alle Objekte selektiert werden. Dafür werden drei neue Variablen für GameObject erstellt:
+Nun wird ein Script geschrieben, welches all diese Schritte vollzieht. Dafür wird ein neuer Ordner mit einem C#-Script mit dem Namen PickUpScript.cs erstellt.  Dort müssen zunächst einmal alle Objekte selektiert werden. Dafür werden drei neue Variablen für GameObject erstellt:
 
 ```
 public class PickUpScript:MonoBehaviour {
@@ -1114,7 +1118,7 @@ public class PickUpScript:MonoBehaviour {
 ```
 Neben dieser wird eine Variable vom Typ float erstellt, in der später der Abstand zwischen Spieler und Objekt gespeichert wird. Da das Ergebnis des nachher verwendeten Objektes eine Gleitkommazahl ist, muss hier statt einer integer eine Variable vom Typ float verwendet werden. 
 
-Um nun weiter zu verfahren wird ein Text benötigt, welcher den Spieler darauf hinweist, den Schlüssel aufzusammeln. Dies wird auf die selbe Weise erstellt, wie das Escape-Menü erstellt wurde. Dies ist <a href="#">hier</a> nachzulesen. In diesem Fall wird im Canvas statt eines Buttons ein Text erstellt. Dieser kann dann rechts im Inspektor bearbeitet werden. 
+Um nun weiter zu verfahren wird ein Text benötigt, welcher den Spieler darauf hinweist, den Schlüssel aufzusammeln. Dies wird auf die selbe Weise erstellt, wie das Escape-Menü erstellt wurde. Dies ist <a href="#pausemenu">hier</a> nachzulesen. In diesem Fall wird im Canvas statt eines Buttons ein Text erstellt. Dieser kann dann rechts im Inspektor bearbeitet werden. 
 
 Als nächstes wird die Start-Funktion gefüllt:
 
@@ -1125,14 +1129,14 @@ void Start() {
 ```
 Da nämlich aktuell der Schriftzug noch immer dauerhaft angezeigt wird, wird er in dieser Zeile zunächst einmal standartmäßig auf nicht-anzeigen gestellt.
 
-Als nächstes muss dann etwas passieren wenn man sich dem Schlüssel nähert. All die Logik dahinter wird innerhalb der Update() Funktion geschrieben:
+Als Nächstes muss dann etwas passieren, wenn man sich dem Schlüssel nähert. All die Logik dahinter wird innerhalb der Update() Funktion geschrieben:
 
 ```
 void Update() {
     Distance = Vector3.Distance(KeyBox.transform.position, Player.transform.position);
 }
 ```
-Hier wird nun der Abstand des Objektes KeyBox vom Abstand des Objektes Player in der vorher deklarierten Variable Distance gespeichert. Wie diese Funktioniert, wurde bereits im Abschnitt <a href="#musik">Musik</a> erläutert
+Hier wird nun der Abstand des Objektes KeyBox vom Abstand des Objektes Player in der vorher deklarierten Variable Distance gespeichert. Wie dies funktioniert, wurde bereits im Abschnitt <a href="#musik">Musik</a> erläutert
 
 Nachdem nun die Entfernung geprüft wurde, muss auch etwas mit der Information angefangen werden. Dafür wird wie üblich eine if-Schleife verwendet. In dieser sollen dann mehrere Operationen ausgelöst werden.
 ```
@@ -1158,9 +1162,10 @@ if(GameObject.Find("Schlüssel") != null) {
 
 Ist nun der Abstand kleiner als 3 und existiert der Schlüssel noch werden diese Aktionen getätigt:
 
-Zuerst wird der Text mit KeyTextUI.SetActive(true) auf "anzeigen" gesetzt, sodass der Spieler diesen auf dem Bildschirm eingeblendet sieht. Als nächstes wird dann geprüft, ob der Spieler E drückt. Wie genau dies funktioniert bzw. was der Code bedeutet, lässt sich <a href="#">hier</a> nachlesen. Wenn der Spieler E drückt, werden zwei Aktionen ausgeführt: Erstens wird der Schlüssel, also das gameObject auf dem das Script drauf ist mittels Destroy(gameObject) zerstört. Zweitens wird der Text, der zum aktuellen Laufzeit-punkt noch eingeblendet ist, ausgeblendet. Der Spieler bekommt also einen Text angezeigt und sobald er E drückt wird dieser wieder ausgeblendet und der Schlüssel zerstört. 
+Zuerst wird der Text mit KeyTextUI.SetActive(true) auf "anzeigen" gesetzt, sodass der Spieler diesen auf dem Bildschirm eingeblendet sieht. Als nächstes wird dann geprüft, ob der Spieler E drückt. Wie genau dies funktioniert bzw. was der Code bedeutet, lässt sich <a href="#pausemenu">hier</a> nachlesen. Wenn der Spieler E drückt, werden zwei Aktionen ausgeführt: Erstens wird der Schlüssel, also das gameObject auf dem das Script drauf ist, mittels Destroy(gameObject) zerstört. Zweitens wird der Text, der zum aktuellen Laufzeit-punkt noch eingeblendet ist, ausgeblendet. Der Spieler bekommt also einen Text angezeigt und sobald er E drückt wird dieser wieder ausgeblendet und der Schlüssel zerstört. 
 
-Als letztes muss noch eine Option eingebaut werden, sollte der Spieler sich wieder vom Schlüssel entfernen. Dafür wird ein else an der if-Schleife angebracht, in der geprüft wird, ob der Abstand kleiner als 3 ist. In diese wird folgender Code geschrieben:
+Als Letztes muss noch eine Option eingebaut werden, sollte der Spieler sich wieder vom Schlüssel entfernen. Dafür wird ein else an der if-Schleife angebracht, in der geschrieben wird, was passiert, wenn der Abstand größer als 3 ist. In diese wird folgender Code geschrieben:
+
 ```
 else {
     KeyTextUI.SetActive(false);
@@ -1194,7 +1199,6 @@ public class PickUpScript : MonoBehaviour {
         }
     }
 }
-
 ```
 
 Anschließend wird der Code abgespeichert. Dieser muss nun nur noch "wirkend" gemacht werden. Das Script wird also auf den Schlüssel gezogen. Dort sind dann drei Felder zu sehen, eins für Player, eins für KeyBox und eins für AxeTextUI. Auf das KeyBox-Feld wird der vorher erzeugte Cube gezogen, auf das Player-Feld der der Charakter und auf das AxeTextUI-Feld der erstellte Canvas. 

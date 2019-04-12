@@ -1,5 +1,5 @@
 <img src="https://user-images.githubusercontent.com/42578917/51550957-c19bea00-1e6d-11e9-9baf-56e92610e7fe.png">
-<b>Beschreibung: Ein Abendteurer strandet auf einer einsamen Insel, die schon seit Jahren verlassen ist. Nun muss er viele Probleme lösen und Sachen sammeln um der Insel zu entkommen und sich selbst zu retten...</b>
+<b>Beschreibung: Ein Abenteurer strandet auf einer einsamen Insel, die schon seit Jahren verlassen ist. Nun muss er viele Probleme lösen und Sachen sammeln um der Insel zu entkommen und sich selbst zu retten...</b>
 <br>
 <br>
 In diesem Mini-Game strandet ein Junge alleine auf einer kleinen Inselgruppe, die schon seit Jahren verlassen ist. Nun muss er sich den Gefahren und Aufgaben dort stellen, um seinen Weg zurück nach Hause zu finden. Von Feinden umgeben und mit rudimentären Informationen muss der Spieler hier alle Teile finden und sammeln, um ein Boot zu bauen um zurück zur Zivilisation zu kommen.
@@ -777,11 +777,8 @@ In diesem Projekt wurde auf mehrere Dateien aus den Standart Assets zurückgegri
 
 Wie bereits erwähnt wurden in diesem Projekt mehrere Standart Assets verwendet: Zum einen das Wasser Asset. Dieses muss einfach per Drag and Drop in die Szene gezogen und dann die Größe angepasst werden. Nach dem Auswählen lassen sich zudem rechts im Inspektor die Texturen der einzelnen Schichten des Wassers anpassen. In diesem Fall wurde eine andere Textur verwendet um das Wasser dem Stil des Projektes anzugleichen. Dies wurde auch noch einmal vorgenommen, um aus dem Wasser Lava für den Vulkan zu machen.
 
-Es wurde zudem eine Feuer Animation verwendet
-
-Desweiteren wurde, wie später zu sehen, eine Explosion sowie Rauch für den Vulkan verwendet. Die Explosion findet sich unter <b>Assets > Standart Assets > ParticleSystems > Prefabs > Explosion</b> und der Rauch unter <b>Assets > Standart Assets > ParticleSystems > Prefabs > Smoke</b>
-
-HIER NOCH SCHREIbBEN WAS VERÄNDERT WURDe.
+Desweiteren wurde, wie später zu sehen, eine Explosion sowie Rauch für den Vulkan und Feuer für eine Kerze verwendet. Die Explosion findet sich unter <b>Assets > Standart Assets > ParticleSystems > Prefabs > Explosion</b> ,der Rauch unter <b>Assets > Standart Assets > ParticleSystems > Prefabs > Smoke</b> und das Feuer unter <b>Assets > Standart Assets > ParticleSystems > Prefabs > Fire</b>.
+Die Einstellungen der Partikel, wie die Skalierung, Geschwindigkeit und Menge der Partikel, werden angepasst bis das gewünschte Ergebnis erreicht wird. So kann aus kleinen Rauchpartikel der Rauch für einen Vulkan entstehen und aus Feuerpartikeln eine brennende Kerze.
 
 Als letztes wurde noch ein Dust Storm verwendet. Diesen findet man unter <b>Assets > Standart Assets > ParticleSystems > DustStorm</b> und er kann einfach per Drag and Drop in die Szene gezogen werden. Im Scene-Screen taucht dann ein Feld auf, mit dem man Dichte und Anzahl der Partikel variieren kann.
     
@@ -795,9 +792,7 @@ Um die Farbe des Lichts zu verändern, wählt man in den Elementen das "Directio
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55971757-6a463280-5c82-11e9-9eef-6d3f951c5b34.png" width="400px"></p>
 
-Zudem kann in Unity die Textur und das Verhalten des Himmels verändert werden
-
-HIER EINE ERLÄUTERUNG WIE DER HIMMEL GESTALTET WURDE
+Zudem kann in Unity die Textur und das Verhalten des Himmels verändert werden. Dafür haben wir erneut auf ein gedownloadetes Asset zurückgegriffen. Der Himmel kann durch Drag n' Drop in den Himmel der Szene hinzugefügt werden. Die dazugehörige Animation ist automatisch aktiviert.
 
 <h2 id="musik">Die Musik</h2>
 

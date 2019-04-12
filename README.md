@@ -259,9 +259,12 @@ Ein transform ist in der Programmierung erst einmal eine Veränderung eines Obje
 Nun muss diese Rotation auch irgendwie ausgeführt werden. Daher wird dieser transform.eulerAngles Folgendes zugewiesen: new Vector3(0.0f, mouseX, 0.0f);
 
 Ein Vector3 ist eine Veränderung in Unity im dreidimensionalen Raum, die ja eine Rotation ist. Würde man ein 2D Spiel programmieren, müsste es Vector2 heißen. Diesem Vector3 werden auf den drei Achsen folgende Werte übergeben. Auf der X Achse (die im Spiel die dritte Achse eines zweidimensionalen Koordinatensystems ist, also beim zweidimensionalen Koordinatensystem "in das Papier hinein") wird 0 übergeben, da hier keine Drehung stattfinden soll (Die Variable heißt zwar mouseX, da sie die X Bewegung im zweidimensionalen Koordinatensystem darstellt, eigentlich ist es aber verantwortlich für die Y-Achse, da im dreidimensionalen Koordinatensystem die X-Achse quasi die Y-Achse ist). Für die Y-Achse wird der zuvor in mouseX gespeicherte Wert übergeben, da die Maus sich ja auf der Y-Achse bewegen soll, und für die z-achse wird wieder 0 übergeben.
-Das new davor bedeutet einfach, dass es sich um eine neue Bewegung handelt und keine kontinuierliche. Würde da kein new stehen, würde sich das Objekt mit jeder Ausführung des Scriptes (also jeden Frame) um den Faktor der Position der Maus drehen, anstatt dies nur dann zu tun, wenn man die Maus bewegt.
 
-Damit ist eine von der Mausbewegung abhängige Bewegung in der X (Y) Richtung implementiert. Als nächstes sollen einige Bewegungen innerhalb des Koordinatensystems definiert werden:
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/56040141-0a10c880-5d36-11e9-9a72-71e82ccfd3d5.gif" width="500px"></p>
+
+Das "new" davor bedeutet einfach, dass es sich um eine neue Bewegung handelt und keine kontinuierliche. Würde da kein new stehen, würde sich das Objekt mit jeder Ausführung des Scriptes (also jeden Frame) um den Faktor der Position der Maus drehen, anstatt dies nur dann zu tun, wenn man die Maus bewegt.
+
+Damit ist eine von der Mausbewegung abhängige Rotation in der X (Y) Richtung implementiert. Als nächstes sollen einige Bewegungen innerhalb des Koordinatensystems definiert werden:
 
 ```
 if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
@@ -277,21 +280,22 @@ transform.Translate(moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f
 
 moveSpeed = 1.5f;  
 ```
-Zunächst wird einmal geprüft, ob die W-Taste UND die Shift-Taste gedrückt ist. Da der Charakter beim Drücken beider Tasten Sprinten soll und sich damit schneller Bewegen soll, wird dann die Variable moveSpeed, also die Variable in der die Laufgeschwindigkeit gespeichert ist, erhöht auf 4. Zudem wird geprüft, ob der Spieler S drückt, also rückwärts läuft. Wenn dies der Fall ist, soll er sich langsamer Bewegen, da die Rückwärts-Laufen-Animation auch langsamer ist, also wird die Bewegungsgeschwindigkeit auch niedriger gesetzt als der Default. 
 
-Als nächstes findet die eigentliche Bewegung statt. Da Unity bereits Standartmäßig für die Bewegung WASD als Tasten definiert hat, werden hier keine if-schleifen oder sonstiges benötigt. Nun wird also, wie zuvor bei der Rotation, wieder ein transform, also eine veränderung im dreidimensionalen Raum gemacht. Statt eines eulerAngle, wird diesmal ein Translate verwendet. Dies ist in der programmierung auch eine SEHR oft verwendete Bezeichnung für die Veränderung der Position eines Objektes. Dieses Translate wird dann mit den Werten, die in der Klammer dahinter übergeben werden ausgeführt. Wieder findet das ganze über die einzelnen Achsen statt: Für die X Achse, also nach vorne und hinten, wird in diesem Fall folgendes übergeben: Die Bewegungsgeschwindigkeit mulipliziert mit der Input.GetAxis("Horizontal"). Unity verwendet das Input.GetAxis("Horizontal") als 3D-Modell der Tasteneingabe. Die Achse "Horizontal" wird dabei immer verändert, wenn W oder S gedrückt werden. Wenn also Input.GetAxis("Horizontal") abgefragt wird, wird die Veränderung in der W-S-Achse, also das Drücken der W und S Taste abgefragt. Im Klartext bedeutet das, dass die Bewegung auf der X Achse, also nach vorne und hinten, abhängig von der Veränderung der "Horizontal" Achse, also vom Drücken der W und der S Taste, verändert werden soll. Damit das ganze auch z.B. beim Pause-Drücken des Spiels pausiert werden kann, wird es noch mit Time.deltaTime multipliziert (Was das ist, wird später auch nocheinmal erläutert). Damit ist die ganze Bewegung abhängig von der Spielinternen zeit und wird damit gestoppt oder eben wieder gestartet. 
+Zunächst wird einmal geprüft, ob die W-Taste UND die Shift-Taste gedrückt ist. Da der Charakter beim Drücken beider Tasten sprinten soll und sich damit schneller bewegen soll, wird dann die Variable moveSpeed, also die Variable in der die Laufgeschwindigkeit gespeichert ist, erhöht auf 4. Zudem wird geprüft, ob der Spieler S drückt, also rückwärts läuft. Wenn dies der Fall ist, soll er sich langsamer bewegen, da die Rückwärts-Laufen-Animation auch langsamer ist, also wird die Bewegungsgeschwindigkeit auch niedriger gesetzt als der Default. 
 
-Da sich der Charakter nicht auf der Y Achse, also nach oben und unten bewegen soll (zumindest nicht in diesem Fall, später allerdings mit einem Sprungscript schon), wird diese auf 0 gesetzt. Als letztes wird das selbe mit der Z-Achse wie mit der X-Achse gemacht. Nur dieses mal mit der "Vertical"-Achse, also der Achse für links und rechts, also A und D - Tasten.
+Als nächstes findet die eigentliche Bewegung statt. Da Unity bereits standartmäßig für die Bewegung WASD als Tasten definiert hat, werden hier keine if-schleifen oder Sonstiges benötigt. Nun wird also, wie zuvor bei der Rotation, wieder ein transform, also eine Veränderung im dreidimensionalen Raum gemacht. Statt eines eulerAngle, wird diesmal ein translate verwendet. Dies ist in der Programmierung auch eine SEHR oft verwendete Bezeichnung für die Veränderung der Position eines Objektes. Dieses Translate wird dann mit den Werten, die in der Klammer dahinter übergeben werden, ausgeführt. Wieder findet das Ganze über die einzelnen Achsen statt: Für die X-Achse, also nach vorne und hinten, wird in diesem Fall Folgendes übergeben: Die Bewegungsgeschwindigkeit mulipliziert mit der Input.GetAxis("Horizontal"). Unity verwendet das Input.GetAxis("Horizontal") als 3D-Modell der Tasteneingabe. Die Achse "Horizontal" wird dabei immer verändert, wenn W oder S gedrückt werden. Wenn also Input.GetAxis("Horizontal") abgefragt wird, wird die Veränderung in der W-S-Achse, also das Drücken der W und S Taste abgefragt. Im Klartext bedeutet das, dass die Bewegung auf der X Achse, also nach vorne und hinten, abhängig von der Veränderung der "Horizontal" Achse, also vom Drücken der W und der S Taste, verändert werden soll. Damit das Ganze auch z.B. beim Pause-Drücken des Spiels pausiert werden kann, wird es noch mit Time.deltaTime multipliziert (Was das ist, wird später auch nocheinmal erläutert). Damit ist die ganze Bewegung abhängig von der spielinternen Zeit und wird damit gestoppt oder eben wieder gestartet. 
 
-Als letztes muss noch das ergänzt werden:
+Da sich der Charakter nicht auf der Y-Achse, also nach oben und unten, bewegen soll (zumindest nicht in diesem Fall, später allerdings mit einem Sprungscript schon), wird diese auf 0 gesetzt. Als Letztes wird das selbe mit der Z-Achse wie mit der X-Achse gemacht. Nur dieses mal mit der "Vertical"-Achse, also der Achse für links und rechts, also A- und D-Tasten.
+
+Als Letztes muss noch das ergänzt werden:
 
 ```
 moveSpeed = 1.5f;  
 ``` 
 
-Dies setzt den moveSpeed wieder auf 1.5. Dies muss getan werden, da sonst, wenn der Spieler z.B. gesprintet ist, die moveSpeed auf 4 ist. Im nächsten Frame würde die Variable dann weiterhin auf 4 stehen, obwohl der Spieler vielleicht gar nicht mehr Sprintet. Daher muss sie vor Ende des Frames noch einmal wieder auf 1.5 gesetzt werden, damit quasi wieder die selbe "Ausgangslage" geschaffen wird.
+Dies setzt den moveSpeed wieder auf 1.5. Dies muss getan werden, da sonst, wenn der Spieler z.B. gesprintet ist, die moveSpeed auf 4 ist. Im nächsten Frame würde die Variable dann weiterhin auf 4 stehen, obwohl der Spieler vielleicht gar nicht mehr sprintet. Daher muss sie vor Ende des Frames noch einmal wieder auf 1.5 gesetzt werden, damit quasi wieder die selbe "Ausgangslage" geschaffen wird.
 
-Das war soweit die Bewegung und Rotation auf der X Achse. Das gesamte Script wird dann auf das Charaktermodell gezogen. Im Feld "Rigidbody" muss dann noch der Charakter selbst zugewiesen werden:
+Das war soweit die Bewegung und Rotation auf der X-Achse. Das gesamte Script wird dann auf das Charaktermodell gezogen. Im Feld "Rigidbody" muss dann noch der Charakter selbst zugewiesen werden:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55975096-7e416280-5c89-11e9-932d-d104d340f8a0.png" width="400px"></p>
 
@@ -309,19 +313,19 @@ public class VerticalCameraMovement : MonoBehaviour
     }
 }
 ```
-Die Funktionsweise ist sehr ähnlich der von der X-Achsen Bewegung, daher soll diesmal nur das erläutert werden, was sich geändert hat. Undzwar soll sich die Kamera nach oben und unten ebenfalls mit der Maus bewegen. Nur diesmal soll die Rotation nur bis zu einem bestimmten Winkel stattfinden. Darüber hinaus soll die Rotation geblockt werden, damit man die Kamera nicht "obenrum" im Kreis drehen kann. 
+Die Funktionsweise ist sehr ähnlich der von der X-Achsen Bewegung, daher soll diesmal nur das erläutert werden, was sich geändert hat. Und zwar soll sich die Kamera nach oben und unten ebenfalls mit der Maus bewegen. Nur diesmal soll die Rotation nur bis zu einem bestimmten Winkel stattfinden. Darüber hinaus soll die Rotation geblockt werden, damit man die Kamera nicht "obenrum" im Kreis drehen kann. 
 
-Um das zu erreichen wird folgendes gemacht: mouseY wird wieder ein bestimmter Wert zugewiesen. Diesmal soll der Wert von mouseX allerdings nicht über 50 gehen. Also wird ein Mathf.Min() verwendet. Dieser Befehl macht nun folgendes: er nimmt die zwei werte, die in der Klammer dahinter stehen und vergleicht sie. Dann gibt der Befehl den kleineren der zwei Werte zurück. Wenn nun also das Ergebnis aus Mathf.Max(-50, mouseY -= speedY * Input.GetAxis("Mouse Y")) (wird gleich noch erläutert) größer als 50 ist, liefert Mathf.Min einfach 50 zurück. Dies dient also dazu, eine Zahl zu limitieren. Natürlich könnte man auch eine if-schleife verwenden, aber diese Funktion ist deutlich eleganter, da hierbei direkt, wenn der wert über 50 steigt, 50 geliefert wird und nicht nochmal per if-schleife irgendwas geprüft werden muss. 
+Um das zu erreichen wird Folgendes gemacht: mouseY wird wieder ein bestimmter Wert zugewiesen. Diesmal soll der Wert von mouseY allerdings nicht über 50 gehen. Also wird ein Mathf.Min() verwendet. Dieser Befehl macht nun dies: er nimmt die zwei Werte, die in der Klammer dahinter stehen, und vergleicht sie. Dann gibt der Befehl den kleineren der zwei Werte zurück. Wenn nun also das Ergebnis aus Mathf.Max(-50, mouseY -= speedY * Input.GetAxis("Mouse Y")) (wird gleich noch erläutert) größer als 50 ist, liefert Mathf.Min einfach 50 zurück. Dies dient also dazu, eine Zahl zu limitieren. Natürlich könnte man auch eine if-schleife verwenden, aber diese Funktion ist deutlich eleganter, da hierbei direkt, wenn der Wert über 50 steigt, 50 geliefert wird und nicht nochmal per if-schleife irgendwas geprüft werden muss. 
 
-Der zweite Wert in der Klammer ist Mathf.Max(-50, mouseY -= speedY * Input.GetAxis("Mouse Y")). Dies ist quasi das gleiche wie die Mathf.Min außer dass es den größten statt den niedrigesten Wert zurückgibt. Das bedeutet wenn der Wert von mouseY -= speedY * Input.GetAxis("Mouse Y") größer als -50 wird, wird er zurückgegeben. Das Ergebnis von mouseY -= speedY * Input.GetAxis("Mouse Y") ist dabei die speedY multipliziert mit der Mauseingabe. Zur Vereinfachung ein paar Szenarien:
+Der zweite Wert in der Klammer ist Mathf.Max(-50, mouseY -= speedY * Input.GetAxis("Mouse Y")). Dies ist quasi das Gleiche wie die Mathf.Min außer, dass es den größten statt den niedrigesten Wert zurückgibt. Das bedeutet wenn der Wert von mouseY -= speedY * Input.GetAxis("Mouse Y") größer als -50 wird, wird er zurückgegeben. Das Ergebnis von mouseY -= speedY * Input.GetAxis("Mouse Y") ist dabei die speedY multipliziert mit der Mauseingabe. Zur Vereinfachung der Erklärung ein paar Szenarien:
 
 Man geht davon aus dass mouseY für den Anfang 0 ist:
 
-1. Die Maus wird stark nach oben bewegt: Dann ist das Ergebnis von Mathf.Max(-50, mouseY -= speedY * Input.GetAxis("Mouse Y")) dass mouseY sehr klein ist. Kleiner als -50. Also wird -50 zurückgegeben. Dann wird in der Klammer von Mathf.Min(50 und -50) verglichen und entsprechend -50 zurückgeliefert. Daher ist die Ausgabe wenn man die Kamera start nach oben bewegt -50 und damit ist -50 der maximal mögliche Drehwinkel nach oben
+1. Die Maus wird stark nach oben bewegt: Dann ist das Ergebnis von Mathf.Max(-50, mouseY -= speedY * Input.GetAxis("Mouse Y")) dass mouseY sehr klein ist. Kleiner als -50. Also wird -50 zurückgegeben. Dann wird in der Klammer von Mathf.Min(50 und -50) verglichen und entsprechend -50 zurückgeliefert. Daher ist die Ausgabe wenn man die Kamera start nach oben bewegt -50 und damit ist -50 der maximal mögliche Drehwinkel nach oben.
 
 2. Die Maus wird leicht nach oben bewegt: Dann ist mouseY in der Mathf.Max Klammer größer als -50 und wird daher zurückgeliefert. Da es aber immernoch im Minusbereich liegt, wird es bei der Mathf.Min Klammer auch zurückgeliefert. Daher wird es also um den Faktor der Mausbewegung gedreht, der ja aber größer als -50 aber kleiner als 0 sein muss. 
 
-3. Die Maus wird leicht nach unten bewegt: Dann ist mouseY positiv. Dadurch wird auch dieser Positive Wert von Mathf.Max zurückgegeben. Verglichen werden in Mathf.Min dann ein die Werte 50 und X < 50. Es wird also X zurückgeliefert und die Kamera um den Wert X gedreht
+3. Die Maus wird leicht nach unten bewegt: Dann ist mouseY positiv. Dadurch wird auch dieser positive Wert von Mathf.Max zurückgegeben. Verglichen werden in Mathf.Min dann ein die Werte 50 und X < 50. Es wird also X zurückgeliefert und die Kamera um den Wert X gedreht
 
 4. Die Maus wird stark nach unten bewegt: mouseY wird über +50, wird daher in der Mathf.Max Klammer als Ergebnis geliefert. Da aber dann 50 und X > 50 in der Mathf.Min Klammer verglichen werden, wird 50 geliefert und die Kamera wird um +50 gedreht.
 
@@ -332,28 +336,27 @@ Die Ergebnisse der Szenarien sind also:
 3. Leicht nach unten: Kamera wird um 0 < X < 50 gedreht
 4. Stark nach unten:  Kamera wird um +50 gedreht
 
-Wie zu erkennen, ist, egal welche Eingabe der Maus vorgenommen wird, die Rotation der Maus immer auf den Faktor X zwischen +50 und -50 begrenzt. So wird dann also auch die gesamte Kamerabewegung begrenzt.
+Wie zu erkennen, ist, egal welche Eingabe der Maus vorgenommen wird, die Rotation der Kamera immer auf den Faktor X zwischen +50 und -50 begrenzt ist. So wird dann also auch die gesamte Kamerabewegung begrenzt.
 
 Der Rest wird genauso gehändelt, wie die X-Bewegung der Kamera. Nur wird das Script diesmal nicht auf den Charakter, sondern auf die MainCamera gezogen. Dies wird gemacht, da nicht der Charakter, mit angehängter Kamera gedreht werden soll, sondern nur die Kamera. 
 
 <h2 id="pausemenu">Das Pause-Menü</h2>
 
-Als nächstes soll ein Pause Menü zum Spiel hinzugefügt werden. Dafür kann in Unity ein Element namens Canvas genutzt werden. Dies lässt sich mittels <b>Rechtsklick in die Assets > UI > Canvas</b> zu den Standart Elementen hinzufügen.
+Als Nächstes soll ein Pause Menü zum Spiel hinzugefügt werden. Dafür kann in Unity ein Element namens Canvas genutzt werden. Dies lässt sich mittels <b>Rechtsklick in die Hierachie > UI > Canvas</b> zu den Elementen hinzufügen.
 
 Das Canvas ist ein von Unity bereitgestelltes User Interface Element, welches einen Screen über den gesamten Bildschirm spannt.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/51204982-34084980-1905-11e9-9889-b57a4e006873.png" width="300px"></p>
 
-Anschließend wird unter diesem mittels <b>Rechtsklick > UI > Panel</b> ein Panel erstellt. Dies füllt den Canvas farbig aus und stellt dadruch quasi die Oberfläche des Menüs dar. Rechts im Inspektor lässt sich nun einiges daran verstellen, in diesem Falle wurde nur die Hintergrundfarbe von weiß auf schwarz verändert.
+Anschließend wird unter diesem mittels <b>Rechtsklick > UI > Panel</b> ein Panel erstellt. Dies füllt den Canvas farbig aus und stellt dadurch quasi die Oberfläche des Menüs dar. Rechts im Inspektor lässt sich nun einiges daran verstellen, in diesem Falle wurde nur die Hintergrundfarbe von weiß auf schwarz verändert.
 
 Im Anschluss wird unter diesem Panel mit <b>Rechtsklick > UI > Button</b> ein Button erstellt.
 
 <p align="center"><img width="300px" src="https://user-images.githubusercontent.com/42578917/51205414-24d5cb80-1906-11e9-9a3a-44e1af32befe.png"></p>
-<span id="createbuttons"></span>
 
-Die Buttons sind aktuell noch nicht besonders ansehnlich. Damit diese nun schöner sind, werden sie noch etwas verändert. Dafür muss zunächst einmal die Schrift verändert werden. Im Buttons-Element wird also das untergeordnete Text-Element ausgewählt und rechts im Inspektor folgendes verändert:
+Die Buttons sind aktuell noch nicht besonders ansehnlich. Damit diese nun schöner sind, werden sie noch etwas verändert. Dafür muss zunächst einmal die Schrift verändert werden. Im Buttons-Element wird also das untergeordnete Text-Element ausgewählt und rechts im Inspektor Folgendes verändert:
 
-Im Text(Script) wird zunächst einmal folgendes eingestellt: Das Font-Style wird auf Bold gestellt, die Font size wird auf 50 gestellt und die Color auf weiß:
+Im Text(Script) wird zunächst einmal folgendes eingestellt: Das Font-Style wird auf Bold gestellt, die Font-Size wird auf 50 gestellt und die Color auf weiß:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55875660-e151cd00-5b95-11e9-973a-2b2df7a516c1.png" width="400px"></p>
 
@@ -365,7 +368,7 @@ Die Effekt Distance wird für X und Y auf 4 bzw. -4 gestellt. Zudem wird für di
 
 Als letztes müssen noch am Button-Element einige Einstellungen vorgenommen werden:
 
-Im Image(Script) wird die Color auf schwarz gestellt und im Button (Script) werden diese Farbeinstellungen vorgenommen:
+Im Image(Script) wird die Color auf schwarz gestellt und im Button(Script) werden diese Farbeinstellungen vorgenommen:
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/55876424-e6b01700-5b97-11e9-8d9d-ee844e0f3661.png" width="400px"></p>
 
@@ -375,7 +378,7 @@ Anschließend kann im Text Element noch im Text-Feld der Text eingegeben werden,
 
 Nun ist das Menü allerdings dauerhaft geöffnet und die Buttons haben keine Funktion. Um dies zu ändern, wird auf dem Canvas ein neues Script namens "EscapeMenu" erstellt. In diesem werden dann alle Bedingungen geschrieben, nach denen das Menü geöffnet wird und alle Aktionen definiert, die die erstellten Buttons ausführen sollen.
 
-Wie alle C# Scripte in Unity hat auch dieses zu Beginneine Start() und eine Update() Funktion. Die Start()-Funktion kann gelöst werden, da sie in diesem Fall nicht benötigt wird.
+Wie alle C# Scripte in Unity hat auch dieses zu Beginn eine Start() und eine Update() Funktion. Die Start()-Funktion kann gelöscht werden, da sie in diesem Fall nicht benötigt wird.
 
 Zu Beginn des Scripts werden wieder außerhalb der Funktion aber innerhalb der Klasse, alle Variablen und Objekte definiert, die benötigt werden. In diesem Fall sind das nur zwei:
 
@@ -385,7 +388,7 @@ public class EscapeMenu:MonoBehaviour {
     public GameObject pauseMenuUI
 }
 ```
-Die erste Variable ist vom Typ bool (also Wahrheitsaussagen) und soll als Überprüfung dienen, ob sich das Spiel aktuell im Pause-Modus befindet oder nicht (da ja abhängig davon das Menü entweder geschlossen, oder eben geöffnet wird). Zudem wird sie zu Beginn auf false gesetzt, da das Spiel zu Anfang nicht im Pause Modus ist. Die zweite Initialisierung ist ein GameObject. Auch dies ist public, weil später nocheinmal aus dem Unity-Inspector drauf zugegriffen werden muss. Dieses GameObject heißt pauseMenuUI, stellt also das Canvas dar. Die Logik dahinter ist, dass diesem GameObject das vorher initialisierte Canvas, also das Menü, zugewiesen wird und dieses dann abhängig vom Tastendruck (in diesem Falle die Escape-Taste) angezeigt oder eben nicht angezeigt wird.
+Die erste Variable ist vom Typ boolean (also Wahrheitsaussagen) und soll als Überprüfung dienen, ob sich das Spiel aktuell im Pause-Modus befindet oder nicht (da ja abhängig davon das Menü entweder geschlossen, oder eben geöffnet wird). Zudem wird sie zu Beginn auf false gesetzt, da das Spiel zu Anfang nicht im Pause Modus ist. Die zweite Initialisierung ist ein GameObject. Auch dies ist public, weil später nocheinmal aus dem Unity-Inspector drauf zugegriffen werden muss. Dieses GameObject heißt pauseMenuUI, stellt also das Canvas dar. Die Logik dahinter ist, dass diesem GameObject das vorher initialisierte Canvas, also das Menü, zugewiesen wird und dieses dann abhängig vom Tastendruck (in diesem Falle die Escape-Taste) angezeigt oder eben nicht angezeigt wird.
 
 Als nächstes wird die Update Funktion geschrieben:
 
@@ -408,8 +411,8 @@ public class EscapeMenu:MonoBehaviour {
 ```
 
 Wie bereits im CharacterController wird hier abhängig vom Tastendruck eine Aktion ausgelöst. In diesem Fall ist es die EscapeTaste, die durch die Bedingung Input.GetKeyDown(KeyCode.Escape) (also: Input eines Tastendruckes holen(von der Taste mit dem Code:Escape) abgefragt wird. Wird nun also die Escape-Taste gedrückt, wird der Inhalt der If-Schleife ausgeführt. In dieser If-Schleife ist eine weitere If-Schleife, die dann noch einmal überprüft, in welchem Zustand sich das Spiel gerade befindet, also ob das Pause-Menü offen oder geschlossen ist, in dem es den Inhalt der zuvor initialisierten Variable <b>GamePaused</b> abfragt. Falls das Spiel pausiert ist, führt es nun also die Funktion Resume() aus, die im nächsten Schritt erläutert wird. Ist das Spiel nicht pausiert, wird die Funktion Pause() ausgeführt.
-<span id="setuiactive"></span>
-Als nächstes müssen dann die Pause() und die Resume() Funktion geschrieben werden. Diese werden unter der Update Funktion geschrieben und enthalten folgendes: 
+
+Als Nächstes müssen dann die Pause() und die Resume() Funktion geschrieben werden. Diese werden unter der Update Funktion geschrieben und enthalten Folgendes: 
 
 ```
 public class EscapeMenu:MonoBehaviour {
@@ -441,7 +444,7 @@ public class EscapeMenu:MonoBehaviour {
 }
 ```
 Zunächst zur Pause() Funktion:
-Diese hat den ausgangspunkt, dass das Menü geschlossen ist. Um es daher zu öffnen (da ja beim pausieren das Pausemenü geöffnet werden muss) wird das zu Beginn gesetzte GameObject pauseMenuUI mit dem Befehl pauseMenuUI.SetActive(true) auf aktiv gesetzt, wodurch es dem Spieler sichtbar wird. Als nächsten Schritt muss dafür gesorgt werden, dass das Spiel währenddessen nicht weiterläuft. Dies geschieht, indem die im Spiel vorhandene Zeit auf null gesetzt wird. Das geschieht mithilfe des Befehls Time.timeScale = 0f; - die Time.timeScale (also die "Spielzeit") wird auf null gesetzt, sie wird angehalten. Als letzten Schritt muss noch die Variable GamePaused auf true gesetzt werden, um beim nächsten Escape-drücken signalisiert wird, dass das Spiel sich aktuell im Pause-Modus befindet. 
+Diese hat den Ausgangspunkt, dass das Menü geschlossen ist. Um es daher zu öffnen (da ja beim pausieren das Pausemenü geöffnet werden muss) wird das zu Beginn gesetzte GameObject pauseMenuUI mit dem Befehl pauseMenuUI.SetActive(true) auf aktiv gesetzt, wodurch es dem Spieler sichtbar wird. Als nächsten Schritt muss dafür gesorgt werden, dass das Spiel währenddessen nicht weiterläuft. Dies geschieht, indem die im Spiel vorhandene Zeit auf null gesetzt wird. Das geschieht mithilfe des Befehls Time.timeScale = 0f; - die Time.timeScale (also die "Spielzeit") wird auf null gesetzt, sie wird angehalten. Als letzten Schritt muss noch die Variable GamePaused auf true gesetzt werden, um beim nächsten Escape-drücken signalisiert wird, dass das Spiel sich aktuell im Pause-Modus befindet. 
 
 Nun zur Resume() Funktion
 Sobald diese ausgeführt wird, muss natürlich das Menü nach dem Tastendruck wieder verschwinden. Um dies zu erreichen, wird pauseMenuUI, also das zuvor initialisierte GameObject, mittels pauseMenuUI.SetActive(false) als nicht aktiv (false) gesetzt. Es wird also deaktiviert! Als nächsten Schritt muss natürlich die Spielzeit wieder auf "normal" gesetzt werden. Daher wird hier einfach Time.timeScale = 1f; gesetzt. Als letztes wird die GamePaused Variable auf false gesetzt, das Spiel geht nämlich von hier an weiter.
@@ -455,7 +458,9 @@ public class EscapeMenu : MonoBehaviour
     }    
 }
 ```
+
 Im Anschluss wird in diese ein einziger einfacher Befehl geschrieben:
+
 ```
 public class EscapeMenu : MonoBehaviour
 {    
@@ -504,7 +509,7 @@ Damit diese Bedingungen und Funktionen nun auch Anwendung finden gibt es in Unit
 <p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/51206209-d45f6d80-1907-11e9-964e-1f93cec748b7.png"></p><br>
 <p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/51206147-b8f46280-1907-11e9-8b6f-918cb9c937eb.png"></p>
 
-Als letztes soll natürlich auch alles im Spiel gestoppt werden, wenn das Spiel gestoppt wird. Also muss noch, wenn das Escape-Menü geöffnet ist, die Bewegung des Charakters und die Bewegung der Kamera blockiert werden. Daher wird in beiden Scripten noch folgendes eingefügt:
+Als Letztes soll natürlich auch alles im Spiel gestoppt werden, wenn das Spiel gestoppt wird. Also muss noch, wenn das Escape-Menü geöffnet ist, die Bewegung des Charakters und die Bewegung der Kamera blockiert werden. Daher wird in beiden Scripten noch Folgendes eingefügt:
 
 Im PlayerController:
 
@@ -530,11 +535,11 @@ if(isPaused == false)
     transform.eulerAngles = new Vector3(mouseY, mouseX, 0.0f);
 }
 ```
-Auch hier wird abgefragt ob das Spiel pausiert ist und dann mittels einer if-schleife im Zweifel die Kamera-Bewegung blockiert wird.
+Auch hier wird abgefragt ob das Spiel pausiert ist und dann mittels einer if-schleife im Zweifel die Kamera-Bewegung blockiert.
 
 <h2 id="mousecursor">Der Mouse Cursor</h2>
 
-Nachdem nun ein Pause-Menü eingerichtet wurde, lässt sich dies auch normal bedienen. Allerdings fällt noch auf, dass die Maus sowohl im Menü, als auch inGame zu sehen ist. Dies soll natürlich nicht sein, die Maus soll inGame nicht zu sehen sein. Das Problem daran, sie einfach auszublenden, ist, dass sie im Menü ja weiterhin sichtbare sein soll. Also muss in einem Script, abhängig davon ob das Menü geöffnet ist, die Maus aus- oder eben eingeblendet werden. Dafür wird zunächst ein neues C#-Script erstellt und folgendes hinzugefügt:
+Nachdem nun ein Pause-Menü eingerichtet wurde, lässt sich dies auch normal bedienen. Allerdings fällt noch auf, dass die Maus sowohl im Menü, als auch inGame zu sehen ist. Dies soll natürlich nicht sein, die Maus soll inGame nicht zu sehen sein. Das Problem daran, sie einfach auszublenden, ist, dass sie im Menü ja weiterhin sichtbar sein soll. Also muss in einem Script, abhängig davon ob das Menü geöffnet ist, die Maus aus- oder eben eingeblendet werden. Dafür wird zunächst ein neues C#-Script erstellt und Folgendes hinzugefügt:
 
 ```
 public class CursorScript:MonoBehaviour {
@@ -561,7 +566,7 @@ public class CursorScript:MonoBehaviour {
 ```
 Dieses Script führt diese Aktionen aus und funktioniert wie folgt:
 
-Zunächst wird erstmal eine Variable vom Typ Boolean mit dem Namen CursorIsLocked erzeugt. Mit dieser soll später der aktuelle Zustand überprüft werden, ob der Mauszeiger aktuell an oder aus ist. Als nächstes wird in der void Start ein Grundzustand erzeugt, also wie die Maus zu Beginn des Spiels aussehen soll:
+Zunächst wird erstmal eine Variable vom Typ Boolean mit dem Namen CursorIsLocked erzeugt. Mit dieser soll später der aktuelle Zustand überprüft werden, ob der Mauszeiger aktuell an oder aus ist. Als Nächstes wird in der void Start ein Grundzustand erzeugt, also wie die Maus zu Beginn des Spiels aussehen soll:
 ```
 void Start() {
     Cursor.lockState = CursorLockMode.Locked;
@@ -569,7 +574,7 @@ void Start() {
     CursorIsLocked = true;
 }
 ```
-Grundsätzlich soll der Cursor unsichtbar sein, und die Varibale CursorIsLocked soll true sagen. Der Befehlt Cursor.lockState=CursorLockMode.Locked, setzt den Cursor zunächst einmal auf locked, also unbeweglich auf dem Bildschirm. Dann wird mit Cursor.visible=false der Cursor unsichtbar gesetzt. Als nächstes muss dem Programm natürlich noch gesagt dass der Cursor jetzt gerade gelockt/unsichtbar ist. Die Variable wird also auf true gesetzt.
+Grundsätzlich soll der Cursor unsichtbar sein, und die Varibale CursorIsLocked soll true sagen. Der Befehl Cursor.lockState=CursorLockMode.Locked setzt den Cursor zunächst einmal auf locked, also unbeweglich auf dem Bildschirm. Dann wird mit Cursor.visible=false der Cursor unsichtbar gesetzt. Als Nächstes muss dem Programm natürlich noch gesagt dass der Cursor jetzt gerade gelockt/unsichtbar ist. Die Variable wird also auf true gesetzt.
 
 Damit es nun möglich ist, auch im aktiven Spiel den Zustand der Maus zu verändern (z.B. wenn man das Menü öffnet), wird der Rest in die Update() Funktion geschrieben, also mit jedem Frame überprüft:
 
@@ -587,15 +592,17 @@ void Update() {
     }
 }
 ```
-Der Zustand der Maus (ob sie unsichtbar oder sichtbar ist) soll natürlich nur mit dem Öffnen des Menüs beeinflusst werden. Da das Menü mit der Escape Taste geöffnet wird, kann auch der Mauszeiger vom Drücken der Escape-Taste abhängig gemacht. Also wird mit der If-Schleife überprüft, ob die Escape-Taste gedrückt wird. Wie genau das funktioniert, lässt sich <a href="#">hier</a> nachlesen. Gleichzeitig muss allerdings auch geguckt werden, ob der Mauszeiger aktuell gelockt ist. Zuvor wurde ja eine Variable namens CursorIsLocked erstellt, in der der aktuelle Zustand der Maus gespeichert ist, welche daher dafür ausgelesen werden kann. Also wird in die If-Schleife noch eine zweite Bedingung hinzugefügt, nämlich ob der Cursor NICHT gelockt ist (Nicht-true wird durch ein Ausrufezeichen (!) vor der Bedingung symbolisiert).
+Der Zustand der Maus (ob sie unsichtbar oder sichtbar ist) soll natürlich nur mit dem Öffnen des Menüs beeinflusst werden. Da das Menü mit der Escape Taste geöffnet wird, kann auch der Mauszeiger vom Drücken der Escape-Taste abhängig gemacht. Also wird mit der If-Schleife überprüft, ob die Escape-Taste gedrückt wird. Wie genau das funktioniert, lässt sich <a href="#pausemenu">hier</a> nachlesen. Gleichzeitig muss allerdings auch geguckt werden, ob der Mauszeiger aktuell "gelocked" ist. Zuvor wurde ja eine Variable namens CursorIsLocked erstellt, in der der aktuelle Zustand der Maus gespeichert ist, welche daher dafür ausgelesen werden kann. Also wird in die If-Schleife noch eine zweite Bedingung hinzugefügt, nämlich ob der Cursor NICHT gelocked ist (Nicht-true wird durch ein Ausrufezeichen (!) vor der Bedingung symbolisiert).
 
-Wenn nun also Escape gedrückt wird UND der cursor nicht gelockt ist, wird die If-Schleife ausgeführt. Die If-Schleife enthält nun alle zuvor in der Start() Funktion verwendeten Befehle, die den Cursor festsetzen, unsichtbar machen und die Variable auf true setzen. Die Schleife würde also ausgeführt werden, wenn man sich im Menü befindet (Die Maus also sichtbar und NICHT gelocked ist = CursorIsLocked auf false ist) und dann mit Escape zurück ins Spiel wechselt.
+Wenn nun also Escape gedrückt wird UND der Cursor nicht gelocked ist, wird die If-Schleife ausgeführt. Die If-Schleife enthält nun alle zuvor in der Start() Funktion verwendeten Befehle, die den Cursor festsetzen, unsichtbar machen und die Variable auf true setzen. Die Schleife würde also ausgeführt werden, wenn man sich im Menü befindet (Die Maus also sichtbar und NICHT gelocked ist = CursorIsLocked auf false ist) und dann mit Escape zurück ins Spiel wechselt.
 
-Andersrum muss natürlich auch der Fall abgedeckt werden, dass man aus dem Spiel ins Menü wechselt, der Cursor also von der Locked-Position in die nicht-LockedPosition wechselt. Dies wird mit einem else if, also einem an eine if-Schleife gebundenen else ausgeführt. In dieser wird überprüft, ob der Escape-Button gedrückt wird, sowie ob der Cursor aktuell gelockt ist. Ist dies der Fall wird die if-schleife ausgeführt. In dieser wird eigentlich nur genau das Gegenteil von den Befehlen in der ersten if-Schleife ausgeführt. Statt CursorLockMode.Locked, wird CursorLockMode.None gesetzt, sodass der Cursor NICHT mehr gelockt ist. Genauso wird Cursor.visible auf true, also auf sichtbar gesetzt. Und die CursorIsLocked wird auf false gesetzt, da der Cursor ja von nun an nicht mehr locked ist.
+Andersrum muss natürlich auch der Fall abgedeckt werden, dass man aus dem Spiel ins Menü wechselt, der Cursor also von der Locked-Position in die nicht-LockedPosition wechselt. Dies wird mit einem else if, also einem an eine if-Schleife gebundenen else ausgeführt. In dieser wird überprüft, ob der Escape-Button gedrückt wird, sowie ob der Cursor aktuell gelockt ist. Ist dies der Fall wird die if-Schleife ausgeführt. In dieser wird eigentlich nur genau das Gegenteil von den Befehlen in der ersten if-Schleife ausgeführt. Statt CursorLockMode.Locked, wird CursorLockMode.None gesetzt, sodass der Cursor NICHT mehr gelockt ist. Genauso wird Cursor.visible auf true, also auf sichtbar gesetzt. Und die CursorIsLocked wird auf false gesetzt, da der Cursor ja von nun an nicht mehr locked ist.
 
-Als nächstes muss das Script auf die MainCamera gezogen werden. Wenn man nun das Game ausprobiert, sieht man, dass die Maus genau das macht, was erwünscht war.
+Als Nächstes muss das Script auf die MainCamera gezogen werden. Wenn man nun das Game ausprobiert, sieht man, dass die Maus genau das macht, was erwünscht ist.
 
 Nun kommt allerdings noch ein weiteres Problem auf. Wenn man im zuvor erstellten Menü auf Fortsetzen klickt, verschwindet die Maus nicht.
+
+HIER FEHLT WAS!!!!
 
 <h2 id="hauptmenu">Das Hauptmenü</h2>
 

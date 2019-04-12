@@ -608,10 +608,6 @@ Andersrum muss natürlich auch der Fall abgedeckt werden, dass man aus dem Spiel
 
 Als Nächstes muss das Script auf die MainCamera gezogen werden. Wenn man nun das Game ausprobiert, sieht man, dass die Maus genau das macht, was erwünscht ist.
 
-Nun kommt allerdings noch ein weiteres Problem auf. Wenn man im zuvor erstellten Menü auf Fortsetzen klickt, verschwindet die Maus nicht.
-
-HIER FEHLT WAS!!!!
-
 <h2 id="hauptmenu">Das Hauptmenü</h2>
 
 Als nächstes soll nun ein Hauptmenü erstellt werden. In diesem soll man dann das Spiel Starten, Beenden und die Credits anschauen können. Dafür muss zunächst eine neue Szene in Unity erstellt werden. Dies geht oben links unter <b>File > New Scene</b>. In dieser kann nun das Menü erstellt werden. Wie beim Pausemenü wird zunächst ein Canvas erstellt, das dann MainMenu genannt wird. Als nächstes wird mit <b> Rechtsklick > UI > Panel</b> ein Hintergrund erstellt. Dann soll ein Hintergrund erstellt werden. Dafür wurde in diesem Fall einfach ein Screenshot erstellt, in Photoshop etwas bearbeitet und per Drag and Drop in die Unity Dateien gezogen. Anschließend wird dieses Bild ausgewählt und rechts im Inspektor unter "Texture Type" der Punkt "Sprite 2D and UI" ausgewählt. Damit wird das Bild zu einem Sprite gemacht. Anschließend kann man auf das zuvor erstellte Panel gehen und unter Background Image das zuvor erstellte Sprite auswählen. Danach müssen nur noch 3 Buttons erstellt und richtig beschriftet werden. Wie das geht, lässt sich unter dem Punkt <a href="pausemenu">Pausemenü</a> nachlesen.
